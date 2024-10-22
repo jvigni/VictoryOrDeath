@@ -26,12 +26,18 @@ public class Minion : MonoBehaviour
         {
             if (mobMovementCountdown > 0) 
                 mobMovementCountdown--;
-            else 
-                mobMovementCountdown = 100;
+            else
+            {
+                mobMovementCountdown = 1000;
+                mobDesiredPosition = transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), 0, UnityEngine.Random.Range(-5, 5));
+                mobDesiredPosition.y = Terrain.activeTerrain.SampleHeight(mobDesiredPosition);
+                transform.position = Vector3.MoveTowards(transform.position, mobDesiredPosition, .03f);
 
-            var randomNewPosition = transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), 0, UnityEngine.Random.Range(-5, 5));
-            randomNewPosition.y = Terrain.activeTerrain.SampleHeight(randomNewPosition);
-            transform.position = Vector3.MoveTowards(transform.position, randomNewPosition, .03f);
+                transform.LookAt(mobDesiredPosition);
+                var newRotation = transform.rotation;
+                newRotation.y = 0;
+                transform.rotation = newRotation;
+            }
         }
     }
 
