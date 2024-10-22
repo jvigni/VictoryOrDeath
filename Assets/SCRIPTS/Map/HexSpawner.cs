@@ -39,6 +39,6 @@ public class HexSpawner : MonoBehaviour
 
         var mob = Instantiate(mobPrefab, rndSpawnPosition, Quaternion.identity);
         mob.transform.SetParent(emptyParent);
-        mob.OnDeath += () => SpawnMob(emptyParent);
+        mob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(emptyParent);
     }
 }
