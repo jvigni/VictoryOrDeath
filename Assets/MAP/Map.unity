@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.2627451, g: 0.25490198, b: 0.20784314, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
@@ -1985,11 +1985,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 963194228}
+  - {fileID: 1711440621}
   - {fileID: 8205934239258870504}
   - {fileID: 705507995}
+  - {fileID: 963194228}
   - {fileID: 1210720458}
-  - {fileID: 1711440621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &578498382
