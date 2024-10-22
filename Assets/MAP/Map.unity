@@ -486,6 +486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (3)
@@ -1913,6 +1917,7 @@ MonoBehaviour:
   lv1MinionPrefab: {fileID: 0}
   lv2MinionPrefab: {fileID: 0}
   lv3MinionPrefab: {fileID: 0}
+  spawnMinions: 1
   actualMinionLevel: 1
   radius: 50
   minionsAmount: 5
@@ -2564,6 +2569,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (11)
@@ -3301,6 +3310,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (2)
@@ -3522,6 +3535,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (10)
@@ -4246,7 +4263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b2cbe6b7fa05347864bcf8c76a81ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawners:
+  hexSpawners:
   - {fileID: 1272397579}
   - {fileID: 1072231330}
   - {fileID: 817435900}
@@ -4258,9 +4275,13 @@ MonoBehaviour:
   - {fileID: 924274511}
   - {fileID: 732427972}
   - {fileID: 1750790428}
-  minionsLv1: []
-  minionsLv2: []
-  minionsLv3: []
+  minionsLv1Prefab:
+  - {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
+  - {fileID: -683393922211658384, guid: 1a73a658eb2a7aa4ab4ceeeb54a43730, type: 3}
+  minionsLv2Prefab:
+  - {fileID: -683393922211658384, guid: 8d6e318b76c2a1146a2cef69994bcc50, type: 3}
+  minionsLv3Prefab:
+  - {fileID: -683393922211658384, guid: d3dce0844e16a5446a90227e2750e9da, type: 3}
 --- !u!1 &1039004370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,6 +4324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (4)
@@ -4485,6 +4510,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (1)
@@ -5388,6 +5417,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (0)
@@ -6013,6 +6046,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (13)
@@ -7230,6 +7267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (5)
@@ -7789,6 +7830,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (12)
@@ -8042,6 +8087,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (7)
@@ -9069,6 +9118,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (8)

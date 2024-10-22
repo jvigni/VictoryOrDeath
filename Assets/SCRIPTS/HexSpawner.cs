@@ -8,14 +8,16 @@ public class HexSpawner : MonoBehaviour
     public Minion lv2MinionPrefab;
     public Minion lv3MinionPrefab;
 
+    [SerializeField] bool spawnMinions;
     [SerializeField] int actualMinionLevel = 1;
     [SerializeField] int radius = 50;
     [SerializeField] int minionsAmount = 5;
 
     private void Start()
     {
-        for (int i = 0; i < minionsAmount; i++)
-            SpawnMob(actualMinionLevel);
+        if (spawnMinions)
+            for (int i = 0; i < minionsAmount; i++)
+                SpawnMob(actualMinionLevel);
     }
 
     void  SpawnMob(int actualMinionLevel)
