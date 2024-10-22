@@ -5,20 +5,16 @@ using UnityEngine;
 
 public class Minion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Minion Target;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Target != null)
+            transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, .03f);
     }
 
-    internal void SetTarget(Minion minionsTarget)
+    internal void SetTarget(Minion newTarget)
     {
-        throw new NotImplementedException();
+        Target = newTarget;
     }
 }
