@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2652475602060462966}
   - component: {fileID: 9192127769953440079}
-  - component: {fileID: 7304919927026733529}
+  - component: {fileID: 7917837374084615300}
   m_Layer: 0
   m_Name: HUMAN_TC
   m_TagString: Untagged
@@ -79,14 +79,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionPrefab: {fileID: 3666370624810418426, guid: 96bc22c9ec4f8114d9fab4c32ace48db, type: 3}
+  minionPrefab: {fileID: 3608339937771777093, guid: 987b9468d3fc0b14eaade748d63f6d5c, type: 3}
   spawnPoint: {fileID: 2633972528949443566}
   minionsTarget: {fileID: 0}
   spawning: 1
   secondsToSpawn: 0.5
   spawnsAmount: 3
   secondsBetweenWaves: 15
---- !u!114 &7304919927026733529
+--- !u!114 &7917837374084615300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,10 +95,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6485796700115025948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c95a48472e760e4abb458574fb8b8d3, type: 3}
+  m_Script: {fileID: 11500000, guid: f473badfdfd879a4b80ac5e451f806c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!1001 &3098426142415402053
 PrefabInstance:
   m_ObjectHideFlags: 0

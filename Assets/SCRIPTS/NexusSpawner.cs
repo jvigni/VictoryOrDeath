@@ -31,11 +31,13 @@ public class NexusSpawner : MonoBehaviour
 
     IEnumerator SpawnMobRoutine()
     {
-        while(spawnCount < spawnsAmount)
+        var minionsWaveEmptyObj = new GameObject("MINIONS_WAVE");
+        while (spawnCount < spawnsAmount)
         {
             var minion = Instantiate(minionPrefab, spawnPoint.position, Quaternion.identity);
             minion.SetTarget(minionsTarget);
             spawnCount++;
+            minion.transform.SetParent(minionsWaveEmptyObj.transform);
             yield return new WaitForSeconds(secondsToSpawn);
         }
         yield return null;

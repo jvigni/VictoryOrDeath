@@ -9,32 +9,36 @@ public class HexSpawner : MonoBehaviour
     public Mob lv3MobPrefab;
 
     [SerializeField] bool spawnMinions;
-    [SerializeField] int actualMinionLevel = 1;
+    [SerializeField] int actualMobLevel = 1;
     [SerializeField] int radius = 50;
     [SerializeField] int minionsAmount = 5;
 
     private void Start()
     {
         if (spawnMinions)
+        {
+            var mobsEmptyObj = new GameObject("MOBS_LV_" + actualMobLevel);
             for (int i = 0; i < minionsAmount; i++)
-                SpawnMob();
+                SpawnMob(mobsEmptyObj.transform);
+        }
     }
 
-    void  SpawnMob() // After 5/10 minutes, dying minions spawns lv2/3 minions respectively
+    void  SpawnMob(Transform emptyParent) // After 5/10 minutes, dying minions spawns lv2/3 minions respectively
     {
         var rndSpawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-radius, radius), 0, UnityEngine.Random.Range(-radius, radius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
 
         var elapsedMinutes = Time.realtimeSinceStartup / 60;
-        if (elapsedMinutes >= 5) actualMinionLevel = 2;
-        if (elapsedMinutes >= 10) actualMinionLevel = 3;
+        if (elapsedMinutes >= 5) actualMobLevel = 2;
+        if (elapsedMinutes >= 10) actualMobLevel = 3;
 
-        Mob minionPrefab = null;
-        if (actualMinionLevel == 1) minionPrefab = lv1MobPrefab;
-        if (actualMinionLevel == 2) minionPrefab = lv2MobPrefab;
-        if (actualMinionLevel >= 3) minionPrefab = lv3MobPrefab;
+        Mob mobPrefab = null;
+        if (actualMobLevel == 1) mobPrefab = lv1MobPrefab;
+        if (actualMobLevel == 2) mobPrefab = lv2MobPrefab;
+        if (actualMobLevel >= 3) mobPrefab = lv3MobPrefab;
 
-        var minion = Instantiate(minionPrefab, rndSpawnPosition, Quaternion.identity);
-        minion.OnDeath += () => SpawnMob();
+        var mob = Instantiate(mobPrefab, rndSpawnPosition, Quaternion.identity);
+        mob.transform.SetParent(emptyParent);
+        mob.OnDeath += () => SpawnMob(emptyParent);
     }
 }
