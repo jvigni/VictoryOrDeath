@@ -7160,7 +7160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5b168774c948f4da3cd072ab777ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionPrefab: {fileID: 3666370624810418426, guid: 553260f9fb820ad4da3cace056fb4b77, type: 3}
+  minionPrefab: {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
   radius: 40
   minionsAmount: 5
 --- !u!1001 &1628926649
