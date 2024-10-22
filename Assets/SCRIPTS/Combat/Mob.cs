@@ -4,8 +4,6 @@ using UnityEngine;
 public class Mob : MonoBehaviour
 {
     public Mob target; // The target for the mob to chase.
-    public Action OnDeath;
-    public int health = 100;
     public bool moveAsMob = true; // Patrol mode when true.
 
     [SerializeField] Vector3 mobDesiredPosition; // The desired patrol position.
@@ -27,12 +25,6 @@ public class Mob : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 0)
-        {
-            OnDeath?.Invoke();
-            return;
-        }
-
         returnTimer += Time.deltaTime; // Increment the timer.
 
         if (returnTimer >= returnToInitialCooldown)
