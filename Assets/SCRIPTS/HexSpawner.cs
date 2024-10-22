@@ -17,7 +17,7 @@ public class HexSpawner : MonoBehaviour
     {
         if (spawnMinions)
             for (int i = 0; i < minionsAmount; i++)
-                SpawnMob(actualMinionLevel);
+                SpawnMob();
     }
 
     void  SpawnMob() // After 5/10 minutes, dying minions spawns lv2/3 minions respectively
@@ -25,7 +25,7 @@ public class HexSpawner : MonoBehaviour
         var rndSpawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-radius, radius), 0, UnityEngine.Random.Range(-radius, radius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
 
-        var elapsedMinutes = Time.realtimeSinceStartup * 60;
+        var elapsedMinutes = Time.realtimeSinceStartup / 60;
         if (elapsedMinutes >= 5) actualMinionLevel = 2;
         if (elapsedMinutes >= 10) actualMinionLevel = 3;
 
