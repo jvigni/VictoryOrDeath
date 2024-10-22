@@ -70,9 +70,15 @@ public class Minion : MonoBehaviour
         mobDesiredPosition.y = Terrain.activeTerrain.SampleHeight(mobDesiredPosition); // Ensure the point is on terrain.
     }
 
-    // Move the mob smoothly towards the destination (patrol point or target).
+    // Move the mob smoothly towards the destination (patrol point or target), ensuring no uphill movement.
     void MoveTowardsTarget(Vector3 destination)
     {
+        // Prevent movement towards higher Y terrain.
+        if (destination.y > transform.position.y)
+        {
+            return; // Do not move if the destination is uphill.
+        }
+
         // Calculate direction.
         Vector3 direction = (destination - transform.position).normalized;
         direction.y = 0; // Ensure no tilting on the Y axis.
