@@ -1904,7 +1904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5b168774c948f4da3cd072ab777ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionPrefab: {fileID: 3666370624810418426, guid: 553260f9fb820ad4da3cace056fb4b77, type: 3}
+  lv1MinionPrefab: {fileID: 0}
+  lv2MinionPrefab: {fileID: 0}
+  lv3MinionPrefab: {fileID: 0}
+  actualMinionLevel: 1
   radius: 50
   minionsAmount: 5
 --- !u!1001 &549911699
@@ -6231,6 +6234,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9192127769953440079, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
+      propertyPath: spawnsAmount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192127769953440079, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
       propertyPath: minionsTarget
       value: 
       objectReference: {fileID: 663179919}
@@ -7160,7 +7167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5b168774c948f4da3cd072ab777ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionPrefab: {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
+  lv1MinionPrefab: {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
+  lv2MinionPrefab: {fileID: -683393922211658384, guid: 8d6e318b76c2a1146a2cef69994bcc50, type: 3}
+  lv3MinionPrefab: {fileID: -683393922211658384, guid: d3dce0844e16a5446a90227e2750e9da, type: 3}
+  actualMinionLevel: 1
   radius: 40
   minionsAmount: 5
 --- !u!1001 &1628926649

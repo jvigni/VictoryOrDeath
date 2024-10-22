@@ -1,27 +1,34 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class HexSpawner : MonoBehaviour
 {
-    public Minion minionPrefab;
-    
+    public Minion lv1MinionPrefab;
+    public Minion lv2MinionPrefab;
+    public Minion lv3MinionPrefab;
+
+    [SerializeField] int actualMinionLevel = 1;
     [SerializeField] int radius = 50;
     [SerializeField] int minionsAmount = 5;
 
     private void Start()
     {
         for (int i = 0; i < minionsAmount; i++)
-            SpawnMob();
+            SpawnMob(actualMinionLevel);
     }
 
-    void SpawnMob()
+    void  SpawnMob(int actualMinionLevel)
     {
-        var rndSpawnPosition = transform.position + new Vector3(Random.Range(-radius, radius), 0, Random.Range(-radius, radius));
+        var rndSpawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-radius, radius), 0, UnityEngine.Random.Range(-radius, radius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
 
-        var minion = Instantiate(minionPrefab, rndSpawnPosition, Quaternion.identity);
-        //TODO minion.IsMob(rndSpawnPosition);
+        Minion minionPrefab = null;
+        if (actualMinionLevel == 1) minionPrefab = lv1MinionPrefab;
+        if (actualMinionLevel == 2) minionPrefab = lv2MinionPrefab;
+        if (actualMinionLevel == 3) minionPrefab = lv3MinionPrefab;
 
-        minion.OnDeath += SpawnMob;
+        var minion = Instantiate(minionPrefab, rndSpawnPosition, Quaternion.identity);
+        minion.OnDeath += () => SpawnMob(actualMinionLevel + 1);
     }
 }
