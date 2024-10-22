@@ -27,6 +27,7 @@ public class Minion : MonoBehaviour
         if (health <= 0)
         {
             OnDeath?.Invoke();
+            Destroy(gameObject);
             return;
         }
 

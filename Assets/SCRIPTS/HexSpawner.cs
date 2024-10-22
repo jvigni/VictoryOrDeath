@@ -26,7 +26,7 @@ public class HexSpawner : MonoBehaviour
         Minion minionPrefab = null;
         if (actualMinionLevel == 1) minionPrefab = lv1MinionPrefab;
         if (actualMinionLevel == 2) minionPrefab = lv2MinionPrefab;
-        if (actualMinionLevel == 3) minionPrefab = lv3MinionPrefab;
+        if (actualMinionLevel >= 3) minionPrefab = lv3MinionPrefab;
 
         var minion = Instantiate(minionPrefab, rndSpawnPosition, Quaternion.identity);
         minion.OnDeath += () => SpawnMob(actualMinionLevel + 1);
