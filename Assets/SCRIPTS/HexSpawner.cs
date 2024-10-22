@@ -11,16 +11,17 @@ public class HexSpawner : MonoBehaviour
     private void Start()
     {
         for (int i = 0; i < minionsAmount; i++)
-            SpawnMinion();
+            SpawnMob();
     }
 
-    void SpawnMinion()
+    void SpawnMob()
     {
         var rndSpawnPosition = transform.position + new Vector3(Random.Range(-radius, radius), 0, Random.Range(-radius, radius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
 
         var minion = Instantiate(minionPrefab, rndSpawnPosition, Quaternion.identity);
+        //TODO minion.IsMob(rndSpawnPosition);
 
-        minion.OnDeath += SpawnMinion;
+        minion.OnDeath += SpawnMob;
     }
 }
