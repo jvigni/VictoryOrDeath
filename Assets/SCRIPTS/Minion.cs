@@ -16,6 +16,9 @@ public class Minion : MonoBehaviour
     [SerializeField] float minDistanceToTarget = 1.0f; // Distance threshold to stop when near the target or patrol point.
     [SerializeField] float rotationSpeed = 5.0f; // Speed at which the mob rotates.
 
+    [SerializeField] float returnToInitialCooldown = 10.0f; // Time before returning to the initial position.
+    private float returnTimer = 0.0f; // Timer to track patrol time.
+
     private void Start()
     {
         initialPosition = transform.position; // Store the initial spawn position as the anchor point.
@@ -28,6 +31,20 @@ public class Minion : MonoBehaviour
         {
             OnDeath?.Invoke();
             return;
+        }
+
+        returnTimer += Time.deltaTime; // Increment the timer.
+
+        if (returnTimer >= returnToInitialCooldown)
+        {
+            // Occasionally return to the initial position.
+            MoveTowardsTarget(initialPosition);
+            if (Vector3.Distance(transform.position, initialPosition) < minDistanceToTarget)
+            {
+                returnTimer = 0; // Reset the timer after reaching the initial position.
+                DecideNextDesiredPosition(); // Decide the next patrol point after returning.
+            }
+            return; // Skip the rest of the Update to avoid patrolling.
         }
 
         if (moveAsMob)
