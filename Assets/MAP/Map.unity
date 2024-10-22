@@ -6210,6 +6210,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7304919927026733529, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304919927026733529, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
+      propertyPath: moveAsMob
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304919927026733529, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
+      propertyPath: patrolRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304919927026733529, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
+      propertyPath: movementSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9192127769953440079, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7146,7 +7162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionPrefab: {fileID: 3666370624810418426, guid: 553260f9fb820ad4da3cace056fb4b77, type: 3}
   radius: 40
-  minionsAmount: 10
+  minionsAmount: 5
 --- !u!1001 &1628926649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9352,8 +9368,24 @@ PrefabInstance:
       value: PLAGUE_TC
       objectReference: {fileID: 0}
     - target: {fileID: 6247513447652403947, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247513447652403947, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247513447652403947, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+      propertyPath: moveAsMob
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247513447652403947, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+      propertyPath: patrolRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247513447652403947, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+      propertyPath: movementSpeed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7639729172663605807, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: m_Enabled

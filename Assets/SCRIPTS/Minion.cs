@@ -1,48 +1,97 @@
-
 using System;
-using System.Collections;
 using UnityEngine;
 
 public class Minion : MonoBehaviour
 {
-    public Minion target; // TODO AUTOTARGETING. Enemy nexus must be allways the last target in the list
+    public Minion target; // The target for the mob to chase.
     public Action OnDeath;
     public int health = 100;
-    public bool moveAsMob;
+    public bool moveAsMob = true; // Patrol mode when true.
 
-    [SerializeField] Vector3 mobDesiredPosition;
-    [SerializeField] int mobMovementCountdown;
+    [SerializeField] Vector3 mobDesiredPosition; // The desired patrol position.
+    [SerializeField] Vector3 initialPosition; // The starting position (anchor point).
+    [SerializeField] float movementSpeed = 3.0f; // Speed of movement.
+    [SerializeField] float aggroRange = 20.0f; // Distance at which the mob will engage the target.
+    [SerializeField] float patrolRadius = 25.0f; // Radius for patrolling around the initial position.
+    [SerializeField] float minDistanceToTarget = 1.0f; // Distance threshold to stop when near the target or patrol point.
+    [SerializeField] float rotationSpeed = 5.0f; // Speed at which the mob rotates.
 
+    private void Start()
+    {
+        initialPosition = transform.position; // Store the initial spawn position as the anchor point.
+        DecideNextDesiredPosition(); // Start patrolling.
+    }
 
-    // TODO Scrapear Lifeform de DreamQuest2Prototype (Y todo lo demas)
-    void Update()
+    private void Update()
     {
         if (health <= 0)
-            OnDeath?.Invoke();
-
-        if (!moveAsMob && target != null)
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, .03f);
-        else if (moveAsMob) // reset countdown & decide new position
         {
-            if (mobMovementCountdown > 0) 
-                mobMovementCountdown--;
+            OnDeath?.Invoke();
+            return;
+        }
+
+        if (moveAsMob)
+        {
+            if (target != null && Vector3.Distance(transform.position, target.transform.position) <= aggroRange)
+            {
+                // Engage the target if within aggro range.
+                MoveTowardsTarget(target.transform.position);
+            }
             else
             {
-                mobMovementCountdown = 1000;
-                mobDesiredPosition = transform.position + new Vector3(UnityEngine.Random.Range(-5, 5), 0, UnityEngine.Random.Range(-5, 5));
-                mobDesiredPosition.y = Terrain.activeTerrain.SampleHeight(mobDesiredPosition);
-                transform.position = Vector3.MoveTowards(transform.position, mobDesiredPosition, .03f);
-
-                transform.LookAt(mobDesiredPosition);
-                var newRotation = transform.rotation;
-                newRotation.y = 0;
-                transform.rotation = newRotation;
+                // If no target or out of range, patrol.
+                target = null; // Reset target if out of range.
+                Patrol();
             }
         }
     }
 
-    public void SetTarget(Minion target)
+    // Patrol: Moves the mob randomly within the set patrol radius around the initial position.
+    void Patrol()
     {
-        this.target = target;
+        // If the mob has reached the current patrol point, choose a new one.
+        if (Vector3.Distance(transform.position, mobDesiredPosition) < minDistanceToTarget)
+        {
+            DecideNextDesiredPosition();
+        }
+        else
+        {
+            MoveTowardsTarget(mobDesiredPosition);
+        }
+    }
+
+    // Decide the next position for patrolling, ensuring it stays within the patrol radius from the initial position.
+    void DecideNextDesiredPosition()
+    {
+        // Set a random position within the patrol radius around the initial position.
+        Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(-patrolRadius, patrolRadius), 0, UnityEngine.Random.Range(-patrolRadius, patrolRadius));
+        mobDesiredPosition = initialPosition + randomOffset;
+        mobDesiredPosition.y = Terrain.activeTerrain.SampleHeight(mobDesiredPosition); // Ensure the point is on terrain.
+    }
+
+    // Move the mob smoothly towards the destination (patrol point or target).
+    void MoveTowardsTarget(Vector3 destination)
+    {
+        // Calculate direction.
+        Vector3 direction = (destination - transform.position).normalized;
+        direction.y = 0; // Ensure no tilting on the Y axis.
+
+        // Check if we are moving.
+        if (Vector3.Distance(transform.position, destination) > minDistanceToTarget)
+        {
+            // Move towards the destination.
+            transform.position = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime);
+
+            // Smoothly rotate towards the destination.
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+    }
+
+    // Set the mob's target manually.
+    public void SetTarget(Minion newTarget)
+    {
+        target = newTarget;
+        moveAsMob = true; // Ensure mob will chase the target if set.
     }
 }
