@@ -117,8 +117,8 @@ GameObject:
   - component: {fileID: 219911174828128330}
   - component: {fileID: 219911174828128331}
   - component: {fileID: 219911174828128324}
-  - component: {fileID: 3666370624810418426}
   - component: {fileID: 8514337188853201886}
+  - component: {fileID: 3608339937771777093}
   m_Layer: 0
   m_Name: Militia
   m_TagString: Untagged
@@ -215,23 +215,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3666370624810418426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219911174828128325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c95a48472e760e4abb458574fb8b8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  health: 100
-  moveAsMob: 0
-  mobDesiredPosition: {x: 0, y: 0, z: 0}
-  mobMovementCountdown: 0
 --- !u!54 &8514337188853201886
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -259,3 +242,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &3608339937771777093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219911174828128325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f473badfdfd879a4b80ac5e451f806c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

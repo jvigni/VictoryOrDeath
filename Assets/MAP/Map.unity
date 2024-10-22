@@ -2102,6 +2102,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1761242836}
     m_Modifications:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: minionsAmount
       value: 5
       objectReference: {fileID: 0}
@@ -2452,17 +2456,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4386168805695701429, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
   m_PrefabInstance: {fileID: 6907806062661390685}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &663179919 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6247513447652403947, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
-  m_PrefabInstance: {fileID: 6907806062661390685}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c95a48472e760e4abb458574fb8b8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4221,12 +4214,12 @@ MonoBehaviour:
   - {fileID: 1212990603}
   - {fileID: 1472416479}
   - {fileID: 1268997338}
-  minionsLv1Prefab:
-  - {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
+  mobsLv1Prefab:
   - {fileID: -683393922211658384, guid: 1a73a658eb2a7aa4ab4ceeeb54a43730, type: 3}
-  minionsLv2Prefab:
+  - {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
+  mobsLv2Prefab:
   - {fileID: -683393922211658384, guid: 8d6e318b76c2a1146a2cef69994bcc50, type: 3}
-  minionsLv3Prefab:
+  mobsLv3Prefab:
   - {fileID: -683393922211658384, guid: d3dce0844e16a5446a90227e2750e9da, type: 3}
 --- !u!1 &1039004370
 GameObject:
@@ -6435,7 +6428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192127769953440079, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9192127769953440079, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
       propertyPath: spawnsAmount
@@ -6444,7 +6437,7 @@ PrefabInstance:
     - target: {fileID: 9192127769953440079, guid: 28201cfd6d6b3a741a0101a76812588d, type: 3}
       propertyPath: minionsTarget
       value: 
-      objectReference: {fileID: 663179919}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7338,6 +7331,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5645880912633204937, guid: 2554522fb280eba4b9d145a838b2f740, type: 3}
   m_PrefabInstance: {fileID: 1597346066}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1607205467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5751727500373775415, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+  m_PrefabInstance: {fileID: 6907806062661390685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1607205468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607205467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  minionsTarget: {fileID: 0}
+  spawning: 1
+  secondsToSpawn: 0.5
+  spawnsAmount: 3
+  secondsBetweenWaves: 5
 --- !u!1001 &1624985139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9763,12 +9780,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7639729172663605807, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7639729172663605807, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: minionPrefab
       value: 
-      objectReference: {fileID: 3666370624810418426, guid: 9a3e6ce53feface4597da71e705a5f63, type: 3}
+      objectReference: {fileID: 3666370624810418426, guid: 3e7078563813a7a419dd7869d72d81dc, type: 3}
     - target: {fileID: 7639729172663605807, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: minionsTarget
       value: 
@@ -9776,7 +9793,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5751727500373775415, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607205468}
   m_SourcePrefab: {fileID: 100100000, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
 --- !u!4 &8205934239258870504
 Transform:

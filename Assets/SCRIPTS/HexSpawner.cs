@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HexSpawner : MonoBehaviour
 {
-    public Minion lv1MinionPrefab;
-    public Minion lv2MinionPrefab;
-    public Minion lv3MinionPrefab;
+    public Mob lv1MobPrefab;
+    public Mob lv2MobPrefab;
+    public Mob lv3MobPrefab;
 
     [SerializeField] bool spawnMinions;
     [SerializeField] int actualMinionLevel = 1;
@@ -29,10 +29,10 @@ public class HexSpawner : MonoBehaviour
         if (elapsedMinutes >= 5) actualMinionLevel = 2;
         if (elapsedMinutes >= 10) actualMinionLevel = 3;
 
-        Minion minionPrefab = null;
-        if (actualMinionLevel == 1) minionPrefab = lv1MinionPrefab;
-        if (actualMinionLevel == 2) minionPrefab = lv2MinionPrefab;
-        if (actualMinionLevel >= 3) minionPrefab = lv3MinionPrefab;
+        Mob minionPrefab = null;
+        if (actualMinionLevel == 1) minionPrefab = lv1MobPrefab;
+        if (actualMinionLevel == 2) minionPrefab = lv2MobPrefab;
+        if (actualMinionLevel >= 3) minionPrefab = lv3MobPrefab;
 
         var minion = Instantiate(minionPrefab, rndSpawnPosition, Quaternion.identity);
         minion.OnDeath += () => SpawnMob();

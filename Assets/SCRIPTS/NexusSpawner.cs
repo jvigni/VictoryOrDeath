@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class NexusSpawner : MonoBehaviour
 {
     [SerializeField] Minion minionPrefab;
     [SerializeField] Transform spawnPoint;

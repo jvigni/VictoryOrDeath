@@ -81,10 +81,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5b168774c948f4da3cd072ab777ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lv1MinionPrefab: {fileID: 0}
-  lv2MinionPrefab: {fileID: 0}
-  lv3MinionPrefab: {fileID: 0}
+  lv1MobPrefab: {fileID: 0}
+  lv2MobPrefab: {fileID: 0}
+  lv3MobPrefab: {fileID: 0}
   spawnMinions: 0
   actualMinionLevel: 1
-  radius: 50
+  radius: 25
   minionsAmount: 10
