@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 730376978602467095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 20, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionPrefab: {fileID: 0}
+  minionPrefab: {fileID: 3666370624810418426, guid: 96bc22c9ec4f8114d9fab4c32ace48db, type: 3}
   spawnPoint: {fileID: 2633972528949443566}
   minionsTarget: {fileID: 0}
   spawning: 1
