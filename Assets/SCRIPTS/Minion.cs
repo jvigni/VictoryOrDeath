@@ -27,7 +27,6 @@ public class Minion : MonoBehaviour
         if (health <= 0)
         {
             OnDeath?.Invoke();
-            Destroy(gameObject);
             return;
         }
 
@@ -70,15 +69,9 @@ public class Minion : MonoBehaviour
         mobDesiredPosition.y = Terrain.activeTerrain.SampleHeight(mobDesiredPosition); // Ensure the point is on terrain.
     }
 
-    // Move the mob smoothly towards the destination (patrol point or target), ensuring no uphill movement.
+    // Move the mob smoothly towards the destination (patrol point or target).
     void MoveTowardsTarget(Vector3 destination)
     {
-        // Prevent movement towards higher Y terrain.
-        if (destination.y > transform.position.y)
-        {
-            return; // Do not move if the destination is uphill.
-        }
-
         // Calculate direction.
         Vector3 direction = (destination - transform.position).normalized;
         direction.y = 0; // Ensure no tilting on the Y axis.
@@ -87,7 +80,12 @@ public class Minion : MonoBehaviour
         if (Vector3.Distance(transform.position, destination) > minDistanceToTarget)
         {
             // Move towards the destination.
-            transform.position = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime);
+            Vector3 newPosition = Vector3.MoveTowards(transform.position, destination, movementSpeed * Time.deltaTime);
+
+            // Adjust the Y position based on terrain height to prevent floating.
+            newPosition.y = Terrain.activeTerrain.SampleHeight(newPosition);
+
+            transform.position = newPosition;
 
             // Smoothly rotate towards the destination.
             Quaternion targetRotation = Quaternion.LookRotation(direction);
