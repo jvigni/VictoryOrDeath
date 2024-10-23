@@ -34,3 +34,7 @@ por ahora meto undeads para testear el gameplay. version 1
 -Sacar el sist de oleadas y hacerlo x dia noche.
 se hace de dia, spawnea todo, noche, repetir.
 
+# IDEA PLAN DE PAGOS:
+-X$ al mes, y 3% de ganancia neta si el consejo de monos decide que su contribucion fue suficiente y util.
+-Asi podemos contratar mucha gente y hacer una obra de arte
+-Yo quiero guita para hacer mis experimentos y salvar vzla. VLLC
