@@ -1536,6 +1536,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1761242836}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnMinions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: minionsAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: actualMobLevel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (6)
@@ -2671,6 +2683,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: actualMobLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: actualMinionLevel
       value: 3
       objectReference: {fileID: 0}
@@ -3279,6 +3295,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: actualMobLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: actualMinionLevel
       value: 3
       objectReference: {fileID: 0}
@@ -3849,6 +3869,10 @@ PrefabInstance:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: spawnMinions
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: minionsAmount
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
@@ -4523,6 +4547,10 @@ PrefabInstance:
       propertyPath: spawnMinions
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: minionsAmount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (2)
@@ -4868,6 +4896,10 @@ PrefabInstance:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: spawnMinions
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: minionsAmount
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
@@ -5732,8 +5764,10 @@ MonoBehaviour:
   - {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
   mobsLv2Prefab:
   - {fileID: -683393922211658384, guid: 8d6e318b76c2a1146a2cef69994bcc50, type: 3}
+  - {fileID: 1158225606334752326, guid: 8d6e318b76c2a1146a2cef69994bcc50, type: 3}
   mobsLv3Prefab:
   - {fileID: -683393922211658384, guid: d3dce0844e16a5446a90227e2750e9da, type: 3}
+  - {fileID: 5274129697002601068, guid: d3dce0844e16a5446a90227e2750e9da, type: 3}
 --- !u!1 &1039004370
 GameObject:
   m_ObjectHideFlags: 0
@@ -7049,6 +7083,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: minionsAmount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: actualMobLevel
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
@@ -9147,6 +9185,10 @@ PrefabInstance:
       propertyPath: spawnMinions
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: minionsAmount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (5)
@@ -9861,6 +9903,10 @@ PrefabInstance:
       propertyPath: spawnMinions
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: minionsAmount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (12)
@@ -10432,6 +10478,10 @@ PrefabInstance:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: spawnMinions
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: minionsAmount
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
