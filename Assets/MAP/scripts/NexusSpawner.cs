@@ -36,14 +36,17 @@ public class NexusSpawner : MonoBehaviour
                 yield return new WaitForSeconds(spawnInterval);
             }
         }
-
-        FX.gameObject.SetActive(false);
     }
 
     public void NightStarts()
     {
         FX.gameObject.SetActive(true);
         StartCoroutine(SpawnMinions());
+    }
+
+    public void DayStarts()
+    {
+        FX.gameObject.SetActive(false);
     }
 
     public List<Minion> GetMinionsForTheNight()
