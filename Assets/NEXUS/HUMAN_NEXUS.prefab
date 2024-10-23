@@ -40,10 +40,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5568323326370756693}
-  - component: {fileID: 5042507900969661322}
   - component: {fileID: 5629393975290862968}
+  - component: {fileID: 7321210846082334373}
   m_Layer: 0
-  m_Name: HUMAN_TC
+  m_Name: HUMAN_NEXUS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,25 +69,6 @@ Transform:
   - {fileID: 1779736057675250672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5042507900969661322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6275355810010931660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minionPrefab: {fileID: 8386420426626142106, guid: 987b9468d3fc0b14eaade748d63f6d5c, type: 3}
-  spawnPoint: {fileID: 3957825680681144240}
-  enemyNexus: {fileID: 0}
-  spawning: 1
-  secondsToSpawn: 1
-  spawnsAmount: 6
-  secondsBetweenWaves: 5
 --- !u!114 &5629393975290862968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +86,24 @@ MonoBehaviour:
   MaxHealth:
     value: 1000
   ID: 0
+--- !u!114 &7321210846082334373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275355810010931660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionTypesToSpawn:
+  - minionPrefab: {fileID: 8386420426626142106, guid: 987b9468d3fc0b14eaade748d63f6d5c, type: 3}
+    amountToSpawn: 6
+  spawnPoint: {fileID: 3957825680681144240}
+  enemyNexus: {fileID: 0}
+  spawnInterval: 1
 --- !u!1001 &148356003602736493
 PrefabInstance:
   m_ObjectHideFlags: 0

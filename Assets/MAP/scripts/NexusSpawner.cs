@@ -1,51 +1,55 @@
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System;
 
 public class NexusSpawner : MonoBehaviour
 {
-    [SerializeField] Minion minionPrefab;
+    [System.Serializable]
+    public class MinionType
+    {
+        public Minion minionPrefab;
+        public int amountToSpawn;
+    }
+
+    [SerializeField] List<MinionType> minionTypesToSpawn;
     [SerializeField] Transform spawnPoint;
     [SerializeField] NexusSpawner enemyNexus;
 
-    public bool spawning = true;
-    public float secondsToSpawn = 0.5f; // Time between individual minions
-    public int spawnsAmount = 3; // Number of minions in each wave
-    public int secondsBetweenWaves = 30; // Time between waves (standard in LoL)
+    public float spawnInterval = 1f;
 
-    private int spawnCount;
+    private List<Minion> minionsForTheNight;
 
-    void Start()
+    IEnumerator SpawnMinions()
     {
-        StartCoroutine(SpawnWaves());
+        minionsForTheNight = new List<Minion>();
+
+        foreach (var minionType in minionTypesToSpawn)
+        {
+            for (int i = 0; i < minionType.amountToSpawn; i++)
+            {
+                var minion = Instantiate(minionType.minionPrefab, spawnPoint.position, Quaternion.identity);
+                minion.SetNexusToOBLITERATE(enemyNexus);
+
+                minionsForTheNight.Add(minion);
+                yield return new WaitForSeconds(spawnInterval);
+            }
+        }
     }
 
-    IEnumerator SpawnWaves()
+    internal void DayStarts()
     {
-        while (spawning)
-        {
-            // Reset spawn count for each wave
-            spawnCount = 0;
+        throw new NotImplementedException();
+    }
 
-            // Create a parent GameObject for the minion wave
-            var minionsWaveEmptyObj = new GameObject("MINIONS_WAVE");
+    public void NightStarts()
+    {
+        spawnPoint.gameObject.SetActive(true);
+        StartCoroutine(SpawnMinions());
+    }
 
-            // Spawn the minions one by one
-            while (spawnCount < spawnsAmount)
-            {
-                var minion = Instantiate(minionPrefab, spawnPoint.position, Quaternion.identity);
-                minion.SetNexusToOBLITERATE(enemyNexus); // Set the enemy Nexus as the target
-
-                // Parent the minion under the wave object
-                minion.transform.SetParent(minionsWaveEmptyObj.transform);
-
-                spawnCount++;
-
-                // Wait before spawning the next minion
-                yield return new WaitForSeconds(secondsToSpawn);
-            }
-
-            // Wait before starting the next wave
-            yield return new WaitForSeconds(secondsBetweenWaves);
-        }
+    public List<Minion> GetMinionsForTheNight()
+    {
+        return minionsForTheNight;
     }
 }
