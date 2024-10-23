@@ -4,7 +4,9 @@
 # IDEAS:
 -Las buildings hacen que del portal principal [frente al nexo] se sumen oleadas de dicha creatura. y tambien sirven para upgradearlos a lo aoe2
 -Se construye en cualquier lado a lo natural selection. aunq los minions siempre van a spawnear en el portal [frente al nexo]
--se repite ciclo de dia noche cada 3 mins c/u.
+-se repite ciclo de dia noche cada 3 mins c/u. DONE
+-si funciona y esta buenardo el gameplay, se hace estilo ajedrez/war3/aoe2 con bandos mirrormatch
+por ahora meto undeads para testear el gameplay. version 1
 
 # MINIONS:
 -No dan recursos, solo XP [Para tener que ir a la jg obligado a por recursos para tener mas y mejores minions]
