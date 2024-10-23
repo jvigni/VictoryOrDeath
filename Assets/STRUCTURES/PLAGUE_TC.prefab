@@ -111,6 +111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4386168805695701429}
     m_Modifications:
+    - target: {fileID: 5758063781874491433, guid: 4c4cab7cbff91724ab7d43cf006e27cd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 749ce1ef7fa78304cba7ca18109f4adf, type: 2}
     - target: {fileID: 6118207098460586492, guid: 4c4cab7cbff91724ab7d43cf006e27cd, type: 3}
       propertyPath: m_Name
       value: SM_Env_Straw_Field_01
@@ -185,6 +189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4386168805695701429}
     m_Modifications:
+    - target: {fileID: 3062523696486990416, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 749ce1ef7fa78304cba7ca18109f4adf, type: 2}
     - target: {fileID: 3567054740871013253, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Statue_Lion_01

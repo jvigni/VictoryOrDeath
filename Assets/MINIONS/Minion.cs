@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class Minion : MonoBehaviour
 {
-    public Minion Target;
-
+    public LifeForm Target;
+    [SerializeField] NexusSpawner nexusToOBLITERATE;
+    
     void Update()
     {
         if (Target != null)
-            transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, .03f);
+            transform.position = Vector3.MoveTowards(transform.position, nexusToOBLITERATE.transform.position, .03f);
     }
 
-    internal void SetTarget(Minion newTarget)
+    public void SetNexusToOBLITERATE(NexusSpawner shittyNexus)
     {
-        Target = newTarget;
+        nexusToOBLITERATE = shittyNexus;
     }
 }

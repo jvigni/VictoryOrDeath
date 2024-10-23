@@ -5,7 +5,7 @@ public class NexusSpawner : MonoBehaviour
 {
     [SerializeField] Minion minionPrefab;
     [SerializeField] Transform spawnPoint;
-    [SerializeField] Minion minionsTarget;
+    [SerializeField] NexusSpawner enemyNexus;
 
     public bool spawning = true;
     public float secondsToSpawn = .5f;
@@ -35,7 +35,7 @@ public class NexusSpawner : MonoBehaviour
         while (spawnCount < spawnsAmount)
         {
             var minion = Instantiate(minionPrefab, spawnPoint.position, Quaternion.identity);
-            minion.SetTarget(minionsTarget);
+            minion.SetNexusToOBLITERATE(enemyNexus);
             spawnCount++;
             minion.transform.SetParent(minionsWaveEmptyObj.transform);
             yield return new WaitForSeconds(secondsToSpawn);
