@@ -24,12 +24,12 @@ public class NexusSpawner : MonoBehaviour
         while(spawning)
         {
             spawnCount = 0;
-            StartCoroutine(SpawnMobRoutine());
+            StartCoroutine(SpawnMinionsRoutine());
             yield return new WaitForSeconds(secondsBetweenWaves);
         }
     }
 
-    IEnumerator SpawnMobRoutine()
+    IEnumerator SpawnMinionsRoutine()
     {
         var minionsWaveEmptyObj = new GameObject("MINIONS_WAVE");
         while (spawnCount < spawnsAmount)

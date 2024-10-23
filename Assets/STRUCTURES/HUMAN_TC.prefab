@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionPrefab: {fileID: 3608339937771777093, guid: 987b9468d3fc0b14eaade748d63f6d5c, type: 3}
+  minionPrefab: {fileID: 8386420426626142106, guid: 987b9468d3fc0b14eaade748d63f6d5c, type: 3}
   spawnPoint: {fileID: 2633972528949443566}
   minionsTarget: {fileID: 0}
   spawning: 1
@@ -95,9 +95,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6485796700115025948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f473badfdfd879a4b80ac5e451f806c6, type: 3}
+  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health:
+    value: 0
+  MaxHealth:
+    value: 1000
+  ID: 0
 --- !u!1001 &3098426142415402053
 PrefabInstance:
   m_ObjectHideFlags: 0

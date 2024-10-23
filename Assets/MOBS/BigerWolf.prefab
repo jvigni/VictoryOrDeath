@@ -114,8 +114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3396988650463702939}
-  - component: {fileID: -683393922211658384}
   - component: {fileID: -2754862881454916175}
+  - component: {fileID: 1158225606334752326}
   m_Layer: 0
   m_Name: BigerWolf
   m_TagString: Untagged
@@ -139,28 +139,6 @@ Transform:
   - {fileID: 5418232538138678211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-683393922211658384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5671971309700151072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c95a48472e760e4abb458574fb8b8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  moveAsMob: 1
-  mobDesiredPosition: {x: 0, y: 0, z: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
-  movementSpeed: 3
-  aggroRange: 20
-  patrolRadius: 25
-  minDistanceToTarget: 1
-  rotationSpeed: 5
-  returnToInitialCooldown: 10
 --- !u!114 &-2754862881454916175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +156,25 @@ MonoBehaviour:
   MaxHealth:
     value: 420
   ID: 0
+--- !u!114 &1158225606334752326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671971309700151072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fd309218588404990164e1f78564f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveAsMob: 1
+  mobDesiredPosition: {x: 0, y: 0, z: 0}
+  initialPosition: {x: 0, y: 0, z: 0}
+  movementSpeed: 3
+  aggroRange: 20
+  patrolRadius: 25
+  minDistanceToTarget: 1
+  rotationSpeed: 5
+  returnToInitialCooldown: 10
