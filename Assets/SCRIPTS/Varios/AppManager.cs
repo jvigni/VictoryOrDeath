@@ -16,6 +16,7 @@ public class AppManager : MonoBehaviour
 
     void Awake()
     {
+        startMenu.gameObject.SetActive(true);
         startBtn.onClick.AddListener(() =>
         {
             //music.gameObject.SetActive(true);
