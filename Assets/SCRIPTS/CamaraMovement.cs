@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
+    public Transform target;                // El personaje a seguir
+    public float distance = 5.0f;           // Distancia entre la cámara y el personaje
+    public float sensitivity = 2.0f;         // Sensibilidad del mouse
+    public float yMinLimit = -40f;          // Límite inferior para la rotación vertical
+    public float yMaxLimit = 80f;           // Límite superior para la rotación vertical
+    public float minDistance = 2.0f;        // Distancia mínima entre la cámara y el personaje
+    public float maxDistance = 12.0f;       // Distancia máxima entre la cámara y el personaje
+    public float distanceAdjustmentSpeed = 2.0f; // Velocidad de ajuste de la distancia
 
-    public Transform target;        // El personaje a seguir
-    public float distance = 5.0f;   // Distancia entre la cámara y el personaje
-    public float sensitivity = 2.0f; // Sensibilidad del mouse
-    public float yMinLimit = -40f;  // Límite inferior para la rotación vertical
-    public float yMaxLimit = 80f;   // Límite superior para la rotación vertical
+    private float currentX = 0.0f;          // Movimiento horizontal
+    private float currentY = 0.0f;          // Movimiento vertical
+    private float currentDistance;           // Distancia actual entre la cámara y el personaje
+    [SerializeField]
+    private bool isColliding = false;       // Indica si la cámara está colisionando con algo
 
-    private float currentX = 0.0f;  // Movimiento horizontal
-    private float currentY = 0.0f;  // Movimiento vertical
+    void Start()
+    {
+        // Inicializar la distancia actual como la distancia original
+        currentDistance = distance;
+    }
 
     void LateUpdate()
     {
@@ -23,13 +34,58 @@ public class ThirdPersonCamera : MonoBehaviour
         // Restringir el movimiento vertical entre los límites
         currentY = Mathf.Clamp(currentY, yMinLimit, yMaxLimit);
 
+        // Ajustar la distancia usando la rueda del mouse
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollInput != 0.0f)
+        {
+            // Ajustar la distancia en función del input de la rueda del mouse
+            distance -= scrollInput * sensitivity;
+
+            // Asegurarse de que la distancia esté dentro del rango permitido
+            distance = Mathf.Clamp(distance, minDistance, maxDistance);
+            currentDistance = distance;
+        }
+
+        // Si la cámara está colisionando con algo, reduce la distancia gradualmente
+        if (isColliding)
+        {
+            currentDistance = Mathf.Lerp(currentDistance, minDistance, Time.deltaTime * distanceAdjustmentSpeed);
+            distance = currentDistance;
+        }
+    
+
         // Calcular la posición de la cámara basándose en la rotación alrededor del personaje
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        Vector3 direction = new Vector3(0, 0, -distance);
+        Vector3 direction = new Vector3(0, 0, -currentDistance); // Usar currentDistance aquí
         Vector3 position = target.position + rotation * direction;
 
         // Aplicar rotación y posición a la cámara
         transform.position = position;
         transform.LookAt(target);
+    }
+
+    // Método para manejar cuando el collider entra en contacto con otro objeto
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other != null) // Validar que el objeto con el que colisiona no sea null
+        {
+            isColliding = true; // Establece que la cámara está colisionando
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other != null) // Asegura que siempre estamos colisionando con algo
+        {
+            isColliding = true; // Mantiene isColliding en true mientras haya colisiones
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other != null) // Asegurarse de que el objeto no sea null
+        {
+            isColliding = false; // Si no hay más colisiones, establece en false         
+        }
     }
 }

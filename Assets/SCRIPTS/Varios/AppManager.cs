@@ -12,6 +12,7 @@ public class AppManager : MonoBehaviour
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
     [SerializeField] Camera mainCamera;
+    [SerializeField] GameObject character;
     //[SerializeField] GameObject music;
 
     void Awake()
@@ -23,6 +24,7 @@ public class AppManager : MonoBehaviour
             menuCamera.gameObject.SetActive(false);
             mainCamera.gameObject.SetActive(true);
             startMenu.gameObject.SetActive(false);
+            character.gameObject.SetActive(true);
         });
     }
 
