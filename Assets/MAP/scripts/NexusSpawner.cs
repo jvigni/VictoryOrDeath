@@ -14,6 +14,7 @@ public class NexusSpawner : MonoBehaviour
 
     [SerializeField] List<MinionType> minionTypesToSpawn;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform FX;
     [SerializeField] NexusSpawner enemyNexus;
 
     public float spawnInterval = 1f;
@@ -35,16 +36,13 @@ public class NexusSpawner : MonoBehaviour
                 yield return new WaitForSeconds(spawnInterval);
             }
         }
-    }
 
-    internal void DayStarts()
-    {
-        throw new NotImplementedException();
+        FX.gameObject.SetActive(false);
     }
 
     public void NightStarts()
     {
-        spawnPoint.gameObject.SetActive(true);
+        FX.gameObject.SetActive(true);
         StartCoroutine(SpawnMinions());
     }
 

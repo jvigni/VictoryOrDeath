@@ -102,6 +102,7 @@ MonoBehaviour:
   - minionPrefab: {fileID: 8386420426626142106, guid: 987b9468d3fc0b14eaade748d63f6d5c, type: 3}
     amountToSpawn: 6
   spawnPoint: {fileID: 3957825680681144240}
+  FX: {fileID: 1779736057675250672}
   enemyNexus: {fileID: 0}
   spawnInterval: 1
 --- !u!1001 &148356003602736493
@@ -267,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 8407721843139645560, guid: 706029da65f34b8429aff213b0f8e3ed, type: 3}
       propertyPath: m_Name
       value: FuerzasDelCielo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407721843139645560, guid: 706029da65f34b8429aff213b0f8e3ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8411564354679379088, guid: 706029da65f34b8429aff213b0f8e3ed, type: 3}
       propertyPath: m_LocalScale.y

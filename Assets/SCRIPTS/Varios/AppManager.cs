@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class AppManager : MonoBehaviour
 {
+    [SerializeField] KeyCode dayNigthSwapCHEATCODE;
+    [SerializeField] DayNightCycle dayNightCycle;
+
     [SerializeField] GameObject startMenu;
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
@@ -20,5 +23,11 @@ public class AppManager : MonoBehaviour
             mainCamera.gameObject.SetActive(true);
             startMenu.gameObject.SetActive(false);
         });
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
+            dayNightCycle.SwapCycle();
     }
 }

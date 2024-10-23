@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
 {
-
     [SerializeField] NexusSpawner humansNexus;
     [SerializeField] NexusSpawner plagueNexus;
     [SerializeField] bool isDay = true; // Starts with day
     private float cycleDuration = 180f; // 3 minutes (180 seconds)
+    private Coroutine cycleCoroutine;
 
     void Start()
     {
         // Start the coroutine to handle the cycle
-        StartCoroutine(CycleDayNight());
+        cycleCoroutine = StartCoroutine(CycleDayNight());
     }
 
     IEnumerator CycleDayNight()
@@ -23,23 +23,41 @@ public class DayNightCycle : MonoBehaviour
             yield return new WaitForSeconds(cycleDuration);
 
             // Toggle day/night state
-            isDay = !isDay;
-
-            // You can also add some actions to happen when day/night changes
-            if (isDay)
-            {
-                Debug.Log("It's day now!");
-                // TODO Change skybox/ligthing
-                humansNexus.DayStarts();
-                plagueNexus.DayStarts();
-            }
-            else
-            {
-                Debug.Log("It's night now!");
-                // TODO Change skybox/ligthing
-                humansNexus.NightStarts();
-                plagueNexus.NightStarts();
-            }
+            ToggleDayNight();
         }
+    }
+
+    public void ToggleDayNight()
+    {
+        // Toggle day/night state
+        isDay = !isDay;
+
+        // Execute day/night specific logic
+        if (isDay)
+        {
+            Debug.Log("It's day now!");
+            // TODO Change skybox/lighting
+            //humansNexus.DayStarts();
+            //plagueNexus.DayStarts();
+        }
+        else
+        {
+            Debug.Log("It's night now!");
+            // TODO Change skybox/lighting
+            humansNexus.NightStarts();
+            plagueNexus.NightStarts();
+        }
+    }
+
+    public void SwapCycle()
+    {
+        // Stop the current cycle and toggle day/night manually
+        if (cycleCoroutine != null)
+        {
+            StopCoroutine(cycleCoroutine);
+        }
+        ToggleDayNight();
+        // Optionally restart the cycle
+        cycleCoroutine = StartCoroutine(CycleDayNight());
     }
 }
