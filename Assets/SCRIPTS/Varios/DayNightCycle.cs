@@ -40,8 +40,8 @@ public class DayNightCycle : MonoBehaviour
         {
             Debug.Log("It's day now!");
             RenderSettings.skybox = daySkybox;
-            //humansNexus.DayStarts();
-            //plagueNexus.DayStarts();
+            humansNexus.DayStarts();
+            plagueNexus.DayStarts();
         }
         else
         {
