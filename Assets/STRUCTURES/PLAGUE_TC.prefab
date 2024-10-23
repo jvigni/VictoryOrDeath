@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionPrefab: {fileID: 8103709462952010969, guid: 3e7078563813a7a419dd7869d72d81dc, type: 3}
+  minionPrefab: {fileID: 8103709462952010969, guid: 0f58df66e2086774698c8ccf43392bc5, type: 3}
   spawnPoint: {fileID: 752343215950328046}
   minionsTarget: {fileID: 0}
   spawning: 1
