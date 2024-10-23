@@ -37,4 +37,9 @@ se hace de dia, spawnea todo, noche, repetir.
 # IDEA PLAN DE PAGOS:
 -X$ al mes, y 3% de ganancia neta si el consejo de monos decide que su contribucion fue suficiente y util.
 -Asi podemos contratar mucha gente y hacer una obra de arte
--Yo quiero guita para hacer mis experimentos y salvar vzla. VLLC
+-Yo wo a poner todas las fichas/guita para I+D y salvar vzla. el que quiera que se sume. VLLC
+
+# IDEAS VERSION 2:
+-si funciona y esta buenardo el gameplay, se hace estilo ajedrez/war3/aoe2 con bandos mirrormatch
+por ahora meto undeads pve only para testear el gameplay. version 1
+
