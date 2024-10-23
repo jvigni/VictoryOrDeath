@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 2
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 0.9529412, b: 0.37254903, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: b5a27fa4b11bfb24cbc6daff3802c229, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3a253cab252a165478338fba0f03e63a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.07840497, g: 0.1342683, b: 0.16664225, a: 1}
+  m_IndirectSpecularColor: {r: 0.14811653, g: 0.113289446, b: 0.10353697, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -679,6 +679,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humansNexus: {fileID: 6151875355391618433}
   plagueNexus: {fileID: 2062274174}
+  daySkybox: {fileID: 2100000, guid: 3a253cab252a165478338fba0f03e63a, type: 2}
+  nightSkybox: {fileID: 2100000, guid: b5a27fa4b11bfb24cbc6daff3802c229, type: 2}
   isDay: 1
 --- !u!1001 &112667874
 PrefabInstance:

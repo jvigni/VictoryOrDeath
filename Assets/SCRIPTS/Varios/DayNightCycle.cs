@@ -5,6 +5,9 @@ public class DayNightCycle : MonoBehaviour
 {
     [SerializeField] NexusSpawner humansNexus;
     [SerializeField] NexusSpawner plagueNexus;
+    [SerializeField] Material daySkybox;
+    [SerializeField] Material nightSkybox;
+
     [SerializeField] bool isDay = true; // Starts with day
     private float cycleDuration = 180f; // 3 minutes (180 seconds)
     private Coroutine cycleCoroutine;
@@ -36,14 +39,14 @@ public class DayNightCycle : MonoBehaviour
         if (isDay)
         {
             Debug.Log("It's day now!");
-            // TODO Change skybox/lighting
+            RenderSettings.skybox = daySkybox;
             //humansNexus.DayStarts();
             //plagueNexus.DayStarts();
         }
         else
         {
             Debug.Log("It's night now!");
-            // TODO Change skybox/lighting
+            RenderSettings.skybox = nightSkybox;
             humansNexus.NightStarts();
             plagueNexus.NightStarts();
         }
