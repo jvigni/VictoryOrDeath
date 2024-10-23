@@ -10,8 +10,12 @@ public class Minion : MonoBehaviour
     
     void Update()
     {
-        if (Target != null)
+        if (Target != null) 
+        {
+            // TODO
+        } else
             transform.position = Vector3.MoveTowards(transform.position, nexusToOBLITERATE.transform.position, .03f);
+        
     }
 
     public void SetNexusToOBLITERATE(NexusSpawner shittyNexus)

@@ -81,11 +81,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minionPrefab: {fileID: 8103709462952010969, guid: 0f58df66e2086774698c8ccf43392bc5, type: 3}
   spawnPoint: {fileID: 752343215950328046}
-  minionsTarget: {fileID: 0}
+  enemyNexus: {fileID: 0}
   spawning: 1
-  secondsToSpawn: 0.5
+  secondsToSpawn: 2
   spawnsAmount: 3
-  secondsBetweenWaves: 5
+  secondsBetweenWaves: 9
 --- !u!114 &2282948957646069639
 MonoBehaviour:
   m_ObjectHideFlags: 0

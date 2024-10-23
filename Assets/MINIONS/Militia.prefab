@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2959346356234717087}
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  nexusToOBLITERATE: {fileID: 0}
 --- !u!1001 &2799287581536355250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,7 +91,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -98,7 +99,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalRotation.z
@@ -110,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1137340246058632237, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
