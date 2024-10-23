@@ -22,7 +22,7 @@ public class HexSpawner : MonoBehaviour
                 SpawnMob(mobsEmptyObj.transform);
         }
     }
-
+    /*
     void  SpawnMob(Transform emptyParent) // After 5/10 minutes, dying minions spawns lv2/3 minions respectively
     {
         var rndSpawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-radius, radius), 0, UnityEngine.Random.Range(-radius, radius));
@@ -40,5 +40,45 @@ public class HexSpawner : MonoBehaviour
         var mob = Instantiate(mobPrefab, rndSpawnPosition, Quaternion.identity);
         mob.transform.SetParent(emptyParent);
         mob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(emptyParent);
+    }*/
+
+    void SpawnMob(Transform emptyParent)
+    {
+        var rndSpawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-radius, radius), 0, UnityEngine.Random.Range(-radius, radius));
+        rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
+
+        var elapsedMinutes = Time.realtimeSinceStartup / 60;
+        if (elapsedMinutes >= 5) actualMobLevel = 2;
+        if (elapsedMinutes >= 10) actualMobLevel = 3;
+
+        Mob mobPrefab = null;
+        if (actualMobLevel == 1) mobPrefab = lv1MobPrefab;
+        if (actualMobLevel == 2) mobPrefab = lv2MobPrefab;
+        if (actualMobLevel >= 3) mobPrefab = lv3MobPrefab;
+
+        if (mobPrefab == null)
+        {
+            Debug.LogError("Mob prefab is null for level " + actualMobLevel);
+            return;
+        }
+
+        var mob = Instantiate(mobPrefab, rndSpawnPosition, Quaternion.identity);
+        mob.transform.SetParent(emptyParent);
+
+        LifeForm lifeForm = mob.GetComponent<LifeForm>();
+        if (lifeForm == null)
+        {
+            Debug.LogError("LifeForm component is missing on the mob prefab.");
+            return;
+        }
+
+        lifeForm.OnDeath += HandleMobDeath;
     }
+
+    void HandleMobDeath()
+    {
+        // You may need to pass the emptyParent if required in this context
+        SpawnMob(transform);
+    }
+
 }

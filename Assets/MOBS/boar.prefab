@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3396988650463702939}
   - component: {fileID: -683393922211658384}
+  - component: {fileID: 7486619049528311741}
   m_Layer: 0
   m_Name: boar
   m_TagString: Untagged
@@ -151,7 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  health: 100
   moveAsMob: 1
   mobDesiredPosition: {x: 0, y: 0, z: 0}
   initialPosition: {x: 0, y: 0, z: 0}
@@ -160,3 +160,21 @@ MonoBehaviour:
   patrolRadius: 25
   minDistanceToTarget: 1
   rotationSpeed: 5
+  returnToInitialCooldown: 10
+--- !u!114 &7486619049528311741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671971309700151072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health:
+    value: 0
+  MaxHealth:
+    value: 50
+  ID: 0
