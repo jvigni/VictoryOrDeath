@@ -28,6 +28,10 @@ por ahora meto undeads para testear el gameplay. version 1
 # DARK KNIGHTS:
 -Heroes caidos. como los mejorados del L4D2 
 
+# TAB:
+-Esta dibujado en la note chikita. click para abrir, click para cerrar.
+personaje/armaduras/armas, mapa, stats, upgrades[proximas y desarolladas]
+
 --------------------------------------------------------
 
 # TODO:

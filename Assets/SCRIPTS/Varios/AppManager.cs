@@ -7,7 +7,7 @@ public class AppManager : MonoBehaviour
 {
     [SerializeField] KeyCode dayNigthSwapCHEATCODE;
     [SerializeField] DayNightCycle dayNightCycle;
-
+    [SerializeField] GameObject tabMenu;
     [SerializeField] GameObject startMenu;
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
@@ -30,5 +30,8 @@ public class AppManager : MonoBehaviour
     {
         if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
             dayNightCycle.SwapCycle();
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+            tabMenu.SetActive(!tabMenu.activeSelf);
     }
 }
