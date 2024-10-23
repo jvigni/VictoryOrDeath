@@ -25,3 +25,10 @@
 
 # DARK KNIGHTS:
 -Heroes caidos. como los mejorados del L4D2 
+
+--------------------------------------------------------
+
+# TODO:
+-Sacar el sist de oleadas y hacerlo x dia noche.
+se hace de dia, spawnea todo, noche, repetir.
+
