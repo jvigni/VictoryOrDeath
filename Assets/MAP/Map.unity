@@ -11085,8 +11085,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayNigthSwapCHEATCODE: 112
+  heroMenuKeyCode: 101
   dayNightCycle: {fileID: 93580546}
-  tabMenu: {fileID: 2107561544}
+  heroMenu: {fileID: 2107561544}
   startMenu: {fileID: 1661804129}
   startBtn: {fileID: 920833373}
   menuCamera: {fileID: 963194227}
@@ -13850,7 +13851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1831860492584090184, guid: 1a53af2c238fcec49bd4cf101d7924b3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5099938082048056975, guid: 1a53af2c238fcec49bd4cf101d7924b3, type: 3}
       propertyPath: m_LocalPosition.x

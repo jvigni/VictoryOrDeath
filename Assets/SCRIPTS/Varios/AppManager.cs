@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class AppManager : MonoBehaviour
 {
     [SerializeField] KeyCode dayNigthSwapCHEATCODE;
+    [SerializeField] KeyCode heroMenuKeyCode;
     [SerializeField] DayNightCycle dayNightCycle;
-    [SerializeField] GameObject tabMenu;
+    [SerializeField] GameObject heroMenu;
     [SerializeField] GameObject startMenu;
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
@@ -33,7 +34,7 @@ public class AppManager : MonoBehaviour
         if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
             dayNightCycle.SwapCycle();
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-            tabMenu.SetActive(!tabMenu.activeSelf);
+        if (Input.GetKeyDown(heroMenuKeyCode))
+            heroMenu.SetActive(!heroMenu.activeSelf);
     }
 }
