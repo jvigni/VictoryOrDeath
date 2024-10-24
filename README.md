@@ -20,6 +20,9 @@
 -Pociones [estus que se regenera al volver a la base]
 NO ITEMS: ore, herb, wood, fish, hide, meat.. esto no va
 
+# UPGRADES:
+-Solo entraban 3 slots, cuando upgradeas una aparece la siguiente y asi. se dividen en 3 columnas/estilos de juego/specs y vas mejorandolas
+
 # RECURSOS:
 -Se consiguen capturando RTs y se usan para mejorar la civilizacion[mejores minions para la noche] o mejoras para el team[Montura voladora, el nexo ataca mas fuerte, etc]
 
