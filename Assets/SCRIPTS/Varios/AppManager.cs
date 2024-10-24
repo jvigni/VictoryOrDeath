@@ -35,6 +35,11 @@ public class AppManager : MonoBehaviour
             dayNightCycle.SwapCycle();
 
         if (Input.GetKeyDown(heroMenuKeyCode))
+        {
             heroMenu.SetActive(!heroMenu.activeSelf);
+            // TODO Stop rotation active swap
+            var cameraFollow = mainCamera.GetComponent<CameraFollow2>();
+            cameraFollow.enabled = !cameraFollow;
+        }
     }
 }
