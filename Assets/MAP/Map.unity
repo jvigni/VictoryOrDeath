@@ -15350,6 +15350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HERO_MENU_CANVAS
       objectReference: {fileID: 0}
+    - target: {fileID: 5132600147292579509, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8998399915973284421, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
