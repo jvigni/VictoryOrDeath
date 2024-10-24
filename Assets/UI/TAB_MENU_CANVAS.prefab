@@ -5517,6 +5517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: item slot 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: GLOVES
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5618,6 +5622,10 @@ PrefabInstance:
     - target: {fileID: 3817245085180130261, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
       propertyPath: m_Name
       value: item slot 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: BOOTS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5721,6 +5729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: item slot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: HEAD
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5822,6 +5834,10 @@ PrefabInstance:
     - target: {fileID: 3817245085180130261, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
       propertyPath: m_Name
       value: item slot 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: CLOAK
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5925,6 +5941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: item slot 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: MAIN HAND
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6026,6 +6046,10 @@ PrefabInstance:
     - target: {fileID: 3817245085180130261, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
       propertyPath: m_Name
       value: item slot 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: RELIC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6129,6 +6153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: item slot 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: ARMOR
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6230,6 +6258,10 @@ PrefabInstance:
     - target: {fileID: 3817245085180130261, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
       propertyPath: m_Name
       value: item slot 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737011092642626516, guid: 0585470423fd0d144bb0aee6a3d4d144, type: 3}
+      propertyPath: m_text
+      value: OFF HAND
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
