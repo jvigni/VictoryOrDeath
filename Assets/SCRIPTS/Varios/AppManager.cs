@@ -14,19 +14,17 @@ public class AppManager : MonoBehaviour
     [SerializeField] Camera menuCamera;
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject character;
-    [SerializeField] CameraRotation cameraRotation;
     //[SerializeField] GameObject music;
 
     void Awake()
     {
-        cameraRotation = mainCamera.GetComponent<CameraRotation>();
+        //cameraRotation = mainCamera.GetComponent<CameraRotation>();
 
         startMenu.gameObject.SetActive(true);
         startBtn.onClick.AddListener(() =>
         {
             //music.gameObject.SetActive(true);
             menuCamera.gameObject.SetActive(false);
-            mainCamera.gameObject.SetActive(true);
             startMenu.gameObject.SetActive(false);
             character.gameObject.SetActive(true);
         });
@@ -41,7 +39,7 @@ public class AppManager : MonoBehaviour
         {
             heroMenu.SetActive(!heroMenu.activeSelf);
             // TODO Stop rotation active swap
-            cameraRotation.enabled = !cameraRotation.enabled;
+            //mainCamera..cameraRotation.enabled = !cameraRotation.enabled;
         }
     }
 }
