@@ -11084,7 +11084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1503d9fbbd6bc354dbc1f45999a6eb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayNigthSwapCHEATCODE: 101
+  dayNigthSwapCHEATCODE: 112
   dayNightCycle: {fileID: 93580546}
   tabMenu: {fileID: 2107561544}
   startMenu: {fileID: 1661804129}
@@ -15735,7 +15735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132600147292579509, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
       propertyPath: m_Name
-      value: TAB_MENU_CANVAS
+      value: HERO_MENU_CANVAS
       objectReference: {fileID: 0}
     - target: {fileID: 5132600147292579509, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
       propertyPath: m_IsActive
