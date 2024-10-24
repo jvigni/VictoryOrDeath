@@ -14,10 +14,13 @@ public class AppManager : MonoBehaviour
     [SerializeField] Camera menuCamera;
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject character;
+    [SerializeField] CameraRotation cameraRotation;
     //[SerializeField] GameObject music;
 
     void Awake()
     {
+        cameraRotation = mainCamera.GetComponent<CameraRotation>();
+
         startMenu.gameObject.SetActive(true);
         startBtn.onClick.AddListener(() =>
         {
@@ -38,8 +41,7 @@ public class AppManager : MonoBehaviour
         {
             heroMenu.SetActive(!heroMenu.activeSelf);
             // TODO Stop rotation active swap
-            var cameraFollow = mainCamera.GetComponent<CameraFollow2>();
-            cameraFollow.enabled = !cameraFollow;
+            cameraRotation.enabled = !cameraRotation.enabled;
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollowJuan : MonoBehaviour
 {
     public Transform target;  // The target GameObject for the camera to follow
     public float distance = 5.0f;  // Distance from the target

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseCamera : MonoBehaviour
+public class CameraRotation : MonoBehaviour
 {
     public Vector2 turn;
 
@@ -15,6 +15,6 @@ public class MouseCamera : MonoBehaviour
     {
         turn.x += Input.GetAxis("Mouse X");
         turn.y += Input.GetAxis("Mouse Y");
-        transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0); 
+        transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
     }
 }
