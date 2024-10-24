@@ -2,19 +2,25 @@
  Fortis Fortuna Adiuvat
 
 # IDEAS:
--Las buildings hacen que del portal principal [frente al nexo] se sumen oleadas de dicha creatura. y tambien sirven para upgradearlos a lo aoe2
--Se construye en cualquier lado a lo natural selection. aunq los minions siempre van a spawnear en el portal [frente al nexo]
--se repite ciclo de dia noche cada 3 mins c/u. DONE
--si funciona y esta buenardo el gameplay, se hace estilo ajedrez/war3/aoe2 con bandos mirrormatch
-por ahora meto undeads para testear el gameplay. version 1
+-Se puede interactuar [E] con una RN para construir [si tenes los recursos] y pasa a ser de tu faccion en 30s [de animacion de construccion]
+-se repite ciclo de dia noche cada 3 mins donde salen los minions y van tunelvision al nexo enemigo.
+-Mirrormatch, cada civ tiene su gameplay diferente [upgrades, heroes, monturas[todos los humanos tienen el mismo caballo. se cambia con skins unlockeadas x metagame]
 
 # Resource Node RN:
--Spawnean aleatorio en los hexagonos, conquistarlos da recursos cada minuto a cada heroe de la civ
+-Spawnean aleatorio en los hexagonos, conquistarlos da recursos a cada heroe del mismo team. Generando puntos de choque durante el dia
+-Es el merge de wow battlegrounds y lol waves
+-Son puntos estrategicos donde un jugador puede gastar recursos en construir una mini base que recolecte recursos cada segundo para todo el team.
+-Tambien pueden dar buffs generales para todos en vez de recursos. EJ: una mina de cobre que spawnea menas de cobre es un buen punto de choque que no da recursos, da items.
 
 # RECURSOS:
 -Puntos ganados por conquistar RN's y se usan para mejorar la civilizacion
 -O sin recursos y estos son reemplazados por los minions/oleadas
 
+# ITEMS:
+-Armas, armaduras, reliquias[2 slots de items con poderes a lo dueloShaolin], 
+-consumibles: runas[requeridas para castear mejores spells] y herramientas[requerida para craftear mejores vehiculos/buildings]
+-Libros de encantamiento para armas/armaduras a lo maincraft
+-Ores, Herbs, Wood, que se requieren para craftear/upgradear items [Si se pueden upgradear, te dicen que necesitan y cuantos te faltan]
 
 # MINIONS:
 -No dan recursos, solo XP [Para tener que ir a la jg obligado a por recursos para tener mas y mejores minions]
@@ -35,10 +41,13 @@ por ahora meto undeads para testear el gameplay. version 1
 -de noche sale un cartel y spawnean los minions de ambos bandos [1 spawn unico segun los edificios q tenga cada bando]
 
 # NEXUS/TOWNHALL:
--Ataca fuerte. leon dorado vs zigurath-llegua / cada civ con su nexo unico
+-Ataca fuerte como el aoe2. Cada civ tiene su nexo [Leon dorado, Zigurat, EstatuaDioses, Edificio]
 
 # TAB TARGETING: 
--Como el smite?
+-Como el smite o el wow?
+
+# UPGRADE HERO MENU - UPGRADES:
+-Son propias estaticas de cada civilizacion y upgradean los minions, agregan nuevos o dan upgrades genericas que le sirven a todos[o a cada clase x separado]
 
 # MONTURAS: Tecla [`]
 -Los humanos arrancan con armored horse y lo mejoran a armored grifos
@@ -50,6 +59,9 @@ por ahora meto undeads para testear el gameplay. version 1
 
 # VUELO:
 Volar no es como el wow. se puede volar poco tiempo y tiene que bajar a recargar energia
+
+# HEROE EVOLUTIVO:
+-Cada heroe al subir de nivel tiene que pickear entre 2 subclases que le dan un nuevo skill, mejora uno existente, agrega minions nuevos a la wave, etc [estilo age of mitology]
 
 --------------------------------------------------------
 
