@@ -786,6 +786,10 @@ PrefabInstance:
       propertyPath: appManager_
       value: 
       objectReference: {fileID: 5353973511076124823}
+    - target: {fileID: 6331632481712720282, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: goldOrePrefab
+      value: 
+      objectReference: {fileID: 219870431290066349, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
     - target: {fileID: 7855756083156607946, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

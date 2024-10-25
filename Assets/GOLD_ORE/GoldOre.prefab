@@ -47,6 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc5efa75da3e124391e19016f01ca06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftingTimeInSeconds: 15
+  goldOre: {fileID: 6182580482599985504}
+  buildingResourceTowerPrefab: {fileID: 2680509336205049112, guid: 1696f2ead1b65a246a46c53a2ec15719, type: 3}
+  humanResourceTowerPrefab: {fileID: 2680509336205049112, guid: de94b2c53b3683c4fac1d79514e78290, type: 3}
+  plagueResourceTowerPrefab: {fileID: 2680509336205049112, guid: 198cd68a7c2f9604697beb9f9ec0fc9e, type: 3}
 --- !u!135 &3692477185511806487
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62,7 +67,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

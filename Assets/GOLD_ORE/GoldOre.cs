@@ -4,40 +4,26 @@ using UnityEngine;
 public class GoldOre : MonoBehaviour
 {
     public float craftingTimeInSeconds = 15f;
+    public GameObject goldOre;
     public GameObject buildingResourceTowerPrefab;
-    public GameObject humanResourceTowerPrefab; 
+    public GameObject humanResourceTowerPrefab;
     public GameObject plagueResourceTowerPrefab;
-    
+    private GameObject building;
+
     public void CraftResourceTower(Faction faction)
     {
-        if (faction == Faction.Human)
-            StartCoroutine(CraftHumanResourceTower());
+        goldOre.SetActive(false);
+        building = Instantiate(buildingResourceTowerPrefab, transform.position, Quaternion.identity);
 
-        else if (faction == Faction.Plague)
-            StartCoroutine(CraftPlagueResourceTower());
+        GameObject resourceTowerPrefab = faction == Faction.Human ? humanResourceTowerPrefab : plagueResourceTowerPrefab;
+        StartCoroutine(CraftResourceTowerRoutine(resourceTowerPrefab));
     }
 
-    private IEnumerator CraftHumanResourceTower()
+    private IEnumerator CraftResourceTowerRoutine(GameObject resourceTowerPrefab)
     {
         yield return new WaitForSeconds(craftingTimeInSeconds);
-        BuildHumanResourceTower();
-    }
-
-    private IEnumerator CraftPlagueResourceTower()
-    {
-        yield return new WaitForSeconds(craftingTimeInSeconds);
-        BuildPlagueResourceTower();
-    }
-
-    private void BuildHumanResourceTower()
-    {
-        Instantiate(humanResourceTowerPrefab, transform.position, Quaternion.identity);
-        Debug.Log("Human Resource Tower built.");
-    }
-
-    private void BuildPlagueResourceTower()
-    {
-        Instantiate(plagueResourceTowerPrefab, transform.position, Quaternion.identity);
-        Debug.Log("Plague Resource Tower built.");
+        Instantiate(resourceTowerPrefab, transform.position, Quaternion.identity);
+        Destroy(building);
+        Debug.Log($"{resourceTowerPrefab.name} built.");
     }
 }

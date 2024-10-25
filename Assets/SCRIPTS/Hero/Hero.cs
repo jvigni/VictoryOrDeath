@@ -6,7 +6,6 @@ public enum Faction
 {
     Human,
     Plague,
-
 }
 
 public class Hero : MonoBehaviour
@@ -17,20 +16,19 @@ public class Hero : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && nearGoldOre != null)
-            nearGoldOre.CraftResourceTower(faction)
+            nearGoldOre.CraftResourceTower(faction);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        GoldOre goldOre = collision.gameObject.GetComponent<GoldOre>();
+        GoldOre goldOre = other.gameObject.GetComponent<GoldOre>();
         if (goldOre != null)
             nearGoldOre = goldOre;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        GoldOre goldOre = collision.gameObject.GetComponent<GoldOre>();
-        if (goldOre != null)
+        if (other.gameObject.GetComponent<GoldOre>() != null)
             nearGoldOre = null;
     }
 }
