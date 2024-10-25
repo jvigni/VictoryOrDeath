@@ -22,31 +22,37 @@ public class HexManager : MonoBehaviour
 
     private void Awake()
     {
+        var parent = new GameObject("GOLD_ORES");
         allHexagons.ForEach(hex =>
         {
-            var parent = new GameObject("GOLD_ORES");
             if (hex.spawnsGoldRT)
                 SpawnGoldRT(hex, parent.transform);
         });
 
+        var allMobsParent = new GameObject("MOBS");
         allHexagons.ForEach(hex =>
         {
             if (hex.spawnsMobs)
             {
-                var parentObj = new GameObject("MOB_CAMP");
+                var mobsCampParent = new GameObject("CAMP");
                 for(int i =0; i < mobsAmountPerHex; i++)
-                    SpawnMob(hex, parentObj.transform);
+                {
+                    var mob = SpawnMob(hex, mobsCampParent.transform);
+                    mobsCampParent.gameObject.transform.SetParent(allMobsParent.transform);
+                }
+                    
             }
         });
     }
 
-    void SpawnMob(Hexagon hex, Transform parentObj)
+    GameObject SpawnMob(Hexagon hex, Transform parentObj)
     {
         var rndSpawnPosition = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
         GameObject newMob = Instantiate(GetRndMobPrefab().gameObject, rndSpawnPosition, Quaternion.identity);
         newMob.transform.SetParent(parentObj.transform);
         newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, parentObj);
+        return newMob;
     }
 
     internal Mob GetRndMobPrefab()
