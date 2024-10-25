@@ -2929,6 +2929,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsGoldRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: minionsAmount
       value: 5
       objectReference: {fileID: 0}
@@ -6483,6 +6491,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1761242836}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsGoldRT
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (5)
@@ -8156,6 +8172,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsGoldRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: minionsAmount
       value: 5
       objectReference: {fileID: 0}
@@ -8983,6 +9007,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1761242836}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (1)
@@ -9324,6 +9352,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: spawnMinions
       value: 0
@@ -10366,6 +10398,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: minionsAmount
       value: 5
       objectReference: {fileID: 0}
@@ -10453,6 +10489,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1761242836}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1614115346032452106, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: m_Name
       value: Hex (0)
@@ -10526,6 +10566,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: minionsAmount
       value: 5
@@ -11729,6 +11773,7 @@ MonoBehaviour:
   - {fileID: 1158225606334752326, guid: 8d6e318b76c2a1146a2cef69994bcc50, type: 3}
   mobsLv3Prefab:
   - {fileID: 5274129697002601068, guid: d3dce0844e16a5446a90227e2750e9da, type: 3}
+  goldRTspawnPercentage: 20
   mobsAmountPerHex: 10
   spawnRadius: 25
   appManager_: {fileID: 1453883787}
@@ -11807,6 +11852,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ad4838dbd2ee80b42b49fdc2b5283fb0, type: 3}
   m_PrefabInstance: {fileID: 1920526355454664310}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1752088879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277296299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d5f65e720305e44b71a34e256af6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobs_: {fileID: 0}
+  goldRT_: {fileID: 0}
+  spawnsMobs: 0
+  spawnsGoldRT: 0
 --- !u!1001 &1753505942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13441,6 +13502,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2059993211}
     m_Modifications:
     - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
+      propertyPath: spawnsMobs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251822377075263929, guid: 928b11222081df04297ff4ac92ce9eeb, type: 3}
       propertyPath: minionsAmount
       value: 5
       objectReference: {fileID: 0}
@@ -13910,26 +13975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d5f65e720305e44b71a34e256af6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1251822376398227604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277296299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb5b168774c948f4da3cd072ab777ecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lv1MobPrefab: {fileID: 0}
-  lv2MobPrefab: {fileID: 0}
-  lv3MobPrefab: {fileID: 0}
-  goldRT: {fileID: 0}
-  spawnMinions: 0
-  actualMobLevel: 1
-  radius: 25
-  minionsAmount: 10
 --- !u!1 &1525687675249496289
 GameObject:
   m_ObjectHideFlags: 0
@@ -14011,7 +14056,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ad4838dbd2ee80b42b49fdc2b5283fb0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1251822376398227604}
+      addedObject: {fileID: 1752088879}
   m_SourcePrefab: {fileID: 100100000, guid: ad4838dbd2ee80b42b49fdc2b5283fb0, type: 3}
 --- !u!4 &2652475601831400099 stripped
 Transform:
