@@ -1,14 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GoldOre : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public float craftingTimeInSeconds = 15f;
+    public GameObject buildingResourceTowerPrefab;
+    public GameObject humanResourceTowerPrefab; 
+    public GameObject plagueResourceTowerPrefab;
+    
+    public void CraftResourceTower(Faction faction)
     {
-        // TODO un heroe apretando E la combierte a buena o mala segun su raza.
-        // Demora 15s en convertirse con un efecto
-        //if (Input.GetKeyDown(KeyCode.E))
-            
+        if (faction == Faction.Human)
+            StartCoroutine(CraftHumanResourceTower());
+
+        else if (faction == Faction.Plague)
+            StartCoroutine(CraftPlagueResourceTower());
+    }
+
+    private IEnumerator CraftHumanResourceTower()
+    {
+        yield return new WaitForSeconds(craftingTimeInSeconds);
+        BuildHumanResourceTower();
+    }
+
+    private IEnumerator CraftPlagueResourceTower()
+    {
+        yield return new WaitForSeconds(craftingTimeInSeconds);
+        BuildPlagueResourceTower();
+    }
+
+    private void BuildHumanResourceTower()
+    {
+        Instantiate(humanResourceTowerPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Human Resource Tower built.");
+    }
+
+    private void BuildPlagueResourceTower()
+    {
+        Instantiate(plagueResourceTowerPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Plague Resource Tower built.");
     }
 }

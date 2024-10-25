@@ -1070,6 +1070,7 @@ GameObject:
   - component: {fileID: 7032444448401109745}
   - component: {fileID: 4198980560960576001}
   - component: {fileID: 1296818261877918626}
+  - component: {fileID: -8888924675286310266}
   - component: {fileID: 692498575794859945}
   m_Layer: 0
   m_Name: HERO
@@ -1202,6 +1203,18 @@ MonoBehaviour:
   isFlying: 0
   virtualCamera: {fileID: 8640146067684100573}
   isGrounded: 0
+--- !u!114 &-8888924675286310266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373272540697670735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544718da4caebc847b3444e86f580927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &692498575794859945
 Animator:
   serializedVersion: 5

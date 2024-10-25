@@ -8,7 +8,7 @@ public class HexManager : MonoBehaviour
     [SerializeField] AppManager appManager_;
     [SerializeField] List<Hexagon> allHexagons;
     [Header("GOLD RTs")]
-    [SerializeField] GoldRT goldOrePrefab;
+    [SerializeField] GoldOre goldOrePrefab;
     [SerializeField] int goldOrespawnPercentage = 20;
     [Space(10)]
     [SerializeField] int maxGoldOreAmount = 12;
