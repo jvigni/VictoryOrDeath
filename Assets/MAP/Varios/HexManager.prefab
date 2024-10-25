@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &926535549262894485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740037473619719357}
+  - component: {fileID: 2208743715250408520}
+  m_Layer: 0
+  m_Name: HexManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &740037473619719357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926535549262894485}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.35, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2208743715250408520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926535549262894485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e1c0217e66b764baf866599275d061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appManager_: {fileID: 0}
+  allHexagons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  goldRtPrefab: {fileID: 6474548053655565309, guid: 948d8c04a2777774e826b37d2a9bb03a, type: 3}
+  goldOrespawnPercentage: 20
+  maxGoldOreAmount: 12
+  spawnedGoldOresCount_: 0
+  minGoldOreAmount: 6
+  mobsAmountPerHex: 6
+  spawnRadius: 25
+  mobsLv1Prefab:
+  - {fileID: -683393922211658384, guid: 1a73a658eb2a7aa4ab4ceeeb54a43730, type: 3}
+  - {fileID: -683393922211658384, guid: 3e9e33a244862f04d879243c9ebfc3bd, type: 3}
+  mobsLv2Prefab:
+  - {fileID: 1158225606334752326, guid: 8d6e318b76c2a1146a2cef69994bcc50, type: 3}
+  mobsLv3Prefab:
+  - {fileID: 5274129697002601068, guid: d3dce0844e16a5446a90227e2750e9da, type: 3}

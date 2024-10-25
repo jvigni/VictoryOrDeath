@@ -24,8 +24,9 @@ public class HexManager : MonoBehaviour
     {
         allHexagons.ForEach(hex =>
         {
+            var parent = new GameObject("GOLD_ORES");
             if (hex.spawnsGoldRT)
-                SpawnGoldRT(hex);
+                SpawnGoldRT(hex, parent.transform);
         });
 
         allHexagons.ForEach(hex =>
@@ -61,31 +62,24 @@ public class HexManager : MonoBehaviour
         return selectedMobsList[randomIndex];
     }
 
-    void SpawnGoldRT(Hexagon hex)
+    void SpawnGoldRT(Hexagon hex, Transform parent)
     {
         // IDEA: sacar cantidad total entre min/max, y deidir rnd los hexs a setear
-        int goldRTAmount = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount +1);
+        spawnedGoldOresCount_ = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount +1);
+        var spawnedOresCountdown = spawnedGoldOresCount_;
+        while (spawnedOresCountdown > 0) {
+            spawnedOresCountdown--;
 
+            int goldSpawnChance = UnityEngine.Random.Range(1, 101);
+            if (goldSpawnChance > goldOrespawnPercentage) 
+                return;
 
+            var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+            goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
+            var ore = Instantiate(goldRtPrefab, goldRTSpawnLocation, Quaternion.identity);
+            ore.transform.SetParent(parent.transform);
 
-
-
-
-
-
-
-
-
-
-        int goldSpawnChance = UnityEngine.Random.Range(1, 101);
-        if (goldSpawnChance > goldOrespawnPercentage) return;
-
-        if (spawnedGoldOresCount_ < maxGoldOreAmount) return;
-        if (spawnedGoldOresCount_ > minGoldOreAmount) return;
-
-        var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
-        goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
-        Instantiate(goldRtPrefab, goldRTSpawnLocation, Quaternion.identity);
-        spawnedGoldOresCount_++;
+            spawnedGoldOresCount_++;
+        }
     }
 }
