@@ -340,7 +340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7354666329879518255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1418,6 +1418,18 @@ PrefabInstance:
     - target: {fileID: 1019984337274421002, guid: 2916e1ed77c99c44ea9f2ca6b78120f1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.000045776367
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111304862993360050, guid: 2916e1ed77c99c44ea9f2ca6b78120f1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6094339
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111304862993360050, guid: 2916e1ed77c99c44ea9f2ca6b78120f1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6094339
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111304862993360050, guid: 2916e1ed77c99c44ea9f2ca6b78120f1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7535944965622339362, guid: 2916e1ed77c99c44ea9f2ca6b78120f1, type: 3}
       propertyPath: m_Pivot.x
