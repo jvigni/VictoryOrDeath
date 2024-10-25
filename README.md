@@ -37,10 +37,11 @@ NO ITEMS: ore, herb, wood, fish, hide, meat.. esto no va
 
 # TECLAS:
 -WASD movement
--E interact [construir RT, ??????????????????????????????????????]
+-E interact [construir RT, pickear item del piso, subir/bajar vehiculo, Parry/Unique spell ability]
 -Q hero menu unico
 -FRTG spells especiales
 -12345 spells spameables
+-[`] montura instantanea [de los 1ros upgrades]
 
 # CLASES:
 -A lo mtg, hay colores [fire, frost, holy, shadow, melee, range, nature, arcane]
@@ -72,3 +73,10 @@ etc..
 
 # MOBS/DUNGEONS:
 -Creaturas quietas o roameantes pasivas o agresivas a lo wow que dan loot [automatico adaptado a tu clase]
+
+# INFO: Para upgradear los graficos:
+en el panel ligthning, bajar el intensity multiplier a 2, y prender el fog
+
+# IDEA: Curriculum meta:
+-I dare anyone that played wow,lol,aoe2,war3 or something similar to play this game and not hiring me.
+also, Im bla bla bla, worked in bla bla bla, know bla bla bla technology/idiom. please gimi mony

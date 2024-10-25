@@ -28,8 +28,9 @@ public class HeroMenu : MonoBehaviour
     public StatSlot manaStat;
     [Space(10)]
     public List<InventorySlot> inventory;
-    public GameObject trash;
+    public Transform trash;
     [Space(10)]
     public TextMeshProUGUI resources;
     public List<UpgradeSlot> upgrades;
+    public Button reroll;
 }

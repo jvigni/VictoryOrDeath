@@ -77,5 +77,3 @@ se hace de dia, spawnea todo, noche, repetir.
 # IDEAS VERSION 2:
 -si funciona y esta buenardo el gameplay, se hace estilo ajedrez/war3/aoe2 con bandos mirrormatch
 por ahora meto undeads pve only para testear el gameplay. version 1
-
-
