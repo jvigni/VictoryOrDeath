@@ -13,7 +13,7 @@ public enum LifeFormID
 [Serializable]
 public class LifeForm : MonoBehaviour
 {
-    public event Action<Hexagon> OnDeath;
+    public event Action OnDeath;
     public event Action<Effect> OnEffectApplied;
     public event Action<Effect> OnEffectRemoved;
     public bool IsAlive { get; private set; }

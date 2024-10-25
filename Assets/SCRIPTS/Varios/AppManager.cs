@@ -17,8 +17,13 @@ public class AppManager : MonoBehaviour
     [SerializeField] GameObject character;
     //[SerializeField] GameObject music;
 
+    bool isPaused;
+    int gameClockSecondsCount;
+
     void Awake()
     {
+        StartCoroutine(StartGameClock());
+
         startMenu.gameObject.SetActive(true);
 
         startBtn.onClick.AddListener(() =>
@@ -45,9 +50,23 @@ public class AppManager : MonoBehaviour
             //mainCamera..cameraRotation.enabled = !cameraRotation.enabled;
         }
     }
+    public int GetElapsedGameSeconds()
+    {
+        return gameClockSecondsCount;
+    }
+
+    IEnumerator StartGameClock()
+    {
+        while (!isPaused)
+        {
+            yield return new WaitForSeconds(1f);
+            gameClockSecondsCount++;
+        }
+    }
 
     void SwapPause()
     {
+        isPaused = !isPaused;
         Time.timeScale = Time.timeScale == 1 ? 0 : 1;
     }
 }
