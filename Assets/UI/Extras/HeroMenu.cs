@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,22 +14,22 @@ public class HeroMenu : MonoBehaviour
     public EquipmentSlot boots;
     public EquipmentSlot main_hand;
     public EquipmentSlot off_hand;
-
-    public string class_name;
-    public int power_level;
+    [Space(10)]
+    public TextMeshProUGUI class_name;
+    public TextMeshProUGUI power_level;
     public Image element1Img;
     public Image element2Img;
-    public string element1txt;
-    public string element2txt;
-
+    public TextMeshProUGUI element1txt;
+    public TextMeshProUGUI element2txt;
+    [Space(10)]
     public StatSlot damageStat;
     public StatSlot defenseStat;
     public StatSlot staminaStat;
     public StatSlot manaStat;
-
+    [Space(10)]
     public List<InventorySlot> inventory;
     public GameObject trash;
-
-    public int resources;
-    public List<UpgradeSlot> Upgrades;
+    [Space(10)]
+    public TextMeshProUGUI resources;
+    public List<UpgradeSlot> upgrades;
 }
