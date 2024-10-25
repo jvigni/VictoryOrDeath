@@ -8,14 +8,16 @@ public class HexManager : MonoBehaviour
     [SerializeField] AppManager appManager_;
     [SerializeField] List<Hexagon> allHexagons;
     [Header("GOLD RTs")]
-    [SerializeField] GoldRT goldRtPrefab;
+    [SerializeField] GoldRT goldOrePrefab;
     [SerializeField] int goldOrespawnPercentage = 20;
+    [Space(10)]
     [SerializeField] int maxGoldOreAmount = 12;
     [SerializeField] int goldOresInMap;
     [SerializeField] int minGoldOreAmount = 6;
     [Header("MOBS")]
     [SerializeField] int mobsAmountPerHex = 10;
     [SerializeField] int spawnRadius = 25;
+    [Space(10)]
     [SerializeField] List<Mob> mobsLv1Prefab;
     [SerializeField] List<Mob> mobsLv2Prefab;
     [SerializeField] List<Mob> mobsLv3Prefab;
@@ -79,9 +81,13 @@ public class HexManager : MonoBehaviour
             if (goldSpawnChance > goldOrespawnPercentage) 
                 return;
 
-            var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
-            goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
-            var ore = Instantiate(goldRtPrefab, goldRTSpawnLocation, Quaternion.identity);
+            //var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+            //goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
+
+            var ore = Instantiate(goldOrePrefab, hex.transform.position, Quaternion.identity);
+            var newTransformPosition = ore.transform.position;
+            newTransformPosition.y = Terrain.activeTerrain.SampleHeight(ore.transform.position);
+            ore.transform.position = newTransformPosition;
             ore.transform.SetParent(parent.transform);
             hex.goldOre = ore;
             spawnedOresCountdown--;
