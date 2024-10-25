@@ -27,6 +27,7 @@ public class HexManager : MonoBehaviour
     {
         var parent = new GameObject("GOLD_ORES");
         goldOresInMap = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount + 1);
+        allHexagons.RemoveAll(hex => !hex.spawnsGoldRT);
         allHexagons.Shuffle();
         allHexagons.ForEach(hex =>
         {
@@ -39,18 +40,12 @@ public class HexManager : MonoBehaviour
 
 
         var allMobsParent = new GameObject("MOBS");
+        allHexagons.RemoveAll(hex => !hex.spawnsMobs);
+        var mobsCampParent = new GameObject("CAMP");
         allHexagons.ForEach(hex =>
         {
-            if (hex.spawnsMobs)
-            {
-                var mobsCampParent = new GameObject("CAMP");
-                for(int i =0; i < mobsAmountPerHex; i++)
-                {
-                    var mob = SpawnMob(hex, mobsCampParent.transform);
-                    mobsCampParent.gameObject.transform.SetParent(allMobsParent.transform);
-                }
-                    
-            }
+            var mob = SpawnMob(hex, mobsCampParent.transform);
+            mobsCampParent.gameObject.transform.SetParent(allMobsParent.transform);
         });
     }
 
