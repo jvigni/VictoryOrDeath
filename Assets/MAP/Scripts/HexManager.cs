@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class HexManager : MonoBehaviour
 {
+    [SerializeField] AppManager appManager_;
     [SerializeField] List<Hexagon> allHexagons;
-    [SerializeField] GoldRT goldRTPrefab;
+    [Header("GOLD RTs")]
+    [SerializeField] GoldRT goldRtPrefab;
+    [SerializeField] int goldOrespawnPercentage = 20;
+    [SerializeField] int maxGoldOreAmount = 12;
+    [SerializeField] int spawnedGoldOresCount_;
+    [SerializeField] int minGoldOreAmount = 6;
+    [Header("MOBS")]
+    [SerializeField] int mobsAmountPerHex = 10;
+    [SerializeField] int spawnRadius = 25;
     [SerializeField] List<Mob> mobsLv1Prefab;
     [SerializeField] List<Mob> mobsLv2Prefab;
     [SerializeField] List<Mob> mobsLv3Prefab;
-
-
-    [SerializeField] int goldRTspawnPercentage = 20;
-    [SerializeField] int mobsAmountPerHex = 10;
-    [SerializeField] int spawnRadius = 25;
-    [SerializeField] AppManager appManager_;
 
     private void Awake()
     {
@@ -60,12 +63,29 @@ public class HexManager : MonoBehaviour
 
     void SpawnGoldRT(Hexagon hex)
     {
+        // IDEA: sacar cantidad total entre min/max, y deidir rnd los hexs a setear
+        int goldRTAmount = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount +1);
+
+
+
+
+
+
+
+
+
+
+
+
         int goldSpawnChance = UnityEngine.Random.Range(1, 101);
-        if (goldSpawnChance < goldRTspawnPercentage)
-        {
-            var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
-            goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
-            Instantiate(goldRTPrefab, goldRTSpawnLocation, Quaternion.identity);
-        }
+        if (goldSpawnChance > goldOrespawnPercentage) return;
+
+        if (spawnedGoldOresCount_ < maxGoldOreAmount) return;
+        if (spawnedGoldOresCount_ > minGoldOreAmount) return;
+
+        var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+        goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
+        Instantiate(goldRtPrefab, goldRTSpawnLocation, Quaternion.identity);
+        spawnedGoldOresCount_++;
     }
 }
