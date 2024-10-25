@@ -13,7 +13,6 @@ public class HexManager : MonoBehaviour
 
 
     [SerializeField] int mobsAmountPerHex = 10;
-    [SerializeField] int actualMobsLevel_ = 1;
     [SerializeField] int spawnRadius = 25;
     [SerializeField] AppManager appManager_;
 
@@ -38,11 +37,7 @@ public class HexManager : MonoBehaviour
 
     void SpawnMob(Hexagon hex, Transform parentObj)
     {
-        var elapsedMinutes = appManager_.GetElapsedGameSeconds() / 60;
-        if (elapsedMinutes >= 5) actualMobsLevel_ = 2;
-        if (elapsedMinutes >= 10) actualMobsLevel_ = 3;
-
-        var rndSpawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+        var rndSpawnPosition = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
         GameObject newMob = Instantiate(GetRndMobPrefab().gameObject, rndSpawnPosition, Quaternion.identity);
         newMob.transform.SetParent(parentObj.transform);
@@ -51,15 +46,15 @@ public class HexManager : MonoBehaviour
 
     internal Mob GetRndMobPrefab()
     {
-        List<Mob> selectedMobs = null;
+        var selectedMobsList = mobsLv1Prefab;
 
-        if (actualMobsLevel_ == 1) selectedMobs = mobsLv1Prefab;
-        else if (actualMobsLevel_ == 2) selectedMobs = mobsLv2Prefab;
-        else if (actualMobsLevel_ == 3) selectedMobs = mobsLv3Prefab;
+        var elapsedMinutes = appManager_.GetElapsedGameSeconds() / 60;
+        if (elapsedMinutes >= 5) selectedMobsList = mobsLv2Prefab;
+        if (elapsedMinutes >= 10) selectedMobsList = mobsLv3Prefab;
 
         // Pick a random mob from the selected list
-        int randomIndex = UnityEngine.Random.Range(0, selectedMobs.Count);
-        return selectedMobs[randomIndex];
+        int randomIndex = UnityEngine.Random.Range(0, selectedMobsList.Count);
+        return selectedMobsList[randomIndex];
     }
 
     void SpawnGoldRT(Hexagon hex)
@@ -67,7 +62,7 @@ public class HexManager : MonoBehaviour
         int goldSpawnchance = UnityEngine.Random.Range(1, 11);
         if (goldSpawnchance == 1)
         {
-            var goldRTSpawnLocation = transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+            var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
             goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
             Instantiate(goldRTPrefab, goldRTSpawnLocation, Quaternion.identity);
         }
