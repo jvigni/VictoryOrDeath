@@ -14,7 +14,6 @@ public class AppManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
-    [SerializeField] Camera mainCamera;
     [SerializeField] GameObject character;
     //[SerializeField] GameObject music;
 
@@ -43,13 +42,6 @@ public class AppManager : MonoBehaviour
 
         if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
             dayNightCycle.SwapCycle();
-
-        if (Input.GetKeyDown(heroMenuKeyCode))
-        {
-            heroMenu.SetActive(!heroMenu.activeSelf);
-            // TODO Stop rotation active swap
-            //mainCamera..cameraRotation.enabled = !cameraRotation.enabled;
-        }
     }
     public int GetElapsedGameSeconds()
     {
