@@ -27,16 +27,6 @@ public class HexManager : MonoBehaviour
             if (hex.spawnsGoldRT)
                 SpawnMobs(hex)
         });
-
-
-        allHexagons.ForEach(spawner =>
-            spawner.lv1MobPrefab = mobsLv1Prefab[Random.Range(0, mobsLv1Prefab.Count)]);
-
-        allHexagons.ForEach(spawner =>
-            spawner.lv2MobPrefab = mobsLv2Prefab[Random.Range(0, mobsLv2Prefab.Count)]);
-
-        allHexagons.ForEach(spawner =>
-            spawner.lv3MobPrefab = mobsLv3Prefab[Random.Range(0, mobsLv3Prefab.Count)]);
     }
 
     void SpawnGoldRT(Hexagon hex)
@@ -46,17 +36,24 @@ public class HexManager : MonoBehaviour
 
     void SpawnMobs(Hexagon hex)
     {
-        var elapsedMinutes = Time.realtimeSinceStartup / 60;
+        var elapsedMinutes = Time.unscaledTime / 60;
         if (elapsedMinutes >= 5) actualMobLevel = 2;
         if (elapsedMinutes >= 10) actualMobLevel = 3;
 
         // Instantiate the mob and set its level
-        GameObject newMob = Instantiate(mobPrefab, hex.transform.position, Quaternion.identity);
-        newMob.GetComponent<Mob>().Initialize(mobLevel);
+        GameObject newMob = Instantiate(GetRndMobPrefab().gameObject, hex.transform.position, Quaternion.identity);
     }
 
-    internal Mob GetRndMob()
+    internal Mob GetRndMobPrefab()
     {
-        throw new NotImplementedException();
+        List<Mob> selectedMobs = null;
+
+        if (actualMobLevel == 1) selectedMobs = mobsLv1Prefab;
+        else if (actualMobLevel == 2) selectedMobs = mobsLv2Prefab;
+        else if (actualMobLevel == 3) selectedMobs = mobsLv3Prefab;
+
+        // Pick a random mob from the selected list
+        int randomIndex = UnityEngine.Random.Range(0, selectedMobs.Count);
+        return selectedMobs[randomIndex];
     }
 }

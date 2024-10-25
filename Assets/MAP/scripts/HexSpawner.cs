@@ -26,7 +26,7 @@ public class HexSpawner : MonoBehaviour
             {
                 var goldRTSpawnLocation = transform.position + new Vector3(UnityEngine.Random.Range(-radius, radius), 0, UnityEngine.Random.Range(-radius, radius));
                 goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
-                Instantiate(hexManager.GetRndMob(), goldRTSpawnLocation, Quaternion.identity);
+                Instantiate(hexManager.GetRndMobPrefab(), goldRTSpawnLocation, Quaternion.identity);
             }
         }
     }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AppManager : MonoBehaviour
 {
     [SerializeField] KeyCode dayNigthSwapCHEATCODE;
+    [SerializeField] KeyCode pauseKey;
     [SerializeField] KeyCode heroMenuKeyCode;
     [SerializeField] DayNightCycle dayNightCycle;
     [SerializeField] GameObject heroMenu;
@@ -18,9 +19,8 @@ public class AppManager : MonoBehaviour
 
     void Awake()
     {
-        //cameraRotation = mainCamera.GetComponent<CameraRotation>();
-
         startMenu.gameObject.SetActive(true);
+
         startBtn.onClick.AddListener(() =>
         {
             //music.gameObject.SetActive(true);
@@ -32,6 +32,9 @@ public class AppManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(pauseKey))
+            SwapPause();
+
         if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
             dayNightCycle.SwapCycle();
 
@@ -41,5 +44,10 @@ public class AppManager : MonoBehaviour
             // TODO Stop rotation active swap
             //mainCamera..cameraRotation.enabled = !cameraRotation.enabled;
         }
+    }
+
+    void SwapPause()
+    {
+        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
     }
 }
