@@ -8,6 +8,6 @@ public class Hexagon : MonoBehaviour
     [SerializeField] GoldRT goldRT;
     [SerializeField] HexManager hexManager;
 
-    public bool spawnsMinions = true;
+    public bool spawnsMobs = true;
     public bool spawnsGoldRT = true;
 }

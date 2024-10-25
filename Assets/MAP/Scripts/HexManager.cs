@@ -19,13 +19,13 @@ public class HexManager : MonoBehaviour
         allHexagons.ForEach(hex =>
         {
             if (hex.spawnsGoldRT)
-                SpawnGoldRT(hex)
+                SpawnGoldRT(hex);
         });
 
         allHexagons.ForEach(hex =>
         {
-            if (hex.spawnsGoldRT)
-                SpawnMobs(hex)
+            if (hex.spawnsMobs)
+                SpawnMobs(hex);
         });
     }
 
@@ -36,12 +36,13 @@ public class HexManager : MonoBehaviour
 
     void SpawnMobs(Hexagon hex)
     {
+
         var elapsedMinutes = Time.unscaledTime / 60;
         if (elapsedMinutes >= 5) actualMobLevel = 2;
         if (elapsedMinutes >= 10) actualMobLevel = 3;
 
-        // Instantiate the mob and set its level
         GameObject newMob = Instantiate(GetRndMobPrefab().gameObject, hex.transform.position, Quaternion.identity);
+        newMob.GetComponent<LifeForm>().OnDeath += SpawnMobs;
     }
 
     internal Mob GetRndMobPrefab()
