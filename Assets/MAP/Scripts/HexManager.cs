@@ -12,6 +12,7 @@ public class HexManager : MonoBehaviour
     [SerializeField] List<Mob> mobsLv3Prefab;
 
 
+    [SerializeField] int goldRTspawnPercentage = 20;
     [SerializeField] int mobsAmountPerHex = 10;
     [SerializeField] int spawnRadius = 25;
     [SerializeField] AppManager appManager_;
@@ -59,8 +60,8 @@ public class HexManager : MonoBehaviour
 
     void SpawnGoldRT(Hexagon hex)
     {
-        int goldSpawnchance = UnityEngine.Random.Range(1, 11);
-        if (goldSpawnchance == 1)
+        int goldSpawnChance = UnityEngine.Random.Range(1, 101);
+        if (goldSpawnChance < goldRTspawnPercentage)
         {
             var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
             goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
