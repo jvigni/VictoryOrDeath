@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,35 +5,34 @@ public class Healthbar : MonoBehaviour
 {
     [SerializeField] private Image healthbarSprite;
     [SerializeField] private float reduceSpeed = 2f;
-    private float target = 1f;
-    private Camera cam;
+    private float targetFillAmount = 0f; // Initialize to 0
+    private Camera mainCamera;
 
-    void Start()
+    private void Start()
     {
-        cam = Camera.main;
-        if (cam == null)
-        {
-            Debug.LogError("Main Camera not found. Please assign a camera.");
-        }
+        mainCamera = Camera.main;
+        // Initialize health bar to start empty
+        healthbarSprite.fillAmount = 0f; // Start empty
     }
 
-    /// <summary>
-    /// Updates the health bar's target fill amount based on max and current health.
-    /// </summary>
-    public void UpdateHealthbar(float maxHealth, float currentHealth)
+    public void SetHealth(float currentHealth, float maxHealth)
     {
-        target = Mathf.Clamp01(currentHealth / maxHealth);
+        // Ensure we calculate fill amount correctly
+        targetFillAmount = Mathf.Clamp01(currentHealth / maxHealth);
     }
 
-    void Update()
+    private void Update()
     {
-        if (cam != null)
-        {
-            // Face the health bar towards the camera
-            transform.rotation = Quaternion.LookRotation(transform.position - cam.transform.position);
-        }
+        FaceCamera();
+        // Smoothly transition to the target fill amount
+        healthbarSprite.fillAmount = Mathf.MoveTowards(healthbarSprite.fillAmount, targetFillAmount, reduceSpeed * Time.deltaTime);
+    }
 
-        // Smoothly move the fill amount towards the target
-        healthbarSprite.fillAmount = Mathf.MoveTowards(healthbarSprite.fillAmount, target, reduceSpeed * Time.deltaTime);
+    private void FaceCamera()
+    {
+        if (mainCamera != null)
+        {
+            transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
+        }
     }
 }
