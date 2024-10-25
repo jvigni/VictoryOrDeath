@@ -580,6 +580,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 219870431290066349, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+      propertyPath: goldOre
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 219870431290066349, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+      propertyPath: buildingResourceTowerPrefab
+      value: 
+      objectReference: {fileID: 2680509336205049112}
     - target: {fileID: 5779097193691109562, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
       propertyPath: m_Name
       value: GoldOre Transform
@@ -658,6 +666,11 @@ PrefabInstance:
 --- !u!4 &1092245788673928525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8802286087094896879, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+  m_PrefabInstance: {fileID: 8430860880181519778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2680509336205049112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5779097193691109562, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
   m_PrefabInstance: {fileID: 8430860880181519778}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8452504320933350698
