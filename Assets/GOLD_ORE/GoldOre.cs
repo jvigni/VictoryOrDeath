@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class GoldOre : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // TODO un heroe apretando E la combierte a buena o mala segun su raza.
+        // Demora 15s en convertirse con un efecto
+        //if (Input.GetKeyDown(KeyCode.E))
+            
     }
 }
