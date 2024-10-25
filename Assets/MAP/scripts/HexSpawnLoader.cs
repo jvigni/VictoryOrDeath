@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class HexSpawnManager : MonoBehaviour
 {
     [SerializeField] List<HexSpawner> hexSpawners;
@@ -20,4 +20,4 @@ public class HexSpawnManager : MonoBehaviour
         hexSpawners.ForEach(spawner =>
             spawner.lv3MobPrefab = mobsLv3Prefab[Random.Range(0, mobsLv3Prefab.Count)]);
     }
-}
+}*/
