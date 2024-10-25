@@ -78,13 +78,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1614115346032452106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb5b168774c948f4da3cd072ab777ecd, type: 3}
+  m_Script: {fileID: 11500000, guid: c5d5f65e720305e44b71a34e256af6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lv1MobPrefab: {fileID: 0}
-  lv2MobPrefab: {fileID: 0}
-  lv3MobPrefab: {fileID: 0}
-  spawnMinions: 0
-  actualMinionLevel: 1
-  radius: 25
-  minionsAmount: 10
+  mobs: {fileID: 0}
+  goldRT: {fileID: 0}
+  hexManager: {fileID: 0}
+  spawnsMobs: 1
+  spawnsGoldRT: 1

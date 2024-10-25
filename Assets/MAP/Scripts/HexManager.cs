@@ -12,10 +12,10 @@ public class HexManager : MonoBehaviour
     [SerializeField] List<Mob> mobsLv3Prefab;
 
 
-    [SerializeField] int actualMobLevel = 1;
+    [SerializeField] int mobsAmountPerHex = 10;
+    [SerializeField] int actualMobsLevel_ = 1;
     [SerializeField] int spawnRadius = 25;
-    [SerializeField] int mobsAmount = 10;
-    [SerializeField] AppManager appManager;
+    [SerializeField] AppManager appManager_;
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class HexManager : MonoBehaviour
             if (hex.spawnsMobs)
             {
                 var parentObj = new GameObject("MOB_CAMP");
-                for(int i =0; i < mobsAmount; i++)
+                for(int i =0; i < mobsAmountPerHex; i++)
                     SpawnMob(hex, parentObj.transform);
             }
         });
@@ -38,9 +38,9 @@ public class HexManager : MonoBehaviour
 
     void SpawnMob(Hexagon hex, Transform parentObj)
     {
-        var elapsedMinutes = appManager.GetElapsedGameSeconds() / 60;
-        if (elapsedMinutes >= 5) actualMobLevel = 2;
-        if (elapsedMinutes >= 10) actualMobLevel = 3;
+        var elapsedMinutes = appManager_.GetElapsedGameSeconds() / 60;
+        if (elapsedMinutes >= 5) actualMobsLevel_ = 2;
+        if (elapsedMinutes >= 10) actualMobsLevel_ = 3;
 
         var rndSpawnPosition = transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
@@ -53,9 +53,9 @@ public class HexManager : MonoBehaviour
     {
         List<Mob> selectedMobs = null;
 
-        if (actualMobLevel == 1) selectedMobs = mobsLv1Prefab;
-        else if (actualMobLevel == 2) selectedMobs = mobsLv2Prefab;
-        else if (actualMobLevel == 3) selectedMobs = mobsLv3Prefab;
+        if (actualMobsLevel_ == 1) selectedMobs = mobsLv1Prefab;
+        else if (actualMobsLevel_ == 2) selectedMobs = mobsLv2Prefab;
+        else if (actualMobsLevel_ == 3) selectedMobs = mobsLv3Prefab;
 
         // Pick a random mob from the selected list
         int randomIndex = UnityEngine.Random.Range(0, selectedMobs.Count);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Hexagon : MonoBehaviour
 {
-    [SerializeField] Mob mobs;
-    [SerializeField] GoldRT goldRT;
-    [SerializeField] HexManager hexManager;
+    [SerializeField] Mob mobs_;
+    [SerializeField] GoldRT goldRT_;
+    //[SerializeField] HexManager hexManager;
 
     public bool spawnsMobs = true;
     public bool spawnsGoldRT = true;
