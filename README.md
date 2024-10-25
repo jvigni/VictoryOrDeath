@@ -80,3 +80,22 @@ en el panel ligthning, bajar el intensity multiplier a 2, y prender el fog
 # IDEA: Curriculum meta:
 -I dare anyone that played wow,lol,aoe2,war3 or something similar to play this game and not hiring me.
 also, Im bla bla bla, worked in bla bla bla, know bla bla bla technology/idiom. please gimi mony
+
+# EJEMPLO:
+# cryomancer: [frost frost]
+-frostbolt [2][casted]
+-ice lance [1][instant]
+-cone of cold [3][instant 2]
+-blizzard [4][aoe]
+-frost nova [5][crowd control]
+
+-icefire/icebomb [F][proc]
+-blink [G][movement]
+-bloque [T][oh shit btn]
+-silence [R][anticasteos]
+
+TALENTOS:[se prenden solos automatico]
+-deep freeze [talento automatico, probabilidad de congelar]
+-ice barrier [explota al romperse en una frostnova]
+-finger of frost [30% faster cast]
+-etc
