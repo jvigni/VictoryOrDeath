@@ -14,7 +14,7 @@ public class HexManager : MonoBehaviour
     [SerializeField] int maxGoldOreAmount = 12;
     [SerializeField] int goldOresInMap;
     [SerializeField] int minGoldOreAmount = 6;
-    List<Hexagon> hexagonsWithGoldOrePlaced;
+    int goldOresPlaced;
     [Header("MOBS")]
     [SerializeField] int mobsAmountPerHex = 10;
     [SerializeField] int spawnRadius = 25;
@@ -27,14 +27,15 @@ public class HexManager : MonoBehaviour
     {
         var parent = new GameObject("GOLD_ORES");
         goldOresInMap = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount + 1);
-        var spawnedOresCountdown = goldOresInMap;
-        hexagonsWithGoldOrePlaced = new List<Hexagon>();
-        while (spawnedOresCountdown > 0)
-            allHexagons.ForEach(hex =>
-            {
-                if (!hexagonsWithGoldOrePlaced.Contains(hex))
-                    TrySpawnGoldOre(hex, parent.transform);
-            });
+        allHexagons.Shuffle();
+        allHexagons.ForEach(hex =>
+        {
+            if (goldOresPlaced >= goldOresInMap)
+                return;
+
+            SpawnGoldOre(hex, parent.transform);
+            goldOresPlaced++;
+        });
 
 
         var allMobsParent = new GameObject("MOBS");
@@ -53,12 +54,8 @@ public class HexManager : MonoBehaviour
         });
     }
 
-    void TrySpawnGoldOre(Hexagon hex, Transform parent)
+    void SpawnGoldOre(Hexagon hex, Transform parent)
     {
-        int goldSpawnChance = UnityEngine.Random.Range(1, 101);
-        if (goldSpawnChance > goldOrespawnPercentage)
-            return;
-
         // To spawn random position as mobs and not in the center of the hexagon: DEPRECATED (center spawn = good)
         //var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
         //goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
@@ -69,7 +66,6 @@ public class HexManager : MonoBehaviour
         ore.transform.position = newTransformPosition;
         ore.transform.SetParent(parent.transform);
         hex.goldOre = ore;
-        hexagonsWithGoldOrePlaced.Add(hex);
     }
 
     Mob SpawnMob(Hexagon hex, Transform parentObj)
