@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class AppManager : MonoBehaviour
 {
     [SerializeField] KeyCode dayNigthSwapCHEATCODE;
-    [SerializeField] KeyCode pauseKey;
     [SerializeField] KeyCode heroMenuKeyCode;
+    [SerializeField] KeyCode pauseMenuKeyCode;
     [SerializeField] DayNightCycle dayNightCycle;
     [SerializeField] GameObject heroMenu;
     [SerializeField] GameObject startMenu;
+    [SerializeField] GameObject pauseMenu;
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
     [SerializeField] Camera mainCamera;
@@ -37,7 +38,7 @@ public class AppManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(pauseKey))
+        if (Input.GetKeyDown(pauseMenuKeyCode))
             SwapPause();
 
         if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
@@ -66,6 +67,7 @@ public class AppManager : MonoBehaviour
 
     void SwapPause()
     {
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
         isPaused = !isPaused;
         Time.timeScale = Time.timeScale == 1 ? 0 : 1;
     }
