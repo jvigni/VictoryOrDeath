@@ -11,7 +11,7 @@ public class HexManager : MonoBehaviour
     [SerializeField] GoldRT goldRtPrefab;
     [SerializeField] int goldOrespawnPercentage = 20;
     [SerializeField] int maxGoldOreAmount = 12;
-    [SerializeField] int spawnedGoldOresCount_;
+    [SerializeField] int goldOresInMap;
     [SerializeField] int minGoldOreAmount = 6;
     [Header("MOBS")]
     [SerializeField] int mobsAmountPerHex = 10;
@@ -45,13 +45,14 @@ public class HexManager : MonoBehaviour
         });
     }
 
-    GameObject SpawnMob(Hexagon hex, Transform parentObj)
+    Mob SpawnMob(Hexagon hex, Transform parentObj)
     {
         var rndSpawnPosition = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
-        GameObject newMob = Instantiate(GetRndMobPrefab().gameObject, rndSpawnPosition, Quaternion.identity);
+        Mob newMob = Instantiate(GetRndMobPrefab(), rndSpawnPosition, Quaternion.identity);
         newMob.transform.SetParent(parentObj.transform);
         newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, parentObj);
+        hex.mobs = newMob;
         return newMob;
     }
 
@@ -70,11 +71,9 @@ public class HexManager : MonoBehaviour
 
     void SpawnGoldRT(Hexagon hex, Transform parent)
     {
-        // IDEA: sacar cantidad total entre min/max, y deidir rnd los hexs a setear
-        spawnedGoldOresCount_ = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount +1);
-        var spawnedOresCountdown = spawnedGoldOresCount_;
+        goldOresInMap = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount +1);
+        var spawnedOresCountdown = goldOresInMap;
         while (spawnedOresCountdown > 0) {
-            spawnedOresCountdown--;
 
             int goldSpawnChance = UnityEngine.Random.Range(1, 101);
             if (goldSpawnChance > goldOrespawnPercentage) 
@@ -84,8 +83,8 @@ public class HexManager : MonoBehaviour
             goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
             var ore = Instantiate(goldRtPrefab, goldRTSpawnLocation, Quaternion.identity);
             ore.transform.SetParent(parent.transform);
-
-            spawnedGoldOresCount_++;
+            hex.goldOre = ore;
+            spawnedOresCountdown--;
         }
     }
 }

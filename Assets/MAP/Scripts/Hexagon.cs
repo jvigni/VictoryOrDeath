@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Hexagon : MonoBehaviour
 {
-    [SerializeField] Mob mobs_;
-    [SerializeField] GoldRT goldRT_;
+    public Mob mobs;
+    public GoldRT goldOre;
     //[SerializeField] HexManager hexManager;
 
     public bool spawnsMobs = true;
