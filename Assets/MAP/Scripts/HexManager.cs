@@ -14,6 +14,7 @@ public class HexManager : MonoBehaviour
     [SerializeField] int maxGoldOreAmount = 12;
     [SerializeField] int goldOresInMap;
     [SerializeField] int minGoldOreAmount = 6;
+    List<Hexagon> hexagonsWithGoldOrePlaced;
     [Header("MOBS")]
     [SerializeField] int mobsAmountPerHex = 10;
     [SerializeField] int spawnRadius = 25;
@@ -25,11 +26,16 @@ public class HexManager : MonoBehaviour
     private void Awake()
     {
         var parent = new GameObject("GOLD_ORES");
-        allHexagons.ForEach(hex =>
-        {
-            if (hex.spawnsGoldRT)
-                SpawnGoldRT(hex, parent.transform);
-        });
+        goldOresInMap = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount + 1);
+        var spawnedOresCountdown = goldOresInMap;
+        hexagonsWithGoldOrePlaced = new List<Hexagon>();
+        while (spawnedOresCountdown > 0)
+            allHexagons.ForEach(hex =>
+            {
+                if (!hexagonsWithGoldOrePlaced.Contains(hex))
+                    TrySpawnGoldOre(hex, parent.transform);
+            });
+
 
         var allMobsParent = new GameObject("MOBS");
         allHexagons.ForEach(hex =>
@@ -45,6 +51,25 @@ public class HexManager : MonoBehaviour
                     
             }
         });
+    }
+
+    void TrySpawnGoldOre(Hexagon hex, Transform parent)
+    {
+        int goldSpawnChance = UnityEngine.Random.Range(1, 101);
+        if (goldSpawnChance > goldOrespawnPercentage)
+            return;
+
+        // To spawn random position as mobs and not in the center of the hexagon: DEPRECATED (center spawn = good)
+        //var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
+        //goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
+
+        var ore = Instantiate(goldOrePrefab, hex.transform.position, Quaternion.identity);
+        var newTransformPosition = ore.transform.position;
+        newTransformPosition.y = Terrain.activeTerrain.SampleHeight(ore.transform.position);
+        ore.transform.position = newTransformPosition;
+        ore.transform.SetParent(parent.transform);
+        hex.goldOre = ore;
+        hexagonsWithGoldOrePlaced.Add(hex);
     }
 
     Mob SpawnMob(Hexagon hex, Transform parentObj)
@@ -69,28 +94,5 @@ public class HexManager : MonoBehaviour
         // Pick a random mob from the selected list
         int randomIndex = UnityEngine.Random.Range(0, selectedMobsList.Count);
         return selectedMobsList[randomIndex];
-    }
-
-    void SpawnGoldRT(Hexagon hex, Transform parent)
-    {
-        goldOresInMap = UnityEngine.Random.Range(minGoldOreAmount, maxGoldOreAmount +1);
-        var spawnedOresCountdown = goldOresInMap;
-        while (spawnedOresCountdown > 0) {
-
-            int goldSpawnChance = UnityEngine.Random.Range(1, 101);
-            if (goldSpawnChance > goldOrespawnPercentage) 
-                return;
-
-            //var goldRTSpawnLocation = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
-            //goldRTSpawnLocation.y = Terrain.activeTerrain.SampleHeight(goldRTSpawnLocation);
-
-            var ore = Instantiate(goldOrePrefab, hex.transform.position, Quaternion.identity);
-            var newTransformPosition = ore.transform.position;
-            newTransformPosition.y = Terrain.activeTerrain.SampleHeight(ore.transform.position);
-            ore.transform.position = newTransformPosition;
-            ore.transform.SetParent(parent.transform);
-            hex.goldOre = ore;
-            spawnedOresCountdown--;
-        }
     }
 }
