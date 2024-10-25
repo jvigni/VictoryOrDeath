@@ -1086,7 +1086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4373272540697670735}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.78616333, y: 27.644949, z: -26.801823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1096,7 +1096,7 @@ Transform:
   - {fileID: 2450043390130545869}
   - {fileID: 1530704049814724603}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &6027835809486051788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,10 +1196,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  runSpeed: 20
   gravity: -9.8
   jumpHeight: 1.5
   isFlying: 0
-  mainCamera: {fileID: 0}
+  virtualCamera: {fileID: 8640146067684100573}
   isGrounded: 0
 --- !u!95 &692498575794859945
 Animator:
@@ -2379,6 +2380,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1530704049814724603}
   - component: {fileID: 8640146067684100573}
+  - component: {fileID: 1334693920466841417}
+  - component: {fileID: 8565896329774868006}
+  - component: {fileID: 1410477401339118359}
+  - component: {fileID: 3976139347779762561}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -2394,8 +2399,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8126131065268105148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08495983, y: 0.67313695, z: -0.07831957, w: 0.73043454}
-  m_LocalPosition: {x: -20.030312, y: 6.003866, z: -1.596571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.370001, z: -4.74}
   m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2423,7 +2428,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 116.47358
+    FieldOfView: 80
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -2441,6 +2446,90 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2067506386788725296}
+--- !u!114 &1334693920466841417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126131065268105148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec971ef565c11d4487ead9f28583117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2450043390130545869}
+  distance: 5
+  sensitivity: 2
+  yMinLimit: -25
+  yMaxLimit: 25
+  minDistance: 2
+  maxDistance: 12
+  distanceAdjustmentSpeed: 2
+  isColliding: 0
+--- !u!114 &8565896329774868006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126131065268105148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd99365f3050e446a8f404815a3c542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirdPersonCamera: {fileID: 1334693920466841417}
+  initialColliderZSize: 2
+  maxColliderZSize: 18
+--- !u!54 &1410477401339118359
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126131065268105148}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &3976139347779762561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126131065268105148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
+  m_Center: {x: 0, y: 0, z: 1.5}
 --- !u!1 &8175575122397242045
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,10 +5,10 @@ using UnityEngine;
 public class ThirdPersonCamera : MonoBehaviour
 {
     public Transform target;                // El personaje a seguir
-    public float distance = 5.0f;           // Distancia entre la cámara y el personaje
+    public float distance = 8.0f;           // Distancia entre la cámara y el personaje
     public float sensitivity = 2.0f;         // Sensibilidad del mouse
-    public float yMinLimit = -40f;          // Límite inferior para la rotación vertical
-    public float yMaxLimit = 80f;           // Límite superior para la rotación vertical
+    public float yMinLimit = -25f;          // Límite inferior para la rotación vertical
+    public float yMaxLimit = 25f;           // Límite superior para la rotación vertical
     public float minDistance = 2.0f;        // Distancia mínima entre la cámara y el personaje
     public float maxDistance = 12.0f;       // Distancia máxima entre la cámara y el personaje
     public float distanceAdjustmentSpeed = 2.0f; // Velocidad de ajuste de la distancia
@@ -27,12 +27,18 @@ public class ThirdPersonCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        // Obtener movimiento del mouse
-        currentX += Input.GetAxis("Mouse X") * sensitivity;
-        currentY -= Input.GetAxis("Mouse Y") * sensitivity;
 
-        // Restringir el movimiento vertical entre los límites
-        currentY = Mathf.Clamp(currentY, yMinLimit, yMaxLimit);
+        // Solo mover la cámara si se mantiene presionado el botón derecho del mouse
+        if (Input.GetMouseButton(1)) // El botón 1 es el clic derecho del mouse
+        {
+            // Obtener movimiento del mouse
+            currentX += Input.GetAxis("Mouse X") * sensitivity;
+            currentY -= Input.GetAxis("Mouse Y") * sensitivity;
+
+            // Restringir el movimiento vertical entre los límites
+            currentY = Mathf.Clamp(currentY, yMinLimit, yMaxLimit);
+        }
+
 
         // Ajustar la distancia usando la rueda del mouse
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
@@ -52,7 +58,7 @@ public class ThirdPersonCamera : MonoBehaviour
             currentDistance = Mathf.Lerp(currentDistance, minDistance, Time.deltaTime * distanceAdjustmentSpeed);
             distance = currentDistance;
         }
-    
+
 
         // Calcular la posición de la cámara basándose en la rotación alrededor del personaje
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);

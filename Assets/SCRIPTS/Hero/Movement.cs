@@ -1,14 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Cinemachine;
 
 public class Movement : MonoBehaviour
 {
     // Variables para definir velocidad y gravedad
     public float speed = 6.0f;
+    public float runSpeed = 20.0f; // Velocidad cuando corre
     public float gravity = -9.8f;
     public float jumpHeight = 1.5f;
     public bool isFlying = false;
-    public Camera mainCamera;
+    public CinemachineVirtualCamera virtualCamera;
 
     // Componente CharacterController
 
@@ -30,12 +32,12 @@ public class Movement : MonoBehaviour
         // Asigna el CharacterController que tiene el personaje
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-      //  ChangeAnimation("StartFly");
+        //  ChangeAnimation("StartFly");
 
         // Inicializa la lista de animaciones prioritarias automáticamente
         priorityAnimationsList = new List<PriorityAnimations>((PriorityAnimations[])System.Enum.GetValues(typeof(PriorityAnimations)));
     }
-    
+
     void Update()
     {
         CheckAnimationCompletion();
@@ -48,7 +50,7 @@ public class Movement : MonoBehaviour
         {
             velocity.y = -2f; // Un pequeño valor negativo para que quede pegado al suelo
         }
-        
+
         // Obtener el input del teclado (WASD o flechas)
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
@@ -56,10 +58,29 @@ public class Movement : MonoBehaviour
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         // Mover el personaje en función de los inputs, relativo a la dirección de la cámara
-        Vector3 move = mainCamera.transform.right * moveX + mainCamera.transform.forward * moveZ;
+        Vector3 move = virtualCamera.transform.right * moveX + virtualCamera.transform.forward * moveZ;
 
-        // Aplicar movimiento basado en la velocidad
-        controller.Move(move * speed * Time.deltaTime);
+        // Comprobar si ambos botones del mouse están presionados
+
+        if (Input.GetMouseButton(0) && Input.GetMouseButton(1)) // 0 = botón izquierdo, 1 = botón derecho
+        {
+            // Si ambos clics están presionados, solo sobreescribe el movimiento en Z (adelante/atrás)
+            move = virtualCamera.transform.right * moveX + virtualCamera.transform.forward; // Sumar la dirección horizontal (A/D) y hacia adelante
+
+            // No necesitas modificar moveX ni moveZ aquí, ya que moveX todavía controla el movimiento lateral
+        }
+
+        // Correr si se presiona "Shift"
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            // Cambiar la velocidad a la velocidad de correr
+            controller.Move(move * runSpeed * Time.deltaTime);
+        }
+        else
+        {
+            // Aplicar movimiento basado en la velocidad normal
+            controller.Move(move * speed * Time.deltaTime);
+        }
 
         // Rotar el personaje hacia el frente de la camara
         ChangeRotationToCamRotation();
@@ -78,14 +99,14 @@ public class Movement : MonoBehaviour
 
         if (isFlying)
             CheckAnimationFlying();
-        else 
-            CheckAnimationGrounded();       
+        else
+            CheckAnimationGrounded();
     }
 
-    public void ChangeRotationToCamRotation() 
+    public void ChangeRotationToCamRotation()
     {
         // Obtener la dirección horizontal de la cámara
-        Vector3 cameraForward = mainCamera.transform.forward;
+        Vector3 cameraForward = virtualCamera.transform.forward;
 
         // Ignorar cualquier rotación en el eje Y (vertical) de la cámara
         cameraForward.y = 0f;
@@ -106,7 +127,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void ResetAnimationToIdle(string idleAnimation) 
+    public void ResetAnimationToIdle(string idleAnimation)
     {
         currentAnimation = idleAnimation;
     }
@@ -151,7 +172,7 @@ public class Movement : MonoBehaviour
         if (IsCurrentAnimationPriority())
             return;
 
-        if (movement.y > 0 && movement.x == 0)
+        else if (movement.y > 0 && movement.x == 0)
             ChangeAnimation("FlyForward");
         else if (movement.y < 0 && movement.x == 0)
             ChangeAnimation("FlyingBack");
@@ -159,14 +180,17 @@ public class Movement : MonoBehaviour
             ChangeAnimation("FlyingRight");
         else if (movement.x < 0 && movement.y == 0)
             ChangeAnimation("FlyingLeft");
-        else if (movement.x > 0 && movement.y > 0)
+        else if (movement.x > 0 && movement.y > 0 || movement.x > 0 && movement.y > 0 && Input.GetMouseButton(0) && Input.GetMouseButton(1))
             ChangeAnimation("FlyForwardRight");
         else if (movement.x > 0 && movement.y < 0)
             ChangeAnimation("FlyingBackRight");
-        else if (movement.x < 0 && movement.y > 0)
+        else if (movement.x < 0 && movement.y > 0 || movement.x < 0 && movement.y > 0 && Input.GetMouseButton(0) && Input.GetMouseButton(1))
             ChangeAnimation("FlyingForwardLeft");
         else if (movement.x < 0 && movement.y < 0)
             ChangeAnimation("FlyingBackLeft");
+
+        else if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+            ChangeAnimation("FlyForward");
         else
             ChangeAnimation("IdleFly");
     }
@@ -176,7 +200,8 @@ public class Movement : MonoBehaviour
         if (IsCurrentAnimationPriority())
             return;
 
-        if (movement.y > 0 && movement.x == 0)
+
+        else if (movement.y > 0 && movement.x == 0)
             ChangeAnimation("GroundedForward");
         else if (movement.y < 0 && movement.x == 0)
             ChangeAnimation("GroundedBack");
@@ -184,14 +209,18 @@ public class Movement : MonoBehaviour
             ChangeAnimation("GroundedRight");
         else if (movement.x < 0 && movement.y == 0)
             ChangeAnimation("GroundedLeft");
-        else if (movement.x > 0 && movement.y > 0)
+        else if (movement.x > 0 && movement.y > 0 || movement.x > 0 && movement.y > 0 && Input.GetMouseButton(0) && Input.GetMouseButton(1))
             ChangeAnimation("GroundedForwardRight");
         else if (movement.x > 0 && movement.y < 0)
             ChangeAnimation("GroundedBackRight");
-        else if (movement.x < 0 && movement.y > 0)
+        else if (movement.x < 0 && movement.y > 0 || movement.x < 0 && movement.y > 0 && Input.GetMouseButton(0) && Input.GetMouseButton(1))
             ChangeAnimation("GroundedForwardLeft");
         else if (movement.x < 0 && movement.y < 0)
             ChangeAnimation("GroundedBackLeft");
+        else if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+            ChangeAnimation("GroundedForward");
+        else if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+            ChangeAnimation("GroundedForward");
         else
             ChangeAnimation("GroundedIdle");
     }
