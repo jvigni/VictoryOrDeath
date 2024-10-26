@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Image healthBarImage;
     [SerializeField] private float maxHealth = 100f; // Maximum health defined in the inspector
     [SerializeField] private float decreaseSpeed = 2f;
+    [SerializeField] TextMeshProUGUI amountTxt;
     private float currentHealth;
 
     private void Start()
@@ -17,6 +19,7 @@ public class HealthBar : MonoBehaviour
     public void IncreaseHealth(float amount)
     {
         currentHealth += amount; // Only increase current health
+        amountTxt.text = currentHealth.ToString();
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Ensure current health does not exceed max
         healthBarImage.fillAmount = currentHealth / maxHealth; // Update health bar
     }

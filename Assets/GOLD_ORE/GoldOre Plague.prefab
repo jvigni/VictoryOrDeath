@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2311193522339783175}
-  - component: {fileID: 6428360917963026245}
   - component: {fileID: 7567545612744457471}
   - component: {fileID: 3941479060467577467}
   m_Layer: 0
@@ -37,23 +36,6 @@ Transform:
   - {fileID: 5336717166855638335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6428360917963026245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722960280651493970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc5efa75da3e124391e19016f01ca06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  craftingTimeInSeconds: 5
-  buildingResourceTowerPrefab: {fileID: 2680509336205049112, guid: 1696f2ead1b65a246a46c53a2ec15719, type: 3}
-  humanResourceTowerPrefab: {fileID: 2680509336205049112, guid: de94b2c53b3683c4fac1d79514e78290, type: 3}
-  plagueResourceTowerPrefab: {fileID: 722960280651493970}
 --- !u!135 &7567545612744457471
 SphereCollider:
   m_ObjectHideFlags: 0
