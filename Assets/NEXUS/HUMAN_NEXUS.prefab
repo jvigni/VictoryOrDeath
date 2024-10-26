@@ -384,14 +384,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4090527608998239314}
   - {fileID: 1779736057675250672}
+  - {fileID: 4090527608998239314}
   - {fileID: 6191498437377416393}
   - {fileID: 3957825680681144240}
   - {fileID: 8366690528428402343}
   - {fileID: 8310465429588122602}
-  - {fileID: 8369274920561147421}
-  - {fileID: 4501183405823028380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5629393975290862968
@@ -783,7 +781,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5568323326370756693}
+    m_TransformParent: {fileID: 8310465429588122602}
     m_Modifications:
     - target: {fileID: 3864511262933041398, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_text
@@ -807,20 +805,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.10000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.53
+      value: 3.525917
       objectReference: {fileID: 0}
     - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.27
+      value: 2.135
       objectReference: {fileID: 0}
     - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.88
+      value: 5.146611
       objectReference: {fileID: 0}
     - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.58052284
+      value: 0.9999555
       objectReference: {fileID: 0}
     - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_LocalRotation.x
@@ -828,7 +838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.814244
+      value: 0.009438426
       objectReference: {fileID: 0}
     - target: {fileID: 5957183880418098278, guid: ab219082d995f4b448ebd25b34881908, type: 3}
       propertyPath: m_LocalRotation.z
@@ -882,27 +892,39 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5568323326370756693}
+    m_TransformParent: {fileID: 8310465429588122602}
     m_Modifications:
     - target: {fileID: 750273513092136919, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_Name
       value: BarracksBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.10000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.05
+      value: -3.8251097
       objectReference: {fileID: 0}
     - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.040001
+      value: 2.5200005
       objectReference: {fileID: 0}
     - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.87
+      value: 5.141639
       objectReference: {fileID: 0}
     - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.58052284
+      value: 0.9999555
       objectReference: {fileID: 0}
     - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_LocalRotation.x
@@ -910,7 +932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.814244
+      value: 0.009438426
       objectReference: {fileID: 0}
     - target: {fileID: 8315428721582643404, guid: 6a9ffe64e9ce8614494e45edac99f767, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1164,11 +1186,17 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6b344983d1e6f6443854ef60f04d1d2e, type: 2}
     - target: {fileID: 919132149155446097, guid: 3fa6ac6d715ddb245a9a932af638a5d4, type: 3}
       propertyPath: m_Name
-      value: Cuartel
+      value: Barracks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fa6ac6d715ddb245a9a932af638a5d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8369274920561147421}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fa6ac6d715ddb245a9a932af638a5d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4501183405823028380}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fa6ac6d715ddb245a9a932af638a5d4, type: 3}
       insertIndex: -1
