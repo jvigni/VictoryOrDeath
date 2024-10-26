@@ -7,7 +7,6 @@ public class GoldOre : MonoBehaviour
 
     [SerializeField] private HealthBar healthBar; // Updated to match the new HealthBar class
     public float craftingTimeInSeconds = 5f;
-    public GameObject goldOre;
     public GameObject buildingResourceTowerPrefab;
     public GameObject humanResourceTowerPrefab;
     public GameObject plagueResourceTowerPrefab;
@@ -20,7 +19,6 @@ public class GoldOre : MonoBehaviour
         if (currentState != OreState.Normal) return; // Prevent crafting if not in normal state
 
         currentState = OreState.Building;
-        goldOre.SetActive(false); // BUG ACA
 
         // Select appropriate tower prefab based on faction
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanResourceTowerPrefab : plagueResourceTowerPrefab;
@@ -73,7 +71,6 @@ public class GoldOre : MonoBehaviour
     public void ResetGoldOre()
     {
         currentState = OreState.Normal;
-        goldOre.SetActive(true);
         healthBar.IncreaseHealth(float.NegativeInfinity); // Reset health bar to zero
     }
 }
