@@ -5,7 +5,7 @@ public class GoldOre : MonoBehaviour
 {
     public enum OreState { Normal, Building, Finished }
 
-    [SerializeField] private Healthbar healthbar;
+    [SerializeField] private HealthBar healthBar; // Updated to match the new HealthBar class
     public float craftingTimeInSeconds = 5f;
     public GameObject goldOre;
     public GameObject buildingResourceTowerPrefab;
@@ -20,7 +20,7 @@ public class GoldOre : MonoBehaviour
         if (currentState != OreState.Normal) return; // Prevent crafting if not in normal state
 
         currentState = OreState.Building;
-        goldOre.SetActive(false);
+        goldOre.SetActive(false); // BUG ACA
 
         // Select appropriate tower prefab based on faction
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanResourceTowerPrefab : plagueResourceTowerPrefab;
@@ -37,15 +37,23 @@ public class GoldOre : MonoBehaviour
         float elapsedTime = 0f;
 
         // Initialize health bar to start empty
-        healthbar.SetHealth(0f, craftingTimeInSeconds);
+        healthBar.IncreaseHealth(float.NegativeInfinity); // Reset the health bar to zero
+
+        // Define the update frequency to speed up health bar updates
+        float updateInterval = 0.1f; // Update health bar every 0.1 seconds
+        float normalizedHealth;
 
         while (elapsedTime < craftingTimeInSeconds)
         {
             elapsedTime += Time.deltaTime;
 
-            // Calculate and set the normalized health
-            float normalizedHealth = elapsedTime / craftingTimeInSeconds;
-            healthbar.SetHealth(normalizedHealth, craftingTimeInSeconds);
+            // Check if it's time to update the health bar
+            if (elapsedTime >= updateInterval)
+            {
+                // Calculate and set the normalized health based on elapsed time
+                normalizedHealth = Mathf.Clamp01(elapsedTime / craftingTimeInSeconds);
+                healthBar.IncreaseHealth(normalizedHealth); // Use IncreaseHealth instead
+            }
 
             yield return null; // Wait until the next frame
         }
@@ -55,7 +63,7 @@ public class GoldOre : MonoBehaviour
         Destroy(building);
 
         // Set health to full after construction
-        healthbar.SetHealth(1f, craftingTimeInSeconds);
+        healthBar.IncreaseHealth(1f); // Use IncreaseHealth instead
 
         currentState = OreState.Finished; // Update state to finished
         Debug.Log($"{resourceTowerPrefab.name} built.");
@@ -66,6 +74,6 @@ public class GoldOre : MonoBehaviour
     {
         currentState = OreState.Normal;
         goldOre.SetActive(true);
-        healthbar.SetHealth(0f, craftingTimeInSeconds); // Reset healthbar
+        healthBar.IncreaseHealth(float.NegativeInfinity); // Reset health bar to zero
     }
 }

@@ -1,38 +1,29 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Healthbar : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Image healthbarSprite;
-    [SerializeField] private float reduceSpeed = 2f;
-    private float targetFillAmount = 0f; // Initialize to 0
-    private Camera mainCamera;
+    [SerializeField] private Image healthBarImage;
+    [SerializeField] private float maxHealth = 100f; // Maximum health defined in the inspector
+    [SerializeField] private float decreaseSpeed = 2f;
+    private float currentHealth;
 
     private void Start()
     {
-        mainCamera = Camera.main;
-        // Initialize health bar to start empty
-        healthbarSprite.fillAmount = 0f; // Start empty
+        currentHealth = maxHealth; // Initialize current health to max health
+        healthBarImage.fillAmount = 1f; // Fill the bar to full
     }
 
-    public void SetHealth(float currentHealth, float maxHealth)
+    public void IncreaseHealth(float amount)
     {
-        // Ensure we calculate fill amount correctly
-        targetFillAmount = Mathf.Clamp01(currentHealth / maxHealth);
+        currentHealth += amount; // Only increase current health
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Ensure current health does not exceed max
+        healthBarImage.fillAmount = currentHealth / maxHealth; // Update health bar
     }
 
     private void Update()
     {
-        FaceCamera();
-        // Smoothly transition to the target fill amount
-        healthbarSprite.fillAmount = Mathf.MoveTowards(healthbarSprite.fillAmount, targetFillAmount, reduceSpeed * Time.deltaTime);
-    }
-
-    private void FaceCamera()
-    {
-        if (mainCamera != null)
-        {
-            transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
-        }
+        // Smoothly transition to the target fill amount (if needed)
+        //healthBarImage.fillAmount = Mathf.MoveTowards(healthBarImage.fillAmount, currentHealth / maxHealth, decreaseSpeed * Time.deltaTime);
     }
 }
