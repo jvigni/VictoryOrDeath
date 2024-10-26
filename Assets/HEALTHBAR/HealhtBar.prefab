@@ -160,7 +160,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3020821752039888262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.08}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.35365, y: -0.00000035763}
-  m_SizeDelta: {x: -0.7073, y: 3}
+  m_AnchoredPosition: {x: 0, y: -0.00000035763}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4680867863732095593
 CanvasRenderer:
@@ -338,11 +338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b7184255b6e834e87b006eb3650137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarImage: {fileID: 8815026267426558447}
-  maxHealth: 300
-  decreaseSpeed: 2
-  amountTxt: {fileID: 1816914989356479141}
-  background: {fileID: 3020821752039888262}
+  healthBarFillImage: {fileID: 8815026267426558447}
+  healthText: {fileID: 1816914989356479141}
+  MaxHealth: 100
 --- !u!223 &8647474031560074252
 Canvas:
   m_ObjectHideFlags: 0
@@ -388,7 +386,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3330067653422331388
 MonoBehaviour:
   m_ObjectHideFlags: 0

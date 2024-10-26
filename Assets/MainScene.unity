@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoldOre
       objectReference: {fileID: 0}
+    - target: {fileID: 7691996631004227663, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8802286087094896879, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.892418

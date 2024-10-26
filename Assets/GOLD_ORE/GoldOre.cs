@@ -3,24 +3,25 @@ using UnityEngine;
 
 public class GoldOre : MonoBehaviour
 {
-    [SerializeField] HealthBar healthBar; // Updated to match the new HealthBar class
-    [SerializeField] GameObject buildingBrazier;
-    [SerializeField] float craftingTimeInSeconds = 5f;
-    [SerializeField] GameObject baseGoldOre;
-    [SerializeField] GameObject humanRTPrefab;
-    [SerializeField] GameObject plagueRTPrefab;
+    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private GameObject buildingBrazier;
+    [SerializeField] private float craftingTimeInSeconds = 5f;
+    [SerializeField] private int healthSteps = 20;
+    [SerializeField] private GameObject baseGoldOre;
+    [SerializeField] private GameObject humanRTPrefab;
+    [SerializeField] private GameObject plagueRTPrefab;
 
-    bool isBuilding;
-    GameObject building;
+    private bool isBuilding;
 
     public void CraftResourceTower(Faction faction)
     {
-        if (isBuilding) 
-            return;
+        if (isBuilding) return;
 
         isBuilding = true;
-        buildingBrazier.gameObject.SetActive(true);
-        healthBar.Show(true);
+        buildingBrazier.SetActive(true); 
+        healthBar.gameObject.SetActive(true);
+        healthBar.AdjustHealth(-healthBar.MaxHealth); // Initialize health to 0 for building
+
 
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanRTPrefab : plagueRTPrefab;
         StartCoroutine(CraftResourceTowerRoutine(resourceTowerPrefab));
@@ -28,38 +29,26 @@ public class GoldOre : MonoBehaviour
 
     private IEnumerator CraftResourceTowerRoutine(GameObject resourceTowerPrefab)
     {
-        float elapsedTime = 0f;
+        float healthIncrement = healthBar.MaxHealth / healthSteps;
+        float interval = craftingTimeInSeconds / healthSteps;
 
-        // Initialize health bar to start empty
-        healthBar.gameObject.SetActive(true);
-        healthBar.IncreaseHealth(float.NegativeInfinity); // Reset the health bar to zero
-
-        while (elapsedTime < craftingTimeInSeconds)
+        for (int i = 0; i < healthSteps; i++)
         {
-            elapsedTime += Time.deltaTime;
-
-            // Calculate and set the normalized health based on elapsed time
-            float normalizedHealth = Mathf.Clamp01(elapsedTime / craftingTimeInSeconds);
-            healthBar.IncreaseHealth(normalizedHealth);
-
-            yield return null; // Wait until the next frame
+            yield return new WaitForSeconds(interval);
+            healthBar.AdjustHealth(healthIncrement);
         }
 
         // Finalize tower construction
-        //Instantiate(resourceTowerPrefab, transform.position, Quaternion.identity);
-
         baseGoldOre.SetActive(false);
         resourceTowerPrefab.SetActive(true);
         Debug.Log($"{resourceTowerPrefab.name} built.");
-        //Destroy(gameObject);
     }
 
-    // Optional: A method to reset the GoldOre state back to Normal
     public void ResetGoldOre()
-    { 
-        healthBar.IncreaseHealth(float.NegativeInfinity);
+    {
+        healthBar.InitializeHealth(); // Reset health to full if required
         isBuilding = false;
-        buildingBrazier.gameObject.SetActive(false);
+        buildingBrazier.SetActive(false);
         baseGoldOre.SetActive(true);
         humanRTPrefab.SetActive(false);
         plagueRTPrefab.SetActive(false);

@@ -1,43 +1,36 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Image healthBarImage;
-    [SerializeField] private float maxHealth = 100f; // Maximum health defined in the inspector
-    [SerializeField] private float decreaseSpeed = 2f;
-    [SerializeField] TextMeshProUGUI amountTxt;
-    [SerializeField] GameObject background;
+    [SerializeField] private Image healthBarFillImage;
+    [SerializeField] private TextMeshProUGUI healthText;
+    public float MaxHealth = 100f;
+
     private float currentHealth;
 
-    public void Show(bool show)
+    private void Awake()
     {
-        background.SetActive(show);
+        InitializeHealth();
     }
 
-    private void Start()
+    public void InitializeHealth()
     {
-        currentHealth = maxHealth; // Initialize current health to max health
-        healthBarImage.fillAmount = 1f; // Fill the bar to full
+        currentHealth = MaxHealth;
+        UpdateHealthUI();
     }
 
-    public void Swap()
+    public void AdjustHealth(float amount)
     {
-        background.SetActive(!background.activeSelf);
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, MaxHealth);
+        UpdateHealthUI();
     }
 
-    public void IncreaseHealth(float amount)
+    private void UpdateHealthUI()
     {
-        currentHealth += amount; // Only increase current health
-        amountTxt.text = currentHealth.ToString();
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Ensure current health does not exceed max
-        healthBarImage.fillAmount = currentHealth / maxHealth; // Update health bar
-    }
-
-    private void Update()
-    {
-        // Smoothly transition to the target fill amount (if needed)
-        //healthBarImage.fillAmount = Mathf.MoveTowards(healthBarImage.fillAmount, currentHealth / maxHealth, decreaseSpeed * Time.deltaTime);
+        healthText.text = currentHealth.ToString("F0");
+        healthBarFillImage.fillAmount = currentHealth / MaxHealth;
     }
 }
