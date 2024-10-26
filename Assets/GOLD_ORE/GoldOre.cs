@@ -7,7 +7,6 @@ public class GoldOre : MonoBehaviour
 
     [SerializeField] private HealthBar healthBar; // Updated to match the new HealthBar class
     public float craftingTimeInSeconds = 5f;
-    public GameObject buildingResourceTowerPrefab;
     public GameObject humanResourceTowerPrefab;
     public GameObject plagueResourceTowerPrefab;
 
@@ -24,7 +23,7 @@ public class GoldOre : MonoBehaviour
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanResourceTowerPrefab : plagueResourceTowerPrefab;
 
         // Instantiate placeholder building
-        building = Instantiate(buildingResourceTowerPrefab, transform.position, Quaternion.identity);
+        building = Instantiate(resourceTowerPrefab, transform.position, Quaternion.identity);
 
         // Start crafting coroutine
         StartCoroutine(CraftResourceTowerRoutine(resourceTowerPrefab));
@@ -65,6 +64,7 @@ public class GoldOre : MonoBehaviour
 
         currentState = OreState.Finished; // Update state to finished
         Debug.Log($"{resourceTowerPrefab.name} built.");
+        Destroy(gameObject);
     }
 
     // Optional: A method to reset the GoldOre state back to Normal
