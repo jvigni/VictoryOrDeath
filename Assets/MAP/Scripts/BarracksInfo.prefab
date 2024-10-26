@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 871431437817435435}
   - component: {fileID: 5316076014893615551}
   m_Layer: 0
-  m_Name: BarracksInfo2 (1)
+  m_Name: BarracksInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

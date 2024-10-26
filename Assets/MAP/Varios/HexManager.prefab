@@ -74,10 +74,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  goldRtPrefab: {fileID: 6474548053655565309, guid: 948d8c04a2777774e826b37d2a9bb03a, type: 3}
+  goldOrePrefab: {fileID: 6474548053655565309, guid: 948d8c04a2777774e826b37d2a9bb03a, type: 3}
   goldOrespawnPercentage: 20
   maxGoldOreAmount: 12
-  spawnedGoldOresCount_: 0
+  goldOresInMap: 0
   minGoldOreAmount: 6
   mobsAmountPerHex: 6
   spawnRadius: 25
