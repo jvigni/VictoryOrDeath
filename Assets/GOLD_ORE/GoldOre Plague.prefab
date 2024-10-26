@@ -250,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9207029398514224156, guid: e88acc101916c2c4f89f391683d56f83, type: 3}
       propertyPath: m_Name
-      value: SM_Bld_Roof_Base_Pillar_01
+      value: torre
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -353,7 +353,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5273457224129974607, guid: 33f77ca29bf05ee4590fc1ed5d1ab213, type: 3}
       propertyPath: m_Name
-      value: FX_Incense_01
+      value: incienso
       objectReference: {fileID: 0}
     - target: {fileID: 5276582440580914531, guid: 33f77ca29bf05ee4590fc1ed5d1ab213, type: 3}
       propertyPath: m_LocalScale.x

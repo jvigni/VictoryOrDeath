@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 5677926703554166965}
   - component: {fileID: 4414332487059804717}
   m_Layer: 0
-  m_Name: GoldOreBasic
+  m_Name: oro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
