@@ -3,16 +3,14 @@ using UnityEngine;
 
 public class GoldOre : MonoBehaviour
 {
-    public enum OreState { Normal, Building }
+    [SerializeField] HealthBar healthBar; // Updated to match the new HealthBar class
+    [SerializeField] GameObject buildingBrazier;
+    [SerializeField] float craftingTimeInSeconds = 5f;
+    [SerializeField] GameObject humanResourceTowerPrefab;
+    [SerializeField] GameObject plagueResourceTowerPrefab;
+
     bool isBuilding;
-
-    [SerializeField] private HealthBar healthBar; // Updated to match the new HealthBar class
-    public float craftingTimeInSeconds = 5f;
-    public GameObject humanResourceTowerPrefab;
-    public GameObject plagueResourceTowerPrefab;
-
-    private GameObject building;
-    private OreState currentState = OreState.Normal;
+    GameObject building;
 
     public void CraftResourceTower(Faction faction)
     {
@@ -20,6 +18,7 @@ public class GoldOre : MonoBehaviour
             return;
 
         isBuilding = true;
+        buildingBrazier.gameObject.SetActive(true);
 
         // Select appropriate tower prefab based on faction
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanResourceTowerPrefab : plagueResourceTowerPrefab;
@@ -59,7 +58,8 @@ public class GoldOre : MonoBehaviour
     // Optional: A method to reset the GoldOre state back to Normal
     public void ResetGoldOre()
     {
-        currentState = OreState.Normal;
-        healthBar.IncreaseHealth(float.NegativeInfinity); // Reset health bar to zero
+        healthBar.IncreaseHealth(float.NegativeInfinity);
+        isBuilding = false;
+        buildingBrazier.gameObject.SetActive(false);
     }
 }
