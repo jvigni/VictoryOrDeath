@@ -20,6 +20,8 @@ public class LifeForm : MonoBehaviour
 
     [SerializeField] ReactiveProperty<int> Health;
     [SerializeField] ReactiveProperty<int> MaxHealth;
+
+    [SerializeField] HealthBar healthBar;
     int originalMaxHealth;
     
     [SerializeField] public List<Effect> Effects { get; private set;  } // should not be public but compiler vult?
