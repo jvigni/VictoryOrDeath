@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 7541842505594548601}
   - component: {fileID: 4739113428083944366}
   m_Layer: 0
-  m_Name: StartBtn
+  m_Name: DeusVultBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 3326122086595003108}
   - component: {fileID: 2420584867783643483}
   m_Layer: 0
-  m_Name: Button
+  m_Name: QuitBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1560,6 +1560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766671826259316840}
+  - component: {fileID: 2879242461801463073}
   - component: {fileID: 8140934272634236386}
   - component: {fileID: 3495486976300044106}
   - component: {fileID: 3513717483304899880}
@@ -1592,6 +1593,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2879242461801463073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870974112225427252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd29e7d93631a447adbe18ea8d6496b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deusVult: {fileID: 4739113428083944366}
+  about: {fileID: 1600253394399417862}
+  quit: {fileID: 2420584867783643483}
+  startMenu: {fileID: 0}
+  hero: {fileID: 0}
 --- !u!223 &8140934272634236386
 Canvas:
   m_ObjectHideFlags: 0
