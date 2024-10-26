@@ -6,7 +6,6 @@ public class GoldOre : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject buildingBrazier;
     [SerializeField] private float craftingTimeInSeconds = 5f;
-    [SerializeField] private int healthSteps = 20;
     [SerializeField] private GameObject baseGoldOre;
     [SerializeField] private GameObject humanRTPrefab;
     [SerializeField] private GameObject plagueRTPrefab;
@@ -18,10 +17,9 @@ public class GoldOre : MonoBehaviour
         if (isBuilding) return;
 
         isBuilding = true;
-        buildingBrazier.SetActive(true); 
+        buildingBrazier.SetActive(true);
         healthBar.gameObject.SetActive(true);
         healthBar.AdjustHealth(-healthBar.MaxHealth); // Initialize health to 0 for building
-
 
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanRTPrefab : plagueRTPrefab;
         StartCoroutine(CraftResourceTowerRoutine(resourceTowerPrefab));
@@ -29,14 +27,20 @@ public class GoldOre : MonoBehaviour
 
     private IEnumerator CraftResourceTowerRoutine(GameObject resourceTowerPrefab)
     {
-        float healthIncrement = healthBar.MaxHealth / healthSteps;
-        float interval = craftingTimeInSeconds / healthSteps;
+        float targetHealth = healthBar.MaxHealth;
+        float elapsedTime = 0f;
+        float healthIncrement = targetHealth / (craftingTimeInSeconds * 100); // Set a smaller increment
 
-        for (int i = 0; i < healthSteps; i++)
+        // Gradually increase health to targetHealth over crafting time
+        while (elapsedTime < craftingTimeInSeconds)
         {
-            yield return new WaitForSeconds(interval);
-            healthBar.AdjustHealth(healthIncrement);
+            healthBar.AdjustHealth(healthIncrement); // Add a small increment
+            elapsedTime += Time.deltaTime; // Increment elapsed time
+            yield return null; // Wait for the next frame
         }
+
+        // Ensure health reaches maximum at the end
+        healthBar.AdjustHealth(targetHealth); // Adjust to max health if needed
 
         // Finalize tower construction
         baseGoldOre.SetActive(false);
