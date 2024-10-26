@@ -8,8 +8,13 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private float maxHealth = 100f; // Maximum health defined in the inspector
     [SerializeField] private float decreaseSpeed = 2f;
     [SerializeField] TextMeshProUGUI amountTxt;
-    [SerializeField] GameObject all;
+    [SerializeField] GameObject background;
     private float currentHealth;
+
+    public void Show(bool show)
+    {
+        background.SetActive(show);
+    }
 
     private void Start()
     {
@@ -19,7 +24,7 @@ public class HealthBar : MonoBehaviour
 
     public void Swap()
     {
-        all.SetActive(!all.activeSelf);
+        background.SetActive(!background.activeSelf);
     }
 
     public void IncreaseHealth(float amount)
