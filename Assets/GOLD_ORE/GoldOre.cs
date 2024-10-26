@@ -36,6 +36,7 @@ public class GoldOre : MonoBehaviour
         float elapsedTime = 0f;
 
         // Initialize health bar to start empty
+        healthBar.Swap();
         healthBar.IncreaseHealth(float.NegativeInfinity); // Reset the health bar to zero
 
         while (elapsedTime < craftingTimeInSeconds)
