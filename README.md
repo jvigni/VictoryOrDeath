@@ -1,4 +1,4 @@
-# VictoryOrDeath
+# VictoryOrDeath / Passion & Glory
  Fortis Fortuna Adiuvat
 
 # Idea general
