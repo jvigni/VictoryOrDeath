@@ -16,6 +16,14 @@ public class HealthBar : MonoBehaviour
         InitializeHealth();
     }
 
+    private void Update()
+    {
+        Vector3 directionToCamera = transform.position - Camera.main.transform.position; // Get direction to the camera
+        directionToCamera.y = 0; // Keep the health bar level, optional
+        Quaternion lookRotation = Quaternion.LookRotation(directionToCamera); // Create rotation to look at the camera
+        transform.rotation = lookRotation; // Apply rotation
+    }
+
     public void InitializeHealth()
     {
         currentHealth = MaxHealth;
