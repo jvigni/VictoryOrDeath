@@ -4,8 +4,8 @@ using UnityEngine;
 public class GoldOre : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar;
-    [SerializeField] private GameObject buildingBrazier;
     [SerializeField] private float craftingTimeInSeconds = 5f;
+    [SerializeField] private GameObject dust;
     [SerializeField] private GameObject baseGoldOre;
     [SerializeField] private GameObject humanRTPrefab;
     [SerializeField] private GameObject plagueRTPrefab;
@@ -17,7 +17,7 @@ public class GoldOre : MonoBehaviour
         if (isBuilding) return;
 
         isBuilding = true;
-        buildingBrazier.SetActive(true);
+        dust.SetActive(true);
         healthBar.gameObject.SetActive(true);
         healthBar.AdjustHealth(-healthBar.MaxHealth); // Initialize health to 0 for building
 
@@ -44,6 +44,7 @@ public class GoldOre : MonoBehaviour
 
         // Finalize tower construction
         baseGoldOre.SetActive(false);
+        healthBar.gameObject.SetActive(false);
         resourceTowerPrefab.SetActive(true);
         Debug.Log($"{resourceTowerPrefab.name} built.");
     }
@@ -52,7 +53,7 @@ public class GoldOre : MonoBehaviour
     {
         healthBar.InitializeHealth(); // Reset health to full if required
         isBuilding = false;
-        buildingBrazier.SetActive(false);
+        dust.SetActive(false);
         baseGoldOre.SetActive(true);
         humanRTPrefab.SetActive(false);
         plagueRTPrefab.SetActive(false);
