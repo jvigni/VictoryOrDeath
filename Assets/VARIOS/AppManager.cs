@@ -23,16 +23,6 @@ public class AppManager : MonoBehaviour
     void Awake()
     {
         StartCoroutine(StartGameClock());
-
-        startMenu.gameObject.SetActive(true);
-
-        startBtn.onClick.AddListener(() =>
-        {
-            //music.gameObject.SetActive(true);
-            menuCamera.gameObject.SetActive(false);
-            startMenu.gameObject.SetActive(false);
-            character.gameObject.SetActive(true);
-        });
     }
 
     private void Update()

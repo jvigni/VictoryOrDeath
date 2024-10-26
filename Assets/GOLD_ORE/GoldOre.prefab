@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HumanRT
       objectReference: {fileID: 0}
+    - target: {fileID: 7434238083007397996, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -10,19 +10,38 @@ public class GoldOre : MonoBehaviour
     [SerializeField] private GameObject humanRTPrefab;
     [SerializeField] private GameObject plagueRTPrefab;
 
-    private bool isBuilding;
+    bool isBuilding;
+    bool conquered;
 
     public void CraftResourceTower(Faction faction)
     {
         if (isBuilding) return;
 
         isBuilding = true;
+        conquered = true;
+        GetComponent<LifeForm>().OnDeath += ResetGoldOre;
         dust.SetActive(true);
         healthBar.gameObject.SetActive(true);
         healthBar.AdjustHealth(-healthBar.MaxHealth); // Initialize health to 0 for building
 
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanRTPrefab : plagueRTPrefab;
         StartCoroutine(CraftResourceTowerRoutine(resourceTowerPrefab));
+    }
+
+    private void Start()
+    {
+        StartCoroutine(GenerateResources());
+    }
+
+    IEnumerator GenerateResources()
+    {
+        if (conquered)
+        {
+            // TODO SUMAR RECURSOS A TODOS LOS DE LA FACCION
+            // TODO ICONITO +10
+            yield return new WaitForSeconds(6);
+
+        }
     }
 
     private IEnumerator CraftResourceTowerRoutine(GameObject resourceTowerPrefab)
@@ -53,6 +72,7 @@ public class GoldOre : MonoBehaviour
     {
         healthBar.InitializeHealth(); // Reset health to full if required
         isBuilding = false;
+        conquered = false;
         dust.SetActive(false);
         baseGoldOre.SetActive(true);
         humanRTPrefab.SetActive(false);
