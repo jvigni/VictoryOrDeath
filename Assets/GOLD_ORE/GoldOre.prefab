@@ -509,10 +509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc5efa75da3e124391e19016f01ca06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingBar: {fileID: 0}
+  buildingBar: {fileID: 4154925488886245628}
   craftingTimeInSeconds: 5
-  humanRTPrefab: {fileID: 0}
-  plagueRTPrefab: {fileID: 0}
+  humanRTPrefab: {fileID: 1528861111163460290, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
+  plagueRTPrefab: {fileID: 442910219867344479, guid: c224f5b6ac68a224fbd36d10b8eaa44d, type: 3}
 --- !u!4 &772621448089153018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5903621682197439712, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}

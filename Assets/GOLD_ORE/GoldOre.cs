@@ -58,6 +58,4 @@ public class GoldOre : MonoBehaviour
         Debug.Log($"{resourceTowerPrefab.name} built.");
         Destroy(gameObject);
     }
-
-
 }
