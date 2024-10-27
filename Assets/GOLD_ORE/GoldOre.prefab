@@ -341,8 +341,8 @@ MonoBehaviour:
   craftingTimeInSeconds: 5
   dust: {fileID: 594012225715228908}
   baseGoldOre: {fileID: 140517249235810112}
-  humanRTPrefab: {fileID: 8709537338271860732}
-  plagueRTPrefab: {fileID: 6472792500830029853}
+  humanRTPrefab: {fileID: 4348449586042896277, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
+  plagueRTPrefab: {fileID: 1443354469055967922, guid: c224f5b6ac68a224fbd36d10b8eaa44d, type: 3}
 --- !u!114 &8731098847352127027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,11 +433,6 @@ PrefabInstance:
 --- !u!4 &4009985298931004227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2905827089724110035, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
-  m_PrefabInstance: {fileID: 2302964717903431568}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8709537338271860732 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7434238083007397996, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
   m_PrefabInstance: {fileID: 2302964717903431568}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6581174922303736090
@@ -842,10 +837,5 @@ PrefabInstance:
 --- !u!4 &5841754945268442224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3148753366130877474, guid: abc7ab04541a17d4091b145319b79145, type: 3}
-  m_PrefabInstance: {fileID: 8836216035591880786}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6472792500830029853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2554510582902016079, guid: abc7ab04541a17d4091b145319b79145, type: 3}
   m_PrefabInstance: {fileID: 8836216035591880786}
   m_PrefabAsset: {fileID: 0}
