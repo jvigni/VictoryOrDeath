@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3692477185511806487}
   - component: {fileID: 7821046792427395219}
   - component: {fileID: 5305432596509414137}
+  - component: {fileID: 8731098847352127027}
   m_Layer: 0
   m_Name: GoldOre
   m_TagString: Untagged
@@ -105,6 +106,24 @@ MonoBehaviour:
   baseGoldOre: {fileID: 140517249235810112}
   humanRTPrefab: {fileID: 8709537338271860732}
   plagueRTPrefab: {fileID: 6472792500830029853}
+--- !u!114 &8731098847352127027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779097193691109562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health:
+    value: 0
+  MaxHealth:
+    value: 600
+  healthBar: {fileID: 0}
+  ID: 0
 --- !u!1001 &2302964717903431568
 PrefabInstance:
   m_ObjectHideFlags: 0
