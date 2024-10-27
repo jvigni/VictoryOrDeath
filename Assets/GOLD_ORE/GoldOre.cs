@@ -5,7 +5,6 @@ public class GoldOre : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private float craftingTimeInSeconds = 5f;
-    [SerializeField] private GameObject dust;
     [SerializeField] private GameObject humanRTPrefab;
     [SerializeField] private GameObject plagueRTPrefab;
     [SerializeField] bool conquered;
@@ -31,7 +30,6 @@ public class GoldOre : MonoBehaviour
 
         isBuilding = true;
         conquered = true;
-        dust.SetActive(true);
         healthBar.gameObject.SetActive(true);
         healthBar.AdjustHealth(-healthBar.MaxHealth); // Initialize health to 0 for building
 
