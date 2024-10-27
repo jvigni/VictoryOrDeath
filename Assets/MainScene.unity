@@ -1410,6 +1410,10 @@ PrefabInstance:
       propertyPath: appManager_
       value: 
       objectReference: {fileID: 4968995392839011125}
+    - target: {fileID: 6331632481712720282, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: mobsAmountPerHex
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7855756083156607946, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

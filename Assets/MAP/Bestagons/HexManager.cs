@@ -44,8 +44,11 @@ public class HexManager : MonoBehaviour
         var mobsCampParent = new GameObject("CAMP");
         allHexagons.ForEach(hex =>
         {
-            var mob = SpawnMob(hex, mobsCampParent.transform);
-            mobsCampParent.gameObject.transform.SetParent(allMobsParent.transform);
+        for (int i = 0; i < mobsAmountPerHex; i++)
+            {
+                var mob = SpawnMob(hex, mobsCampParent.transform);
+                mobsCampParent.gameObject.transform.SetParent(allMobsParent.transform);
+            }
         });
     }
 
