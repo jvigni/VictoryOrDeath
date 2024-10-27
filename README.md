@@ -3,6 +3,10 @@
 
 # Idea general
 -Se pickea civ[team] y heroe[clase] en interfaz a lo war3
+DIA: 3 minutos de wow mob farming + battleground[goldOre]
+NOCHE: 3 minutos de ARAM mejorado
+con dungeons y upgrades easy [world of runescape]
+wow epic items. accion rapida sin farmeo
 
 # Juegos mergeados y lo bueno agregado / malo fixeado de cada uno:
 -Wow pvp sin 10 meses de farm
