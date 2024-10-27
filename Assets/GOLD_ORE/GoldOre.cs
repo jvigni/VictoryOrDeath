@@ -6,7 +6,6 @@ public class GoldOre : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private float craftingTimeInSeconds = 5f;
     [SerializeField] private GameObject dust;
-    [SerializeField] private GameObject baseGoldOre;
     [SerializeField] private GameObject humanRTPrefab;
     [SerializeField] private GameObject plagueRTPrefab;
 
@@ -19,29 +18,12 @@ public class GoldOre : MonoBehaviour
 
         isBuilding = true;
         conquered = true;
-        GetComponent<LifeForm>().OnDeath += ResetGoldOre;
         dust.SetActive(true);
         healthBar.gameObject.SetActive(true);
         healthBar.AdjustHealth(-healthBar.MaxHealth); // Initialize health to 0 for building
 
         GameObject resourceTowerPrefab = faction == Faction.Human ? humanRTPrefab : plagueRTPrefab;
         StartCoroutine(CraftResourceTowerRoutine(resourceTowerPrefab));
-    }
-
-    private void Start()
-    {
-        StartCoroutine(GenerateResources());
-    }
-
-    IEnumerator GenerateResources()
-    {
-        if (conquered)
-        {
-            // TODO SUMAR RECURSOS A TODOS LOS DE LA FACCION
-            // TODO ICONITO +10
-            yield return new WaitForSeconds(6);
-
-        }
     }
 
     private IEnumerator CraftResourceTowerRoutine(GameObject resourceTowerPrefab)
@@ -62,20 +44,20 @@ public class GoldOre : MonoBehaviour
         healthBar.AdjustHealth(targetHealth); // Adjust to max health if needed
 
         // Finalize tower construction
-        baseGoldOre.SetActive(false);
         healthBar.gameObject.SetActive(false);
         resourceTowerPrefab.SetActive(true);
+        gameObject.SetActive(false);
         Debug.Log($"{resourceTowerPrefab.name} built.");
     }
 
+    /* DEPRECATED
     public void ResetGoldOre()
     {
         healthBar.InitializeHealth(); // Reset health to full if required
         isBuilding = false;
         conquered = false;
         dust.SetActive(false);
-        baseGoldOre.SetActive(true);
         humanRTPrefab.SetActive(false);
         plagueRTPrefab.SetActive(false);
-    }
+    }*/
 }
