@@ -2434,7 +2434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8802286087094896879, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.58
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 8802286087094896879, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4270,6 +4270,26 @@ PrefabInstance:
     - target: {fileID: 8493789939390883265, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_Name
       value: goldOreBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998634929920050364, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998634929920050364, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998634929920050364, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998634929920050364, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998634929920050364, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
