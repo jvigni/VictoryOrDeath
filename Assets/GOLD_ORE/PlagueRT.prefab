@@ -122,9 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nexusARCA: {fileID: 0}
   resourceText: {fileID: 0}
-  resourcesPerCycle: 10
+  resourcesPerCycle: 9
   cycleDuration: 3
-  fadeDuration: 3
+  fadeDuration: 6
   floatUpDistance: 1.5
 --- !u!1 &5698646572342951440
 GameObject:
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.33631182, g: 0.7584905, b: 0.3860802, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

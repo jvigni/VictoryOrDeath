@@ -12,18 +12,22 @@ public class ResourceTower : MonoBehaviour
     [SerializeField] float fadeDuration = .1f; // Time for fade-out
     [SerializeField] float floatUpDistance = 6f; // Distance to move upward
 
-    private float cycleTimer;
-
-    private void Update()
+    private void Start()
     {
-        cycleTimer += Time.deltaTime;
-        if (cycleTimer >= cycleDuration)
+        StartCoroutine(CycleResources());
+    }
+
+    private IEnumerator CycleResources()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(cycleDuration);
             GiveResources();
+        }
     }
 
     void GiveResources()
     {
-        cycleTimer = 0f;
         GiveResourcesToTeam(resourcesPerCycle);
         UpdateResourceDisplay(resourcesPerCycle);
         StartCoroutine(FadeText());
@@ -42,7 +46,7 @@ public class ResourceTower : MonoBehaviour
         resourceText.transform.localPosition = Vector3.zero; // Reset position
     }
 
-    IEnumerator FadeText()
+    private IEnumerator FadeText()
     {
         Color color = resourceText.color;
         Vector3 startPosition = resourceText.transform.localPosition;

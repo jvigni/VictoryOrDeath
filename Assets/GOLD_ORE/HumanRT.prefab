@@ -122,9 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nexusARCA: {fileID: 0}
   resourceText: {fileID: 1241470596392828237}
-  resourcesPerCycle: 10
-  cycleDuration: 3
-  fadeDuration: 3
+  resourcesPerCycle: 6
+  cycleDuration: 6
+  fadeDuration: 6
   floatUpDistance: 1.5
 --- !u!1 &7442955120594514743
 GameObject:
