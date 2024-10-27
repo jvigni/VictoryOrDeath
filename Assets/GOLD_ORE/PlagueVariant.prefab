@@ -93,6 +93,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5305432596509414137, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+      propertyPath: plagueRTPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5779097193691109562, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
       propertyPath: m_Name
       value: PlagueVariant
@@ -143,8 +147,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8802286087094896879, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
       insertIndex: 0
       addedObject: {fileID: 5292073954201487965}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5779097193691109562, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 442910219867344479}
   m_SourcePrefab: {fileID: 100100000, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+--- !u!1 &1443354469055967922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5779097193691109562, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}
+  m_PrefabInstance: {fileID: 4914739431957064200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &442910219867344479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443354469055967922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867a28f7e7976c947b92f09afd67369a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceText: {fileID: 0}
+  resourcesPerCycle: 10
+  cycleDuration: 3
+  fadeDuration: 3
+  floatUpDistance: 1.5
 --- !u!4 &4475639004225626855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8802286087094896879, guid: 83725f7c84799ed4cb28a6f574367f41, type: 3}

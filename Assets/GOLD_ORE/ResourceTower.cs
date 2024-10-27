@@ -11,13 +11,11 @@ public class ResourceTower : MonoBehaviour
     [SerializeField] float fadeDuration = .1f; // Time for fade-out
     [SerializeField] float floatUpDistance = 6f; // Distance to move upward
 
-    private int totalResources;
     private float cycleTimer;
 
     private void Update()
     {
         cycleTimer += Time.deltaTime;
-
         if (cycleTimer >= cycleDuration)
             GiveResources();
     }
@@ -32,16 +30,13 @@ public class ResourceTower : MonoBehaviour
 
     private void GiveResourcesToTeam(int amount)
     {
-        // TODO repartir recursos a c/u del team
+        // TODO: Distribute resources to each team member
     }
 
     private void UpdateResourceDisplay(int amount)
     {
         resourceText.gameObject.SetActive(true);
         resourceText.text = "+ " + amount;
-        Color color = resourceText.color;
-        color.a = 1f; // Reset alpha to fully visible
-        resourceText.color = color;
         resourceText.transform.localPosition = Vector3.zero; // Reset position
     }
 
@@ -66,8 +61,10 @@ public class ResourceTower : MonoBehaviour
             yield return null;
         }
 
-        color.a = 0f;
+        // Ensure text is fully transparent and reset position
+        color.a = 1; // Reset alpha for next use
         resourceText.color = color;
+        resourceText.transform.localPosition = Vector3.zero; // Reset position
         resourceText.gameObject.SetActive(false);
     }
 }
