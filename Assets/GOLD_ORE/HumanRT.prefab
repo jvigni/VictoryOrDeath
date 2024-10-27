@@ -121,10 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nexusARCA: {fileID: 0}
   resourceText: {fileID: 1241470596392828237}
-  resourcesPerCycle: 50
-  cycleDuration: 15
-  fadeDuration: 3
-  floatUpDistance: 3
+  resourcesPerCycle: 10
+  cycleDuration: 6
+  fadeDuration: 5
+  floatUpDistance: 1.5
 --- !u!1 &7442955120594514743
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7442955120594514743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -161,8 +161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.33, y: 10.57}
-  m_SizeDelta: {x: 10, y: 2.8362}
+  m_AnchoredPosition: {x: -2.3, y: 4.1003}
+  m_SizeDelta: {x: 2.7481, y: 3.2122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5533609132437207580
 Canvas:
@@ -261,8 +261,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000000089181, y: -0.0000094175}
-  m_SizeDelta: {x: 10, y: 2.8362}
+  m_AnchoredPosition: {x: -0.44, y: -0.06}
+  m_SizeDelta: {x: 3.1212, y: 2.8362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7394628355261412080
 CanvasRenderer:
@@ -319,8 +319,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3
-  m_fontSizeBase: 3
+  m_fontSize: 1
+  m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -877,11 +877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.17
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalPosition.z
