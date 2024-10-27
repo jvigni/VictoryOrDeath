@@ -78,7 +78,7 @@ MonoBehaviour:
   goldOrespawnPercentage: 20
   maxGoldOreAmount: 12
   goldOresInMap: 0
-  minGoldOreAmount: 6
+  minGoldOreAmount: 9
   mobsAmountPerHex: 6
   spawnRadius: 25
   mobsLv1Prefab:
