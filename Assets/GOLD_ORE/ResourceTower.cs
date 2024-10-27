@@ -31,7 +31,7 @@ public class ResourceTower : MonoBehaviour
 
     private void GiveResourcesToTeam(int amount)
     {
-        nexusARCA.IncreaseResources();
+        //nexusARCA.IncreaseResources();
         // TODO: Distribute resources to each team member
     }
 
