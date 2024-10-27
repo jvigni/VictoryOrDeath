@@ -50,6 +50,7 @@ MonoBehaviour:
     value: 0
   MaxHealth:
     value: 200
+  healthBar: {fileID: 0}
   ID: 1
 --- !u!114 &8103709462952010969
 MonoBehaviour:
@@ -65,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   nexusToOBLITERATE: {fileID: 0}
+  speed: 10
 --- !u!1001 &3869973601485021187
 PrefabInstance:
   m_ObjectHideFlags: 0
