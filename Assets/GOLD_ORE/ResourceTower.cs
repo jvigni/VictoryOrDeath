@@ -5,45 +5,69 @@ using System.Collections;
 public class ResourceTower : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private TextMeshProUGUI resourceText; // Reference to the TextMeshProUGUI component
-    [SerializeField] private int resourcesPerCycle = 10; // Amount of resources to give each cycle
-    [SerializeField] private float cycleDuration = 6f; // Duration between resource distributions
+    [SerializeField] TextMeshProUGUI resourceText;
+    [SerializeField] int resourcesPerCycle = 10;
+    [SerializeField] int cycleDuration = 6;
+    [SerializeField] float fadeDuration = .1f; // Time for fade-out
+    [SerializeField] float floatUpDistance = 6f; // Distance to move upward
 
-    private int totalResources; // Total resources collected
+    private int totalResources;
+    private float cycleTimer;
 
-    private void Start()
+    private void Update()
     {
-        // Start the coroutine to give resources
-        StartCoroutine(GiveResources());
+        cycleTimer += Time.deltaTime;
+
+        if (cycleTimer >= cycleDuration)
+            GiveResources();
     }
 
-    private IEnumerator GiveResources()
+    void GiveResources()
     {
-        while (true) // Infinite loop to keep giving resources
-        {
-            // Simulate giving resources to the team
-            GiveResourcesToTeam(resourcesPerCycle);
-
-            // Update the displayed resource count
-            UpdateResourceDisplay();
-
-            // Wait for the specified duration before the next cycle
-            yield return new WaitForSeconds(cycleDuration);
-        }
+        cycleTimer = 0f;
+        GiveResourcesToTeam(resourcesPerCycle);
+        UpdateResourceDisplay(resourcesPerCycle);
+        StartCoroutine(FadeText());
     }
 
     private void GiveResourcesToTeam(int amount)
     {
-        // Add resources to the total
-        totalResources += amount;
-
-        // Here you can implement the logic to actually distribute the resources to your team
-        // For example, notifying team members or updating their resource counts.
+        // TODO repartir recursos a c/u del team
     }
 
-    private void UpdateResourceDisplay()
+    private void UpdateResourceDisplay(int amount)
     {
-        // Update the resource text display
-        resourceText.text = "Resources: " + totalResources;
+        resourceText.gameObject.SetActive(true);
+        resourceText.text = "+ " + amount;
+        Color color = resourceText.color;
+        color.a = 1f; // Reset alpha to fully visible
+        resourceText.color = color;
+        resourceText.transform.localPosition = Vector3.zero; // Reset position
+    }
+
+    IEnumerator FadeText()
+    {
+        Color color = resourceText.color;
+        Vector3 startPosition = resourceText.transform.localPosition;
+        Vector3 endPosition = startPosition + new Vector3(0, floatUpDistance, 0);
+
+        float startAlpha = color.a;
+        float time = 0f;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            color.a = Mathf.Lerp(startAlpha, 0f, time / fadeDuration);
+            resourceText.color = color;
+
+            // Move the text upward
+            resourceText.transform.localPosition = Vector3.Lerp(startPosition, endPosition, time / fadeDuration);
+
+            yield return null;
+        }
+
+        color.a = 0f;
+        resourceText.color = color;
+        resourceText.gameObject.SetActive(false);
     }
 }
