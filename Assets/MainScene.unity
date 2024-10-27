@@ -646,6 +646,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d49aea3d98dc86469af5e77105cc89b, type: 3}
+--- !u!4 &509234408 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7855756083156607946, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+  m_PrefabInstance: {fileID: 6280505561059620134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &646271510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2725,7 +2730,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 509234408}
     m_Modifications:
     - target: {fileID: 1604320592050925504, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2769,19 +2774,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4348449586042896277, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
       propertyPath: m_Name
-      value: HumanRT
+      value: HumanFirstRT
       objectReference: {fileID: 0}
     - target: {fileID: 7232280395007824871, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.65
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 7232280395007824871, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.88
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7232280395007824871, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.01
+      value: -0.84
       objectReference: {fileID: 0}
     - target: {fileID: 7390590147962457757, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
       propertyPath: lengthInSec
@@ -3607,6 +3612,9 @@ PrefabInstance:
     - {fileID: 3199839140831326055, guid: abdb7707905b88442b472ba324e03e59, type: 3}
     - {fileID: 4657721061959867470, guid: abdb7707905b88442b472ba324e03e59, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7855756083156607946, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1664614914}
     - targetCorrespondingSourceObject: {fileID: 8327761821598411704, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       insertIndex: 0
       addedObject: {fileID: 915249510}
@@ -4248,4 +4256,3 @@ SceneRoots:
   - {fileID: 851701242}
   - {fileID: 6280505561059620134}
   - {fileID: 1591685722}
-  - {fileID: 2044881395}
