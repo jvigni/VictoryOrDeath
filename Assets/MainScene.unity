@@ -2354,6 +2354,10 @@ PrefabInstance:
       propertyPath: nexusARCA
       value: 
       objectReference: {fileID: 6280505561059620137}
+    - target: {fileID: 1528861111163460290, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
+      propertyPath: floatUpDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1604320592050925504, guid: d2941bb9969f9ff4a8f8fd529939142f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.85
