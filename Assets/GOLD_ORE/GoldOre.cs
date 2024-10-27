@@ -8,10 +8,9 @@ public class GoldOre : MonoBehaviour
     [SerializeField] private GameObject dust;
     [SerializeField] private GameObject humanRTPrefab;
     [SerializeField] private GameObject plagueRTPrefab;
-
-    bool isBuilding;
-    bool conquered;
-
+    [SerializeField] bool conquered;
+    private bool isBuilding;
+    
     private void Update()
     {
         // Ensure the health bar always faces the main camera

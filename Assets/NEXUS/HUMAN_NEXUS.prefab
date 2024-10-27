@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 5568323326370756693}
   - component: {fileID: 5629393975290862968}
   - component: {fileID: 7321210846082334373}
+  - component: {fileID: 5908064122077091153}
   m_Layer: 0
   m_Name: HUMAN_NEXUS
   m_TagString: Untagged
@@ -142,6 +143,18 @@ MonoBehaviour:
   FX: {fileID: 1779736057675250672}
   enemyNexus: {fileID: 0}
   spawnInterval: 1
+--- !u!114 &5908064122077091153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275355810010931660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7615cc01be4f1b44582be6af3298800c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9096308819364866457
 GameObject:
   m_ObjectHideFlags: 0

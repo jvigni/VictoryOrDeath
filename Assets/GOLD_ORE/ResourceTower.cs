@@ -4,6 +4,7 @@ using System.Collections;
 
 public class ResourceTower : MonoBehaviour
 {
+    [SerializeField] NexusARCA nexusARCA;
     [Header("References")]
     [SerializeField] TextMeshProUGUI resourceText;
     [SerializeField] int resourcesPerCycle = 10;
@@ -30,6 +31,7 @@ public class ResourceTower : MonoBehaviour
 
     private void GiveResourcesToTeam(int amount)
     {
+        nexusARCA.IncreaseResources();
         // TODO: Distribute resources to each team member
     }
 
