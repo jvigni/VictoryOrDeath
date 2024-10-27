@@ -36,6 +36,13 @@ public class HealthBar : MonoBehaviour
         UpdateHealthUI();
     }
 
+    public void SetHealth(float health)
+    {
+        // Clamp the health value to ensure it stays within 0 and MaxHealth
+        currentHealth = Mathf.Clamp(health, 0, MaxHealth);
+        UpdateHealthUI();
+    }
+
     private void UpdateHealthUI()
     {
         healthText.text = currentHealth.ToString("F0");

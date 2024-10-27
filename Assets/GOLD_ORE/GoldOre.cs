@@ -34,27 +34,30 @@ public class GoldOre : MonoBehaviour
         ResourceTower resourceTowerPrefab = faction == Faction.Human ? humanRTPrefab : plagueRTPrefab;
         StartCoroutine(CraftResourceTowerRoutine(resourceTowerPrefab));
     }
-
     private IEnumerator CraftResourceTowerRoutine(ResourceTower resourceTowerPrefab)
     {
         float targetHealth = buildingBar.MaxHealth;
         float elapsedTime = 0f;
-        float healthIncrement = targetHealth / (craftingTimeInSeconds * 100); // Set a smaller increment
 
-        // Gradually increase health to targetHealth over crafting time
+        // Gradually increase health over the crafting time
         while (elapsedTime < craftingTimeInSeconds)
         {
-            buildingBar.AdjustHealth(healthIncrement); // Add a small increment
-            elapsedTime += Time.deltaTime; // Increment elapsed time
+            float progress = elapsedTime / craftingTimeInSeconds;
+            float currentHealth = progress * targetHealth;
+            buildingBar.SetHealth(currentHealth); // Adjust health to match current progress
+
+            elapsedTime += Time.deltaTime;
             yield return null; // Wait for the next frame
         }
 
         // Ensure health reaches maximum at the end
-        buildingBar.AdjustHealth(targetHealth); // Adjust to max health if needed
+        buildingBar.SetHealth(targetHealth);
 
         // Finalize tower construction
         Instantiate(resourceTowerPrefab, transform.position, Quaternion.identity);
         Debug.Log($"{resourceTowerPrefab.name} built.");
         Destroy(gameObject);
     }
+
+
 }
