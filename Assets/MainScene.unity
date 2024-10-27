@@ -680,6 +680,33 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 766671826259316840, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
   m_PrefabInstance: {fileID: 8144774123073441930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2043114571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7492816882924618488, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+  m_PrefabInstance: {fileID: 6280505561059620134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2043114575
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043114571}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7817235653798541150, guid: d4ef292ed1b0a34468e3a6f4997ce35d, type: 3}
 --- !u!114 &2094603169 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4739113428083944366, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
@@ -1351,6 +1378,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3219914765416644182, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_text
+      value: '- 4 - GOLD ORES -'
+      objectReference: {fileID: 0}
     - target: {fileID: 3607014757921453892, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1425,7 +1456,10 @@ PrefabInstance:
     - {fileID: 2494877449983553381, guid: abdb7707905b88442b472ba324e03e59, type: 3}
     - {fileID: 6251758507470620599, guid: abdb7707905b88442b472ba324e03e59, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7492816882924618488, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2043114575}
   m_SourcePrefab: {fileID: 100100000, guid: abdb7707905b88442b472ba324e03e59, type: 3}
 --- !u!4 &6283246913281734009
 Transform:
