@@ -2769,7 +2769,7 @@ MonoBehaviour:
   sensitivity: 2
   yMinLimit: -25
   yMaxLimit: 25
-  minDistance: 0
+  minDistance: 0.2
   maxDistance: 12
   distanceAdjustmentSpeed: 2
   isColliding: 0
