@@ -709,10 +709,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5733833739797231167}
   - {fileID: 3597570425530298745}
   - {fileID: 8327761821598411704}
   - {fileID: 4159664055991000624}
+  - {fileID: 5733833739797231167}
   - {fileID: 3848397431049241301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5248,7 +5248,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8407721843139645560, guid: 706029da65f34b8429aff213b0f8e3ed, type: 3}
       propertyPath: m_Name
-      value: FX_SunBeam_Large_01 (1)
+      value: NexusSunBeam
       objectReference: {fileID: 0}
     - target: {fileID: 8411564354679379088, guid: 706029da65f34b8429aff213b0f8e3ed, type: 3}
       propertyPath: m_LocalScale.x
