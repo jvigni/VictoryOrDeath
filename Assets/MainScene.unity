@@ -3190,6 +3190,63 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1001 &354708533941332582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000003774895
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948898611336181256, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433405645345631410, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
+      propertyPath: m_Name
+      value: world_of_warcraft_ins_1028030425_refine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c49e2f4f5a649c14b8a6d3022e56f247, type: 3}
 --- !u!1 &495896999859773445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4484,3 +4541,4 @@ SceneRoots:
   - {fileID: 6280505561059620134}
   - {fileID: 1591685722}
   - {fileID: 849567690}
+  - {fileID: 354708533941332582}
