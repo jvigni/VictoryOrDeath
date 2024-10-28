@@ -16,6 +16,7 @@ public class LifeForm : MonoBehaviour
     public event Action OnDeath;
     public event Action<Effect> OnEffectApplied;
     public event Action<Effect> OnEffectRemoved;
+    public string side = "";
     public bool IsAlive { get; private set; }
 
     [SerializeField] ReactiveProperty<int> Health;

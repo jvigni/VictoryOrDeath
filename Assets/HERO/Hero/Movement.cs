@@ -9,9 +9,11 @@ public class Movement : MonoBehaviour
     public float runSpeed = 20.0f; // Velocidad cuando corre
     public float gravity = -9.8f;
     public float jumpHeight = 1.5f;
+    public bool isJumping = false;
     public bool isFlying = false;
     public CinemachineVirtualCamera virtualCamera;
-
+    [SerializeField]
+    public GroundCheck groundCheck;
     // Componente CharacterController
 
     //TODO To Fix
@@ -42,13 +44,17 @@ public class Movement : MonoBehaviour
     {
         CheckAnimationCompletion();
 
-        // Chequea si el personaje está en el suelo (basado en el CharacterController)
-        isGrounded = controller.isGrounded;
+        isGrounded = groundCheck.isGrounded;
 
         // Si está en el suelo y tenía velocidad en Y (caída), resetea la velocidad
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f; // Un pequeño valor negativo para que quede pegado al suelo
+            if (isJumping) // Si estaba saltando y ahora ha aterrizado
+            {
+                ChangeAnimation("IdleFly"); // Cambia a Idle inmediatamente
+                isJumping = false; // Resetea el estado de salto
+            }
         }
 
         // Obtener el input del teclado (WASD o flechas)
@@ -86,9 +92,11 @@ public class Movement : MonoBehaviour
         ChangeRotationToCamRotation();
 
         // Salto
-        if (Input.GetButtonDown("Jump") /*&& isGrounded*/  )
+        if (Input.GetButtonDown("Jump") && isGrounded && !IsCurrentAnimationPriority())
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            ChangeAnimation("IdleFly");
+            isJumping = true; // Marca que se está saltando
         }
 
         // Aplicar la gravedad manualmente (si no está en el suelo, caerá)
@@ -172,6 +180,9 @@ public class Movement : MonoBehaviour
         if (IsCurrentAnimationPriority())
             return;
 
+        if (isJumping) // Priorizar salto si está saltando
+            return; // No cambiar a animaciones de movimiento
+
         else if (movement.y > 0 && movement.x == 0)
             ChangeAnimation("FlyForward");
         else if (movement.y < 0 && movement.x == 0)
@@ -200,6 +211,8 @@ public class Movement : MonoBehaviour
         if (IsCurrentAnimationPriority())
             return;
 
+        if (isJumping) // Priorizar salto si está saltando
+            return; // No cambiar a animaciones de movimiento
 
         else if (movement.y > 0 && movement.x == 0)
             ChangeAnimation("GroundedForward");
@@ -219,8 +232,6 @@ public class Movement : MonoBehaviour
             ChangeAnimation("GroundedBackLeft");
         else if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
             ChangeAnimation("GroundedForward");
-        else if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
-            ChangeAnimation("GroundedForward");
         else
             ChangeAnimation("GroundedIdle");
     }
@@ -229,4 +240,5 @@ public class Movement : MonoBehaviour
 public enum PriorityAnimations
 {
     AtackFlying02,
+    Jump,
 }

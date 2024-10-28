@@ -6,10 +6,13 @@ public class TabTargeting : MonoBehaviour
 {
     // El collider del objeto que se activará
     private Collider targetCollider;
-
+    [SerializeField]
+    private LifeForm currentObjective;
     // Lista para guardar los objetos con los que se colisiona
     [SerializeField]
     private List<GameObject> targetedObjects;
+    private int currentTargetIndex = -1; // Índice inicial en -1 para manejar el primer Tab
+
 
     void Start()
     {
@@ -60,9 +63,37 @@ public class TabTargeting : MonoBehaviour
                 // Asegúrate de que no esté ya en la lista antes de agregar
                 if (!targetedObjects.Contains(collider.gameObject))
                 {
-                    targetedObjects.Add(collider.gameObject);
+                    /*if(collider.CompareTag("Minion") || collider.CompareTag("Hero"))*/
+                        targetedObjects.Add(collider.gameObject);
                 }
             }
+        }
+        // Reiniciar el índice cuando se actualiza la lista de objetivos
+        //        currentTargetIndex = -1;
+
+        // Seleccionar el próximo objetivo en la lista solo después de detectar objetivos
+        SelectNextTarget();
+
+    }
+
+    // Selecciona el próximo objetivo en la lista de forma cíclica y actualiza currentObjective
+    private void SelectNextTarget()
+    {
+        if (targetedObjects.Count > 0)
+        {
+            // Incrementa el índice de objetivo y envuélvelo si es necesario
+            currentTargetIndex = (currentTargetIndex + 1) % targetedObjects.Count;
+
+            // Obtén el LifeForm del nuevo objetivo y asigna a currentObjective
+            currentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
+
+            // Imprime para verificar el cambio
+            Debug.Log($"Nuevo objetivo actual: {currentObjective.gameObject.name}");
+        }
+        else
+        {
+            currentObjective = null; // Si no hay objetivos, el objetivo actual es nulo
+            Debug.Log("Sin objetivos disponibles al presionar Tab.");
         }
     }
 
@@ -72,20 +103,8 @@ public class TabTargeting : MonoBehaviour
         // Añadir el objeto que colisiona a la lista de objetivos si no está ya presente
         if (!targetedObjects.Contains(other.gameObject) && other.gameObject != gameObject)
         {
-            targetedObjects.Add(other.gameObject);
-        }
-    }
-
-    // Para depuración: Mostrar los objetos en la consola
-    void OnGUI()
-    {
-        if (targetedObjects.Count > 0)
-        {
-            GUILayout.Label("Objetivos detectados:");
-            foreach (GameObject obj in targetedObjects)
-            {
-                GUILayout.Label(obj.name);
-            }
+            if (other.CompareTag("Minion") || other.CompareTag("Hero"))
+                targetedObjects.Add(other.gameObject);
         }
     }
 }
