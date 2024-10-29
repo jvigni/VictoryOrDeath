@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 219911174828128329}
   - component: {fileID: 1630907943542481204}
   - component: {fileID: 8386420426626142106}
-  - component: {fileID: 3711292162464541825}
-  - component: {fileID: 762662425920815490}
   - component: {fileID: 5685534498758688612}
+  - component: {fileID: 2409506915351705823}
+  - component: {fileID: 2570849920237025719}
+  - component: {fileID: 377546723377792663}
   m_Layer: 0
   m_Name: Militia
   m_TagString: Minion
@@ -67,35 +68,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbaa53c649555594eb1fad8bdeb75045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  thisLifeForm: {fileID: 1630907943542481204}
+  atack: 10
+  myTeam: 0
   nexusToOBLITERATE: {fileID: 0}
-  speed: 20
+  speed: 10
   gravity: -9.8
   groundCheck: {fileID: 5685534498758688612}
---- !u!136 &3711292162464541825
-CapsuleCollider:
+  targetView: {fileID: 0}
+  targetToAtack: {fileID: 0}
+  animator: {fileID: 2959346356224878665}
+--- !u!114 &5685534498758688612
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219911174828128325}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.6290325
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.76455194, z: 0}
---- !u!54 &762662425920815490
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc155025943a384a9c83e9073527c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckDistance: 0.3
+  isGrounded: 0
+--- !u!114 &2409506915351705823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219911174828128325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5128cc1647f56e74884100b048fd6131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentMinion: {fileID: 8386420426626142106}
+  detectionRadius: 1.5
+  attackRange: 3
+  dmgInfo:
+    Amount: 0
+    Unbloqueable: 0
+    Pure: 0
+    DamagePreventedCounter: 0
+    LifeSteal: 0
+  animations: {fileID: 0}
+--- !u!54 &2570849920237025719
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,20 +141,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5685534498758688612
-MonoBehaviour:
+--- !u!135 &377546723377792663
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219911174828128325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc155025943a384a9c83e9073527c39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheckDistance: 0.3
-  isGrounded: 0
+  serializedVersion: 3
+  m_Radius: 6.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2799287581536355250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,6 +226,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2846635394874824847}
   m_SourcePrefab: {fileID: 100100000, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
+--- !u!95 &2959346356224878665 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1137340246065835003, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}
+  m_PrefabInstance: {fileID: 2799287581536355250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2959346356234230783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1137340246058539085, guid: 1a022ca3e54eae6418cb98811e635fdb, type: 3}

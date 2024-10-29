@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Minion : MonoBehaviour
 {
-    public LifeForm Target;
+    [SerializeField] private LifeForm thisLifeForm;
+    [SerializeField] private int atack;
+    [SerializeField] private Team myTeam;
     [SerializeField] NexusSpawner nexusToOBLITERATE;
     [SerializeField] float speed = 5f;
     [SerializeField] float gravity = -9.8f;
     [SerializeField] GroundCheck groundCheck;
+    [SerializeField] public LifeForm targetView;
+    [SerializeField] public LifeForm targetToAtack;
+    [SerializeField] private Animator animator;
+    private string currentAnimation = "";
 
     private Vector3 velocity;
 
@@ -17,10 +24,10 @@ public class Minion : MonoBehaviour
         bool isGrounded = groundCheck.isGrounded;
 
         ApplyGravity(isGrounded);
-        if (Target != null)
+        if (targetView != null)
         {
             // Si hay un objetivo, mover hacia el objetivo
-            Vector3 direction = (Target.transform.position - transform.position).normalized;
+            Vector3 direction = (targetView.transform.position - transform.position).normalized;
             MoveInDirection(direction, isGrounded);
         }
         else if (nexusToOBLITERATE != null)
@@ -31,6 +38,57 @@ public class Minion : MonoBehaviour
         }
 
         AdjustHeightToTerrain();
+    }
+
+    public void SetTagetToAtack(LifeForm targetToAtack) 
+    {
+        this.targetToAtack = targetToAtack;
+    }
+
+    public LifeForm GetNexusToObliterate()
+    {
+        // Asegúrate de que nexusToOBLITERATE no sea nulo antes de acceder a su componente
+        if (nexusToOBLITERATE != null)
+        {
+            return nexusToOBLITERATE.GetComponent<LifeForm>();
+        }
+        return null; // Retorna null si nexusToOBLITERATE es nulo
+    }
+
+
+
+    public void ChangeAnimation(string animation, float crossFade = 0.2f)
+    {
+        if (currentAnimation != animation)
+        {
+            currentAnimation = animation;
+            animator.CrossFade(animation, crossFade);
+        }
+    }
+
+    public LifeForm getTarget() 
+    {
+        return targetView;
+    }
+
+    public void SetSpeed(float newSpeed) 
+    {
+        speed = newSpeed;
+    }
+
+    public int getAtackDamage() 
+    {
+        return atack;
+    }
+
+    public void SetMySide(Team team)
+    {
+        myTeam = team;
+    }
+
+    public Team getMyTeam()
+    {
+        return myTeam;
     }
 
     private void AdjustHeightToTerrain()
@@ -64,5 +122,10 @@ public class Minion : MonoBehaviour
     public void SetNexusToOBLITERATE(NexusSpawner shittyNexus)
     {
         nexusToOBLITERATE = shittyNexus;
+    }
+
+    public NexusSpawner GetNexusToOBLITERATE()
+    {
+        return nexusToOBLITERATE;
     }
 }

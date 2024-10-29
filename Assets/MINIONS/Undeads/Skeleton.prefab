@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: -76904049364798972}
   - component: {fileID: 8103709462952010969}
   - component: {fileID: 2217146831806859300}
-  - component: {fileID: 1901981865325702531}
-  - component: {fileID: 2026602321936455093}
+  - component: {fileID: 4864030509135022040}
+  - component: {fileID: 7857326952771371198}
+  - component: {fileID: 7430151845757589210}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Minion
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   healthBar: {fileID: 0}
   Health:
     value: 0
@@ -67,11 +68,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbaa53c649555594eb1fad8bdeb75045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  thisLifeForm: {fileID: -76904049364798972}
+  atack: 10
+  myTeam: 0
   nexusToOBLITERATE: {fileID: 0}
-  speed: 20
+  speed: 10
   gravity: -9.8
   groundCheck: {fileID: 2217146831806859300}
+  targetView: {fileID: 0}
+  targetToAtack: {fileID: 0}
+  animator: {fileID: 8164723294615893492}
 --- !u!114 &2217146831806859300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +92,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheckDistance: 0.3
   isGrounded: 0
---- !u!54 &1901981865325702531
+--- !u!114 &4864030509135022040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219911174828128325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5128cc1647f56e74884100b048fd6131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentMinion: {fileID: 8103709462952010969}
+  detectionRadius: 1.5
+  attackRange: 3
+  dmgInfo:
+    Amount: 0
+    Unbloqueable: 0
+    Pure: 0
+    DamagePreventedCounter: 0
+    LifeSteal: 0
+  animations: {fileID: 0}
+--- !u!54 &7857326952771371198
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,8 +141,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &2026602321936455093
-CapsuleCollider:
+--- !u!135 &7430151845757589210
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,10 +159,8 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.57
-  m_Direction: 1
+  serializedVersion: 3
+  m_Radius: 6.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3869973601485021187
 PrefabInstance:
@@ -204,5 +230,10 @@ PrefabInstance:
 --- !u!4 &8164723294608104000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4970290565428968003, guid: cc2054e9ef8b30440b6d4c873d3f0c90, type: 3}
+  m_PrefabInstance: {fileID: 3869973601485021187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8164723294615893492 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4970290565419144695, guid: cc2054e9ef8b30440b6d4c873d3f0c90, type: 3}
   m_PrefabInstance: {fileID: 3869973601485021187}
   m_PrefabAsset: {fileID: 0}

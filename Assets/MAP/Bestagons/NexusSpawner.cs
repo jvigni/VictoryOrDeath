@@ -12,6 +12,7 @@ public class NexusSpawner : MonoBehaviour
         public int amountToSpawn;
     }
 
+    [SerializeField] Team team;
     [SerializeField] List<MinionType> minionTypesToSpawn;
     [SerializeField] Transform spawnPoint;
     [SerializeField] Transform FX;
@@ -30,6 +31,7 @@ public class NexusSpawner : MonoBehaviour
             for (int i = 0; i < minionType.amountToSpawn; i++)
             {
                 var minion = Instantiate(minionType.minionPrefab, spawnPoint.position, Quaternion.identity);
+                minion.SetMySide(team);
                 minion.SetNexusToOBLITERATE(enemyNexus);
 
                 minionsForTheNight.Add(minion);
