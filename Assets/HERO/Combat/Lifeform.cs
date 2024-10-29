@@ -13,21 +13,19 @@ public enum Team
 [Serializable]
 public class LifeForm : MonoBehaviour
 {
-    public event Action OnDeath;
-    public event Action<Effect> OnEffectApplied;
-    public event Action<Effect> OnEffectRemoved;
-    public string side = "";
-    public bool IsAlive { get; private set; }
-
+    [SerializeField] Team team;
+    [SerializeField] HealthBar healthBar;
     [SerializeField] ReactiveProperty<int> Health;
     [SerializeField] ReactiveProperty<int> MaxHealth;
 
-    [SerializeField] HealthBar healthBar;
+    [SerializeField] public List<Effect> Effects { get; private set; } // should not be public but compiler vult?
+
+    public event Action OnDeath;
+    public event Action<Effect> OnEffectApplied;
+    public event Action<Effect> OnEffectRemoved;    
+    public bool IsAlive { get; private set; }
     int originalMaxHealth;
     
-    [SerializeField] public List<Effect> Effects { get; private set;  } // should not be public but compiler vult?
-    [SerializeField] Team team;
-
     public LifeForm(int maxHp, Team team)
     {
         this.team = team;
