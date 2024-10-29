@@ -26,11 +26,11 @@ public class LifeForm : MonoBehaviour
     int originalMaxHealth;
     
     [SerializeField] public List<Effect> Effects { get; private set;  } // should not be public but compiler vult?
-    [SerializeField] Team ID;
+    [SerializeField] Team team;
 
-    public LifeForm(int maxHp, Team ID)
+    public LifeForm(int maxHp, Team team)
     {
-        this.ID = ID;
+        this.team = team;
         IsAlive = true;
         originalMaxHealth = maxHp;
         MaxHealth = new ReactiveProperty<int>(maxHp);
@@ -117,7 +117,7 @@ public class LifeForm : MonoBehaviour
         //Provider.Combat.View.ApplyEffect(effect, ID);
         //OnEffectApplied?.Invoke(effect);
 
-        Debug.Log($"<color=orange>{effect} Applied</color>");
+        //Debug.Log($"<color=orange>{effect} Applied</color>");
     }
 
     public bool HasEffect(EffectID id)
@@ -164,7 +164,7 @@ public class LifeForm : MonoBehaviour
 
     private void Death()
     {
-        Debug.Log("Monster death");
+        //Debug.Log("Monster death");
         IsAlive = false;
 
         foreach (Effect effect in Effects.ToList())
@@ -178,7 +178,7 @@ public class LifeForm : MonoBehaviour
         var desiredEffect = Effects.Where(effect => effect.Type == effectType).FirstOrDefault();
         if (desiredEffect != null)
         {
-            Debug.Log($"Removing effect: {desiredEffect.ID}");
+            //Debug.Log($"Removing effect: {desiredEffect.ID}");
             RemoveEffect(desiredEffect);
         }
     }
@@ -204,7 +204,7 @@ public class LifeForm : MonoBehaviour
         var desiredEffect = Effects.Where(effect => effect.ID == id).FirstOrDefault();
         if (desiredEffect != null)
         {
-            Debug.Log($"Removing effect: {desiredEffect.ID}");
+            //Debug.Log($"Removing effect: {desiredEffect.ID}");
             RemoveEffect(desiredEffect);
         }
     }
