@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8386420426626142106}
   - component: {fileID: 3711292162464541825}
   - component: {fileID: 762662425920815490}
+  - component: {fileID: 5685534498758688612}
   m_Layer: 0
   m_Name: Militia
   m_TagString: Minion
@@ -69,6 +70,8 @@ MonoBehaviour:
   Target: {fileID: 0}
   nexusToOBLITERATE: {fileID: 0}
   speed: 20
+  gravity: -9.8
+  groundCheck: {fileID: 5685534498758688612}
 --- !u!136 &3711292162464541825
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -119,6 +122,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5685534498758688612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219911174828128325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc155025943a384a9c83e9073527c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckDistance: 0.3
+  isGrounded: 0
 --- !u!1001 &2799287581536355250
 PrefabInstance:
   m_ObjectHideFlags: 0

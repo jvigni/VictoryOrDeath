@@ -26,17 +26,12 @@ public class Movement : MonoBehaviour
     private string currentAnimation = "";
     private Vector2 movement = Vector2.zero;
 
-    // Lista de animaciones prioritarias
     private List<PriorityAnimations> priorityAnimationsList;
 
     void Start()
     {
-        // Asigna el CharacterController que tiene el personaje
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-        //  ChangeAnimation("StartFly");
-
-        // Inicializa la lista de animaciones prioritarias automáticamente
         priorityAnimationsList = new List<PriorityAnimations>((PriorityAnimations[])System.Enum.GetValues(typeof(PriorityAnimations)));
     }
 
@@ -45,36 +40,25 @@ public class Movement : MonoBehaviour
         CheckAnimationCompletion();
 
         isGrounded = groundCheck.isGrounded;
-
-        // Si está en el suelo y tenía velocidad en Y (caída), resetea la velocidad
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f; // Un pequeño valor negativo para que quede pegado al suelo
-            if (isJumping) // Si estaba saltando y ahora ha aterrizado
+            if (isJumping)
             {
-                ChangeAnimation("IdleFly"); // Cambia a Idle inmediatamente
-                isJumping = false; // Resetea el estado de salto
+                ChangeAnimation("IdleFly");
+                isJumping = false;
             }
         }
 
-        // Obtener el input del teclado (WASD o flechas)
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        // Mover el personaje en función de los inputs, relativo a la dirección de la cámara
         Vector3 move = virtualCamera.transform.right * moveX + virtualCamera.transform.forward * moveZ;
 
         // Comprobar si ambos botones del mouse están presionados
-
         if (Input.GetMouseButton(0) && Input.GetMouseButton(1)) // 0 = botón izquierdo, 1 = botón derecho
-        {
-            // Si ambos clics están presionados, solo sobreescribe el movimiento en Z (adelante/atrás)
-            move = virtualCamera.transform.right * moveX + virtualCamera.transform.forward; // Sumar la dirección horizontal (A/D) y hacia adelante
-
-            // No necesitas modificar moveX ni moveZ aquí, ya que moveX todavía controla el movimiento lateral
-        }
+        {move = virtualCamera.transform.right * moveX + virtualCamera.transform.forward;}// Sumar la dirección horizontal (A/D) y hacia adelante
 
         // Correr si se presiona "Shift"
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
@@ -84,12 +68,8 @@ public class Movement : MonoBehaviour
             controller.Move(move * runSpeed * Time.deltaTime);
         }
         else
-        {
-            // Aplicar movimiento basado en la velocidad normal
-            controller.Move(move * speed * Time.deltaTime);
-        }
+            {controller.Move(move * speed * Time.deltaTime);}
 
-        // Rotar el personaje hacia el frente de la camara
         ChangeRotationToCamRotation();
 
         // Salto
@@ -97,13 +77,10 @@ public class Movement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             ChangeAnimation("IdleFly");
-            isJumping = true; // Marca que se está saltando
+            isJumping = true;
         }
 
-        // Aplicar la gravedad manualmente (si no está en el suelo, caerá)
         velocity.y += gravity * Time.deltaTime;
-
-        // Mover el CharacterController con la gravedad aplicada
         controller.Move(velocity * Time.deltaTime);
 
         if (isFlying)
@@ -114,16 +91,9 @@ public class Movement : MonoBehaviour
 
     public void ChangeRotationToCamRotation()
     {
-        // Obtener la dirección horizontal de la cámara
         Vector3 cameraForward = virtualCamera.transform.forward;
-
-        // Ignorar cualquier rotación en el eje Y (vertical) de la cámara
         cameraForward.y = 0f;
-
-        // Asegurarse de que la dirección de la cámara esté normalizada (sin cambio en magnitud)
         cameraForward.Normalize();
-
-        // Rotar el personaje hacia la dirección de la cámara
         transform.rotation = Quaternion.LookRotation(cameraForward);
     }
 
@@ -143,37 +113,31 @@ public class Movement : MonoBehaviour
 
     private void CheckAnimationCompletion()
     {
-        // Verifica si hay una animación actual
         if (!string.IsNullOrEmpty(currentAnimation))
         {
-            // Obtiene el estado de la animación actual
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-            // Compara el tiempo de la animación actual con su duración
             if (stateInfo.IsName(currentAnimation) && stateInfo.normalizedTime >= 1f)
             {
-                currentAnimation = ""; // Resetea currentAnimation a una cadena vacía
+                currentAnimation = "";
             }
         }
     }
 
     private bool IsCurrentAnimationPriority()
     {
-        // Verifica que currentAnimation no sea nulo o vacío
         if (string.IsNullOrEmpty(currentAnimation))
         {
-            return false; // No hay animación actual
+            return false;
         }
 
-        // Intenta convertir currentAnimation a PriorityAnimations
         PriorityAnimations animation;
         if (System.Enum.TryParse(currentAnimation, out animation))
         {
-            // Verifica si está en la lista de animaciones prioritarias
             return priorityAnimationsList.Contains(animation);
         }
 
-        return false; // No se pudo convertir, no es prioritaria
+        return false;
     }
 
     private void CheckAnimationFlying()
@@ -181,8 +145,8 @@ public class Movement : MonoBehaviour
         if (IsCurrentAnimationPriority())
             return;
 
-        if (isJumping) // Priorizar salto si está saltando
-            return; // No cambiar a animaciones de movimiento
+        if (isJumping)
+            return; 
 
         else if (movement.y > 0 && movement.x == 0)
             ChangeAnimation("FlyForward");
@@ -212,8 +176,8 @@ public class Movement : MonoBehaviour
         if (IsCurrentAnimationPriority())
             return;
 
-        if (isJumping) // Priorizar salto si está saltando
-            return; // No cambiar a animaciones de movimiento
+        if (isJumping)
+            return;
 
         else if (movement.y > 0 && movement.x == 0)
             ChangeAnimation("GroundedForward");
