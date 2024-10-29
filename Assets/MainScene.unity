@@ -3169,25 +3169,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1334693920466841417, guid: ecef3719a140763489f73e9fdd3478e7, type: 3}
-      propertyPath: minDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4373272540697670735, guid: ecef3719a140763489f73e9fdd3478e7, type: 3}
       propertyPath: m_Name
       value: HERO
-      objectReference: {fileID: 0}
-    - target: {fileID: 4373272540697670735, guid: ecef3719a140763489f73e9fdd3478e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5272291006333900032, guid: ecef3719a140763489f73e9fdd3478e7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126131065268105148, guid: ecef3719a140763489f73e9fdd3478e7, type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 9022247484022144202, guid: ecef3719a140763489f73e9fdd3478e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3229,8 +3213,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -8888924675286310266, guid: ecef3719a140763489f73e9fdd3478e7, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4670,6 +4653,18 @@ PrefabInstance:
     - target: {fileID: 2285644845771825539, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45.299
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748502436465809886, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748502436465809886, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748502436465809886, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.88
       objectReference: {fileID: 0}
     - target: {fileID: 2768886130330404972, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_PresetInfoIsWorld

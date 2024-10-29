@@ -8,7 +8,7 @@ public class MinionSideA : MonoBehaviour
     //TODO hacer que se obtenga solo , para efectos practicos lo inicializare a mano cargandolo como "SerializeField"
     [SerializeField] LifeForm OppositNexus;
     [SerializeField] List<LifeForm> enemiesInRange = new List<LifeForm>();
-    private LifeForm currentObjective;
+    private LifeForm target;
     public float moveSpeed = 2f;
     
     // Método para inicializar las variables
@@ -17,13 +17,13 @@ public class MinionSideA : MonoBehaviour
         // TODO pedir los 2 nexos para saber cual es el opposite. y fuardarlo en : "OppositNexus"
 
         // Al iniciar, el objetivo predeterminado es el nexo enemigo
-        currentObjective = OppositNexus;
+        target = OppositNexus;
     }
 
     void Update()
     {
         // Comprobar si el objetivo actual sigue vivo
-        if (currentObjective != null && !currentObjective.IsAlive)
+        if (target != null && !target.IsAlive)
         {
             ChangeTarget();
         }
@@ -53,10 +53,10 @@ public class MinionSideA : MonoBehaviour
     // Método para mover el minion hacia el objetivo actual
     private void MoveTowardsCurrentObjective()
     {
-        if (currentObjective != null)
+        if (target != null)
         {
             // Mueve al minion hacia el objetivo actual
-            Vector3 direction = (currentObjective.transform.position - transform.position).normalized;
+            Vector3 direction = (target.transform.position - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
         }
     }
@@ -64,27 +64,25 @@ public class MinionSideA : MonoBehaviour
     // Método para cambiar el objetivo actual
     private void SetCurrentObjective(LifeForm newObjective)
     {
-        currentObjective = newObjective;
+        target = newObjective;
     }
 
-    // Método que se activa al colisionar con otro objeto
     private void OnTriggerEnter(Collider other)
     {
         LifeForm otherLifeForm = other.GetComponent<LifeForm>();
-        //Debug.Log($" lo que choco es del side: {otherLifeForm.team}");
+        // Debug.Log($" lo que choco es del side: {otherLifeForm.team}");
         if (otherLifeForm != null && otherLifeForm.team != mySide) // Asegúrate de que sea un enemigo
         {
-            Debug.Log($"es un enemigo");
+            // Debug.Log($"es un enemigo");
             // Añadir el enemigo a la lista                                                                         
             enemiesInRange.Add(otherLifeForm);
-            Debug.Log("agregado a la lista");
+            // Debug.Log("agregado a la lista");
             
             // Si no hay un objetivo actual, establece este como objetivo
-            if (currentObjective == null)
+            if (target == null)
             {
-
-                Debug.Log("no hay currentObjetive");
-                currentObjective = otherLifeForm;
+                //Debug.Log("no hay currentObjetive");
+                target = otherLifeForm;
             }
         }
     }
@@ -100,7 +98,7 @@ public class MinionSideA : MonoBehaviour
             enemiesInRange.Remove(otherLifeForm);
 
             // Si el objetivo actual es el que salió, cambia el objetivo
-            if (currentObjective == otherLifeForm)
+            if (target == otherLifeForm)
             {
                 ChangeTarget(); // Cambia a otro objetivo
             }
