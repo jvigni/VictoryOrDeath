@@ -68,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   nexusToOBLITERATE: {fileID: 0}
-  speed: 1000
+  speed: 20
 --- !u!136 &3711292162464541825
 CapsuleCollider:
   m_ObjectHideFlags: 0
