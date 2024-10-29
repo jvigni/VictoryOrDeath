@@ -1751,7 +1751,7 @@ GameObject:
   - component: {fileID: 968839155}
   - component: {fileID: 968839154}
   m_Layer: 0
-  m_Name: flag
+  m_Name: ArmenianFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4665,7 +4665,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 85622290}
   startBtn: {fileID: 2094603169}
   menuCamera: {fileID: 4249777442977968002}
-  character: {fileID: 903185244}
 --- !u!4 &5227313259746392146
 Transform:
   m_ObjectHideFlags: 0
