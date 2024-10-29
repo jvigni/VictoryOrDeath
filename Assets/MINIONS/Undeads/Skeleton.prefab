@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 219911174828128329}
   - component: {fileID: -76904049364798972}
   - component: {fileID: 8103709462952010969}
+  - component: {fileID: 2217146831806859300}
   - component: {fileID: 1901981865325702531}
   - component: {fileID: 2026602321936455093}
   m_Layer: 0
@@ -48,13 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  side: 
+  team: 0
+  healthBar: {fileID: 0}
   Health:
     value: 0
   MaxHealth:
     value: 200
-  healthBar: {fileID: 0}
-  ID: 1
 --- !u!114 &8103709462952010969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +69,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   nexusToOBLITERATE: {fileID: 0}
-  speed: 50
+  speed: 20
+  gravity: -9.8
+  groundCheck: {fileID: 2217146831806859300}
+--- !u!114 &2217146831806859300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219911174828128325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc155025943a384a9c83e9073527c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckDistance: 0.3
+  isGrounded: 0
 --- !u!54 &1901981865325702531
 Rigidbody:
   m_ObjectHideFlags: 0
