@@ -13,11 +13,10 @@ public enum Team
 [Serializable]
 public class LifeForm : MonoBehaviour
 {
-    [SerializeField] Team team;
+    [SerializeField] public Team team;
     [SerializeField] HealthBar healthBar;
     [SerializeField] ReactiveProperty<int> Health;
     [SerializeField] ReactiveProperty<int> MaxHealth;
-
     [SerializeField] public List<Effect> Effects { get; private set; } // should not be public but compiler vult?
 
     public event Action OnDeath;

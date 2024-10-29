@@ -3,16 +3,14 @@ using UnityEngine;
 
 public class MinionSideA : MonoBehaviour
 {
-    private string mySide = "SideA";
+    private Team mySide = Team.Humans;
 
     //TODO hacer que se obtenga solo , para efectos practicos lo inicializare a mano cargandolo como "SerializeField"
-    [SerializeField]
-    private LifeForm OppositNexus;
+    [SerializeField] LifeForm OppositNexus;
+    [SerializeField] List<LifeForm> enemiesInRange = new List<LifeForm>();
     private LifeForm currentObjective;
     public float moveSpeed = 2f;
-    [SerializeField]
-    private List<LifeForm> enemiesInRange = new List<LifeForm>();
-
+    
     // Método para inicializar las variables
     void Start()
     {
@@ -73,7 +71,7 @@ public class MinionSideA : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         LifeForm otherLifeForm = other.GetComponent<LifeForm>();
-        Debug.Log($" lo que choco es del side: {otherLifeForm.team}");
+        //Debug.Log($" lo que choco es del side: {otherLifeForm.team}");
         if (otherLifeForm != null && otherLifeForm.team != mySide) // Asegúrate de que sea un enemigo
         {
             Debug.Log($"es un enemigo");
