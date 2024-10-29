@@ -12436,7 +12436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697245746227897842, guid: 2e9d0f60391020747aeb22c5da25302b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.09
+      value: -0.088
       objectReference: {fileID: 0}
     - target: {fileID: 1697245746227897842, guid: 2e9d0f60391020747aeb22c5da25302b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12456,7 +12456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697245746227897842, guid: 2e9d0f60391020747aeb22c5da25302b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0
+      value: -0.026
       objectReference: {fileID: 0}
     - target: {fileID: 1697245746227897842, guid: 2e9d0f60391020747aeb22c5da25302b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12580,7 +12580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189462554323345741, guid: 2e9d0f60391020747aeb22c5da25302b, type: 3}
       propertyPath: m_text
-      value: '- PARA QUE? > WHY? -'
+      value: PARA QUE? > WHY?
       objectReference: {fileID: 0}
     - target: {fileID: 7189462554323345741, guid: 2e9d0f60391020747aeb22c5da25302b, type: 3}
       propertyPath: m_fontSize
