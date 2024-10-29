@@ -93,7 +93,7 @@ public class ThirdPersonCamera : MonoBehaviour
         if (other != null && !other.CompareTag("Hero") /*&& !other.CompareTag("GoldOreCapturer")*/) // Validar que el objeto con el que colisiona no sea null
         {
             isColliding = true; // Establece que la cámara está colisionando
-            Debug.Log($"OnTriggerEnter con: {other.gameObject.name}, Tag: {other.tag}");
+            //Debug.Log($"OnTriggerEnter con: {other.gameObject.name}, Tag: {other.tag}");
         }
     }
 
@@ -102,7 +102,7 @@ public class ThirdPersonCamera : MonoBehaviour
         if (other != null && !other.CompareTag("Hero") /*&& !other.CompareTag("GoldOreCapturer")*/) // Asegura que siempre estamos colisionando con algo
         {
             isColliding = true; // Mantiene isColliding en true mientras haya colisiones
-            Debug.Log($"OnTriggerEnter con: {other.gameObject.name}, Tag: {other.tag}");
+            //Debug.Log($"OnTriggerEnter con: {other.gameObject.name}, Tag: {other.tag}");
         }
     }
 
@@ -111,7 +111,7 @@ public class ThirdPersonCamera : MonoBehaviour
         if (other != null && !other.CompareTag("Hero") /* && !other.CompareTag("GoldOreCapturer")*/) // Asegurarse de que el objeto no sea null
         {
             isColliding = false; // Si no hay más colisiones, establece en false
-            Debug.Log($"OnTriggerEnter con: {other.gameObject.name}, Tag: {other.tag}");
+            //Debug.Log($"OnTriggerEnter con: {other.gameObject.name}, Tag: {other.tag}");
         }
     }
 }

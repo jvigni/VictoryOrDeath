@@ -4,10 +4,10 @@ using System.Linq;
 using UniRx;
 using UnityEngine;
 
-public enum LifeFormID
+public enum Team
 {
-    Player,
-    Enemy
+    Humans,
+    Plague
 }
 
 [Serializable]
@@ -26,9 +26,9 @@ public class LifeForm : MonoBehaviour
     int originalMaxHealth;
     
     [SerializeField] public List<Effect> Effects { get; private set;  } // should not be public but compiler vult?
-    [SerializeField] LifeFormID ID;
+    [SerializeField] Team ID;
 
-    public LifeForm(int maxHp, LifeFormID ID)
+    public LifeForm(int maxHp, Team ID)
     {
         this.ID = ID;
         IsAlive = true;

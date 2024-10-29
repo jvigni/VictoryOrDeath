@@ -911,7 +911,7 @@ namespace Polyperfect.Common
                 NavMeshHit hit;
                 if (!NavMesh.SamplePosition(targetPos, out hit, Mathf.Infinity, 1 << NavMesh.GetAreaFromName("Walkable")))
                 {
-                    Debug.LogError("Unable to sample nav mesh. Please ensure there's a Nav Mesh layer with the name Walkable");
+                    //Debug.LogError("Unable to sample nav mesh. Please ensure there's a Nav Mesh layer with the name Walkable"); 
                     enabled = false;
                     return;
                 }

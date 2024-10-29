@@ -22,12 +22,12 @@ public class GroundCheck : MonoBehaviour
         if (position.y <= terrainHeight + groundCheckDistance)
         {
             isGrounded = true;
-            Debug.Log("El objeto está en el suelo.");
+            //Debug.Log("El objeto está en el suelo.");
         }
         else
         {
             isGrounded = false;
-            Debug.Log("El objeto no está en el suelo.");
+            //Debug.Log("El objeto no está en el suelo.");
         }
     }
 }

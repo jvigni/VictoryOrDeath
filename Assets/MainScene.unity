@@ -3905,6 +3905,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseBoard 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4159978806943650279, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159978806943650279, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159978806943650279, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159978806943650279, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5051521629328249117, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6650,6 +6666,10 @@ PrefabInstance:
     - target: {fileID: 3653630293322040771, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662418812262040656, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: m_text
+      value: '- PARA QUE -'
       objectReference: {fileID: 0}
     - target: {fileID: 4006845962223851878, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: Nexus
