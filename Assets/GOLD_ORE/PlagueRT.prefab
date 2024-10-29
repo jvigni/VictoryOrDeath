@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4475639004225626855}
   - component: {fileID: 8577942315628084255}
   - component: {fileID: 2935601384800662171}
-  - component: {fileID: 4404433974560625723}
   - component: {fileID: 442910219867344479}
   m_Layer: 0
   m_Name: PlagueRT
@@ -90,25 +89,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4404433974560625723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443354469055967922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  side: 
-  Health:
-    value: 0
-  MaxHealth:
-    value: 600
-  healthBar: {fileID: 0}
-  ID: 0
 --- !u!114 &442910219867344479
 MonoBehaviour:
   m_ObjectHideFlags: 0

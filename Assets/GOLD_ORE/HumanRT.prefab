@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1604320592050925504}
   - component: {fileID: 6869645247329595704}
   - component: {fileID: 63684838258540476}
-  - component: {fileID: 1531410511991888156}
   - component: {fileID: 1528861111163460290}
   m_Layer: 0
   m_Name: HumanRT
@@ -89,25 +88,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1531410511991888156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4348449586042896277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  side: 
-  Health:
-    value: 0
-  MaxHealth:
-    value: 600
-  healthBar: {fileID: 0}
-  ID: 0
 --- !u!114 &1528861111163460290
 MonoBehaviour:
   m_ObjectHideFlags: 0
