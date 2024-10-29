@@ -5029,7 +5029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8792723074404992329, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_text
-      value: "THEE WAY \nOF THE WARRIOR"
+      value: "THE WAY \nOF THE WARRIOR"
       objectReference: {fileID: 0}
     - target: {fileID: 8920660875636962384, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_LocalPosition.x
