@@ -79,6 +79,7 @@ public class Movement : MonoBehaviour
         // Correr si se presiona "Shift"
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
+            //Cursor.visible = false;
             // Cambiar la velocidad a la velocidad de correr
             controller.Move(move * runSpeed * Time.deltaTime);
         }
