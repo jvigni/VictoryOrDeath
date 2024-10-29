@@ -2586,7 +2586,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 57663d9fa7727864090dccbd94ad6214, type: 3}
     - target: {fileID: 218094491474196059, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
       propertyPath: m_Name
-      value: GrayKnight
+      value: GrayKnightBoard
       objectReference: {fileID: 0}
     - target: {fileID: 3244209584604732891, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -2594,7 +2594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4159978806943650279, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
       propertyPath: m_text
-      value: "WE ARE \nTHE HAMMER"
+      value: "WE ARE \nTHE SWORD"
       objectReference: {fileID: 0}
     - target: {fileID: 4159978806943650279, guid: 1a275205573c9ce44bfc9e64e1520dba, type: 3}
       propertyPath: m_fontColor.b
