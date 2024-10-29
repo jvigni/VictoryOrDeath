@@ -1280,6 +1280,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9046921503753500698, guid: 51f4a839b3689304395ae13e40b695be, type: 3}
   m_PrefabInstance: {fileID: 679284075}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &741024292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2402022870436117545, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+  m_PrefabInstance: {fileID: 6280505561059620134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &773870510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,7 +1931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4159978806943650279, guid: 2456e4ecde0f4804799b8a9c3f76a2ef, type: 3}
       propertyPath: m_text
-      value: '- The philosopher -
+      value: 'The philosopher,
 
         True emperor of Rome'
       objectReference: {fileID: 0}
@@ -2021,6 +2026,10 @@ PrefabInstance:
     - target: {fileID: 5051521629328249117, guid: 2456e4ecde0f4804799b8a9c3f76a2ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206606678175260607, guid: 2456e4ecde0f4804799b8a9c3f76a2ef, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5616262198869955928, guid: 2456e4ecde0f4804799b8a9c3f76a2ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2188,23 +2197,35 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1799191382}
+    m_TransformParent: {fileID: 741024292}
     m_Modifications:
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.299
+      value: -0.056439877
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.16
+      value: 3.08
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.162
+      value: 4.390677
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.596359
+      value: 0.9999485
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2212,7 +2233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8027178
+      value: -0.010148228
       objectReference: {fileID: 0}
     - target: {fileID: 1284245347261974269, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2232,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1916667545688988743, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_Name
-      value: SM_Prop_Marble_Block_01
+      value: AurelioStatue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4819,8 +4840,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8327761821598411704, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 679284076}
-    - targetCorrespondingSourceObject: {fileID: 8327761821598411704, guid: abdb7707905b88442b472ba324e03e59, type: 3}
-      insertIndex: -1
+    - targetCorrespondingSourceObject: {fileID: 2402022870436117545, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      insertIndex: 0
       addedObject: {fileID: 1199273833}
     - targetCorrespondingSourceObject: {fileID: 3149650291571964805, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       insertIndex: -1
