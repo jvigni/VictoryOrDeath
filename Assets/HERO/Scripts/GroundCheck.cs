@@ -16,7 +16,7 @@ public class GroundCheck : MonoBehaviour
         Vector3 position = transform.position;
 
         // Obtener la altura del terreno en la posición actual
-        float terrainHeight = Terrain.activeTerrain.SampleHeight(position);
+        float terrainHeight = Terrain.activeTerrain.SampleHeight(position); 
 
         // Comprobar si la posición Y del objeto es menor o igual que la altura del terreno
         if (position.y <= terrainHeight + groundCheckDistance)

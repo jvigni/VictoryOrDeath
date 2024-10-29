@@ -14,7 +14,6 @@ public class AppManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
-    [SerializeField] GameObject character;
     //[SerializeField] GameObject music;
 
     bool isPaused;
