@@ -4803,6 +4803,76 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &5626655686675115148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.206524
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98856056
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15082453
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 17.349
+      objectReference: {fileID: 0}
+    - target: {fileID: 661793884921143405, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189099162154017570, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_Name
+      value: JuanBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645270178806289999, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_text
+      value: PARA QUE? why?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835830769598079895, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
+      propertyPath: m_text
+      value: 'I DONT KNOW, MAYBE IT''S A TEST OF FAITH,
+
+        MAYBE A TRAINING
+        FOR WHAT''S THERE.
+
+        - JOIN THE GOOD OR ROT -'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
 --- !u!114 &6206939422260044228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4935,7 +5005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3662418812262040656, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_text
-      value: PARA QUE? > WHY?
+      value: WHAT FOR? > WHY?
       objectReference: {fileID: 0}
     - target: {fileID: 4123462044857423110, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_Name
@@ -5874,3 +5944,4 @@ SceneRoots:
   - {fileID: 1591685722}
   - {fileID: 1082057195}
   - {fileID: 968839155}
+  - {fileID: 5626655686675115148}
