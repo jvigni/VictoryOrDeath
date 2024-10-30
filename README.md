@@ -1,6 +1,12 @@
 # VictoryOrDeath / Passion & Glory
  Fortis Fortuna Adiuvat
 
+# DA RULES:
+-main branch es sagrada. siempre tiene que quedar funcionando sin errores. si el cambio es muy grande y necesita checkpoints, se usa una branch con tu nombre eg. [juan_cameraWIP]
+-A gpt se le pide ser el mejor space wizard coder del universo, que use cleancode para variables autodescriptivas y usar buenos modales por las dudas [prompting engineering]
+-La main scene tiene un capitan que solo el puede hacer cambios en dicha scene. todos los demas hacen cambios en prefabs o crean los suyos o agregan cosas. pero no modifican la main scene sin avisar al capitan [Mergear metadata de unity es imposibru]
+-Se separa el trabajo para que cada quien trabaje en lo mas separado posible [evitar merge conflicts a toda costa][eg. A en el character, B en los minions]
+
 # Idea general
 -Se pickea civ[team] y heroe[clase] en interfaz a lo war3
 DIA: 3 minutos de wow mob farming + battleground[goldOre]
