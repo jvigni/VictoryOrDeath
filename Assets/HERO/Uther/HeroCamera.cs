@@ -4,10 +4,10 @@ public class HeroCamera : MonoBehaviour
 {
     [SerializeField] private Transform hero;           // The hero or target to orbit around
     [SerializeField] private float distance = 9f;      // Distance from the target
-    [SerializeField] private float movementSpeed =  300f; // Speed for both horizontal and vertical rotation
+    [SerializeField] private float movementSpeed = 300f; // Speed for both horizontal and vertical rotation
     [SerializeField] private float zoomSpeed = 9f;     // Speed of zooming in and out
     [SerializeField] private float minDistance = 1f;   // Minimum distance to the target
-    [SerializeField] private float maxDistance = 9f;  // Maximum distance from the target
+    [SerializeField] private float maxDistance = 9f;   // Maximum distance from the target
 
     private float currentYaw;       // Horizontal rotation angle
     private float currentPitch;     // Vertical rotation angle
@@ -16,7 +16,7 @@ public class HeroCamera : MonoBehaviour
 
     public Vector3 CamDirection;
     public float CamDistance;
-    
+
     void Start()
     {
         // Initialize yaw and pitch based on the camera's initial rotation
@@ -59,8 +59,18 @@ public class HeroCamera : MonoBehaviour
         Vector3 positionOffset = rotation * new Vector3(0, 0, -distance);
         Vector3 targetPosition = hero.position + Vector3.up * 2f; // Adjusted height offset
 
-        // Set the camera position and make it look at the hero
-        transform.position = targetPosition + positionOffset;
+        // Raycast to check for obstacles
+        RaycastHit hit;
+        if (Physics.Raycast(targetPosition, positionOffset.normalized, out hit, distance))
+        {
+            // If there's an obstacle, set the distance to the hit point distance
+            distance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
+        }
+
+        // Set the camera position based on the adjusted distance
+        transform.position = targetPosition + positionOffset.normalized * distance;
+
+        // Make the camera look at the hero
         transform.LookAt(targetPosition);
 
         // Update the new camDirection and camDistance variables
