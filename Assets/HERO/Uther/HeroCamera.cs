@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class HeroCamera : MonoBehaviour
 {
-    [SerializeField] private Transform hero;            // The hero or target to orbit around
-    [SerializeField] private float distance = 8f;       // Distance from the target
-    [SerializeField] private float horizontalVelocity = 100f; // Speed of horizontal rotation
-    [SerializeField] private float verticalVelocity = 80f;    // Speed of vertical rotation
-    [SerializeField] private float zoomSpeed = 2f;      // Speed of zooming in and out
-    [SerializeField] private float minDistance = 2f;     // Minimum distance to the target
-    [SerializeField] private float maxDistance = 15f;    // Maximum distance from the target
+    [SerializeField] private Transform hero;           // The hero or target to orbit around
+    [SerializeField] private float distance = 8f;      // Distance from the target
+    [SerializeField] private float movementSpeed = 90f; // Speed for both horizontal and vertical rotation
+    [SerializeField] private float zoomSpeed = 2f;     // Speed of zooming in and out
+    [SerializeField] private float minDistance = 2f;   // Minimum distance to the target
+    [SerializeField] private float maxDistance = 15f;  // Maximum distance from the target
 
-    private float currentYaw;     // Horizontal rotation angle
-    private float currentPitch;   // Vertical rotation angle
+    private float currentYaw;       // Horizontal rotation angle
+    private float currentPitch;     // Vertical rotation angle
     private const float minPitch = -20f; // Minimum vertical angle
     private const float maxPitch = 80f;  // Maximum vertical angle
 
-    private bool isCameraInitialized = false; // Flag to check if camera is initialized
+    public Vector3 camDirection { get; private set; } // Camera's direction relative to the hero
+    public float camDistance { get; private set; }    // Current distance from camera to hero
 
     void Start()
     {
@@ -23,24 +23,12 @@ public class HeroCamera : MonoBehaviour
         Vector3 angles = transform.eulerAngles;
         currentYaw = angles.y;
         currentPitch = angles.x;
-
-        // Set the camera position to its initial position
-        isCameraInitialized = true; // Set this flag to true since we have an initial setup
     }
 
     void LateUpdate()
     {
-        // Enable rotation and hide the cursor while holding the left mouse button
         if (Input.GetMouseButton(0))
         {
-            // Store the initial yaw and pitch based on the current rotation on first click
-            if (!isCameraInitialized)
-            {
-                currentYaw = transform.eulerAngles.y;
-                currentPitch = transform.eulerAngles.x;
-                isCameraInitialized = true; // Set the flag to true after initializing
-            }
-
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -48,16 +36,15 @@ public class HeroCamera : MonoBehaviour
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
 
-            // Adjust yaw and pitch based on mouse input and respective velocities
-            currentYaw += mouseX * horizontalVelocity * Time.deltaTime;
-            currentPitch -= mouseY * verticalVelocity * Time.deltaTime;
+            // Adjust yaw and pitch based on mouse input and movement speed
+            currentYaw += mouseX * movementSpeed * Time.deltaTime;
+            currentPitch -= mouseY * movementSpeed * Time.deltaTime;
 
             // Clamp the pitch to stay within specified limits
             currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
         }
         else
         {
-            // Show the cursor and unlock it when the left mouse button is released
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -75,5 +62,9 @@ public class HeroCamera : MonoBehaviour
         // Set the camera position and make it look at the hero
         transform.position = targetPosition + positionOffset;
         transform.LookAt(targetPosition);
+
+        // Update the new camDirection and camDistance variables
+        camDirection = (transform.position - hero.position).normalized;
+        camDistance = Vector3.Distance(transform.position, hero.position);
     }
 }
