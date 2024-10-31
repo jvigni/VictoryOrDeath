@@ -676,6 +676,7 @@ MonoBehaviour:
   help: {fileID: 3361165245025463888}
   endGame: {fileID: 2136034154766724150}
   returnToFirstMenu: {fileID: 8554810683809961154}
+  camera3D: {fileID: 0}
 --- !u!223 &2783837358986915602
 Canvas:
   m_ObjectHideFlags: 0
@@ -907,8 +908,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5.2573853, y: 10.515076}
+  m_SizeDelta: {x: 147.2108, y: 136.6959}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7695700830304469155
 CanvasRenderer:
