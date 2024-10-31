@@ -3,19 +3,19 @@ using UnityEngine;
 public class HeroCamera : MonoBehaviour
 {
     [SerializeField] private Transform hero;           // The hero or target to orbit around
-    [SerializeField] private float distance = 8f;      // Distance from the target
-    [SerializeField] private float movementSpeed = 90f; // Speed for both horizontal and vertical rotation
-    [SerializeField] private float zoomSpeed = 2f;     // Speed of zooming in and out
-    [SerializeField] private float minDistance = 2f;   // Minimum distance to the target
-    [SerializeField] private float maxDistance = 15f;  // Maximum distance from the target
+    [SerializeField] private float distance = 9f;      // Distance from the target
+    [SerializeField] private float movementSpeed =  300f; // Speed for both horizontal and vertical rotation
+    [SerializeField] private float zoomSpeed = 9f;     // Speed of zooming in and out
+    [SerializeField] private float minDistance = 1f;   // Minimum distance to the target
+    [SerializeField] private float maxDistance = 9f;  // Maximum distance from the target
 
     private float currentYaw;       // Horizontal rotation angle
     private float currentPitch;     // Vertical rotation angle
     private const float minPitch = -20f; // Minimum vertical angle
     private const float maxPitch = 80f;  // Maximum vertical angle
 
-    public Vector3 camDirection { get; private set; } // Camera's direction relative to the hero
-    public float camDistance { get; private set; }    // Current distance from camera to hero
+    public Vector3 camDirection;
+    public float camDistance;
 
     void Start()
     {
