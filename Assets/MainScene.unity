@@ -975,7 +975,7 @@ GameObject:
   - component: {fileID: 276617646}
   - component: {fileID: 276617645}
   m_Layer: 0
-  m_Name: TIMER
+  m_Name: countdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2474,7 +2474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &901029655
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2491,7 +2491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -810.08, y: 500.21}
+  m_AnchoredPosition: {x: -786.8, y: 500.21}
   m_SizeDelta: {x: 299.83, y: 79.581}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &901029656
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SUNRISE IN:'
+  m_text: 'DAY TIME:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5226,7 +5226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -783.5, y: 500.20935}
+  m_AnchoredPosition: {x: -810.08, y: 500.21}
   m_SizeDelta: {x: 299.8368, y: 79.5813}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851196982
@@ -5249,7 +5249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'NIGHT IN:'
+  m_text: 'NIGHT TIME:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8533,7 +8533,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 9167506967995138831}
+  - {fileID: 153122485}
   - {fileID: 851701242}
   - {fileID: 6280505561059620134}
   - {fileID: 1358260709665266928}
-  - {fileID: 153122485}
