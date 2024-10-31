@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3643205961633664886}
-  - component: {fileID: 8597945155088970479}
   - component: {fileID: 6083162072315861070}
   - component: {fileID: 2642875443899460163}
   m_Layer: 0
@@ -37,22 +36,6 @@ Transform:
   - {fileID: 3357100471901456834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8597945155088970479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2731825122156141009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fbd80f306515c41bf602ddd02f0e82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 0}
-  distance: 8
-  horizontalVelocity: 100
-  verticalVelocity: 80
 --- !u!54 &6083162072315861070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,6 +97,7 @@ GameObject:
   - component: {fileID: 3042311607301522603}
   - component: {fileID: 3929759520133363014}
   - component: {fileID: 1414568411005383866}
+  - component: {fileID: 2417406114118956008}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -195,6 +179,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6780780218335308570}
   m_Enabled: 1
+--- !u!114 &2417406114118956008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780780218335308570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fbd80f306515c41bf602ddd02f0e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 2098684273054232265}
+  distance: 8
+  horizontalVelocity: 100
+  verticalVelocity: 80
 --- !u!1 &8466383888362833343
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +258,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3643205961633664886}
     m_Modifications:
+    - target: {fileID: 3286065629415039563, guid: 7446fc63649c2ee48b182b2009c99608, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257564348279400325, guid: 7446fc63649c2ee48b182b2009c99608, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8334810020102068652, guid: 7446fc63649c2ee48b182b2009c99608, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -300,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710209211926872854, guid: 7446fc63649c2ee48b182b2009c99608, type: 3}
       propertyPath: m_Name
-      value: SM_Chr_Captain_Male_01
+      value: Uther3DModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
