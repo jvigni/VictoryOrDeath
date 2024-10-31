@@ -683,6 +683,7 @@ namespace Lightbug.CharacterControllerPro.Demo
         {
             if (lookingDirectionMode == LookingDirectionParameters.LookingDirectionMovementSource.Input)
             {
+                //TODO ESTA X ACA
                 if (CharacterStateController.InputMovementReference != Vector3.zero)
                     targetLookingDirection = CharacterStateController.InputMovementReference;
                 else
