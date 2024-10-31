@@ -6,6 +6,9 @@ public class HeroCamera : MonoBehaviour
     [SerializeField] private float distance = 8f;       // Distance from the target
     [SerializeField] private float horizontalVelocity = 100f; // Speed of horizontal rotation
     [SerializeField] private float verticalVelocity = 80f;    // Speed of vertical rotation
+    [SerializeField] private float zoomSpeed = 2f;      // Speed of zooming in and out
+    [SerializeField] private float minDistance = 2f;     // Minimum distance to the target
+    [SerializeField] private float maxDistance = 15f;    // Maximum distance from the target
 
     private float currentYaw;     // Horizontal rotation angle
     private float currentPitch;   // Vertical rotation angle
@@ -58,6 +61,11 @@ public class HeroCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
+        // Zoom in/out based on the mouse scroll wheel
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        distance -= scrollInput * zoomSpeed; // Adjust the distance based on scroll input
+        distance = Mathf.Clamp(distance, minDistance, maxDistance); // Clamp distance to prevent clipping
 
         // Calculate the camera position and rotation based on yaw, pitch, and distance
         Quaternion rotation = Quaternion.Euler(currentPitch, currentYaw, 0);

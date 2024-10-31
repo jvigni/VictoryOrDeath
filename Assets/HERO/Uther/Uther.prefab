@@ -195,6 +195,9 @@ MonoBehaviour:
   distance: 8
   horizontalVelocity: 100
   verticalVelocity: 80
+  zoomSpeed: 10
+  minDistance: 0
+  maxDistance: 20
 --- !u!1 &8466383888362833343
 GameObject:
   m_ObjectHideFlags: 0
