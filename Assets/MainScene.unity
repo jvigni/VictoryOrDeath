@@ -1320,6 +1320,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3aa477a5d702814584a9a4812312681, type: 3}
+--- !u!1 &528285680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7584270497408759287, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+  m_PrefabInstance: {fileID: 1358260709665266928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &537367213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2660,6 +2665,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6564454700863510281, guid: 6955c98543aadde46a96dcf02d163820, type: 3}
+      propertyPath: camera3D
+      value: 
+      objectReference: {fileID: 528285680}
     - target: {fileID: 6754019190536625214, guid: 6955c98543aadde46a96dcf02d163820, type: 3}
       propertyPath: m_Name
       value: PAUSE_MENU
