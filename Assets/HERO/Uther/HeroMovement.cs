@@ -1,5 +1,5 @@
 using UnityEngine;
-
+/*
 public class HeroMovement : MonoBehaviour
 {
     [SerializeField] private HeroCamera heroCamera;
@@ -39,7 +39,7 @@ public class HeroMovement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         // Calculate movement direction relative to the camera's orientation
-        Vector3 camForward = heroCamera.CamDirection;
+        Vector3 camForward = heroCamera.direction;
         Vector3 camRight = new Vector3(camForward.z, 0, -camForward.x); // perpendicular to camForward on the XZ plane
 
         Vector3 moveDirection = (camForward * vertical + camRight * horizontal).normalized;
@@ -61,10 +61,11 @@ public class HeroMovement : MonoBehaviour
     private void RotateHeroWithCamera()
     {
         // Keep hero facing the camera direction while right-clicking
-        Vector3 cameraFacing = new Vector3(heroCamera.CamDirection.x, 0, heroCamera.CamDirection.z);
+        Vector3 cameraFacing = new Vector3(heroCamera.direction.x, 0, heroCamera.direction.z);
         if (cameraFacing != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cameraFacing), Time.deltaTime * 10f);
         }
     }
 }
+*/
