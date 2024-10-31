@@ -5,23 +5,24 @@ using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
-    [SerializeField] Button deusVult;
-    [SerializeField] Button about;
-    [SerializeField] Button quit;
+    [SerializeField] Button startBtn;
+    [SerializeField] Button aboutBtn;
+    [SerializeField] Button quitBtn;
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject hero;
 
     private void Start()
     {
-        deusVult.onClick.AddListener(DeusVult);
-        about.onClick.AddListener(About);
-        quit.onClick.AddListener(Quit);
+        startBtn.onClick.AddListener(StartDEUSVULT);
+        aboutBtn.onClick.AddListener(About);
+        quitBtn.onClick.AddListener(Quit);
     }
 
-    void DeusVult()
+    void StartDEUSVULT()
     {
         hero.SetActive(true);
         startMenu.SetActive(false);
+        Cursor.visible = false;
     }
 
     void About()

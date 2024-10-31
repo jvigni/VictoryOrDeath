@@ -1273,7 +1273,7 @@ namespace Lightbug.CharacterControllerPro.Core
 
                 Velocity = characterVelocity;
                 Position += CustomUtilities.Multiply(characterVelocity, dt);
-                Rotation = targetRotation;
+                //Rotation = targetRotation;
             }
             else
             {

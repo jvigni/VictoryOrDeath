@@ -342,6 +342,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6754019190536625214, guid: 6955c98543aadde46a96dcf02d163820, type: 3}
   m_PrefabInstance: {fileID: 1037664952}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &141250758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1600253394399417862, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
+  m_PrefabInstance: {fileID: 8144774123073441930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &186501737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1217,6 +1228,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8379955498038156963, guid: 7b4ffca0174cb9e4e95616dd092d2735, type: 3}
   m_PrefabInstance: {fileID: 558020160}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &558544255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2420584867783643483, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
+  m_PrefabInstance: {fileID: 8144774123073441930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &577751811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6581,6 +6603,22 @@ PrefabInstance:
       propertyPath: hero
       value: 
       objectReference: {fileID: 80094918139921526}
+    - target: {fileID: 2879242461801463073, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
+      propertyPath: quitBtn
+      value: 
+      objectReference: {fileID: 558544255}
+    - target: {fileID: 2879242461801463073, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
+      propertyPath: aboutBtn
+      value: 
+      objectReference: {fileID: 141250758}
+    - target: {fileID: 2879242461801463073, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
+      propertyPath: startBtn
+      value: 
+      objectReference: {fileID: 2094603169}
+    - target: {fileID: 5305009039457778301, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
+      propertyPath: m_Name
+      value: StartDeusVultBtn
+      objectReference: {fileID: 0}
     - target: {fileID: 7870974112225427252, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
       propertyPath: m_Name
       value: START_MENU

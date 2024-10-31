@@ -17,4 +17,15 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Button help;
     [SerializeField] Button endGame;
     [SerializeField] Button returnToFirstMenu;
+
+    private void OnEnable()
+    {
+        Cursor.visible = true;
+        StartCoroutine(Utils.CenterCursor());
+    }
+
+    private void OnDisable()
+    {
+        Cursor.visible = false;
+    }
 }

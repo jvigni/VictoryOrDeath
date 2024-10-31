@@ -22,6 +22,7 @@ public class AppManager : MonoBehaviour
 
     void Awake()
     {
+        StartCoroutine(Utils.CenterCursor());
         StartCoroutine(StartGameClock());
     }
 
