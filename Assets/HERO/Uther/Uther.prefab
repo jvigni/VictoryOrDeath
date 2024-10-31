@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df89c07f3ab500d47a2d303c900e53b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heroCamera: {fileID: 2417406114118956008}
   moveSpeed: 5
 --- !u!54 &6083162072315861070
 Rigidbody:
@@ -284,8 +285,8 @@ MonoBehaviour:
   zoomSpeed: 9
   minDistance: 1
   maxDistance: 9
-  camDirection: {x: 0, y: 0, z: 0}
-  camDistance: 20
+  CamDirection: {x: 0, y: 0, z: 0}
+  CamDistance: 0
 --- !u!135 &2027884968815385205
 SphereCollider:
   m_ObjectHideFlags: 0

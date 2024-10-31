@@ -14,9 +14,9 @@ public class HeroCamera : MonoBehaviour
     private const float minPitch = -20f; // Minimum vertical angle
     private const float maxPitch = 80f;  // Maximum vertical angle
 
-    public Vector3 camDirection;
-    public float camDistance;
-
+    public Vector3 CamDirection;
+    public float CamDistance;
+    
     void Start()
     {
         // Initialize yaw and pitch based on the camera's initial rotation
@@ -64,7 +64,7 @@ public class HeroCamera : MonoBehaviour
         transform.LookAt(targetPosition);
 
         // Update the new camDirection and camDistance variables
-        camDirection = (transform.position - hero.position).normalized;
-        camDistance = Vector3.Distance(transform.position, hero.position);
+        CamDirection = (transform.position - hero.position).normalized;
+        CamDistance = Vector3.Distance(transform.position, hero.position);
     }
 }

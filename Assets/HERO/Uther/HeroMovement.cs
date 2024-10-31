@@ -2,72 +2,69 @@ using UnityEngine;
 
 public class HeroMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f; // Speed at which the hero moves
-    private CharacterController characterController; // Reference to the character controller
+    [SerializeField] private HeroCamera heroCamera;
+    [SerializeField] private float moveSpeed = 5f;
+
+    private CharacterController characterController;
+    private bool isRightClicking = false;
 
     private void Start()
     {
-        // Get the CharacterController component attached to the hero
         characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
     {
-        // Handle WASD movement (forward/backward and strafe)
         HandleWASDMovement();
 
-        // Handle right mouse button click for movement to a point
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)) // Right mouse down
         {
-            // Perform a raycast to detect the ground position to move to
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            isRightClicking = true;
+        }
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                // Move the hero to the hit position
-                MoveToPosition(hit.point);
-            }
+        if (Input.GetMouseButtonUp(1)) // Right mouse up
+        {
+            isRightClicking = false;
+        }
+
+        if (isRightClicking)
+        {
+            RotateHeroWithCamera();
         }
     }
 
     private void HandleWASDMovement()
     {
-        // Get input from WASD keys
-        float horizontal = Input.GetAxis("Horizontal"); // A/D or Left/Right
-        float vertical = Input.GetAxis("Vertical"); // W/S or Up/Down
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        // Create movement vectors
-        Vector3 forwardMovement = transform.forward * vertical; // Forward (W) and Backward (S)
-        Vector3 strafeMovement = transform.right * horizontal; // Strafe left (A) and right (D)
+        // Calculate movement direction relative to the camera's orientation
+        Vector3 camForward = heroCamera.CamDirection;
+        Vector3 camRight = new Vector3(camForward.z, 0, -camForward.x); // perpendicular to camForward on the XZ plane
 
-        // Combine movement and strafe vectors
-        Vector3 finalMove = forwardMovement + strafeMovement;
+        Vector3 moveDirection = (camForward * vertical + camRight * horizontal).normalized;
 
-        // Move the hero using the CharacterController
-        characterController.Move(finalMove * moveSpeed * Time.deltaTime);
-
-        // Optional: Rotate the hero only when moving forward or backward
-        if (vertical != 0) // Rotate only if moving forward or backward
+        // Apply movement to the character controller
+        if (moveDirection != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(forwardMovement);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+            // Rotate the hero to face the movement direction if moving forward or backward
+            if (vertical != 0)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            }
         }
     }
 
-    private void MoveToPosition(Vector3 targetPosition)
+    private void RotateHeroWithCamera()
     {
-        // Calculate the direction to the target position
-        Vector3 direction = (targetPosition - transform.position).normalized;
-
-        // Move the hero
-        characterController.Move(direction * moveSpeed * Time.deltaTime);
-
-        // Optional: Rotate the hero to face the target position
-        if (direction != Vector3.zero) // Check to prevent rotation when direction is zero
+        // Keep hero facing the camera direction while right-clicking
+        Vector3 cameraFacing = new Vector3(heroCamera.CamDirection.x, 0, heroCamera.CamDirection.z);
+        if (cameraFacing != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cameraFacing), Time.deltaTime * 10f);
         }
     }
 }
