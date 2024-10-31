@@ -685,8 +685,8 @@ namespace Lightbug.CharacterControllerPro.Demo
             {
                 //TODO ESTA X ACA
                 if (CharacterStateController.InputMovementReference != Vector3.zero)
-                    //targetLookingDirection = CharacterStateController.InputMovementReference;
-                    targetLookingDirection = CharacterStateController.MovementReferenceForward;
+                    //targetLookingDirection = CharacterStateController.InputMovementReference; // Rotando segun donde apunte WASD
+                    targetLookingDirection = CharacterStateController.MovementReferenceForward; // Siempre viendo para adelante
                 else
                     targetLookingDirection = CharacterActor.Forward;
             }
