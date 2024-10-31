@@ -4722,11 +4722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8504479670762950424, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
       propertyPath: m_Name
-      value: KALDOR
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504479670762950424, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: RODLAK
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
