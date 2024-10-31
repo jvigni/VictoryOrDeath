@@ -1,12 +1,13 @@
 using UnityEngine;
-/*
-public class HeroMovement : MonoBehaviour
+
+[RequireComponent(typeof(CharacterController))]
+public class WoWCharacterMovement : MonoBehaviour
 {
-    [SerializeField] private HeroCamera heroCamera;
+    [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float rotationSpeed = 700f; // Degrees per second
 
     private CharacterController characterController;
-    private bool isRightClicking = false;
 
     private void Start()
     {
@@ -15,57 +16,39 @@ public class HeroMovement : MonoBehaviour
 
     private void Update()
     {
-        HandleWASDMovement();
-
-        if (Input.GetMouseButtonDown(1)) // Right mouse down
-        {
-            isRightClicking = true;
-        }
-
-        if (Input.GetMouseButtonUp(1)) // Right mouse up
-        {
-            isRightClicking = false;
-        }
-
-        if (isRightClicking)
-        {
-            RotateHeroWithCamera();
-        }
+        MoveCharacter();
     }
 
-    private void HandleWASDMovement()
+    private void MoveCharacter()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        // Get input from WASD keys
+        float horizontalInput = Input.GetAxis("Horizontal"); // A/D keys
+        float verticalInput = Input.GetAxis("Vertical"); // W/S keys
 
-        // Calculate movement direction relative to the camera's orientation
-        Vector3 camForward = heroCamera.direction;
-        Vector3 camRight = new Vector3(camForward.z, 0, -camForward.x); // perpendicular to camForward on the XZ plane
+        // Get the forward direction of the character
+        Vector3 forward = transform.forward; // Forward direction based on character's orientation
+        Vector3 right = transform.right; // Right direction based on character's orientation
 
-        Vector3 moveDirection = (camForward * vertical + camRight * horizontal).normalized;
+        // Normalize the movement vector to ensure consistent speed
+        Vector3 movement = (right * horizontalInput + forward * verticalInput).normalized;
 
-        // Apply movement to the character controller
-        if (moveDirection != Vector3.zero)
+        // If there's movement input, move the character
+        if (movement.magnitude > 0.1f)
         {
-            characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+            // Move the character
+            characterController.Move(movement * moveSpeed * Time.deltaTime);
 
-            // Rotate the hero to face the movement direction if moving forward or backward
-            if (vertical != 0)
+            // Rotate the character to face forward/backward movement direction
+            if (verticalInput != 0)
             {
-                Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+                Quaternion targetRotation = Quaternion.LookRotation(forward);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
         }
-    }
-
-    private void RotateHeroWithCamera()
-    {
-        // Keep hero facing the camera direction while right-clicking
-        Vector3 cameraFacing = new Vector3(heroCamera.direction.x, 0, heroCamera.direction.z);
-        if (cameraFacing != Vector3.zero)
+        else
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(cameraFacing), Time.deltaTime * 10f);
+            // If no input, set velocity to zero immediately
+            characterController.Move(Vector3.zero);
         }
     }
 }
-*/
