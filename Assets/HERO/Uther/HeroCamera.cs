@@ -7,10 +7,12 @@ public class HeroCamera : MonoBehaviour
     [SerializeField] private float horizontalVelocity = 100f; // Speed of horizontal rotation
     [SerializeField] private float verticalVelocity = 80f;    // Speed of vertical rotation
 
-    private float currentYaw = 0f;    // Horizontal rotation angle
-    private float currentPitch = 20f; // Vertical rotation angle
+    private float currentYaw;     // Horizontal rotation angle
+    private float currentPitch;   // Vertical rotation angle
     private const float minPitch = -20f; // Minimum vertical angle
     private const float maxPitch = 80f;  // Maximum vertical angle
+
+    private bool isCameraInitialized = false; // Flag to check if camera is initialized
 
     void Start()
     {
@@ -18,6 +20,9 @@ public class HeroCamera : MonoBehaviour
         Vector3 angles = transform.eulerAngles;
         currentYaw = angles.y;
         currentPitch = angles.x;
+
+        // Set the camera position to its initial position
+        isCameraInitialized = true; // Set this flag to true since we have an initial setup
     }
 
     void LateUpdate()
@@ -25,6 +30,14 @@ public class HeroCamera : MonoBehaviour
         // Enable rotation and hide the cursor while holding the left mouse button
         if (Input.GetMouseButton(0))
         {
+            // Store the initial yaw and pitch based on the current rotation on first click
+            if (!isCameraInitialized)
+            {
+                currentYaw = transform.eulerAngles.y;
+                currentPitch = transform.eulerAngles.x;
+                isCameraInitialized = true; // Set the flag to true after initializing
+            }
+
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 

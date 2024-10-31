@@ -9,7 +9,7 @@ public class StartMenu : MonoBehaviour
     [SerializeField] Button about;
     [SerializeField] Button quit;
     [SerializeField] GameObject startMenu;
-    [SerializeField] GameObject hero;
+    [SerializeField] GameObject heroCamera;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class StartMenu : MonoBehaviour
     void DeusVult()
     {
         startMenu.SetActive(false);
-        hero.SetActive(true);
+        heroCamera.SetActive(true);
     }
 
     void About()

@@ -2025,6 +2025,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 189802390850978646, guid: aea4a32a0656a7d42a65406d023b32ba, type: 3}
   m_PrefabInstance: {fileID: 1427778370}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1021307899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6780780218335308570, guid: 420789146cded7545ae1d30815345508, type: 3}
+  m_PrefabInstance: {fileID: 1788531788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1037664952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3720,11 +3725,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2731825122156141009, guid: 420789146cded7545ae1d30815345508, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3643205961633664886, guid: 420789146cded7545ae1d30815345508, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.06781
+      value: 23.73
       objectReference: {fileID: 0}
     - target: {fileID: 3643205961633664886, guid: 420789146cded7545ae1d30815345508, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3760,6 +3765,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3643205961633664886, guid: 420789146cded7545ae1d30815345508, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780780218335308570, guid: 420789146cded7545ae1d30815345508, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6472,6 +6481,10 @@ PrefabInstance:
       propertyPath: startMenu
       value: 
       objectReference: {fileID: 2011637649}
+    - target: {fileID: 2879242461801463073, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
+      propertyPath: heroCamera
+      value: 
+      objectReference: {fileID: 1021307899}
     - target: {fileID: 2879242461801463073, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
       propertyPath: fuerzasDelCieloFX
       value: 
