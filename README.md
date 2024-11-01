@@ -15,9 +15,9 @@ music -> passion -> strenght -> victory "without music life would be a mistake -
 # Speach de venta:
 -Cansado de juegos woke y falta de masculinidad/estoicismo?
 -Cansado de farmear 10 meses para hacer buen pvp del wow?
--Cansado de perder la partida por que una linea feedeo?
--Cansado de la empresa desarolladora de juegos multimillonaria afanando?
--Cansado de los dictadores y campos de tortura/concentracion?
+-Cansado de perder la partida de lol por que una linea feedeo?
+-Cansado de la desarolladora de juegos multimillonaria siga robando?
+-Cansado de los dictadores y campos de concentracion/tortura?
 yo tambien. Aca esta todo lo bueno y voy a dar la vida para que funcione
 -wow meets lol
 
