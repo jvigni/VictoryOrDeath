@@ -46,7 +46,7 @@ public class HexManager : MonoBehaviour
         {
         for (int i = 0; i < mobsAmountPerHex; i++)
             {
-                var mob = SpawnMob(hex, mobsCampParent.transform);
+                var mob = SpawnMob(hex, hex.mobsLevel, mobsCampParent.transform);
                 mobsCampParent.gameObject.transform.SetParent(allMobsParent.transform);
             }
         });
@@ -66,24 +66,24 @@ public class HexManager : MonoBehaviour
         hex.goldOre = ore;
     }
 
-    Mob SpawnMob(Hexagon hex, Transform parentObj)
+    Mob SpawnMob(Hexagon hex, int level, Transform parentObj)
     {
         var rndSpawnPosition = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
-        Mob newMob = Instantiate(GetRndMobPrefab(), rndSpawnPosition, Quaternion.identity);
+        Mob newMob = Instantiate(GetRndMobPrefab(level), rndSpawnPosition, Quaternion.identity);
         newMob.transform.SetParent(parentObj.transform);
-        newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, parentObj);
+        newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, level, parentObj);
         hex.mobs = newMob;
         return newMob;
     }
 
-    internal Mob GetRndMobPrefab()
+    internal Mob GetRndMobPrefab(int level)
     {
         var selectedMobsList = mobsLv1Prefab;
 
         var elapsedMinutes = appManager_.GetElapsedGameSeconds() / 60;
-        if (elapsedMinutes >= 5) selectedMobsList = mobsLv2Prefab;
-        if (elapsedMinutes >= 10) selectedMobsList = mobsLv3Prefab;
+        if (elapsedMinutes >= 5 || level == 2) selectedMobsList = mobsLv2Prefab;
+        if (elapsedMinutes >= 10 || level == 3) selectedMobsList = mobsLv3Prefab;
 
         // Pick a random mob from the selected list
         int randomIndex = UnityEngine.Random.Range(0, selectedMobsList.Count);
