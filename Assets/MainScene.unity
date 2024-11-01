@@ -6810,6 +6810,10 @@ PrefabInstance:
       propertyPath: learnedAbilities.Array.data[0]
       value: 
       objectReference: {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
+    - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8163705346962099271, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.31277

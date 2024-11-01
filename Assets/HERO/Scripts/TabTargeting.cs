@@ -40,13 +40,8 @@ public class TabTargeting : MonoBehaviour
     // Corrutina que activa el collider y verifica los objetivos
     IEnumerator ActivateColliderAndDetectTargets()
     {
-        // Activar el collider
         targetCollider.enabled = true;
-
-        // Esperar un tiempo breve para permitir detección
         yield return new WaitForSeconds(0.1f);
-
-        // Desactivar el collider
         targetCollider.enabled = false;
 
         // Obtener el centro y el tamaño del collider para la detección

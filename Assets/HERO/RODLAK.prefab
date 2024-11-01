@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8904476147039024361}
-  - component: {fileID: 5392119760698676596}
   - component: {fileID: 5781005756806020627}
+  - component: {fileID: 3982425700066061597}
   m_Layer: 0
   m_Name: TabTargeter
   m_TagString: Untagged
@@ -33,20 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3350729461305089110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5392119760698676596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791509911748982555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7519d25bd8cc46640966724cdb3b8d1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentObjective: {fileID: 0}
-  targetedObjects: []
 --- !u!65 &5781005756806020627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,6 +54,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6, y: 6, z: 6}
   m_Center: {x: 0, y: 1, z: 3}
+--- !u!114 &3982425700066061597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791509911748982555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4341dc33e2067d4b9b7af0e87d64901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectedTargets: []
 --- !u!1 &5578046334139406400
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +281,7 @@ GameObject:
   - component: {fileID: 3133228240431496104}
   m_Layer: 0
   m_Name: RODLAK
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
