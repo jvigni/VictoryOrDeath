@@ -33,13 +33,14 @@ public class TabTargeter : MonoBehaviour
         Vector3 detectionSize = selfCollider.bounds.extents;
 
         Collider[] colliders = Physics.OverlapBox(detectionCenter, detectionSize);
+        if (colliders == null)
+            return;
 
         foreach (var collider in colliders)
         {
-            if (collider.gameObject != gameObject && (collider.CompareTag("Minion") || collider.CompareTag("Hero")))
-            {
+            var mob = collider.GetComponent<Mob>();
+            if (mob != null)
                 detectedTargets.Add(collider.gameObject);
-            }
         }
     }
 
