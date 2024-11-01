@@ -7906,6 +7906,10 @@ PrefabInstance:
       propertyPath: mobsLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1719185457442492295, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: spawnsMobs
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1805101386179558651, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_LocalPosition.y
       value: 24.87
@@ -8013,6 +8017,10 @@ PrefabInstance:
     - target: {fileID: 3662418812262040656, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_text
       value: WHAT FOR? > WHY?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725303128996356271, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: spawnsMobs
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4123462044857423110, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: m_Name
@@ -8154,6 +8162,14 @@ PrefabInstance:
       propertyPath: appManager_
       value: 
       objectReference: {fileID: 4968995392839011125}
+    - target: {fileID: 6331632481712720282, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: spawnRadius
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6331632481712720282, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: mobsAmountPerHex
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6331632481712720282, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: mobsLv2Prefab.Array.size
       value: 2
