@@ -12,6 +12,14 @@
 -Se trabaja con musica para concentrarse. ya sea passionate[eg. AmonAmart, Sabaton, Manowar] o mas chill background del war3/wow humans/nightelfs/taurens, o mas chill repetitiva adhd style
 music -> passion -> strenght -> victory "without music life would be a mistake -nietzsche"
 
+# Speach de venta:
+-Cansado de farmear 10 meses para hacer buen pvp del wow?
+-Cansado de perder la partida por que una linea feedeo?
+-Cansado de la empresa desarolladora de juegos multimillonaria afanando?
+-Cansado de los dictadores y campos de tortura/concentracion?
+-Aca esta todo lo bueno y voy a dar la vida para que funcione
+-wow meets lol
+
 # Idea general
 -Se pickea civ[team] y heroe[clase] en interfaz a lo war3
 DIA: 3 minutos de wow mob farming + battleground[goldOre]

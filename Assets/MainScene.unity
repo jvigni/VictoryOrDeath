@@ -2407,7 +2407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee744710697d4c043b8044651949c781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muteSound: 0
+  muteSound: 1
   objectPoolLength: 20
   soundDistance: 7
   logSounds: 0
