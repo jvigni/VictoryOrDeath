@@ -13,6 +13,7 @@
 music -> passion -> strenght -> victory "without music life would be a mistake -nietzsche"
 
 # Speach de venta:
+-Cansado de juegos woke y falta de masculinidad/estoicismo?
 -Cansado de farmear 10 meses para hacer buen pvp del wow?
 -Cansado de perder la partida por que una linea feedeo?
 -Cansado de la empresa desarolladora de juegos multimillonaria afanando?
