@@ -5,34 +5,25 @@ public class CharacterAbilities : MonoBehaviour
 {
     public List<Ability> learnedAbilities = new List<Ability>();
     public Ability[] abilitySlots = new Ability[4]; // 4 habilidades asignables
-    private Movement movement;
-    void Start()
-    {
-        // Inicializa el script de movimiento
-        movement = GetComponent<Movement>();
-    }
 
         void Update()
     {
         // Asignar habilidades a teclas
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
             UseAbility(0);
-            movement.ChangeAnimation("AtackFlying02");
-        }
-            if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
             UseAbility(1);
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
             UseAbility(2);
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
             UseAbility(3);
     }
 
     public void UseAbility(int slot)
     {
         if (abilitySlots[slot] != null)
-        {
-            abilitySlots[slot].Activate(gameObject);  // Activa la habilidad asignada
-        }
+            abilitySlots[slot].Activate(gameObject);
+        else
+            Debug.Log("No ability assigned on slot " + slot);
     }
 }

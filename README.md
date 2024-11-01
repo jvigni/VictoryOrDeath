@@ -2,12 +2,15 @@
  Fortis Fortuna Adiuvat
 
 # DA RULES:
--main branch es sagrada. siempre tiene que quedar funcionando sin errores. si el cambio es muy grande y necesita checkpoints, se usa una branch con tu nombre eg. [juan_cameraWIP]
+-Lean e internalizen lentamente cada una de estas regla
+-main branch y la main scene son sagrada. siempre tiene que quedar funcionando sin errores. si el cambio es muy grande y necesita checkpoints, se usa una branch con tu nombre eg. [juan_cameraWIP]
+-La main scene tiene un capitan que solo el puede hacer cambios en la scene. todos los demas hacen cambios en existentes/nuevos prefabs o clonan su scene para armar un paquete y traerlo a la principal. pero no modifican la main scene sin avisar al capitan [Mergear metadata de unity es imposibru]
 -A gpt se empieza con: "sos el mejor space wizard coder del universo, que usa cleancode y variables autodescriptivas." antes de pegar el codigo que tiene que revisar. tambien usar buenos modales por las dudas [prompting engineering]
--La main scene tiene un capitan que solo el puede hacer cambios en dicha scene. todos los demas hacen cambios en prefabs o crean los suyos o agregan cosas. pero no modifican la main scene sin avisar al capitan [Mergear metadata de unity es imposibru]
 -Se separa el trabajo para que cada quien trabaje en lo mas separado posible [evitar merge conflicts a toda costa][eg. A en el character, B en los minions]
 -El codigo no se compra en la assetstore. entender y debugear codigo de un paquete es perdida de tiempo.
 -Cualquiera puede proponer reglas sin consecuencia. se revisaran por el consejo de mono si entran o no.
+-Se trabaja con musica para concentrarse. ya sea passionate[eg. AmonAmart, Sabaton, Manowar] o mas chill background del war3/wow humans/nightelfs/taurens, o mas chill repetitiva adhd style
+music -> passion -> strenght -> victory "without music life would be a mistake -nietzsche"
 
 # Idea general
 -Se pickea civ[team] y heroe[clase] en interfaz a lo war3
