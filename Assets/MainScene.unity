@@ -7631,9 +7631,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6835830769598079895, guid: cb5472a1a22084e44a3680f07bc4cdf3, type: 3}
       propertyPath: m_text
-      value: 'I DONT KNOW, MAYBE IT''S A TEST OF FAITH,
+      value: 'I DONT KNOW, COULD BE A TEST OF FAITH,
 
-        MAYBE A TRAINING
+        COULD BE A TRAINING
         FOR WHAT''S AFTER.
 
         - JOIN THE GOOD OR ROT -'
