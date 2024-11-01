@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8904476147039024361}
   - component: {fileID: 5781005756806020627}
-  - component: {fileID: 3489921142320640958}
-  - component: {fileID: 3982425700066061597}
+  - component: {fileID: 4528155784341948974}
   m_Layer: 0
   m_Name: TabTargeter
   m_TagString: Untagged
@@ -49,27 +48,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6, y: 6, z: 6}
-  m_Center: {x: 0, y: 1, z: 3}
---- !u!114 &3489921142320640958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791509911748982555}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7519d25bd8cc46640966724cdb3b8d1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentObjective: {fileID: 0}
-  targetedObjects: []
---- !u!114 &3982425700066061597
+  m_Size: {x: 12, y: 12, z: 12}
+  m_Center: {x: 0, y: 1, z: 5}
+--- !u!114 &4528155784341948974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,9 +266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8e128e30acb7643a3983aac98f9ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  learnedAbilities: []
+  learnedAbilities:
+  - {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
   abilitySlots:
-  - {fileID: 0}
+  - {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -416,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6289874671616063288, guid: c822f91997f3a8649ae1b0ddaac74b61, type: 3}
       propertyPath: planarMovementParameters.boostSpeedLimit
-      value: 9
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6289874671616063291, guid: c822f91997f3a8649ae1b0ddaac74b61, type: 3}
       propertyPath: movementReferenceParameters.externalReference

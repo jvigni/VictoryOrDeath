@@ -30,7 +30,12 @@ public class TabTargeter : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
+    {
+       Debug.Log("colision");
+    }
+
+    private void OnTriggerEnter3D(Collider other)
     {
         Debug.Log("colision");
     }
