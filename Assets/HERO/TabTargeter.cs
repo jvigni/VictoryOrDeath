@@ -4,14 +4,17 @@ using System.Collections;
 
 public class TabTargeter : MonoBehaviour
 {
-    public BoxCollider collider;
+    private Collider selfCollider;
     private LifeForm currentTarget;
     [SerializeField] private List<GameObject> detectedTargets = new List<GameObject>();
     private int targetIndex = -1;
 
+    [SerializeField] private LayerMask targetLayer; // Add this for layer filtering
+
     void Start()
     {
-        collider.enabled = false; // Ensure it's initially disabled
+        selfCollider = GetComponent<Collider>();
+        selfCollider.enabled = false; // Ensure it's initially disabled
     }
 
     void Update()
@@ -28,18 +31,20 @@ public class TabTargeter : MonoBehaviour
         targetIndex = -1; // Reset target index on update
 
         // Temporarily enable collider to detect mobs in range
-        collider.enabled = true;
+        selfCollider.enabled = true;
         yield return new WaitForFixedUpdate(); // Wait one physics update to ensure overlap detection
-        collider.enabled = false;
+        selfCollider.enabled = false;
 
         // Use collider bounds to define detection area
-        Vector3 detectionCenter = collider.bounds.center;
-        Vector3 detectionSize = collider.bounds.extents;
+        Vector3 detectionCenter = selfCollider.bounds.center;
+        Vector3 detectionSize = selfCollider.bounds.extents;
 
-        Collider[] colliders = Physics.OverlapBox(detectionCenter, detectionSize);
+        // Use a layer mask for filtering relevant targets only
+        Collider[] colliders = Physics.OverlapBox(detectionCenter, detectionSize, Quaternion.identity, targetLayer);
+
         foreach (var collider in colliders)
         {
-            if (collider != this.collider) // Skip self-collider
+            if (collider != selfCollider) // Skip self-collider
             {
                 var mob = collider.GetComponent<Mob>();
                 if (mob != null)

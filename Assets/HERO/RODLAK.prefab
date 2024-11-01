@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8904476147039024361}
   - component: {fileID: 5781005756806020627}
+  - component: {fileID: 3489921142320640958}
   - component: {fileID: 3982425700066061597}
   m_Layer: 0
   m_Name: TabTargeter
@@ -54,7 +55,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6, y: 6, z: 6}
   m_Center: {x: 0, y: 1, z: 3}
---- !u!114 &3982425700066061597
+--- !u!114 &3489921142320640958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +64,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791509911748982555}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7519d25bd8cc46640966724cdb3b8d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentObjective: {fileID: 0}
+  targetedObjects: []
+--- !u!114 &3982425700066061597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791509911748982555}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4341dc33e2067d4b9b7af0e87d64901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   detectedTargets: []
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &5578046334139406400
 GameObject:
   m_ObjectHideFlags: 0
