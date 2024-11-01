@@ -829,7 +829,7 @@ MonoBehaviour:
   Health:
     value: 0
   MaxHealth:
-    value: 1
+    value: 800
 --- !u!114 &6801812493259527109
 MonoBehaviour:
   m_ObjectHideFlags: 0

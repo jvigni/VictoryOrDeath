@@ -9,5 +9,6 @@ public class Hexagon : MonoBehaviour
     //[SerializeField] HexManager hexManager;
 
     public bool spawnsMobs = true;
+    public int mobsLevel = 1;
     public bool spawnsGoldRT = true;
 }
