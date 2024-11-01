@@ -18,7 +18,7 @@ music -> passion -> strenght -> victory "without music life would be a mistake -
 -Cansado de perder la partida por que una linea feedeo?
 -Cansado de la empresa desarolladora de juegos multimillonaria afanando?
 -Cansado de los dictadores y campos de tortura/concentracion?
--Aca esta todo lo bueno y voy a dar la vida para que funcione
+yo tambien. Aca esta todo lo bueno y voy a dar la vida para que funcione
 -wow meets lol
 
 # Idea general
