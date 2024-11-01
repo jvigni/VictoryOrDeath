@@ -83,7 +83,7 @@ public class TabTargeting : MonoBehaviour
             currentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
 
             // Imprime para verificar el cambio
-            Debug.Log($"Nuevo objetivo actual: {currentObjective.gameObject.name}");
+                Debug.Log($"Nuevo objetivo actual: {currentObjective.gameObject.name}");
         }
         else
         {

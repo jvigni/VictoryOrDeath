@@ -123,3 +123,14 @@ TALENTOS:[se prenden solos automatico]
 -ice barrier [explota al romperse en una frostnova]
 -finger of frost [30% faster cast]
 -etc
+
+# MTG+:
+-60 diferent cards [no lands][mazo mezclable]
+-recursos a lo wow [girar cualquier carta][no mana stucked]
+-combate con target y dmg [dados para marcar dmg][combate mas dinamico y justo]
+-vigilance o defender es protector [meterse entre medio de un ataque]
+-El comander inicia ingame pero son 2 cartas menos iniciales  x recurso
+-5 players = tus enemigos estan al lado, tus aliados los demas
+-Carta de comander donde se suman dados como el dmg. 30 de hp todos
+-pve nexus mode: no sabes a quien atacar? es todos vs 1. ese 1 roba 2 cartas y baja 2 lands x turno. los demas son team. se ajusta para mas players
+

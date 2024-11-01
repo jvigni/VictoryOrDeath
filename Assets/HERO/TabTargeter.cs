@@ -1,50 +1,56 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class TabTargeter : MonoBehaviour
 {
-    private Collider selfCollider;
     private LifeForm currentTarget;
     [SerializeField] private List<GameObject> detectedTargets = new List<GameObject>();
     private int targetIndex = -1;
 
-    [SerializeField] private LayerMask targetLayer; // Add this for layer filtering
+    [SerializeField] private LayerMask targetLayer;
+    private BoxCollider detectionCollider; // Reference to the BoxCollider
 
     void Start()
     {
-        selfCollider = GetComponent<Collider>();
-        selfCollider.enabled = false; // Ensure it's initially disabled
+        detectionCollider = GetComponent<BoxCollider>();
+        if (detectionCollider == null)
+        {
+            Debug.LogError("BoxCollider is missing. Please attach a BoxCollider to this GameObject.");
+            return;
+        }
+        detectionCollider.isTrigger = true; // Set the collider as a trigger
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            StartCoroutine(ActivateColliderAndFindTargets());
+            FindTargets();
         }
     }
 
-    private IEnumerator ActivateColliderAndFindTargets()
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("colision");
+    }
+
+    private void FindTargets()
+    {
+        // Clear previous detections and reset target index
         detectedTargets.Clear();
-        targetIndex = -1; // Reset target index on update
+        targetIndex = -1;
 
-        // Temporarily enable collider to detect mobs in range
-        selfCollider.enabled = true;
-        yield return new WaitForFixedUpdate(); // Wait one physics update to ensure overlap detection
-        selfCollider.enabled = false;
+        // Use the BoxCollider bounds to define the detection area
+        Vector3 detectionCenter = detectionCollider.bounds.center;
+        Vector3 detectionSize = detectionCollider.bounds.extents;
 
-        // Use collider bounds to define detection area
-        Vector3 detectionCenter = selfCollider.bounds.center;
-        Vector3 detectionSize = selfCollider.bounds.extents;
-
-        // Use a layer mask for filtering relevant targets only
-        Collider[] colliders = Physics.OverlapBox(detectionCenter, detectionSize, Quaternion.identity, targetLayer);
+        // Detect targets within the BoxCollider bounds
+        Collider[] colliders = Physics.OverlapBox(detectionCenter, detectionSize, Quaternion.identity);
 
         foreach (var collider in colliders)
         {
-            if (collider != selfCollider) // Skip self-collider
+            if (collider.gameObject != gameObject) // Skip self
             {
                 var mob = collider.GetComponent<Mob>();
                 if (mob != null)
