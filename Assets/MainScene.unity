@@ -2194,6 +2194,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 189802390850978646, guid: aea4a32a0656a7d42a65406d023b32ba, type: 3}
   m_PrefabInstance: {fileID: 1475748935}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &627622511 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+  m_PrefabInstance: {fileID: 1358260709665266928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &629449106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7225,6 +7230,30 @@ PrefabInstance:
       propertyPath: learnedAbilities.Array.data[0]
       value: 
       objectReference: {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
+    - target: {fileID: 3982425700066061597, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 627622511}
+    - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_Size.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_Size.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_Size.z
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_Center.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
       propertyPath: m_IsTrigger
       value: 1

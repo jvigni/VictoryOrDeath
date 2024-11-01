@@ -4,44 +4,53 @@ using System.Collections;
 
 public class TabTargeter : MonoBehaviour
 {
-    private Collider selfCollider;
+    public BoxCollider collider;
     private LifeForm currentTarget;
     [SerializeField] private List<GameObject> detectedTargets = new List<GameObject>();
     private int targetIndex = -1;
 
     void Start()
     {
-        selfCollider = GetComponent<Collider>();
-        selfCollider.enabled = false;
+        collider.enabled = false; // Ensure it's initially disabled
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            UpdateTargets();
-            SelectNextTarget();
+            StartCoroutine(ActivateColliderAndFindTargets());
         }
     }
 
-    private void UpdateTargets()
+    private IEnumerator ActivateColliderAndFindTargets()
     {
         detectedTargets.Clear();
         targetIndex = -1; // Reset target index on update
 
-        Vector3 detectionCenter = selfCollider.bounds.center;
-        Vector3 detectionSize = selfCollider.bounds.extents;
+        // Temporarily enable collider to detect mobs in range
+        collider.enabled = true;
+        yield return new WaitForFixedUpdate(); // Wait one physics update to ensure overlap detection
+        collider.enabled = false;
+
+        // Use collider bounds to define detection area
+        Vector3 detectionCenter = collider.bounds.center;
+        Vector3 detectionSize = collider.bounds.extents;
 
         Collider[] colliders = Physics.OverlapBox(detectionCenter, detectionSize);
-        if (colliders == null)
-            return;
-
         foreach (var collider in colliders)
         {
-            var mob = collider.GetComponent<Mob>();
-            if (mob != null)
-                detectedTargets.Add(collider.gameObject);
+            if (collider != this.collider) // Skip self-collider
+            {
+                var mob = collider.GetComponent<Mob>();
+                if (mob != null)
+                {
+                    detectedTargets.Add(collider.gameObject);
+                }
+            }
         }
+
+        // Select the next target after updating the list
+        SelectNextTarget();
     }
 
     private void SelectNextTarget()
