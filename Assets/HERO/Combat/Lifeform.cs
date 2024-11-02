@@ -139,18 +139,6 @@ public class LifeForm : MonoBehaviour
         //    Provider.FloatingTextManager.PrintOnPosition($"{amount}", Color.green, GetPosition());
     }
 
-    public void ExecuteOnTurnEndEffects()
-    {
-        foreach (Effect effect in Effects.ToList())
-            effect.OnTurnEnd();
-    }
-
-    public void ExecuteOnTurnStartEffects()
-    {
-        foreach (Effect effect in Effects.ToList())
-            effect.OnTurnStart();
-    }
-
     public void ExecutePostStunEffects()
     {
         foreach (Effect effect in Effects.ToList())
