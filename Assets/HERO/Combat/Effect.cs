@@ -1,5 +1,4 @@
 using System;
-using UniRx;
 using UnityEngine;
 
 public enum EffectBehaviour
@@ -45,7 +44,9 @@ public enum EffectID
 [Serializable]
 public abstract class Effect
 {
-    public ReactiveProperty<int> Charges { get; protected set; }
+    public int Charges;
+    public Action<int> OnChargesChange;
+
     public EffectID ID;
     public LifeForm Owner;
     public LifeForm Caster;
@@ -64,7 +65,7 @@ public abstract class Effect
         Type = type;
         Description = desc;
         BehaviourType = behaviourType;
-        Charges = new ReactiveProperty<int>(charges);
+        Charges = charges;
     }
 
     public void Expire()
@@ -75,62 +76,15 @@ public abstract class Effect
 
     protected void Tick()
     {
-        Charges.Value--;
-        if (Charges.Value == 0)
+        Charges--;
+        OnChargesChange?.Invoke(Charges);
+        if (Charges == 0)
             Expire();
-    }
-
-    public void OnTurnStart()
-    {
-        DoOnTurnStart();
-
-        if (ticksOnTurnStart)
-        {
-            if (ticksDelayCountdown > 0)
-            {
-                ticksDelayCountdown--;
-                return;
-            }
-
-            Charges.Value--;
-            if (Charges.Value == 0)
-                Expire();
-        }
-    }
-
-    public void OnTurnEnd()
-    {
-        DoOnTurnEnd();
-
-        if (ticksOnTurnEnd)
-        {
-            if (ticksDelayCountdown > 0)
-            {
-                ticksDelayCountdown--;
-                return;
-            }
-
-            Charges.Value--;
-            if (Charges.Value == 0)
-                Expire();
-        }
-    }
-
-    protected void SetTickOnTurnStart(int delay = 0)
-    {
-        ticksOnTurnStart = true;
-        ticksDelayCountdown = delay;
-    }
-
-    protected void SetTickOnTurnEnd(int delay = 0)
-    {
-        ticksOnTurnEnd = true;
-        ticksDelayCountdown = delay;
     }
 
     public void OnStack(Effect anotherEffect)
     {
-        Charges.Value += anotherEffect.Charges.Value;
+        Charges += anotherEffect.Charges;
         DoOnStack(anotherEffect);
     }
 

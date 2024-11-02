@@ -498,6 +498,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6754019190536625214, guid: 6955c98543aadde46a96dcf02d163820, type: 3}
   m_PrefabInstance: {fileID: 1037664952}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &141190846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141190847}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &141190847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141190846}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.346736, y: 31.341492, z: 4.5141354}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &141250758 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1600253394399417862, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
@@ -4740,13 +4771,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  minDmg: 0
+  maxDmg: 0
   moveAsMob: 0
-  mobDesiredPosition: {x: 0, y: 0, z: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
   movementSpeed: 2
   aggroRange: 20
   patrolRadius: 25
-  minDistanceToTarget: 1
   rotationSpeed: 5
   returnToInitialCooldown: 10
   idleDuration: 3
@@ -4793,12 +4823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  Team: 0
   healthBar: {fileID: 0}
-  Health:
-    value: 0
-  MaxHealth:
-    value: 0
+  MaxHealth: 0
 --- !u!1001 &1397442305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5335,6 +5362,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bea269e720bd78744b106d677015fadb, type: 3}
+--- !u!1 &1465292773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5239225736432919673, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+  m_PrefabInstance: {fileID: 6280505561059620134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1465292777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465292773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 61a82dfa2e4a5ed47993aad8a90e393a, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1475748935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6088,8 +6151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7519d25bd8cc46640966724cdb3b8d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentObjective: {fileID: 0}
-  targetedObjects: []
 --- !u!65 &1765603282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9274,7 +9335,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3149650291571964805, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1948628872}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5239225736432919673, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1465292777}
   m_SourcePrefab: {fileID: 100100000, guid: abdb7707905b88442b472ba324e03e59, type: 3}
 --- !u!4 &6280505561059620135 stripped
 Transform:
@@ -9857,3 +9921,4 @@ SceneRoots:
   - {fileID: 6280505561059620134}
   - {fileID: 1358260709665266928}
   - {fileID: 1368202731}
+  - {fileID: 141190847}

@@ -16,8 +16,8 @@ public class LifeForm : MonoBehaviour
 {
     [SerializeField] public Team Team;
     [SerializeField] HealthBar healthBar;
-    [SerializeField] int Health;
     [SerializeField] int MaxHealth;
+    private int Health;
     [SerializeField] public List<Effect> Effects { get; private set; } // should not be public but compiler vult?
 
     public event Action OnDeath;
