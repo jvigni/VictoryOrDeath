@@ -114,13 +114,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3396988650463702939}
+  - component: {fileID: -683393922211658384}
+  - component: {fileID: -248545443424397927}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3396988650463702939
 Transform:
   m_ObjectHideFlags: 0
@@ -138,6 +140,51 @@ Transform:
   - {fileID: 7869745974802512519}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &-683393922211658384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671971309700151072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fd309218588404990164e1f78564f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveAsMob: 1
+  mobDesiredPosition: {x: 0, y: 0, z: 0}
+  initialPosition: {x: 0, y: 0, z: 0}
+  movementSpeed: 3
+  aggroRange: 20
+  patrolRadius: 25
+  minDistanceToTarget: 1
+  rotationSpeed: 5
+  returnToInitialCooldown: 10
+  idleDuration: 3
+  maxSlope: 30
+  downhillPriorityRange: 10
+  downhillSearchRadius: 10
+  downhillSamplePoints: 8
+--- !u!114 &-248545443424397927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671971309700151072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  healthBar: {fileID: 0}
+  Health:
+    value: 0
+  MaxHealth:
+    value: 150
 --- !u!1001 &6068305254333083902
 PrefabInstance:
   m_ObjectHideFlags: 0

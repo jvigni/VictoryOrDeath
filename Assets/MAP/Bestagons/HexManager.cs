@@ -19,7 +19,9 @@ public class HexManager : MonoBehaviour
     [SerializeField] int mobsAmountPerHex = 10;
     [SerializeField] int spawnRadius = 25;
     [Space(10)]
-    [SerializeField] MobPool mobs;
+    [SerializeField] List<Mob> mobsLv1Prefab;
+    [SerializeField] List<Mob> mobsLv2Prefab;
+    [SerializeField] List<Mob> mobsLv3Prefab;
 
     private void Awake()
     {
@@ -68,16 +70,23 @@ public class HexManager : MonoBehaviour
     {
         var rndSpawnPosition = hex.transform.position + new Vector3(UnityEngine.Random.Range(-spawnRadius, spawnRadius), 0, UnityEngine.Random.Range(-spawnRadius, spawnRadius));
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
-
-        var selectedLvl = 1;
-        var elapsedMinutes = appManager_.GetElapsedGameSeconds() / 60;
-        if (elapsedMinutes >= 5) selectedLvl = 2;
-        if (elapsedMinutes >= 10) selectedLvl = 3;
-
-        Mob newMob = mobs.InstantiateRndMob(level, rndSpawnPosition);
+        Mob newMob = Instantiate(GetRndMobPrefab(level), rndSpawnPosition, Quaternion.identity);
         newMob.transform.SetParent(parentObj.transform);
         newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, level, parentObj);
         hex.mobs = newMob;
         return newMob;
+    }
+
+    internal Mob GetRndMobPrefab(int level)
+    {
+        var selectedMobsList = mobsLv1Prefab;
+
+        var elapsedMinutes = appManager_.GetElapsedGameSeconds() / 60;
+        if (elapsedMinutes >= 5 || level == 2) selectedMobsList = mobsLv2Prefab;
+        if (elapsedMinutes >= 10 || level == 3) selectedMobsList = mobsLv3Prefab;
+
+        // Pick a random mob from the selected list
+        int randomIndex = UnityEngine.Random.Range(0, selectedMobsList.Count);
+        return selectedMobsList[randomIndex];
     }
 }

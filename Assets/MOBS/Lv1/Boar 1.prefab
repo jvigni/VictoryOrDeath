@@ -1102,6 +1102,8 @@ GameObject:
   - component: {fileID: 6728229084142784259}
   - component: {fileID: 4908756654575969223}
   - component: {fileID: 1795442109104022038}
+  - component: {fileID: 7554047501085413915}
+  - component: {fileID: -6811722384040668914}
   m_Layer: 0
   m_Name: Boar 1
   m_TagString: Untagged
@@ -1117,7 +1119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6728229084135505093}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -1195,6 +1197,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7554047501085413915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728229084135505093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fd309218588404990164e1f78564f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveAsMob: 1
+  mobDesiredPosition: {x: 0, y: 0, z: 0}
+  initialPosition: {x: 0, y: 0, z: 0}
+  movementSpeed: 3
+  aggroRange: 20
+  patrolRadius: 25
+  minDistanceToTarget: 1
+  rotationSpeed: 5
+  returnToInitialCooldown: 10
+  idleDuration: 3
+  maxSlope: 30
+  downhillPriorityRange: 10
+  downhillSearchRadius: 10
+  downhillSamplePoints: 8
+--- !u!114 &-6811722384040668914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728229084135505093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  healthBar: {fileID: 0}
+  Health:
+    value: 0
+  MaxHealth:
+    value: 0
 --- !u!1 &6728229084135505095
 GameObject:
   m_ObjectHideFlags: 0
