@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 3396988650463702939}
   - component: {fileID: -683393922211658384}
   - component: {fileID: -248545443424397927}
-  - component: {fileID: -6435513094213396345}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -148,18 +147,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5671971309700151072}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31fd309218588404990164e1f78564f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  minDmg: 0
-  maxDmg: 0
   moveAsMob: 1
+  mobDesiredPosition: {x: 0, y: 0, z: 0}
+  initialPosition: {x: 0, y: 0, z: 0}
   movementSpeed: 3
   aggroRange: 20
   patrolRadius: 25
+  minDistanceToTarget: 1
   rotationSpeed: 5
   returnToInitialCooldown: 10
   idleDuration: 3
@@ -179,30 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Team: 0
+  team: 0
   healthBar: {fileID: 0}
-  MaxHealth: 0
---- !u!65 &-6435513094213396345
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5671971309700151072}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  Health:
+    value: 0
+  MaxHealth:
+    value: 150
 --- !u!1001 &6068305254333083902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,7 +195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4077645253277802895, guid: 3bd169e089b38f745bfd0a1bcd413a94, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4103854991529651369, guid: 3bd169e089b38f745bfd0a1bcd413a94, type: 3}
       propertyPath: m_Enabled
