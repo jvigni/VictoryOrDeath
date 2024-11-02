@@ -4,15 +4,20 @@ using UnityEngine;
 public class Mob : MonoBehaviour
 {
     public Mob target; // The target for the mob to chase.
-    public bool moveAsMob = true; // Patrol mode when true.
+    public int minDmg;
+    public int maxDmg;
+    [Space]
 
-    [SerializeField] Vector3 mobDesiredPosition; // The desired patrol position.
-    [SerializeField] Vector3 initialPosition; // The starting position (anchor point).
+    [Space]
+    [SerializeField] bool moveAsMob = true; // Patrol mode when true.
     [SerializeField] float movementSpeed = 3.0f; // Speed of movement.
     [SerializeField] float aggroRange = 20.0f; // Distance at which the mob will engage the target.
     [SerializeField] float patrolRadius = 25.0f; // Radius for patrolling around the initial position.
-    [SerializeField] float minDistanceToTarget = 1.0f; // Distance threshold to stop when near the target or patrol point.
     [SerializeField] float rotationSpeed = 5.0f; // Speed at which the mob rotates.
+    float minDistanceToTarget = 1.0f; // Distance threshold to stop when near the target or patrol point.
+    Vector3 initialPosition; // The starting position (anchor point).
+    Vector3 mobDesiredPosition; // The desired patrol position.
+    [Space]
 
     [SerializeField] float returnToInitialCooldown = 10.0f; // Time before returning to the initial position.
     private float returnTimer = 0.0f; // Timer to track patrol time.

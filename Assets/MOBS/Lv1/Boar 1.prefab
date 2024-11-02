@@ -1099,11 +1099,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6728229084135858405}
+  - component: {fileID: -6811722384040668914}
+  - component: {fileID: 7554047501085413915}
   - component: {fileID: 6728229084142784259}
   - component: {fileID: 4908756654575969223}
-  - component: {fileID: 1795442109104022038}
-  - component: {fileID: 7554047501085413915}
-  - component: {fileID: -6811722384040668914}
   m_Layer: 0
   m_Name: Boar 1
   m_TagString: Untagged
@@ -1128,6 +1127,50 @@ Transform:
   - {fileID: 6728229084135858345}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6811722384040668914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728229084135505093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  healthBar: {fileID: 0}
+  Health:
+    value: 0
+  MaxHealth:
+    value: 0
+--- !u!114 &7554047501085413915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728229084135505093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fd309218588404990164e1f78564f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  minDmg: 1
+  maxDmg: 2
+  moveAsMob: 1
+  movementSpeed: 3
+  aggroRange: 20
+  patrolRadius: 25
+  rotationSpeed: 5
+  returnToInitialCooldown: 10
+  idleDuration: 3
+  maxSlope: 30
+  downhillPriorityRange: 10
+  downhillSearchRadius: 10
+  downhillSamplePoints: 8
 --- !u!95 &6728229084142784259
 Animator:
   serializedVersion: 5
@@ -1168,80 +1211,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
---- !u!54 &1795442109104022038
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6728229084135505093}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &7554047501085413915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6728229084135505093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fd309218588404990164e1f78564f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  moveAsMob: 1
-  mobDesiredPosition: {x: 0, y: 0, z: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
-  movementSpeed: 3
-  aggroRange: 20
-  patrolRadius: 25
-  minDistanceToTarget: 1
-  rotationSpeed: 5
-  returnToInitialCooldown: 10
-  idleDuration: 3
-  maxSlope: 30
-  downhillPriorityRange: 10
-  downhillSearchRadius: 10
-  downhillSamplePoints: 8
---- !u!114 &-6811722384040668914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6728229084135505093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team: 0
-  healthBar: {fileID: 0}
-  Health:
-    value: 0
-  MaxHealth:
-    value: 0
+  m_Size: {x: 0.32749578, y: 0.28871793, z: 0.66553485}
+  m_Center: {x: 0.0059990436, y: 0.44120666, z: 0.026862442}
 --- !u!1 &6728229084135505095
 GameObject:
   m_ObjectHideFlags: 0
