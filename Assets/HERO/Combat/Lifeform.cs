@@ -7,46 +7,43 @@ using UnityEngine;
 public enum Team
 {
     Humans,
-    Plague
+    Plague,
+    GAIA
 }
 
 [Serializable]
 public class LifeForm : MonoBehaviour
 {
-    [SerializeField] public Team team;
+    [SerializeField] public Team Team;
     [SerializeField] HealthBar healthBar;
-    [SerializeField] ReactiveProperty<int> Health;
-    [SerializeField] ReactiveProperty<int> MaxHealth;
+    [SerializeField] int Health;
+    [SerializeField] int MaxHealth;
     [SerializeField] public List<Effect> Effects { get; private set; } // should not be public but compiler vult?
 
     public event Action OnDeath;
+    public event Action<int> OnDamageTaken;
+
     public event Action<Effect> OnEffectApplied;
     public event Action<Effect> OnEffectRemoved;    
     public bool IsAlive { get; private set; }
     int originalMaxHealth;
-    
-    public LifeForm(int maxHp, Team team)
+
+    private void Start()
     {
-        this.team = team;
-        IsAlive = true;
-        originalMaxHealth = maxHp;
-        MaxHealth = new ReactiveProperty<int>(maxHp);
-        Health = new ReactiveProperty<int>(maxHp);
-        Effects = new List<Effect>();
+        ResetToDefault();
     }
 
     public void ResetToDefault()
     {
-        MaxHealth.Value = originalMaxHealth;
-        Health.Value = originalMaxHealth;
         IsAlive = true;
+        originalMaxHealth = MaxHealth;
+        Health = MaxHealth;
         Effects = new List<Effect>();
     }
 
     public void RestoreAllHealth()
     {
-        Debug.Log("Restoring player to full heal");
-        Health.Value = MaxHealth.Value;
+        Health = MaxHealth;
     }
 
     public int TakeDamage(DmgInfo dmgInfo)
@@ -63,7 +60,7 @@ public class LifeForm : MonoBehaviour
         foreach (Effect effect in Effects.ToList())
             effect.OnDamageReceibed(dmgInfo);
 
-        Health.Value -= dmgInfo.Amount;
+        Health -= dmgInfo.Amount;
 
         //Provider.VFXManager.Play(VFX.Explosion1, GetPosition());
         //Provider.VFXManager.ShowHitAlert(dmgInfo, GetPosition());
@@ -72,10 +69,11 @@ public class LifeForm : MonoBehaviour
         //Color textColor = dmgInfo.Amount > 0 ? Color.red : Color.gray;
         //Provider.FloatingTextManager.PrintOnPosition(textMsg, textColor, GetPosition());
 
-        if (Health.Value <= 0)
+        OnDamageTaken?.Invoke(dmgInfo.Amount);
+
+        if (Health <= 0)
             Death();
 
-        //SaveSystem.SavePlayer();
         return dmgInfo.Amount;
     }
 
@@ -132,10 +130,10 @@ public class LifeForm : MonoBehaviour
         if (HasEffect(EffectID.Poison))
             amount = 0;
 
-        if (Health.Value + amount > MaxHealth.Value)
-            Health.Value = MaxHealth.Value;
+        if (Health + amount > MaxHealth)
+            Health = MaxHealth;
         else
-            Health.Value += amount;
+            Health += amount;
 
         //if (amount > 0)
         //    Provider.FloatingTextManager.PrintOnPosition($"{amount}", Color.green, GetPosition());

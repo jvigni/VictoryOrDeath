@@ -27,7 +27,7 @@ public class MinionCollisionDetector : MonoBehaviour
         foreach (var collider in hitColliders)
         {
             LifeForm otherLifeForm = collider.GetComponent<LifeForm>();
-            if (otherLifeForm != null && otherLifeForm.team != parentMinion.getMyTeam())
+            if (otherLifeForm != null && otherLifeForm.Team != parentMinion.getMyTeam())
             {
                 Vector3 directionToTarget = (otherLifeForm.transform.position - transform.position).normalized;
                 float distanceToTarget = Vector3.Distance(transform.position, otherLifeForm.transform.position);

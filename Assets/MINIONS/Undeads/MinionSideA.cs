@@ -71,7 +71,7 @@ public class MinionSideA : MonoBehaviour
     {
         LifeForm otherLifeForm = other.GetComponent<LifeForm>();
         // Debug.Log($" lo que choco es del side: {otherLifeForm.team}");
-        if (otherLifeForm != null && otherLifeForm.team != mySide) // Asegúrate de que sea un enemigo
+        if (otherLifeForm != null && otherLifeForm.Team != mySide) // Asegúrate de que sea un enemigo
         {
             // Debug.Log($"es un enemigo");
             // Añadir el enemigo a la lista                                                                         
@@ -92,7 +92,7 @@ public class MinionSideA : MonoBehaviour
     {
         LifeForm otherLifeForm = other.GetComponent<LifeForm>();
 
-        if (otherLifeForm != null && otherLifeForm.team != mySide) // Asegúrate de que sea un enemigo
+        if (otherLifeForm != null && otherLifeForm.Team != mySide) // Asegúrate de que sea un enemigo
         {
             // Remover el enemigo de la lista al salir del collider
             enemiesInRange.Remove(otherLifeForm);
