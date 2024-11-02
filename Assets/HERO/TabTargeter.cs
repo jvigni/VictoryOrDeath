@@ -19,9 +19,7 @@ public class TabTargeter : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-        {
             RefreshTargets();
-        }
     }
 
     private void RefreshTargets()
@@ -40,9 +38,7 @@ public class TabTargeter : MonoBehaviour
         foreach (var collider in detectedColliders)
         {
             if (IsValidTarget(collider))
-            {
                 targetedObjects.Add(collider.gameObject);
-            }
         }
 
         SelectNextTarget();
@@ -50,9 +46,10 @@ public class TabTargeter : MonoBehaviour
 
     private bool IsValidTarget(Collider collider)
     {
-        return collider != null && collider.gameObject != gameObject &&
-               (collider.CompareTag("Minion") || collider.CompareTag("Hero")) &&
-               !targetedObjects.Contains(collider.gameObject);
+        return collider != null
+            && collider.gameObject != gameObject
+            && !targetedObjects.Contains(collider.gameObject)
+            && collider.GetComponent<Mob>() != null;
     }
 
     private void SelectNextTarget()
