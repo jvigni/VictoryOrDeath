@@ -7,7 +7,9 @@ using UnityEngine;
 public enum Team
 {
     Humans,
-    Plague
+    Plague,
+    GAIA,
+
 }
 
 [Serializable]
@@ -19,13 +21,14 @@ public class LifeForm : MonoBehaviour
     [SerializeField] ReactiveProperty<int> MaxHealth;
     [SerializeField] public List<Effect> Effects { get; private set; } // should not be public but compiler vult?
 
+    public GameObject targeter;
     public event Action OnDeath;
     public event Action<Effect> OnEffectApplied;
     public event Action<Effect> OnEffectRemoved;    
     public bool IsAlive { get; private set; }
     int originalMaxHealth;
     
-    public LifeForm(int maxHp, Team team)
+    public void Init(int maxHp, Team team)
     {
         this.team = team;
         IsAlive = true;

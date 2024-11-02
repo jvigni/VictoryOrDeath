@@ -58,6 +58,7 @@ public class TabTargeter : MonoBehaviour
         {
             currentTargetIndex = (currentTargetIndex + 1) % targetedObjects.Count;
             currentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
+            currentObjective.targeter.SetActive(true);
             Debug.Log($"New target selected: {currentObjective.gameObject.name}");
         }
         else
