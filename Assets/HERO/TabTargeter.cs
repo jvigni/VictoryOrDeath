@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TabTargeter : MonoBehaviour
 {
-    [SerializeField] private LifeForm currentObjective;
+    public LifeForm CurrentObjective;
     [SerializeField] private List<GameObject> targetedObjects = new List<GameObject>();
 
     private Collider targetCollider;
@@ -56,12 +56,12 @@ public class TabTargeter : MonoBehaviour
     {
         // juan idea: ordenar la lista de targets segun distancia
         // si el que tengo targeteado esta, ir al proximo o volver al 1ro
-        currentObjective = null;
+        CurrentObjective = null;
         if (targetedObjects.Count > 0)
         {
             currentTargetIndex = (currentTargetIndex + 1) % targetedObjects.Count;
-            currentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
-            Debug.Log($"New target selected: {currentObjective.gameObject.name}");
+            CurrentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
+            Debug.Log($"New target selected: {CurrentObjective.gameObject.name}");
         }
     }
 

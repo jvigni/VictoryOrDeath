@@ -3,10 +3,17 @@ using UnityEngine;
 
 public class CharacterAbilities : MonoBehaviour
 {
-    public List<Ability> learnedAbilities = new List<Ability>();
-    public Ability[] abilitySlots = new Ability[4]; // 4 habilidades asignables
+    [SerializeField] TabTargeter targeter;
+    Ability[] abilitySlots;
+    List<Ability> learnedAbilities;
 
-        void Update()
+    private void Awake()
+    {
+        learnedAbilities = new List<Ability>();
+        abilitySlots = new Ability[5];
+    }
+
+    void Update()
     {
         // Asignar habilidades a teclas
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -17,13 +24,20 @@ public class CharacterAbilities : MonoBehaviour
             UseAbility(2);
         if (Input.GetKeyDown(KeyCode.Alpha4))
             UseAbility(3);
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            UseAbility(4);
     }
 
     public void UseAbility(int slot)
     {
-        if (abilitySlots[slot] != null)
-            abilitySlots[slot].Activate(gameObject);
-        else
-            Debug.Log("No ability assigned on slot " + slot);
+        if (this.abilitySlots[slot] == null)
+            return;
+
+        var target = targeter.CurrentObjective;
+        if (target == null)
+            return;
+
+        var caster = gameObject;
+        this.abilitySlots[slot].Trigger(caster, target.gameObject);
     }
 }

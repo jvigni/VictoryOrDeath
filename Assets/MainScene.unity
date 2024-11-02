@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RODLAK
       objectReference: {fileID: 0}
+    - target: {fileID: 6039682493893884005, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: targeter
+      value: 
+      objectReference: {fileID: 1242784098}
     - target: {fileID: 6335304462450827694, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       propertyPath: MaxHealth
       value: 300
@@ -1458,6 +1462,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3122876074396471706, guid: 536ef9f3cb71fc4459cec05d72cd0364, type: 3}
   m_PrefabInstance: {fileID: 5042333682000586296}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1242784098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 282472272727027081, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+  m_PrefabInstance: {fileID: 838572108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4341dc33e2067d4b9b7af0e87d64901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1255829760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3618200894614408082, guid: 932f9b0225be55e478ba3a786163290a, type: 3}
