@@ -19,10 +19,10 @@ public class TabTargeter : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-            RefreshTargets();
+            FindTargets();
     }
 
-    private void RefreshTargets()
+    private void FindTargets()
     {
         targetedObjects.Clear();
         StartCoroutine(DetectTargetsInCollider());
@@ -41,7 +41,7 @@ public class TabTargeter : MonoBehaviour
                 targetedObjects.Add(collider.gameObject);
         }
 
-        SelectNextTarget();
+        SelectTarget();
     }
 
     private bool IsValidTarget(Collider collider)
@@ -52,18 +52,16 @@ public class TabTargeter : MonoBehaviour
             && collider.GetComponent<Mob>() != null;
     }
 
-    private void SelectNextTarget()
+    private void SelectTarget()
     {
+        // juan idea: ordenar la lista de targets segun distancia
+        // si el que tengo targeteado esta, ir al proximo o volver al 1ro
+        currentObjective = null;
         if (targetedObjects.Count > 0)
         {
             currentTargetIndex = (currentTargetIndex + 1) % targetedObjects.Count;
             currentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
             Debug.Log($"New target selected: {currentObjective.gameObject.name}");
-        }
-        else
-        {
-            currentObjective = null;
-            Debug.Log("No available targets on Tab press.");
         }
     }
 
