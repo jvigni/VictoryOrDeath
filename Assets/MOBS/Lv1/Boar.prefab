@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 6728229084142784259}
   - component: {fileID: 4908756654575969223}
   m_Layer: 0
-  m_Name: Boar 1
+  m_Name: Boar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4740,13 +4740,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  minDmg: 0
+  maxDmg: 0
   moveAsMob: 0
-  mobDesiredPosition: {x: 0, y: 0, z: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
   movementSpeed: 2
   aggroRange: 20
   patrolRadius: 25
-  minDistanceToTarget: 1
   rotationSpeed: 5
   returnToInitialCooldown: 10
   idleDuration: 3
@@ -4793,12 +4792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f4bd63b0c30374db14cfbba1ed3e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
-  healthBar: {fileID: 0}
-  Health:
-    value: 0
-  MaxHealth:
-    value: 0
+  Team: 0
+  MaxHealth: 0
 --- !u!1001 &1397442305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6088,8 +6083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7519d25bd8cc46640966724cdb3b8d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentObjective: {fileID: 0}
-  targetedObjects: []
 --- !u!65 &1765603282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8901,6 +8894,10 @@ PrefabInstance:
       propertyPath: mobsLv1Prefab.Array.data[0]
       value: 
       objectReference: {fileID: 7554047501085413915, guid: 3543d7f6276cfba4f8f247599b9de4e2, type: 3}
+    - target: {fileID: 6331632481712720282, guid: abdb7707905b88442b472ba324e03e59, type: 3}
+      propertyPath: mobsLv1Prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 7554047501085413915, guid: 54ae2ccb73de2034b969c21df7498bc2, type: 3}
     - target: {fileID: 6331632481712720282, guid: abdb7707905b88442b472ba324e03e59, type: 3}
       propertyPath: mobsLv2Prefab.Array.data[1]
       value: 

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UniRx;
 using UnityEngine;
 
 public enum Team
@@ -15,18 +14,19 @@ public enum Team
 public class LifeForm : MonoBehaviour
 {
     [SerializeField] public Team Team;
-    [SerializeField] HealthBar healthBar;
-    [SerializeField] int Health;
     [SerializeField] int MaxHealth;
-    [SerializeField] public List<Effect> Effects { get; private set; } // should not be public but compiler vult?
+    int originalMaxHealth;
 
+    [Space]
+    private int Health;
     public event Action OnDeath;
     public event Action<int> OnDamageTaken;
 
+    public List<Effect> Effects { get; private set; } // should not be public but compiler vult?
     public event Action<Effect> OnEffectApplied;
     public event Action<Effect> OnEffectRemoved;    
     public bool IsAlive { get; private set; }
-    int originalMaxHealth;
+    
 
     private void Start()
     {
