@@ -5768,6 +5768,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8754587060012710952, guid: 7e541e949836eb9458ea9aeee965e575, type: 3}
   m_PrefabInstance: {fileID: 1592558094}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1648184737 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3350729461305089110, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+  m_PrefabInstance: {fileID: 1358260709665266928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1653025992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3372097962719085746, guid: 00911c918f8389b48a631dcb35f34b90, type: 3}
@@ -6038,6 +6043,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6097961051609019521, guid: c3aa477a5d702814584a9a4812312681, type: 3}
   m_PrefabInstance: {fileID: 502338314}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1765603279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765603280}
+  - component: {fileID: 1765603282}
+  - component: {fileID: 1765603281}
+  m_Layer: 0
+  m_Name: TabTargeterFER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765603280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765603279}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1648184737}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765603281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765603279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7519d25bd8cc46640966724cdb3b8d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentObjective: {fileID: 0}
+  targetedObjects: []
+--- !u!65 &1765603282
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765603279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 12, y: 12, z: 12}
+  m_Center: {x: 0, y: 1, z: 5}
 --- !u!4 &1788233177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5378593419878823387, guid: fbcfa6c5fb4f02e429deceafa60c7920, type: 3}
@@ -7398,13 +7471,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791509911748982555, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4528155784341948974, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
       propertyPath: detectionCollider
       value: 
       objectReference: {fileID: 2061626785}
     - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8163705346962099271, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7452,7 +7529,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3350729461305089110, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 1765603280}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
 --- !u!4 &1537054598384203097

@@ -4,63 +4,77 @@ using UnityEngine;
 
 public class TabTargeter : MonoBehaviour
 {
-    [SerializeField] BoxCollider detectionCollider;
-    [SerializeField] LifeForm currentTarget;
-    [SerializeField] private List<GameObject> detectedTargets = new List<GameObject>();
-    private int targetIndex = -1;
+    [SerializeField] private LifeForm currentObjective;
+    [SerializeField] private List<GameObject> targetedObjects = new List<GameObject>();
 
-    void Update()
+    private Collider targetCollider;
+    private int currentTargetIndex = -1;
+
+    private void Start()
+    {
+        targetCollider = GetComponent<BoxCollider>();
+        targetCollider.enabled = false;
+    }
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-            FindTargets();
-    }
-  
-    void FindTargets()
-    {
-        // Use the BoxCollider bounds to define the detection area
-        Vector3 detectionCenter = detectionCollider.bounds.center;
-        Vector3 detectionSize = detectionCollider.bounds.extents;
-
-        // Detect targets within the BoxCollider bounds
-        Collider[] colliders = Physics.OverlapBox(detectionCenter, detectionSize, Quaternion.identity);
-
-        foreach (var collider in colliders)
         {
-            if (collider.gameObject != gameObject) // Skip self
+            RefreshTargets();
+        }
+    }
+
+    private void RefreshTargets()
+    {
+        targetedObjects.Clear();
+        StartCoroutine(DetectTargetsInCollider());
+    }
+
+    IEnumerator DetectTargetsInCollider()
+    {
+        targetCollider.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        targetCollider.enabled = false;
+
+        Collider[] detectedColliders = Physics.OverlapBox(targetCollider.bounds.center, targetCollider.bounds.extents);
+        foreach (var collider in detectedColliders)
+        {
+            if (IsValidTarget(collider))
             {
-                var mob = collider.GetComponent<Mob>();
-                if (mob != null)
-                {
-                    detectedTargets.Add(collider.gameObject);
-                }
+                targetedObjects.Add(collider.gameObject);
             }
         }
 
-        // Select the next target after updating the list
         SelectNextTarget();
+    }
+
+    private bool IsValidTarget(Collider collider)
+    {
+        return collider != null && collider.gameObject != gameObject &&
+               (collider.CompareTag("Minion") || collider.CompareTag("Hero")) &&
+               !targetedObjects.Contains(collider.gameObject);
     }
 
     private void SelectNextTarget()
     {
-        if (detectedTargets.Count > 0)
+        if (targetedObjects.Count > 0)
         {
-            targetIndex = (targetIndex + 1) % detectedTargets.Count;
-            GameObject targetObject = detectedTargets[targetIndex];
-            currentTarget = targetObject != null ? targetObject.GetComponent<LifeForm>() : null;
-
-            if (currentTarget != null)
-            {
-                Debug.Log($"Targeted: {currentTarget.gameObject.name}");
-            }
-            else
-            {
-                Debug.LogWarning("Selected object does not have a LifeForm component.");
-            }
+            currentTargetIndex = (currentTargetIndex + 1) % targetedObjects.Count;
+            currentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
+            Debug.Log($"New target selected: {currentObjective.gameObject.name}");
         }
         else
         {
-            currentTarget = null;
-            Debug.Log("No targets found.");
+            currentObjective = null;
+            Debug.Log("No available targets on Tab press.");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (IsValidTarget(other))
+        {
+            targetedObjects.Add(other.gameObject);
         }
     }
 }
