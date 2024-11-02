@@ -936,6 +936,14 @@ PrefabInstance:
       propertyPath: targeter
       value: 
       objectReference: {fileID: 1242784098}
+    - target: {fileID: 6039682493893884005, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: abilitySlots.Array.data[0]
+      value: 
+      objectReference: {fileID: 296808959219213274, guid: 5917fb7d9609daf418c16946a4e58064, type: 3}
+    - target: {fileID: 6039682493893884005, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: learnedAbilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 296808959219213274, guid: 5917fb7d9609daf418c16946a4e58064, type: 3}
     - target: {fileID: 6335304462450827694, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       propertyPath: MaxHealth
       value: 300

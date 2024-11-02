@@ -4,8 +4,8 @@ using UnityEngine;
 public class CharacterAbilities : MonoBehaviour
 {
     [SerializeField] TabTargeter targeter;
-    Ability[] abilitySlots;
-    List<Ability> learnedAbilities;
+    [SerializeField] Ability[] abilitySlots;
+    [SerializeField] List<Ability> learnedAbilities;
 
     private void Awake()
     {

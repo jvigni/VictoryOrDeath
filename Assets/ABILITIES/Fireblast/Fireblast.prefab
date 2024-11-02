@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e09548a3962bf47a84f22c9506e1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: Fireblast
+  cooldown: 2
+  damage: 10
+  fireFX: {fileID: 9086559793544782414, guid: c40ad698bd279974ba26ff51af745849, type: 3}

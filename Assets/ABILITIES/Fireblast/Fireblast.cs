@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireblast : MonoBehaviour
+public class Fireblast : Ability
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] int damage;
+    [SerializeField] ParticleSystem fireFX;
 
-    // Update is called once per frame
-    void Update()
+    public override void Trigger(GameObject caster, GameObject target)
     {
-        
+        Instantiate(fireFX, target.transform.position, Quaternion.identity);
+        target.GetComponent<LifeForm>().TakeDamage(new DmgInfo(damage, DmgType.Fire));
     }
 }
