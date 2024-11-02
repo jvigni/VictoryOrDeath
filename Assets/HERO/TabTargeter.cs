@@ -4,48 +4,19 @@ using UnityEngine;
 
 public class TabTargeter : MonoBehaviour
 {
-    private LifeForm currentTarget;
+    [SerializeField] BoxCollider detectionCollider;
+    [SerializeField] LifeForm currentTarget;
     [SerializeField] private List<GameObject> detectedTargets = new List<GameObject>();
     private int targetIndex = -1;
-
-    [SerializeField] private LayerMask targetLayer;
-    private BoxCollider detectionCollider; // Reference to the BoxCollider
-
-    void Start()
-    {
-        detectionCollider = GetComponent<BoxCollider>();
-        if (detectionCollider == null)
-        {
-            Debug.LogError("BoxCollider is missing. Please attach a BoxCollider to this GameObject.");
-            return;
-        }
-        detectionCollider.isTrigger = true; // Set the collider as a trigger
-    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            FindTargets();
-        }
+            StartCoroutine(FindTargets());
     }
 
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator FindTargets()
     {
-       Debug.Log("colision");
-    }
-
-    private void OnTriggerEnter3D(Collider other)
-    {
-        Debug.Log("colision");
-    }
-
-    private void FindTargets()
-    {
-        // Clear previous detections and reset target index
-        detectedTargets.Clear();
-        targetIndex = -1;
-
         // Use the BoxCollider bounds to define the detection area
         Vector3 detectionCenter = detectionCollider.bounds.center;
         Vector3 detectionSize = detectionCollider.bounds.extents;
@@ -67,6 +38,7 @@ public class TabTargeter : MonoBehaviour
 
         // Select the next target after updating the list
         SelectNextTarget();
+        yield return null;
     }
 
     private void SelectNextTarget()
