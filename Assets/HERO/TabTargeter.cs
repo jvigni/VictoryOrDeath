@@ -12,10 +12,10 @@ public class TabTargeter : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-            StartCoroutine(FindTargets());
+            FindTargets();
     }
-
-    IEnumerator FindTargets()
+  
+    void FindTargets()
     {
         // Use the BoxCollider bounds to define the detection area
         Vector3 detectionCenter = detectionCollider.bounds.center;
@@ -38,7 +38,6 @@ public class TabTargeter : MonoBehaviour
 
         // Select the next target after updating the list
         SelectNextTarget();
-        yield return null;
     }
 
     private void SelectNextTarget()

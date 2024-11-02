@@ -7402,6 +7402,10 @@ PrefabInstance:
       propertyPath: detectionCollider
       value: 
       objectReference: {fileID: 2061626785}
+    - target: {fileID: 5781005756806020627, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8163705346962099271, guid: a7b6d0f3fef5eae4ba60ef3678161681, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.31277
