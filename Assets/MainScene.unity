@@ -2750,6 +2750,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.107
       objectReference: {fileID: 0}
+    - target: {fileID: 1357140315129194859, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.52
+      objectReference: {fileID: 0}
     - target: {fileID: 1556190670090198813, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_Name
       value: EinstenBoard
@@ -2846,6 +2850,10 @@ PrefabInstance:
     - target: {fileID: 7902100826662125988, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 26.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276749040217745923, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32.461
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
