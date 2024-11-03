@@ -47,8 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc16eca3799684418e068ca677e45f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: 
-  cooldown: 1
+  Code: 0
+  Icon: {fileID: 0}
+  NAME: FIREBALL
+  DESCRIPTION: ALLWAYS THE CORRECT SPELL
+  castSeconds: 1.5
   character: {fileID: 1831860492584090184, guid: 9a303eafd2d21cf409458ea242a7f70a, type: 3}
   launchTransform: {fileID: 5099938082048056975, guid: 9a303eafd2d21cf409458ea242a7f70a, type: 3}
   fireballSpeed: 20

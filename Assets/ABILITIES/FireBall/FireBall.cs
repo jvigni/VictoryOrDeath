@@ -1,19 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FireBall : Ability
 {
-    [SerializeField] private GameObject character;
-    [SerializeField] private Transform launchTransform;
-    public float fireballSpeed;
-    public GameObject fireballPrefab;
-
+    [SerializeField] GameObject projectilePrefab;
+    public float projectileSpeed;
+    
     public override void Trigger(GameObject caster, GameObject target)
     {
-        GameObject fireball = Instantiate(fireballPrefab, caster.transform.position, Quaternion.identity);
+        GameObject fireball = Instantiate(projectilePrefab, caster.transform.position, Quaternion.identity);
 
         // Usa la dirección del transform para la velocidad
-        fireball.GetComponent<Rigidbody>().velocity = character.transform.forward * fireballSpeed;
+        //fireball.GetComponent<Rigidbody>().velocity = character.transform.forward * fireballSpeed;
+        // TODO tiene que ir directi al target [con Projectile. Agregando velocidad segun la direccion]
     }
 }

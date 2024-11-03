@@ -10,7 +10,7 @@ public abstract class Ability : MonoBehaviour
     public string DESCRIPTION;
 
     [Space]
-    public float castTime;
+    public float castSeconds;
     public Action OnFinishCasting;
 
     //[SerializeField] float Cooldown;
@@ -25,7 +25,8 @@ public abstract class Ability : MonoBehaviour
 
     IEnumerator Cast2(GameObject target)
     {
-        yield return new WaitForSeconds(castTime);
+        yield return new WaitForSeconds(castSeconds);
+        OnFinishCasting?.Invoke();
         Trigger(gameObject, target);
     }
 

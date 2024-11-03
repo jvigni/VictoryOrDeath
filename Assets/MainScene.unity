@@ -816,8 +816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3545ee7cc906d1946a303226c5c849fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireball: {fileID: 0}
-  fireblast: {fileID: 0}
+  fireballPrefab: {fileID: 0}
+  fireblastPrefab: {fileID: 124503007278863780, guid: 5917fb7d9609daf418c16946a4e58064, type: 3}
 --- !u!4 &672718725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5645880912633204937, guid: 2554522fb280eba4b9d145a838b2f740, type: 3}
@@ -7824,9 +7824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1503d9fbbd6bc354dbc1f45999a6eb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityProvider: {fileID: 0}
+  abilityProvider: {fileID: 672117093}
   heroCharacterAbilities: {fileID: 838572109}
-  learnFireballCHEATCODE: 0
+  learnFireballCHEATCODE: 111
   dayNightCycle: {fileID: 6206939422260044228}
   dayNigthSwapCHEATCODE: 112
   heroMenuKeyCode: 101

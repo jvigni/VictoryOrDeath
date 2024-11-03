@@ -18,7 +18,9 @@ public class AbilityProvider : MonoBehaviour
         if (characterAbilities.LearnedAbilities.Find(ability => ability.Code == abilityPrefab.Code))
             return; // Already learned
 
-        var abilityClone = abilityPrefab.DeepClone();
+        var abilityClone = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
+        abilityClone.transform.SetParent(gameObject.transform);
+
         characterAbilities.LearnedAbilities.Add(abilityClone);
     }
 
