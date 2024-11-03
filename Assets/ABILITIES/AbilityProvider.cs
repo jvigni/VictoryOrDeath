@@ -12,10 +12,15 @@ public class AbilityProvider : MonoBehaviour
     [SerializeField] Ability fireball;
     [SerializeField] Ability fireblast;
 
-    public void LearnAbility(AbilityCode code, CharacterAbilities characterAbilities)
+    public void TeachAbility(AbilityCode code, CharacterAbilities characterAbilities)
     {
         var abilityPrefab = GetAbilityPrefab(code);
-        characterAbilities.LearnAbility(abilityPrefab);
+        
+        if (characterAbilities.LearnedAbilities.Find(ability => ability.Code == abilityPrefab.Code))
+            return; // Already learned
+
+        var abilityClone = abilityPrefab.DeepClone();
+        characterAbilities.LearnedAbilities.Add(abilityClone);
     }
 
     private Ability GetAbilityPrefab(AbilityCode code)
@@ -29,6 +34,6 @@ public class AbilityProvider : MonoBehaviour
 
 
         // Ad infinitum..
-        return ability
+        return ability;
     }
 }

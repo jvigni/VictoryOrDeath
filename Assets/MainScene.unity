@@ -7767,6 +7767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1503d9fbbd6bc354dbc1f45999a6eb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hero: {fileID: 1719493316}
+  learnFireballCHEATCODE: 0
   dayNigthSwapCHEATCODE: 112
   heroMenuKeyCode: 101
   pauseMenuKeyCode: 27
@@ -11646,11 +11648,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6283246913281734009}
-  - {fileID: 4920560147588984829}
   - {fileID: 4872717791962584575}
-  - {fileID: 6933454096204711550}
   - {fileID: 170370041}
+  - {fileID: 6933454096204711550}
+  - {fileID: 4920560147588984829}
+  - {fileID: 6283246913281734009}
   - {fileID: 312074551}
   - {fileID: 1546095843}
   - {fileID: 6573035159906443682}
