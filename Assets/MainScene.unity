@@ -15227,8 +15227,8 @@ PrefabInstance:
     - target: {fileID: 3012085934422186639, guid: 9b7dc5bd3d089a044a729cf584ed5797, type: 3}
       propertyPath: m_text
       value: "WE, THE TRUE EMPIRE OF ROME, \nONCE CONQUERORS OF THE KNOWN WORLD,
-        \nDISCOVERED THE POWERS OF THE STEAM,\nBUT THE PLAGUE MADE US THE LAST HOPE
-        OF OUR PEOPLE. \n                   NEVER LET OUR SPIRIT DIE. VLLC"
+        \nDISCOVERED THE TRUE POWERS OF THE STEAM,\nBUT THE PLAGUE MADE US THE LAST
+        HOPE OF OUR PEOPLE. \n                   NEVER LET OUR SPIRIT DIE. VLLC"
       objectReference: {fileID: 0}
     - target: {fileID: 3012085934422186639, guid: 9b7dc5bd3d089a044a729cf584ed5797, type: 3}
       propertyPath: m_fontSize
@@ -16973,9 +16973,14 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4287139839
       objectReference: {fileID: 0}
+    - target: {fileID: 7902100826662125988, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3670285588129071787, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+    - {fileID: 7413547830632258334, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5758245789188097934, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       insertIndex: 0
