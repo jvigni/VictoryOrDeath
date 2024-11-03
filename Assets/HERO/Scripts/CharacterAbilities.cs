@@ -10,7 +10,7 @@ public class CharacterAbilities : MonoBehaviour
     private void Awake()
     {
         abilitySlots = new Ability[5];
-        learnedAbilities = new List<Ability>();
+        LearnedAbilities = new List<Ability>();
     }
 
     void Update()
@@ -41,17 +41,13 @@ public class CharacterAbilities : MonoBehaviour
         this.abilitySlots[slot].Trigger(caster, target.gameObject);
     }
 
-    public void LearnAbility(AbilityCode code)
+    public void LearnAbility(Ability abilityPrefab)
     {
         // Already learned
-        if (LearnedAbilities.Find(ability => ability.Code == code))
+        if (LearnedAbilities.Find(ability => ability.Code == abilityPrefab.Code))
             return;
 
-        var abilityClone = AbilityProvider.GetAbilityClone(code);
-
-
-        var clonedAbility = newAbility.DeepClone<Ability>();
-        learnedAbilities.Add(clonedAbility);
+        var abilityClone = abilityPrefab.DeepClone();
+        LearnedAbilities.Add(abilityClone);
     }
-
 }

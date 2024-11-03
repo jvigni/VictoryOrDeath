@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
@@ -15,10 +16,10 @@ public abstract class Ability : MonoBehaviour
 
     public void Cast(AbilityCode code)
     {
-
+        StartCoroutine(Cast2());
     }
 
-    public void Learn(AbilityManager abilityManager)
+    IEnumerator Cast2()
     {
 
     }
