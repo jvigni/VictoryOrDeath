@@ -5,12 +5,12 @@ public class CharacterAbilities : MonoBehaviour
 {
     [SerializeField] TabTargeter targeter;
     [SerializeField] Ability[] abilitySlots;
-    [SerializeField] List<Ability> learnedAbilities;
+    [SerializeField] List<Ability> LearnedAbilities;
 
     private void Awake()
     {
-        learnedAbilities = new List<Ability>();
         abilitySlots = new Ability[5];
+        learnedAbilities = new List<Ability>();
     }
 
     void Update()
@@ -40,4 +40,18 @@ public class CharacterAbilities : MonoBehaviour
         var caster = gameObject;
         this.abilitySlots[slot].Trigger(caster, target.gameObject);
     }
+
+    public void LearnAbility(AbilityCode code)
+    {
+        // Already learned
+        if (LearnedAbilities.Find(ability => ability.Code == code))
+            return;
+
+        var abilityClone = AbilityProvider.GetAbilityClone(code);
+
+
+        var clonedAbility = newAbility.DeepClone<Ability>();
+        learnedAbilities.Add(clonedAbility);
+    }
+
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AppManager : MonoBehaviour
 {
+    [SerializeField] KeyCode learnFireballCHEATCODE;
     [SerializeField] KeyCode dayNigthSwapCHEATCODE;
     [SerializeField] KeyCode heroMenuKeyCode;
     [SerializeField] KeyCode pauseMenuKeyCode;
@@ -35,6 +36,9 @@ public class AppManager : MonoBehaviour
 
         if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
             dayNightCycle.SwapCycle();
+
+        if (Input.GetKeyDown(learnFireballCHEATCODE))
+            hero.GetComponent<AbilityManager>().LearnAbility(Abilities.Fireball ???)
     }
     public int GetElapsedGameSeconds()
     {
