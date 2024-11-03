@@ -7,21 +7,26 @@ public abstract class Ability : MonoBehaviour
     public AbilityCode Code;
     public string Name;
     public Sprite Icon;
-    public Action OnFinishCasting;
+
 
     [Space]
-    [SerializeField] float Cooldown;
-    [SerializeField] float castTime;
-    bool cooldownReady; //?    
+    public float castTime;
+    public Action OnFinishCasting;
 
-    public void Cast(AbilityCode code)
+    //[SerializeField] float Cooldown;
+    //[SerializeField] float castTime;
+    // TODO GCD???
+    //bool cooldownReady; //?    
+
+    public void Cast(AbilityCode code, GameObject target)
     {
-        StartCoroutine(Cast2());
+        StartCoroutine(Cast2(target));
     }
 
-    IEnumerator Cast2()
+    IEnumerator Cast2(GameObject target)
     {
-
+        yield return new WaitForSeconds(castTime);
+        Trigger(gameObject, target);
     }
 
     public abstract void Trigger(GameObject caster, GameObject target);
