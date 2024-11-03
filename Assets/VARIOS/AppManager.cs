@@ -6,14 +6,23 @@ using UnityEngine.UI;
 public class AppManager : MonoBehaviour
 {
     [SerializeField] AbilityProvider abilityProvider;
+    [SerializeField] CharacterAbilities heroCharacterAbilities;
     [SerializeField] KeyCode learnFireballCHEATCODE;
+
+    [Space]
+    [SerializeField] DayNightCycle dayNightCycle;
     [SerializeField] KeyCode dayNigthSwapCHEATCODE;
+
+    [Space]
     [SerializeField] KeyCode heroMenuKeyCode;
     [SerializeField] KeyCode pauseMenuKeyCode;
-    [SerializeField] DayNightCycle dayNightCycle;
+
+    [Space]
     [SerializeField] GameObject heroMenu;
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject pauseMenu;
+
+    [Space]
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
     //[SerializeField] GameObject music;
@@ -39,7 +48,7 @@ public class AppManager : MonoBehaviour
             dayNightCycle.SwapCycle();
 
         if (Input.GetKeyDown(learnFireballCHEATCODE))
-            characterAbilities.LearnAbility(AbilityCode.Fireblast);
+            abilityProvider.TeachAbility(AbilityCode.Fireblast, heroCharacterAbilities);
     }
     public int GetElapsedGameSeconds()
     {

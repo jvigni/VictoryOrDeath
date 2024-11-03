@@ -5,7 +5,7 @@ public class CharacterAbilities : MonoBehaviour
 {
     [SerializeField] TabTargeter targeter;
     [SerializeField] Ability[] abilitySlots;
-    public List<Ability> LearnedAbilities;
+    public List<Ability> LearnedAbilities; // Use AbilityProvider.TeachAbility() to learn new abilities. DeepClone is esential
 
     private void Awake()
     {

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7817734673822864270}
+  - component: {fileID: 124503007278863780}
   m_Layer: 0
   m_Name: Fireblast
   m_TagString: Untagged
@@ -31,3 +32,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &124503007278863780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121078597918089281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e09548a3962bf47a84f22c9506e1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Code: 0
+  Name: FIREBALL
+  Icon: {fileID: 21300000, guid: a5c5da8d636a95a40813a7bac86ed0ca, type: 3}
+  castTime: 0
+  damage: 0
+  fireFX: {fileID: 0}

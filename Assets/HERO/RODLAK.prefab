@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4341dc33e2067d4b9b7af0e87d64901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentObjective: {fileID: 0}
+  CurrentObjective: {fileID: 0}
   targetedObjects: []
 --- !u!1 &499585203884407600
 GameObject:
@@ -857,13 +857,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8e128e30acb7643a3983aac98f9ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  learnedAbilities:
-  - {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
+  targeter: {fileID: 0}
   abilitySlots:
-  - {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  LearnedAbilities: []
 --- !u!1 &1055923098060082174
 GameObject:
   m_ObjectHideFlags: 0

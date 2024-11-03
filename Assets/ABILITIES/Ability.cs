@@ -5,9 +5,9 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     public AbilityCode Code;
-    public string Name;
-    public Sprite Icon;
-
+    public Sprite Icon; 
+    public string NAME;
+    public string DESCRIPTION;
 
     [Space]
     public float castTime;

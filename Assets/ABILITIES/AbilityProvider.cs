@@ -6,11 +6,10 @@ public enum AbilityCode
     Fireblast,
 }
 
-
 public class AbilityProvider : MonoBehaviour
 {
-    [SerializeField] Ability fireball;
-    [SerializeField] Ability fireblast;
+    [SerializeField] Ability fireballPrefab;
+    [SerializeField] Ability fireblastPrefab;
 
     public void TeachAbility(AbilityCode code, CharacterAbilities characterAbilities)
     {
@@ -27,11 +26,11 @@ public class AbilityProvider : MonoBehaviour
     {
         Ability ability = null;
         if (code.Equals(AbilityCode.Fireball))
-            ability = fireball;
+            ability = fireballPrefab;
 
         if (code.Equals(AbilityCode.Fireblast))
-            ability = fireblast;
-
+            ability = fireblastPrefab;
+        
 
         // Ad infinitum..
         return ability;
