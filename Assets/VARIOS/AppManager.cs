@@ -14,7 +14,6 @@ public class AppManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] Button startBtn;
     [SerializeField] Camera menuCamera;
-    [SerializeField] GameObject character;
     //[SerializeField] GameObject music;
 
     bool isPaused;
@@ -28,6 +27,9 @@ public class AppManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(heroMenuKeyCode))
+            heroMenu.SetActive(!heroMenu.activeSelf);
+
         if (Input.GetKeyDown(pauseMenuKeyCode))
             SwapPause();
 

@@ -33,4 +33,17 @@ public class HeroMenu : MonoBehaviour
     public TextMeshProUGUI resources;
     public List<UpgradeSlot> upgrades;
     public Button reroll;
+    public Camera mainCamera;
+
+    private void OnEnable()
+    {
+        Cursor.visible = true;
+        mainCamera.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        Cursor.visible = false;
+        mainCamera.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = true;
+    }
 }
