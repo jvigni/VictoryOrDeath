@@ -105,6 +105,14 @@ en el panel ligthning, bajar el intensity multiplier a 2, y prender el fog
 -I dare anyone that played wow,lol,aoe2,war3 or something similar to play this game and not hiring me.
 also, Im bla bla bla, worked in bla bla bla, know bla bla bla technology/idiom. please gimi mony
 
+
+# SPELLS DATA:
+GCD? si
+MAIN CHANGE: Los spells se aprenden y van a la barra. no existe spells aprendidos y en barra. son todos uno grande de 9 spells.
+vos podes dragear para acomodarlos a placer y ya.
+ademas van evolucionando.
+cada clase tiene sus 9 spells predefinidos. x eso son tantas clases
+
 # EJEMPLO:
 # cryomancer: [frost frost]
 -frostbolt [2][casted]

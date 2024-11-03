@@ -14,14 +14,11 @@ public class AbilityProvider : MonoBehaviour
     public void TeachAbility(AbilityCode code, CharacterAbilities characterAbilities)
     {
         var abilityPrefab = GetAbilityPrefab(code);
-        
-        if (characterAbilities.LearnedAbilities.Find(ability => ability.Code == abilityPrefab.Code))
-            return; // Already learned
 
         var abilityClone = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
         abilityClone.transform.SetParent(gameObject.transform);
 
-        characterAbilities.LearnedAbilities.Add(abilityClone);
+        characterAbilities.Abilities.Add(abilityClone);
     }
 
     private Ability GetAbilityPrefab(AbilityCode code)

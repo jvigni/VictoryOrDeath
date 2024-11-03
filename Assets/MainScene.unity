@@ -1513,7 +1513,6 @@ GameObject:
   m_Component:
   - component: {fileID: 762201248}
   - component: {fileID: 762201250}
-  - component: {fileID: 762201249}
   m_Layer: 0
   m_Name: PortraitCamera
   m_TagString: Untagged
@@ -1536,14 +1535,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 76594279}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!81 &762201249
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762201247}
-  m_Enabled: 1
 --- !u!20 &762201250
 Camera:
   m_ObjectHideFlags: 0

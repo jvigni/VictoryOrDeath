@@ -4,13 +4,13 @@ using UnityEngine;
 public class CharacterAbilities : MonoBehaviour
 {
     [SerializeField] TabTargeter targeter;
-    [SerializeField] Ability[] abilitySlots;
-    public List<Ability> LearnedAbilities; // Use AbilityProvider.TeachAbility() to learn new abilities. DeepClone is esential
+    public List<Ability> Abilities;
+    //public List<Ability> LearnedAbilities; // Use AbilityProvider.TeachAbility() to learn new abilities. DeepClone is esential
 
     private void Awake()
     {
-        abilitySlots = new Ability[5];
-        LearnedAbilities = new List<Ability>();
+        Abilities = new List<Ability>();
+        //LearnedAbilities = new List<Ability>();
     }
 
     void Update()
@@ -30,7 +30,7 @@ public class CharacterAbilities : MonoBehaviour
 
     public void UseAbility(int slot)
     {
-        if (this.abilitySlots[slot] == null)
+        if (this.Abilities[slot] == null)
             return;
 
         var target = targeter.CurrentObjective;
@@ -38,6 +38,6 @@ public class CharacterAbilities : MonoBehaviour
             return;
 
         var caster = gameObject;
-        this.abilitySlots[slot].Trigger(caster, target.gameObject);
+        this.Abilities[slot].Trigger(caster, target.gameObject);
     }
 }
