@@ -1104,8 +1104,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TYRANTS ARE THE SOURCE OF ALL OUR PROBLEMS \nWE SHALL SEND THEM TO GOD
-    SO THEY CAN BE JUDGE\nWE SHALL BURN THEM TO HEL \nDEUS VULT"
+  m_text: 'TYRANTS ARE THE SOURCE OF ALL OUR PROBLEMS.
+
+    WE SHALL SEND THEM TO
+    GOD SO THEY CAN BE JUDGE.
+
+    WE SHALL BURN THEM TO HELL
+
+    DEUS VULT'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff4b2609afbad014ea0d24025c6e084d, type: 2}
   m_sharedMaterial: {fileID: -162318533977977057, guid: ff4b2609afbad014ea0d24025c6e084d, type: 2}
@@ -1132,8 +1138,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.15
-  m_fontSizeBase: 0.15
+  m_fontSize: 0.14
+  m_fontSizeBase: 0.14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
