@@ -8725,6 +8725,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLAGUE_TC
       objectReference: {fileID: 0}
+    - target: {fileID: 7142358644864456215, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+      propertyPath: m_text
+      value: 'LESS TYRANTS.
+
+        MORE MILEI.'
+      objectReference: {fileID: 0}
     - target: {fileID: 7829383466342846048, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.56
