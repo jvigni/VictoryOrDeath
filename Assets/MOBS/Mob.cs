@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class Mob : MonoBehaviour
 {
+    [SerializeField] GameObject tabMarker;
+    [SerializeField] GameObject lifebar;
+
+    [Space]
     public Mob target; // The target for the mob to chase.
     public int minDmg;
     public int maxDmg;
@@ -14,11 +18,11 @@ public class Mob : MonoBehaviour
     [SerializeField] float aggroRange = 20.0f; // Distance at which the mob will engage the target.
     [SerializeField] float patrolRadius = 25.0f; // Radius for patrolling around the initial position.
     [SerializeField] float rotationSpeed = 5.0f; // Speed at which the mob rotates.
+
     float minDistanceToTarget = 1.0f; // Distance threshold to stop when near the target or patrol point.
     Vector3 initialPosition; // The starting position (anchor point).
     Vector3 mobDesiredPosition; // The desired patrol position.
-    [Space]
-
+    
     [SerializeField] float returnToInitialCooldown = 10.0f; // Time before returning to the initial position.
     private float returnTimer = 0.0f; // Timer to track patrol time.
 
@@ -186,4 +190,10 @@ public class Mob : MonoBehaviour
     {
         target = newTarget;
     }
+
+    public void SwapTabMark()
+    {
+        tabMarker.SetActive(!tabMarker.activeSelf);
+    }
+
 }
