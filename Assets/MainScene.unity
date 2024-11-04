@@ -4064,8 +4064,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TYRANTS ACT LIKE DEMONS; \nTHEIR EVIL GROWS WITH OUR INDIFFERENCE.\nSILENCE
-    IS COMPLICITY; LET OUR ACTIONS MAKE THEM TREMBLE \n- DEUS VULT - "
+  m_text: "TYRANTS ACT LIKE DEMONS; \r\nOUR INDIFERENCE NOURISH THEM\r\nSILENCE IS
+    COMPLICITY; \r\nOUR ACTIONS\nMUST MAKE THEM TREMBLE\r\n\n- DEUS VULT - "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff4b2609afbad014ea0d24025c6e084d, type: 2}
   m_sharedMaterial: {fileID: -162318533977977057, guid: ff4b2609afbad014ea0d24025c6e084d, type: 2}
