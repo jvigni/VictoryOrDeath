@@ -1923,8 +1923,8 @@ Transform:
   m_GameObject: {fileID: 915606239}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.80901694, z: -0, w: 0.5877853}
-  m_LocalPosition: {x: 1.93, y: 1.4443, z: 0.34}
-  m_LocalScale: {x: 0.8893972, y: 0.25132254, z: 0.20000002}
+  m_LocalPosition: {x: 1.93, y: 1.36, z: 0.34}
+  m_LocalScale: {x: 0.8893972, y: 0.22399513, z: 0.20000002}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1074901678}
@@ -2217,8 +2217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -179.98, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.13, y: -0.215}
-  m_SizeDelta: {x: 1.864, y: 0.678}
+  m_AnchoredPosition: {x: -0.13, y: 0.136}
+  m_SizeDelta: {x: 1.864, y: 1.218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074901679
 MonoBehaviour:
@@ -2742,10 +2742,6 @@ PrefabInstance:
 
         EXPLORE,
         BE PREPEARED..'
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996354324819619597, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 27.48
       objectReference: {fileID: 0}
     - target: {fileID: 7679043657856784713, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_fontColor.b
@@ -4068,8 +4064,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TYRANTS ACT LIKE DEMONS; \r\nOUR INDIFERENCE NOURISH THEM\r\n\nSILENCE
-    IS COMPLICITY; \r\nOUR ACTIONS\nMUST MAKE THEM TREMBLE\r\n\n- DEUS VULT - "
+  m_text: "TYRANTS ACT LIKE DEMONS; \r\nOUR INDIFERENCE NOURISH THEM\r\nSILENCE IS
+    COMPLICITY; \r\nOUR ACTIONS\nMUST MAKE THEM TREMBLE\r\n\n- DEUS VULT - "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff4b2609afbad014ea0d24025c6e084d, type: 2}
   m_sharedMaterial: {fileID: -162318533977977057, guid: ff4b2609afbad014ea0d24025c6e084d, type: 2}
