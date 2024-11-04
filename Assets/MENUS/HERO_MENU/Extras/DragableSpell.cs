@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragableSpell : MonoBehaviour, IPointerDownHandler
+public class DragableSpell : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
+        Debug.Log("Begin Drag");
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        Debug.Log("Dragging");
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Debug.Log("End Drag");
     }
 }
