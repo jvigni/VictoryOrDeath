@@ -10,6 +10,7 @@ public class AbilityProvider : MonoBehaviour
 {
     [SerializeField] Ability fireballPrefab;
     [SerializeField] Ability fireblastPrefab;
+    [SerializeField] HeroMenu heroMenu;
 
     public void TeachAbility(AbilityCode code, CharacterAbilities characterAbilities)
     {
@@ -19,6 +20,7 @@ public class AbilityProvider : MonoBehaviour
         abilityClone.transform.SetParent(gameObject.transform);
 
         characterAbilities.Abilities.Add(abilityClone);
+        heroMenu.AbilityAdded(abilityClone);
     }
 
     private Ability GetAbilityPrefab(AbilityCode code)

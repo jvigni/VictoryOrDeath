@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,9 @@ using UnityEngine.UI;
 
 public class HeroMenu : MonoBehaviour
 {
+    public Camera mainCamera;
+    
+    [Space(10)]
     public EquipmentSlot head;
     public EquipmentSlot cloak;
     public EquipmentSlot armor;
@@ -14,6 +18,7 @@ public class HeroMenu : MonoBehaviour
     public EquipmentSlot boots;
     public EquipmentSlot main_hand;
     public EquipmentSlot off_hand;
+
     [Space(10)]
     public TextMeshProUGUI class_name;
     public TextMeshProUGUI power_level;
@@ -21,19 +26,32 @@ public class HeroMenu : MonoBehaviour
     public Image element2Img;
     public TextMeshProUGUI element1txt;
     public TextMeshProUGUI element2txt;
+
     [Space(10)]
     public StatSlot damageStat;
     public StatSlot defenseStat;
     public StatSlot staminaStat;
     public StatSlot manaStat;
+    
     [Space(10)]
     public List<InventorySlot> inventory;
     public Transform trash;
+
     [Space(10)]
     public TextMeshProUGUI resources;
     public List<UpgradeSlot> upgrades;
     public Button reroll;
-    public Camera mainCamera;
+
+    [Space(10)]
+    public SpellSlot spellSlot1;
+    public SpellSlot spellSlot2;
+    public SpellSlot spellSlot3;
+    public SpellSlot spellSlot4;
+    public SpellSlot spellSlot5;
+    public SpellSlot spellSlotR;
+    public SpellSlot spellSlotF;
+    public SpellSlot spellSlotT;
+    public SpellSlot spellSlotG;
 
     private void OnEnable()
     {
@@ -45,5 +63,11 @@ public class HeroMenu : MonoBehaviour
     {
         Cursor.visible = false;
         mainCamera.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = true;
+    }
+
+    internal void AbilityAdded(Ability abilityClone)
+    {
+
+        throw new NotImplementedException();
     }
 }
