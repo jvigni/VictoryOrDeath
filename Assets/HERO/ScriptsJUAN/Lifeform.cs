@@ -15,6 +15,7 @@ public class LifeForm : MonoBehaviour
 {
     [SerializeField] public Team Team;
     [SerializeField] int MaxHealth;
+    [SerializeField] DmgMarker dmgMark;
     int originalMaxHealth;
 
     [Space]
