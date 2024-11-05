@@ -10,7 +10,7 @@ public class DmgMarker : MonoBehaviour
  
     public void Show(int dmg)
     {
-        StartCoroutine(ShowDmg(dmg));
+        StartCoroutine(ShowDmg(dmg)); // TODO WHY
     }
 
     IEnumerable ShowDmg(int dmg)
