@@ -2252,6 +2252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4133003701919391613}
   - component: {fileID: 3043573003647571007}
+  - component: {fileID: 5034396408706961116}
   - component: {fileID: 1179703593670537002}
   m_Layer: 5
   m_Name: FloorMark
@@ -2287,6 +2288,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9029268029483771352}
   m_CullTransparentMesh: 1
+--- !u!114 &5034396408706961116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9029268029483771352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8967637e4fcd242a213103dad29230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1179703593670537002
 MonoBehaviour:
   m_ObjectHideFlags: 0
