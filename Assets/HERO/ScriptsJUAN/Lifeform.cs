@@ -69,6 +69,8 @@ public class LifeForm : MonoBehaviour
         //Color textColor = dmgInfo.Amount > 0 ? Color.red : Color.gray;
         //Provider.FloatingTextManager.PrintOnPosition(textMsg, textColor, GetPosition());
 
+        //HitFX.enable = true
+
         OnDamageTaken?.Invoke(dmgInfo.Amount);
 
         if (Health <= 0)
