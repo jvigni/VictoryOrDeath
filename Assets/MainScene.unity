@@ -3348,15 +3348,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6728229084135858405, guid: 3543d7f6276cfba4f8f247599b9de4e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.45
+      value: 34.663
       objectReference: {fileID: 0}
     - target: {fileID: 6728229084135858405, guid: 3543d7f6276cfba4f8f247599b9de4e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.995468
+      value: 25.652
       objectReference: {fileID: 0}
     - target: {fileID: 6728229084135858405, guid: 3543d7f6276cfba4f8f247599b9de4e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.08
+      value: 9.792
       objectReference: {fileID: 0}
     - target: {fileID: 6728229084135858405, guid: 3543d7f6276cfba4f8f247599b9de4e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8909,7 +8909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142358644864456215, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: m_text
-      value: 'LESS TYRANTS.
+      value: 'LESS DICTATORS.
 
         MORE MILEI.'
       objectReference: {fileID: 0}

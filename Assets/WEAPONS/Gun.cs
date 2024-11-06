@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Q))
             Shoot(new DmgInfo(dmg, DmgType.Fire));
     }
 
