@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class DmgMarker : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI dmgText;
     [SerializeField] GameObject redMark;
+    [SerializeField] TextMeshProUGUI dmgText;
  
     public void Show(int dmg)
     {
-        StartCoroutine(ShowDmg(dmg)); // TODO WHY
+        StartCoroutine(ShowDmg(dmg));
     }
 
-    IEnumerable ShowDmg(int dmg)
+    IEnumerator ShowDmg(int dmg)
     {
         redMark.SetActive(true);
         dmgText.text = dmg.ToString();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.2f);
         redMark.SetActive(false);
     }
 }

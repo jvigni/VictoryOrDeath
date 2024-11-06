@@ -311,6 +311,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3122876074396471706, guid: 536ef9f3cb71fc4459cec05d72cd0364, type: 3}
   m_PrefabInstance: {fileID: 8688060533954901888}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &64068583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 282472272727027081, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+  m_PrefabInstance: {fileID: 838572108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4341dc33e2067d4b9b7af0e87d64901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &85622290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6754019190536625214, guid: 6955c98543aadde46a96dcf02d163820, type: 3}
@@ -1652,7 +1663,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5705120346867569624, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2078833919}
   m_SourcePrefab: {fileID: 100100000, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
 --- !u!114 &838572109 stripped
 MonoBehaviour:
@@ -4151,6 +4165,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d5f65e720305e44b71a34e256af6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2078833916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5705120346867569624, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+  m_PrefabInstance: {fileID: 838572108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2078833919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078833916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca0a7a261bb66a4c8d7a26628f18c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targeter: {fileID: 64068583}
+  dmg: 42
 --- !u!4 &2084455367 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 725230025567053311, guid: 4c3bb98d144842b40b83e0d4475cc09b, type: 3}

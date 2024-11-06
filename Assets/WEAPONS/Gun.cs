@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] LifeForm Target;
+    [SerializeField] TabTargeter targeter;
     [SerializeField] int dmg;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
-            Shoot(Target, new DmgInfo(dmg, DmgType.Fire));
+            Shoot(new DmgInfo(dmg, DmgType.Fire));
     }
 
-    public void Shoot(LifeForm target, DmgInfo dmgInfo)
+    public void Shoot(DmgInfo dmgInfo)
     {
-        target.TakeDamage(dmgInfo);
+        var target = targeter.CurrentObjective;
+        if (target != null)
+            target.TakeDamage(dmgInfo);
     }
 }

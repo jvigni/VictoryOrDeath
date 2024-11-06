@@ -15,7 +15,7 @@ public class LifeForm : MonoBehaviour
 {
     [SerializeField] public Team Team;
     [SerializeField] int MaxHealth;
-    [SerializeField] DmgMarker dmgMark;
+    [SerializeField] DmgMarker dmgMarker;
     int originalMaxHealth;
 
     [Space]
@@ -70,7 +70,7 @@ public class LifeForm : MonoBehaviour
         //Color textColor = dmgInfo.Amount > 0 ? Color.red : Color.gray;
         //Provider.FloatingTextManager.PrintOnPosition(textMsg, textColor, GetPosition());
 
-        // TODO dmgMarker.Show()
+        dmgMarker.Show(dmgInfo.Amount);
 
         OnDamageTaken?.Invoke(dmgInfo.Amount);
 
