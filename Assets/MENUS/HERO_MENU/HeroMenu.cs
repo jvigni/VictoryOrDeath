@@ -38,7 +38,7 @@ public class HeroMenu : MonoBehaviour
     public List<UpgradeSlot> upgrades;
     public Button reroll;
 
-    public List<SpellSlot> spellSlots;
+    [SerializeField] List<SpellSlot> spellSlots;
 
     private void OnEnable()
     {
@@ -52,14 +52,16 @@ public class HeroMenu : MonoBehaviour
         mainCamera.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = true;
     }
     
-    internal void AddAbility(Ability abilityClone)
+    internal void NewAbility(Ability ability)
     {
         // Find the first empty spell slot
+        var done = false;
         for (int i = 0; i < spellSlots.Count; i++)
         {
-            if (spellSlots[i].ability == null)
+            if (!done && spellSlots[i].ability == null)
             {
-                spellSlots[i].Init(abilityClone);
+                done = true;
+                spellSlots[i].Init(ability);
             }
         }
     }

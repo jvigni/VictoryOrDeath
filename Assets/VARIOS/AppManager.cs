@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class AppManager : MonoBehaviour
 {
-    [SerializeField] AbilityLibrary abilityLibrary;
     [SerializeField] Spellbook spellbook;
     [SerializeField] KeyCode learnFireballCHEATCODE;
 
@@ -48,10 +47,8 @@ public class AppManager : MonoBehaviour
             dayNightCycle.SwapCycle();
 
         if (Input.GetKeyDown(learnFireballCHEATCODE))
-        {
-            spellbook.LearnAbility(AbilityCode.Fireblast)
+            spellbook.LearnAbility(AbilityCode.Fireblast);
 
-        }
     }
     public int GetElapsedGameSeconds()
     {

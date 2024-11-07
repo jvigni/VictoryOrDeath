@@ -1454,6 +1454,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8411564354679379088, guid: 706029da65f34b8429aff213b0f8e3ed, type: 3}
   m_PrefabInstance: {fileID: 776461406938016375}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &743452697 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3774786367846968130, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+  m_PrefabInstance: {fileID: 838572108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &754876873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3537340521950560084, guid: a0ca8bc332cc4d0499939680166ff8b8, type: 3}
@@ -1556,6 +1561,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2312300609994551941, guid: b8efa4db480bb254492bcaa91d3d6855, type: 3}
   m_PrefabInstance: {fileID: 7788223036866028268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &827612216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827612217}
+  - component: {fileID: 827612218}
+  m_Layer: 0
+  m_Name: Spellbook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &827612217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827612216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 743452697}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &827612218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827612216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a860b7ab56cabc544a11562a5900af27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 1869245153}
+  heroMenu: {fileID: 2107561553}
 --- !u!4 &833322967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5903621682197439712, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}
@@ -1615,23 +1666,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3774786367846968130, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 827612217}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5705120346867569624, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2078833919}
   m_SourcePrefab: {fileID: 100100000, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
---- !u!114 &838572109 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6039682493893884005, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-  m_PrefabInstance: {fileID: 838572108}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8e128e30acb7643a3983aac98f9ac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &851701241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3884,6 +3927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dce522063db2464b86e54e9f575ccd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
+  fireblastPrefab: {fileID: 124503007278863780, guid: 5917fb7d9609daf418c16946a4e58064, type: 3}
 --- !u!1001 &1875864974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4386,6 +4431,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8998399915973284421, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
   m_PrefabInstance: {fileID: 7025209528210612445}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2107561553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9067994025868563652, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
+  m_PrefabInstance: {fileID: 7025209528210612445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107561544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ddf3b2aab7d974eb63f39bb538b912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2121017547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9560,8 +9616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1503d9fbbd6bc354dbc1f45999a6eb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityProvider: {fileID: 0}
-  heroCharacterAbilities: {fileID: 838572109}
+  spellbook: {fileID: 827612218}
   learnFireballCHEATCODE: 111
   dayNightCycle: {fileID: 6206939422260044228}
   dayNigthSwapCHEATCODE: 112

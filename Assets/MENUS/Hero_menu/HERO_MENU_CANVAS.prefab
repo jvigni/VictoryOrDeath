@@ -2577,6 +2577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ddf3b2aab7d974eb63f39bb538b912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  draggablePrefab: {fileID: 0}
   mainCamera: {fileID: 0}
   head: {fileID: 4336483632943352389}
   cloak: {fileID: 4306818656398622503}
@@ -2614,15 +2615,16 @@ MonoBehaviour:
   - {fileID: 2725491192842460785}
   - {fileID: 4229391514160154215}
   reroll: {fileID: 7469666762925784895}
-  spellSlot1: {fileID: 506691125821889973}
-  spellSlot2: {fileID: 5945896038794979276}
-  spellSlot3: {fileID: 6624596703892363431}
-  spellSlot4: {fileID: 245823544178977529}
-  spellSlot5: {fileID: 6271129377819820351}
-  spellSlotR: {fileID: 4995970359559050605}
-  spellSlotF: {fileID: 5745442404631408514}
-  spellSlotT: {fileID: 1852685466433952004}
-  spellSlotG: {fileID: 7672075454802084740}
+  spellSlots:
+  - {fileID: 506691125821889973}
+  - {fileID: 5945896038794979276}
+  - {fileID: 6624596703892363431}
+  - {fileID: 245823544178977529}
+  - {fileID: 6271129377819820351}
+  - {fileID: 4995970359559050605}
+  - {fileID: 1852685466433952004}
+  - {fileID: 5745442404631408514}
+  - {fileID: 7672075454802084740}
 --- !u!223 &6382678304492472816
 Canvas:
   m_ObjectHideFlags: 0

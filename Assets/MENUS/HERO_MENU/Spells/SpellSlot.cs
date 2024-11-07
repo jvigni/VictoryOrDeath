@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SpellSlot : MonoBehaviour, IDropHandler
 {
-    public Sprite icon;
+    public Image icon;
     public Ability ability;
 
     public void OnDrop(PointerEventData eventData)
@@ -18,6 +18,6 @@ public class SpellSlot : MonoBehaviour, IDropHandler
     internal void Init(Ability ability)
     {
         this.ability = ability;
-        icon = ability.Icon;
+        icon.sprite = ability.Icon;
     }
 }
