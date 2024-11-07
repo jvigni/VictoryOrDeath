@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class AppManager : MonoBehaviour
 {
-    [SerializeField] AbilityProvider abilityProvider;
-    [SerializeField] CharacterAbilities heroCharacterAbilities;
+    [SerializeField] AbilityLibrary abilityLibrary;
+    [SerializeField] Spellbook spellbook;
     [SerializeField] KeyCode learnFireballCHEATCODE;
 
     [Space]
@@ -47,9 +47,11 @@ public class AppManager : MonoBehaviour
         if (Input.GetKeyDown(dayNigthSwapCHEATCODE))
             dayNightCycle.SwapCycle();
 
-        //if (Input.GetKeyDown(learnFireballCHEATCODE))
-            
-            //abilityProvider.TeachAbility(AbilityCode.Fireblast, heroCharacterAbilities);
+        if (Input.GetKeyDown(learnFireballCHEATCODE))
+        {
+            spellbook.LearnAbility(AbilityCode.Fireblast)
+
+        }
     }
     public int GetElapsedGameSeconds()
     {

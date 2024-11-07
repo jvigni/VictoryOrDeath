@@ -6,20 +6,16 @@ public enum AbilityCode
     Fireblast,
 }
 
-public class AbilityProvider : MonoBehaviour
+public class AbilityLibrary : MonoBehaviour
 {
     [SerializeField] Ability fireballPrefab;
     [SerializeField] Ability fireblastPrefab;
-    [SerializeField] HeroMenu heroMenu;
 
-    public void TeachAbility(AbilityCode code, CharacterAbilities characterAbilities)
+    public Ability GetAbilityClone(AbilityCode code)
     {
         var abilityPrefab = GetAbilityPrefab(code);
-
         var abilityClone = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
-        abilityClone.transform.SetParent(gameObject.transform);
-        characterAbilities.Abilities.Add(abilityClone);
-        heroMenu.AddAbility(abilityClone);
+        return abilityClone;
     }
 
     private Ability GetAbilityPrefab(AbilityCode code)
@@ -30,7 +26,7 @@ public class AbilityProvider : MonoBehaviour
 
         if (code.Equals(AbilityCode.Fireblast))
             ability = fireblastPrefab;
-        
+
 
         // Ad infinitum..
         return ability;
