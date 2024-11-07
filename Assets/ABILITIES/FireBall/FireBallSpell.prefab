@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1444223838962942727}
   - component: {fileID: 3513136486539658314}
   m_Layer: 0
-  m_Name: FireBall
+  m_Name: FireBallSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,10 +52,10 @@ MonoBehaviour:
   NAME: FIREBALL
   DESCRIPTION: ALLWAYS THE CORRECT SPELL
   castSeconds: 1.5
-  character: {fileID: 1831860492584090184, guid: 9a303eafd2d21cf409458ea242a7f70a, type: 3}
-  launchTransform: {fileID: 5099938082048056975, guid: 9a303eafd2d21cf409458ea242a7f70a, type: 3}
-  fireballSpeed: 20
-  fireballPrefab: {fileID: 4650110666360210433}
+  damage: 40
+  dmgType: 0
+  projectilePrefab: {fileID: 5963291665896859921, guid: 731bc23f7857f874cb2816153dcca8d6, type: 3}
+  projectileSpeed: 4
 --- !u!135 &1444223838962942727
 SphereCollider:
   m_ObjectHideFlags: 0

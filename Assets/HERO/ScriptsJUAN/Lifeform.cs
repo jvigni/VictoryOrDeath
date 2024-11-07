@@ -47,7 +47,7 @@ public class LifeForm : MonoBehaviour
         Health = MaxHealth;
     }
 
-    public int TakeDamage(DmgInfo dmgInfo)
+    public int TakeDamage(DmgInfo dmgInfo, GameObject attacker)
     {
         foreach (Effect effect in Effects.ToList())
             effect.OnBeingAttacked(dmgInfo);

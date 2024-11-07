@@ -9,6 +9,6 @@ public class Fireblast : Ability
     public override void Trigger(GameObject caster, GameObject target)
     {
         Instantiate(fireFX, target.transform.position, Quaternion.identity);
-        target.GetComponent<LifeForm>().TakeDamage(new DmgInfo(damage, DmgType.Fire));
+        target.GetComponent<LifeForm>().TakeDamage(new DmgInfo(damage, DmgType.Fire), caster);
     }
 }
