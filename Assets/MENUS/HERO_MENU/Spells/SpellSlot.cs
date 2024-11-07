@@ -12,7 +12,7 @@ public class SpellSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-
+        Debug.Log("ON DROP");
     }
 
     internal void Init(Ability ability)
