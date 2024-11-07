@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class DragableSpell : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [SerializeField] Ability ability;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin Drag");

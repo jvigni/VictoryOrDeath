@@ -7746,6 +7746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Team: 0
   MaxHealth: 300
+  dmgMarker: {fileID: 0}
 --- !u!1 &3754857558450625766
 GameObject:
   m_ObjectHideFlags: 0

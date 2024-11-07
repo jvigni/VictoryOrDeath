@@ -18,9 +18,8 @@ public class AbilityProvider : MonoBehaviour
 
         var abilityClone = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
         abilityClone.transform.SetParent(gameObject.transform);
-
         characterAbilities.Abilities.Add(abilityClone);
-        heroMenu.AbilityAdded(abilityClone);
+        heroMenu.AddAbility(abilityClone);
     }
 
     private Ability GetAbilityPrefab(AbilityCode code)

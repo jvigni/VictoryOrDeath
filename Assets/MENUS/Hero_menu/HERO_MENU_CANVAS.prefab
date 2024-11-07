@@ -2577,6 +2577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ddf3b2aab7d974eb63f39bb538b912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   head: {fileID: 4336483632943352389}
   cloak: {fileID: 4306818656398622503}
   armor: {fileID: 129372884311283581}
@@ -2622,7 +2623,6 @@ MonoBehaviour:
   spellSlotF: {fileID: 5745442404631408514}
   spellSlotT: {fileID: 1852685466433952004}
   spellSlotG: {fileID: 7672075454802084740}
-  mainCamera: {fileID: 0}
 --- !u!223 &6382678304492472816
 Canvas:
   m_ObjectHideFlags: 0
@@ -3657,7 +3657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: -335}
+  m_AnchoredPosition: {x: -524, y: -252}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3067381889481815413
@@ -3707,6 +3707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7799981313944c4986294970e0cf765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ability: {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
 --- !u!1 &7705285306230649646
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public class EquipmentSlot : MonoBehaviour
 {
-    public Image Image;
+    public Weapon weapon;
 }
