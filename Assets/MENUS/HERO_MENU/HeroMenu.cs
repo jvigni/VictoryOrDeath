@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class HeroMenu : MonoBehaviour
     public EquipmentSlot off_hand;
 
     public TextMeshProUGUI class_name;
+
+
     public TextMeshProUGUI power_level;
 
     public Image element1Img;
@@ -38,7 +41,9 @@ public class HeroMenu : MonoBehaviour
     public List<UpgradeSlot> upgrades;
     public Button reroll;
 
-    [SerializeField] List<SpellSlot> spellSlots;
+    [SerializeField] SpellsMenu spellsMenu;
+
+    //[SerializeField] List<SpellSlot> spellSlots;
 
     private void OnEnable()
     {
@@ -51,7 +56,12 @@ public class HeroMenu : MonoBehaviour
         Cursor.visible = false;
         mainCamera.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = true;
     }
-    
+    internal void NewAbility(Ability ability)
+    {
+        spellsMenu.NewAbility(ability);
+    }
+
+    /*
     internal void NewAbility(Ability ability)
     {
         // Find the first empty spell slot
@@ -65,7 +75,7 @@ public class HeroMenu : MonoBehaviour
             }
         }
     }
-
+    */
     public void SetWeapon(Weapon wpn)
     {
         main_hand.weapon = wpn;
