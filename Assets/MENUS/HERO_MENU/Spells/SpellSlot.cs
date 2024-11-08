@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class AbilitySlot : MonoBehaviour
 {
-    [SerializeField] private Image abilityIcon;
+    [SerializeField] public Ability ability;
 
-    // Public method to initialize the ability slot
-    public void Init(Sprite newIcon)
+
+    public void Init(Ability ability)
     {
-        abilityIcon.sprite = newIcon;
+        this.ability = ability;
     }
 }

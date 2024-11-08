@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class HeroMenu : MonoBehaviour
 {
-    public DragableSpell draggablePrefab;
 
     public Camera mainCamera;
 
+    [Header("EQUIPMENT")]
     public EquipmentSlot head;
     public EquipmentSlot cloak;
     public EquipmentSlot armor;
@@ -19,29 +19,34 @@ public class HeroMenu : MonoBehaviour
     public EquipmentSlot main_hand;
     public EquipmentSlot off_hand;
 
+    [Header("CLASS")]
     public TextMeshProUGUI class_name;
-
-
     public TextMeshProUGUI power_level;
-
     public Image element1Img;
     public Image element2Img;
     public TextMeshProUGUI element1txt;
     public TextMeshProUGUI element2txt;
 
+
+    [Header("STATS")]
     public StatSlot damageStat;
     public StatSlot defenseStat;
     public StatSlot staminaStat;
     public StatSlot manaStat;
 
+
+    [Header("INVENTORY")]
     public List<InventorySlot> inventory;
     public Transform trash;
 
+    [Header("UPGRADES")]
     public TextMeshProUGUI resources;
     public List<UpgradeSlot> upgrades;
     public Button reroll;
 
-    [SerializeField] SpellsMenu spellsMenu;
+
+    [Header("SPELLS")]
+    [SerializeField] List<AbilitySlot> spellSlots;
 
     //[SerializeField] List<SpellSlot> spellSlots;
 
@@ -58,12 +63,6 @@ public class HeroMenu : MonoBehaviour
     }
     internal void NewAbility(Ability ability)
     {
-        spellsMenu.NewAbility(ability);
-    }
-
-    /*
-    internal void NewAbility(Ability ability)
-    {
         // Find the first empty spell slot
         var done = false;
         for (int i = 0; i < spellSlots.Count; i++)
@@ -75,7 +74,7 @@ public class HeroMenu : MonoBehaviour
             }
         }
     }
-    */
+
     public void SetWeapon(Weapon wpn)
     {
         main_hand.weapon = wpn;
