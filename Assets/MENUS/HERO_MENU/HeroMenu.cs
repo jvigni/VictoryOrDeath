@@ -70,9 +70,9 @@ public class HeroMenu : MonoBehaviour
         spellSlots[index].Init(ability);
     }
 
-    internal object GetAbility(int index)
+    internal Ability GetAbility(int index)
     {
-        throw new NotImplementedException();
+        return spellSlots[index].ability;
     }
 
 

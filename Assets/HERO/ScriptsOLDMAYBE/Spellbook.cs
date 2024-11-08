@@ -20,4 +20,9 @@ public class Spellbook : MonoBehaviour
         //abilities.Add(ability);
         heroMenu.NewAbility(index, ability);
     }
+    /*
+    public void Cast(int index)
+    {
+        heroMenu.GetAbility(index).Trigger();
+    }*/
 }
