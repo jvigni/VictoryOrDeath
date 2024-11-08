@@ -8,8 +8,10 @@ public class SpellSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Image icon;
     public Ability ability;
 
-    private Image draggedIcon;
     private Canvas rootCanvas;
+    private Vector2 originalPosition;
+    private Vector2 dragOffset;
+    private RectTransform rectTransform;
 
     private void Awake()
     {
@@ -19,33 +21,51 @@ public class SpellSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             Debug.LogError("No root canvas found in parent hierarchy.");
         }
+
+        // Cache the RectTransform component for position adjustments
+        rectTransform = GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            originalPosition = rectTransform.anchoredPosition;
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag called");
 
-        if (rootCanvas == null) return;
+        // Save the original position to return after dragging
+        if (rectTransform != null)
+        {
+            originalPosition = rectTransform.anchoredPosition;
 
-        // Create a new image for dragging
-        draggedIcon = new GameObject("DraggedIcon").AddComponent<Image>();
-        draggedIcon.sprite = icon.sprite;
-        draggedIcon.transform.SetParent(rootCanvas.transform, false); // Set to root canvas
-        //draggedIcon.rectTransform.sizeDelta = icon.rectTransform.sizeDelta; // Match size of the original icon
-        draggedIcon.rectTransform.sizeDelta = new Vector2(60, 60);
-
-        // Set position to the mouse position
-        UpdateDraggedIconPosition(eventData);
+            // Calculate the offset between the mouse position and the center of the slot
+            Vector2 mousePosition;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                rootCanvas.transform as RectTransform,
+                eventData.position,
+                rootCanvas.worldCamera,
+                out mousePosition
+            );
+            dragOffset = rectTransform.anchoredPosition - mousePosition;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("OnDrag called");
 
-        // Update the dragged icon position
-        if (draggedIcon != null)
+        // Move the SpellSlot with the cursor, adjusting for the initial offset
+        if (rectTransform != null && rootCanvas != null)
         {
-            UpdateDraggedIconPosition(eventData);
+            Vector2 mousePosition;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                rootCanvas.transform as RectTransform,
+                eventData.position,
+                rootCanvas.worldCamera,
+                out mousePosition
+            );
+            rectTransform.anchoredPosition = mousePosition + dragOffset;
         }
     }
 
@@ -53,24 +73,11 @@ public class SpellSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         Debug.Log("OnEndDrag called");
 
-        // Destroy the dragged icon when dragging ends
-        if (draggedIcon != null)
+        // Return to original position
+        if (rectTransform != null)
         {
-            //Destroy(draggedIcon.gameObject);
+            rectTransform.anchoredPosition = originalPosition;
         }
-    }
-
-    private void UpdateDraggedIconPosition(PointerEventData eventData)
-    {
-        if (rootCanvas == null) return;
-
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            rootCanvas.transform as RectTransform,
-            eventData.position,
-            rootCanvas.worldCamera,
-            out Vector2 localPoint);
-
-        draggedIcon.rectTransform.localPosition = localPoint;
     }
 
     internal void Init(Ability ability)

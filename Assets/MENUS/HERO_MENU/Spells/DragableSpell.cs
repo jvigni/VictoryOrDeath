@@ -18,6 +18,6 @@ public class DragableSpell : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End Drag");
+        Destroy(gameObject);
     }
 }
