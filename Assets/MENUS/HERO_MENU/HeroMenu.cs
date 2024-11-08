@@ -61,6 +61,18 @@ public class HeroMenu : MonoBehaviour
         Cursor.visible = false;
         mainCamera.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = true;
     }
+
+    public void NewAbility(int index, Ability ability)
+    {
+        spellSlots[index].Init(ability);
+    }
+
+    public void SetWeapon(Weapon wpn)
+    {
+        main_hand.weapon = wpn;
+    }
+
+    /*
     internal void NewAbility(Ability ability)
     {
         // Find the first empty spell slot
@@ -74,11 +86,6 @@ public class HeroMenu : MonoBehaviour
             }
         }
     }
-
-    public void SetWeapon(Weapon wpn)
-    {
-        main_hand.weapon = wpn;
-    }
-
+    */
 
 }

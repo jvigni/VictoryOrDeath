@@ -18,6 +18,6 @@ public class Spellbook : MonoBehaviour
     {
         var ability = library.GetAbilityClone(code);
         abilities.Add(ability);
-        heroMenu.NewAbility(ability);
+        heroMenu.NewAbility(0, ability);
     }
 }
