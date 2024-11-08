@@ -7,17 +7,17 @@ public class Spellbook : MonoBehaviour
 {
     [SerializeField] AbilityLibrary library;
     [SerializeField] HeroMenu heroMenu;
-    List<Ability> abilities;
+    //List<Ability> abilities;
 
     private void Start()
     {
-        abilities = new List<Ability>();    
+        //abilities = new List<Ability>();    
     }
 
-    internal void LearnAbility(AbilityCode code)
+    internal void LearnAbility(int index, AbilityCode code)
     {
         var ability = library.GetAbilityClone(code);
-        abilities.Add(ability);
-        heroMenu.NewAbility(0, ability);
+        //abilities.Add(ability);
+        heroMenu.NewAbility(index, ability);
     }
 }

@@ -47,7 +47,7 @@ public class AppManager : MonoBehaviour
             dayNightCycle.SwapCycle();
 
         if (Input.GetKeyDown(learnFireballCHEATCODE))
-            spellbook.LearnAbility(AbilityCode.Fireblast);
+            spellbook.LearnAbility(1, AbilityCode.Fireball);
 
     }
     public int GetElapsedGameSeconds()

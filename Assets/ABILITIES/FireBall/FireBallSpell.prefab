@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Code: 0
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: c066fa331faf24141a23d56d65674537, type: 3}
   NAME: FIREBALL
   DESCRIPTION: ALLWAYS THE CORRECT SPELL
   castSeconds: 1.5

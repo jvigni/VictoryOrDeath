@@ -23,6 +23,8 @@ public class HeroMenu : MonoBehaviour
     public TextMeshProUGUI class_name;
     public TextMeshProUGUI power_level;
     public Image element1Img;
+
+
     public Image element2Img;
     public TextMeshProUGUI element1txt;
     public TextMeshProUGUI element2txt;
@@ -62,11 +64,19 @@ public class HeroMenu : MonoBehaviour
         mainCamera.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = true;
     }
 
+    #region ABILITIES
     public void NewAbility(int index, Ability ability)
     {
         spellSlots[index].Init(ability);
     }
 
+    internal object GetAbility(int index)
+    {
+        throw new NotImplementedException();
+    }
+
+
+    #endregion
     public void SetWeapon(Weapon wpn)
     {
         main_hand.weapon = wpn;
