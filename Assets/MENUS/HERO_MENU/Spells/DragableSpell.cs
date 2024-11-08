@@ -1,23 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DragableSpell : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragableSpell : MonoBehaviour
 {
+    [SerializeField] Ability ability;
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void Init(Ability newAbility)
     {
-        Debug.Log("Begin Drag");
+        ability = newAbility;
+        GetComponent<Image>().sprite = newAbility.Icon;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public Ability GetAbility()
     {
-        transform.position = Input.mousePosition;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Debug.Log("End Drag");
+        return ability;
     }
 }
