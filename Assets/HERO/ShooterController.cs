@@ -9,13 +9,11 @@ public class ShooterController : MonoBehaviour
 
     private void Update()
     {
-        /*
         Vector2 screen2CenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        //Ray ray = Camera.main.ScreenPointToRay(screen2CenterPoint);
-        Ray ray = Camera.main.ViewportPointToRay(screen2CenterPoint);
+        Ray ray = Camera.main.ScreenPointToRay(screen2CenterPoint);
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, mouseColliderLayerMask))
         {   
             aimTrainsform.position = raycastHit.point;
-        }*/
+        }
     }
 }
