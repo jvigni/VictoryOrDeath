@@ -5,15 +5,16 @@ using UnityEngine;
 public class ShooterController : MonoBehaviour
 {
     [SerializeField] LayerMask mouseColliderLayerMask;
-    [SerializeField] Transform aimTrainsform;
+    [SerializeField] Transform aimTransform;
 
     private void Update()
     {
-        Vector2 screen2CenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        Ray ray = Camera.main.ScreenPointToRay(screen2CenterPoint);
+        Vector3 screenCenterPoint = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, mouseColliderLayerMask))
-        {   
-            aimTrainsform.position = raycastHit.point;
+        {
+            aimTransform.position = raycastHit.point;
         }
     }
 }

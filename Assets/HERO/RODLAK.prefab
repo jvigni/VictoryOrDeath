@@ -7760,6 +7760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2e06b3b6400df408f48e3138857b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  aimTransform: {fileID: 0}
 --- !u!1 &3754857558450625766
 GameObject:
   m_ObjectHideFlags: 0
