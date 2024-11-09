@@ -74,28 +74,21 @@ public class HeroMenu : MonoBehaviour
     {
         return spellSlots[index].ability;
     }
-
-
     #endregion
-    public void SetWeapon(Weapon wpn)
-    {
-        main_hand.weapon = wpn;
-    }
+}
 
-    /*
-    internal void NewAbility(Ability ability)
+/*
+internal void NewAbility(Ability ability)
+{
+    // Find the first empty spell slot
+    var done = false;
+    for (int i = 0; i < spellSlots.Count; i++)
     {
-        // Find the first empty spell slot
-        var done = false;
-        for (int i = 0; i < spellSlots.Count; i++)
+        if (!done && spellSlots[i].ability == null)
         {
-            if (!done && spellSlots[i].ability == null)
-            {
-                done = true;
-                spellSlots[i].Init(ability);
-            }
+            done = true;
+            spellSlots[i].Init(ability);
         }
     }
-    */
-
 }
+*/

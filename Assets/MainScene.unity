@@ -3681,6 +3681,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190335
       objectReference: {fileID: 0}
+    - target: {fileID: 3869372571450237476, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4966435361449847126, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3741,6 +3745,11 @@ PrefabInstance:
 
         EXPLORE,
         BE PREPEARED..'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470481130600201080, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_text
+      value: IN HONOR OF ALL THOSE WHO STRUGGLED FOR SURVIVAL, MAINTENANCE OF HOLY
+        FAITH, INDEPENDENCE AND FREEDOM
       objectReference: {fileID: 0}
     - target: {fileID: 7679043657856784713, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_fontColor.b
