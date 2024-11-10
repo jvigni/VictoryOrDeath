@@ -48,7 +48,7 @@ public class HeroMenu : MonoBehaviour
 
 
     [Header("SPELLS")]
-    [SerializeField] List<AbilitySlot> spellSlots;
+    public List<AbilitySlot> spellSlots;
 
     //[SerializeField] List<SpellSlot> spellSlots;
 

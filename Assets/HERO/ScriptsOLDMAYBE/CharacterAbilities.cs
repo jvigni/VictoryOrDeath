@@ -4,12 +4,7 @@ using UnityEngine;
 public class CharacterAbilities : MonoBehaviour
 {
     [SerializeField] TabTargeter targeter;
-    public List<Ability> Abilities;
-
-    private void Awake()
-    {
-        Abilities = new List<Ability>();
-    }
+    [SerializeField] HeroMenu heroMenu;
 
     void Update()
     {
@@ -28,14 +23,6 @@ public class CharacterAbilities : MonoBehaviour
 
     public void UseAbility(int slot)
     {
-        if (this.Abilities[slot] == null)
-            return;
-
-        var target = targeter.CurrentObjective;
-        if (target == null)
-            return;
-
-        var caster = gameObject;
-        this.Abilities[slot].Trigger(caster, target.gameObject);
+        heroMenu.spellSlots[slot].ability.Trigger(gameObject, targeter.CurrentObjective.gameObject);
     }
 }

@@ -5,7 +5,7 @@ public class Projectile : MonoBehaviour
     private int damage;
     private DmgType dmgType;
     private GameObject target;
-    private GameObject caster; // Add caster reference
+    private GameObject caster;
     private float speed;
 
     public void Init(int damage, DmgType dmgType, GameObject target, float speed, GameObject caster)
@@ -25,6 +25,9 @@ public class Projectile : MonoBehaviour
             Vector3 direction = (target.transform.position - transform.position).normalized;
             transform.position += direction * speed * Time.deltaTime;
 
+            // Optional: Rotate to face the target
+            transform.rotation = Quaternion.LookRotation(direction);
+
             // Check if the projectile is close enough to apply damage and destroy itself
             if (Vector3.Distance(transform.position, target.transform.position) < 0.5f)
             {
@@ -41,7 +44,7 @@ public class Projectile : MonoBehaviour
 
     void ApplyDamage()
     {
-        // Apply damage to the target - this can be customized based on your damage system
+        // Apply damage to the target based on your damage system
         LifeForm targetHealth = target.GetComponent<LifeForm>();
         if (targetHealth != null)
         {
