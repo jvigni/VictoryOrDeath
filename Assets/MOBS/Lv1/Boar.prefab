@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5790408683347601113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2433,6 +2433,14 @@ PrefabInstance:
     - target: {fileID: 2379624477800437250, guid: 38a64f6b35f225348b88080465226b14, type: 3}
       propertyPath: m_Name
       value: DmgMarker
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379624477800437250, guid: 38a64f6b35f225348b88080465226b14, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987419942159137250, guid: 38a64f6b35f225348b88080465226b14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8711649928500869570, guid: 38a64f6b35f225348b88080465226b14, type: 3}
       propertyPath: m_LocalPosition.x
