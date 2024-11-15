@@ -48,7 +48,7 @@ public class Projectile : MonoBehaviour
         LifeForm targetHealth = target.GetComponent<LifeForm>();
         if (targetHealth != null)
         {
-            targetHealth.TakeDamage(new DmgInfo(damage, dmgType), caster);
+            targetHealth.TakeDamage(new DmgInfo(damage, dmgType)/*, caster*/);
         }
     }
 }

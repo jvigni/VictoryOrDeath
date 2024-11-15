@@ -17,6 +17,6 @@ public class Gun : MonoBehaviour
     {
         var target = targeter.CurrentObjective;
         if (target != null)
-            target.TakeDamage(dmgInfo, gameObject); // todo??
+            target.TakeDamage(dmgInfo/*, gameObject*/); // todo??
     }
 }

@@ -64,7 +64,7 @@ public class LifeForm : MonoBehaviour
         Health = MaxHealth;
     }
 
-    public int TakeDamage(DmgInfo dmgInfo, GameObject attacker)
+    public int TakeDamage(DmgInfo dmgInfo/*, GameObject attacker*/)
     {
         foreach (Effect effect in Effects.ToList())
             effect.OnBeingAttacked(dmgInfo);
@@ -87,7 +87,7 @@ public class LifeForm : MonoBehaviour
         //Color textColor = dmgInfo.Amount > 0 ? Color.red : Color.gray;
         //Provider.FloatingTextManager.PrintOnPosition(textMsg, textColor, GetPosition());
 
-        dmgMarker.Show(dmgInfo.Amount);
+        //dmgMarker.Show(dmgInfo.Amount);
 
         OnDamageTaken?.Invoke(dmgInfo.Amount);
 
