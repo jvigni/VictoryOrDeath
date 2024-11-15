@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using System;
+using UnityEngine.AI;
 
 public class NexusSpawner : MonoBehaviour
 {
@@ -30,12 +31,24 @@ public class NexusSpawner : MonoBehaviour
         {
             for (int i = 0; i < minionType.amountToSpawn; i++)
             {
-                var minion = Instantiate(minionType.minionPrefab, spawnPoint.position, Quaternion.identity);
-                minion.SetMySide(team);
-                minion.SetNexusToOBLITERATE(enemyNexus);
+                {
+                    Vector3 spawnPosition = spawnPoint.position;
+                    NavMeshHit hit;
 
-                minionsForTheNight.Add(minion);
-                yield return new WaitForSeconds(spawnInterval);
+                    if (NavMesh.SamplePosition(spawnPosition, out hit, 1.0f, NavMesh.AllAreas))
+                    {
+                        spawnPosition = hit.position;
+                    }
+
+                    var minion = Instantiate(minionType.minionPrefab, spawnPosition, Quaternion.identity);
+                    minion.SetMySide(team);
+                    minion.SetNexusToOBLITERATE(enemyNexus);
+                    minion.AdjustHeightToTerrain();
+                    minion.MoveTowardsNexus();
+
+                    minionsForTheNight.Add(minion);
+                    yield return new WaitForSeconds(spawnInterval);
+                }
             }
         }
     }

@@ -2,60 +2,182 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Minion : MonoBehaviour
 {
-    [SerializeField] private LifeForm thisLifeForm;
-    [SerializeField] private int atack;
+    [SerializeField] private int minionDamage;
     [SerializeField] private Team myTeam;
     [SerializeField] NexusSpawner nexusToOBLITERATE;
-    [SerializeField] float speed = 5f;
-    [SerializeField] float gravity = -9.8f;
-    [SerializeField] GroundCheck groundCheck;
-    [SerializeField] public LifeForm targetView;
+    [SerializeField] float speed = 10f;
+    [SerializeField] public LifeForm targetToWalk;
     [SerializeField] public LifeForm targetToAtack;
     [SerializeField] private Animator animator;
+    [SerializeField] private MinionCollisionDetector collisionDetector;
+
+    [SerializeField] bool isStoped;
+
     private string currentAnimation = "";
+    public NavMeshAgent navAgent;
 
-    private Vector3 velocity;
+    public DmgInfo dmgInfo;
 
+    void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+        if (navAgent == null)
+        {
+            navAgent.enabled = false;
+            navAgent.enabled = true;
+            navAgent.speed = speed;
+            Debug.LogError("NavMeshAgent not Found -Minion-");
+        }
+    }
+    void Start()
+    {
+        dmgInfo = new DmgInfo(minionDamage, DmgType.Fire);
+        MoveTowardsNexus();
+    }
     void Update()
     {
-        bool isGrounded = groundCheck.isGrounded;
+        isStoped = navAgent.isStopped;
+        activateMinionLogic();
+        //ValidateCurrentAnimation();
 
-        ApplyGravity(isGrounded);
-        if (targetView != null)
-        {
-            // Si hay un objetivo, mover hacia el objetivo
-            Vector3 direction = (targetView.transform.position - transform.position).normalized;
-            MoveInDirection(direction, isGrounded);
-        }
-        else if (nexusToOBLITERATE != null)
-        {
-            // Si no hay objetivo, mover hacia el nexo enemigo
-            Vector3 direction = (nexusToOBLITERATE.transform.position - transform.position).normalized;
-            MoveInDirection(direction, isGrounded);
-        }
-
-        AdjustHeightToTerrain();
     }
 
-    public void SetTagetToAtack(LifeForm targetToAtack) 
+    public void activateMinionLogic()
+    {
+        if (targetToWalk != null && targetToAtack == null)
+            navAgent.isStopped = false;
+
+        if (targetToWalk == null || !targetToWalk.gameObject)
+        {
+            navAgent.isStopped = false;
+            targetToAtack = null;
+            MoveTowardsNexus();
+            RotateTowardsTarget(targetToWalk.transform.position);
+        }
+
+        if (targetToAtack != null)
+        {
+            if (targetToAtack.IsAlive())
+            {
+                if (collisionDetector.IsTargetInRangeToAtack(targetToAtack))
+                {
+                    navAgent.isStopped = true;
+                    ChangeAnimation("Atacking");
+                    targetToAtack.TakeDamage(dmgInfo, this.gameObject);
+                }
+                else
+                {
+                    if (targetToWalk != targetToAtack)
+                    {
+                        navAgent.isStopped = false;
+                        targetToWalk = targetToAtack;
+                        navAgent.SetDestination(targetToWalk.transform.position);
+                        Debug.Log("SetDestination enemy in range to Walk 1");
+                        RotateTowardsTarget(targetToWalk.transform.position);
+                        ChangeAnimation("Walking");
+                    }
+                }
+            }
+            else
+            {
+                targetToAtack = null;
+                LifeForm minionToAtack = collisionDetector.IsAnyMinionInRangeToAtack();
+                if (minionToAtack != null)
+                {
+                    navAgent.isStopped = true;
+                    targetToAtack = minionToAtack;
+                    ChangeAnimation("Atacking");
+                    targetToAtack.TakeDamage(dmgInfo, this.gameObject);
+                }
+                else
+                {
+                    LifeForm CloserEnemyInRangeToWalk = collisionDetector.FindClosestEnemyInRange();
+                    if (CloserEnemyInRangeToWalk != null)
+                    {
+                        navAgent.isStopped = false;
+                        targetToWalk = CloserEnemyInRangeToWalk;
+                        navAgent.SetDestination(targetToWalk.transform.position);
+                        Debug.Log("SetDestination enemy in range to Walk 2");
+                        RotateTowardsTarget(targetToWalk.transform.position);
+                        ChangeAnimation("Walking");
+                    }
+                    else
+                    {
+                        navAgent.isStopped = false;
+                        MoveTowardsNexus();
+                        Debug.Log("111");
+                    }
+                }
+            }
+        }
+        else
+        {
+            LifeForm minionToAtack = collisionDetector.IsAnyMinionInRangeToAtack();
+            if (minionToAtack != null)
+            {
+                navAgent.isStopped = true;
+                Debug.Log("Atacando nuevo minion");
+                targetToWalk = minionToAtack;
+                targetToAtack = minionToAtack;
+                ChangeAnimation("Atacking");
+                targetToAtack.TakeDamage(dmgInfo, this.gameObject);
+
+            }
+            else
+            {
+                LifeForm CloserEnemyInRangeToWalk = collisionDetector.FindClosestEnemyInRange();
+                if (CloserEnemyInRangeToWalk != null)
+                {
+                    if (targetToWalk != CloserEnemyInRangeToWalk)
+                    {
+                        navAgent.isStopped = false;
+                        targetToWalk = CloserEnemyInRangeToWalk;
+                        navAgent.SetDestination(targetToWalk.transform.position);
+                        Debug.Log("SetDestination enemy in range to Walk");
+                        RotateTowardsTarget(targetToWalk.transform.position);
+                    }
+                }
+                else
+                {
+                    if (targetToWalk != GetNexusToObliterate())
+                    {
+                        navAgent.isStopped = false;
+                        targetToAtack = null;
+                        MoveTowardsNexus();
+                        RotateTowardsTarget(targetToWalk.transform.position);
+                    }
+                }
+            }
+        }
+    }
+
+    private void RotateTowardsTarget(Vector3 targetPosition)
+    {
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
+        }
+    }
+
+    public void SetTagetToAtack(LifeForm targetToAtack)
     {
         this.targetToAtack = targetToAtack;
     }
 
     public LifeForm GetNexusToObliterate()
     {
-        // Asegúrate de que nexusToOBLITERATE no sea nulo antes de acceder a su componente
         if (nexusToOBLITERATE != null)
         {
             return nexusToOBLITERATE.GetComponent<LifeForm>();
         }
-        return null; // Retorna null si nexusToOBLITERATE es nulo
+        return null;
     }
-
-
 
     public void ChangeAnimation(string animation, float crossFade = 0.2f)
     {
@@ -66,19 +188,29 @@ public class Minion : MonoBehaviour
         }
     }
 
-    public LifeForm getTarget() 
+    private bool HasTargetToAttack()
     {
-        return targetView;
+        return targetToAtack != null;
     }
 
-    public void SetSpeed(float newSpeed) 
+    private bool IsTargetAlive(LifeForm target)
+    {
+        return target != null && target.IsAlive(); // Suponiendo que LifeForm tiene un método IsAlive()
+    }
+
+    public LifeForm getTarget()
+    {
+        return targetToWalk;
+    }
+
+    public void SetSpeed(float newSpeed)
     {
         speed = newSpeed;
     }
 
-    public int getAtackDamage() 
+    public int getAtackDamage()
     {
-        return atack;
+        return minionDamage;
     }
 
     public void SetMySide(Team team)
@@ -91,7 +223,7 @@ public class Minion : MonoBehaviour
         return myTeam;
     }
 
-    private void AdjustHeightToTerrain()
+    public void AdjustHeightToTerrain()
     {
         Vector3 position = transform.position;
         float terrainHeight = Terrain.activeTerrain.SampleHeight(position);
@@ -99,24 +231,29 @@ public class Minion : MonoBehaviour
         transform.position = position;
     }
 
-    private void ApplyGravity(bool isGrounded)
+    public void MoveTowardsNexus()
     {
-        if (!isGrounded)
+        LifeForm nexusToObliterate = GetNexusToObliterate();
+        if (GetNexusToOBLITERATE() != null)
         {
-            velocity.y += gravity * Time.deltaTime; // Aplicar gravedad
+            navAgent.isStopped = false;
+            ChangeAnimation("Walking");
+            targetToWalk = nexusToObliterate;
+            navAgent.SetDestination(nexusToObliterate.transform.position);
+            // Debug.Log($"SetDestination Go Nexus {GetNexusToOBLITERATE().transform.position}");
+            Debug.Log($"SetDestination Go Nexus {nexusToObliterate.transform.position} - NavMeshAgent isStopped: {navAgent.isStopped}");
+            //Debug.Log($"Minion {gameObject.name} moving towards Nexus at position {GetNexusToOBLITERATE().transform.position}");
         }
-        else
-        {
-            velocity.y = 0; // Reiniciar la velocidad en Y cuando esté en el suelo
-        }
-        transform.Translate(velocity * Time.deltaTime, Space.World);
     }
 
-    private void MoveInDirection(Vector3 direction, bool isGrounded)
+    //TODO revisr que esto no anda bien u otra cosa falla. se traban los minions a veces.
+    public void ValidateCurrentAnimation()
     {
-        Vector3 move = direction * speed * Time.deltaTime;
-        move.y = velocity.y * Time.deltaTime; // Incluir la gravedad
-        transform.Translate(move, Space.World);
+        if (targetToAtack != null && collisionDetector.IsTargetInRangeToAtack(targetToAtack))
+        {
+            if (currentAnimation != "Atacking")
+                ChangeAnimation("Atacking");
+        }
     }
 
     public void SetNexusToOBLITERATE(NexusSpawner shittyNexus)

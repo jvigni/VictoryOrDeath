@@ -1,59 +1,90 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MinionCollisionDetector : MonoBehaviour
 {
     [SerializeField] private Minion parentMinion;
-    [SerializeField] private float detectionRadius = 1.5f;
+    [SerializeField] private float detectionRadius = 6.5f;
+    [SerializeField] private float attackRange = 6.5f;
     NexusSpawner nexusToOBLITERATE;
-    [SerializeField] private float attackRange = 3.0f;
-    [SerializeField] public DmgInfo dmgInfo;
+    [SerializeField] private List<LifeForm> enemiesInCollider = new List<LifeForm>();
 
     void Start()
     {
-         parentMinion = GetComponentInParent<Minion>();
+        parentMinion = GetComponentInParent<Minion>();
         nexusToOBLITERATE = parentMinion.GetNexusToOBLITERATE();
     }
 
     void Update()
     {
-        DetectCollisions();
+        enemiesInCollider.RemoveAll(enemy => enemy == null || !enemy.gameObject);
     }
 
-    private void DetectCollisions()
+    public List<LifeForm> GetEnemiesInRange()
     {
-        // Obtener todos los colliders en un radio alrededor del detector
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius);
+        return enemiesInCollider;
+    }
 
-        foreach (var collider in hitColliders)
+    public LifeForm FindClosestEnemyInRange()
+    {
+        LifeForm closestEnemy = null;
+        float closestDistance = float.MaxValue;
+        var enemiesInRange = enemiesInCollider;
+        if (enemiesInRange.Count > 0)
         {
-            LifeForm otherLifeForm = collider.GetComponent<LifeForm>();
-            if (otherLifeForm != null && otherLifeForm.Team != parentMinion.getMyTeam())
+            foreach (var enemy in enemiesInRange)
             {
-                Vector3 directionToTarget = (otherLifeForm.transform.position - transform.position).normalized;
-                float distanceToTarget = Vector3.Distance(transform.position, otherLifeForm.transform.position);
-
-                if (distanceToTarget <= attackRange)
+                if (enemy != null)
                 {
-
-                    parentMinion.ChangeAnimation("Atacking");
-                    parentMinion.SetSpeed(0);
-                    parentMinion.SetTagetToAtack(otherLifeForm);
+                    float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestEnemy = enemy;
+                        closestDistance = distance;
+                    }
                 }
-
-                // Si el minion no tiene un objetivo, establece el enemigo como objetivo
-                if (parentMinion.targetView == null || parentMinion.GetNexusToObliterate() == parentMinion.targetView)
-                {
-                    parentMinion.targetView = otherLifeForm;
-                }
-                
             }
         }
+        return closestEnemy;
+    }
 
-        // Si no hay un objetivo, asignar el nexo
-        if (parentMinion.targetView == null && parentMinion.GetNexusToOBLITERATE() != null)
+    public bool IsTargetInRangeToAtack(LifeForm target)
+    {
+        if (target != null)
+            return Vector3.Distance(transform.position, target.transform.position) <= attackRange;
+
+        return false;
+    }
+
+    public LifeForm IsAnyMinionInRangeToAtack()
+    {
+        LifeForm closestEnemyInRange = FindClosestEnemyInRange();
+        if (closestEnemyInRange != null)
         {
-            Debug.Log("6");
-            parentMinion.targetView = parentMinion.GetNexusToOBLITERATE().GetComponent<LifeForm>();
+            float distance = Vector3.Distance(transform.position, closestEnemyInRange.transform.position);
+            if (distance < attackRange)
+            {
+                return closestEnemyInRange;
+            }
+        }
+        return null;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        LifeForm enemy = other.GetComponent<LifeForm>();
+        if (enemy != null && enemy.team != parentMinion.getMyTeam() && !enemiesInCollider.Contains(enemy))
+        {
+            enemiesInCollider.Add(enemy);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        LifeForm enemy = other.GetComponent<LifeForm>();
+        if (enemy != null && enemiesInCollider.Contains(enemy))
+        {
+            enemiesInCollider.Remove(enemy);
         }
     }
 }
