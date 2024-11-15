@@ -2638,10 +2638,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
-  minionTypesToSpawn: []
+  minionTypesToSpawn:
+  - minionPrefab: {fileID: 8386420426626142106, guid: 987b9468d3fc0b14eaade748d63f6d5c, type: 3}
+    amountToSpawn: 10
   spawnPoint: {fileID: 1449847499}
   FX: {fileID: 1002124835}
-  enemyNexus: {fileID: 0}
+  enemyNexus: {fileID: 1267000552}
   spawnInterval: 1
 --- !u!114 &888953718
 MonoBehaviour:
@@ -3848,7 +3850,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 32.461
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6933939342185195750, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3670285588129071787, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
     - {fileID: 7413547830632258334, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
@@ -3873,9 +3876,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 926539799}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5671626516254347052, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1446443738}
     - targetCorrespondingSourceObject: {fileID: 1475750660364025392, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 888953718}
@@ -4130,38 +4130,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3122876074396471706, guid: 536ef9f3cb71fc4459cec05d72cd0364, type: 3}
   m_PrefabInstance: {fileID: 744752408522606553}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1446443734 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5671626516254347052, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
-  m_PrefabInstance: {fileID: 1314951245}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &1446443738
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446443734}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
---- !u!114 &1446443740 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6933939342185195750, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
-  m_PrefabInstance: {fileID: 1314951245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446443734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b71be309d4d39f143a0cf627f29dfe7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1449847499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3633690599166260808, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
@@ -4596,22 +4564,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5751727500373775415, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
   m_PrefabInstance: {fileID: 4630779599937900310}
   m_PrefabAsset: {fileID: 0}
---- !u!208 &1572442089
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572442087}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!65 &1572442090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4631,8 +4583,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 26.41, y: 1, z: 24.88}
-  m_Center: {x: 0, y: 1.84, z: 0}
+  m_Size: {x: 26.41, y: 17.220924, z: 24.88}
+  m_Center: {x: 0, y: 9.950462, z: 0}
 --- !u!1001 &1595068673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10414,11 +10366,11 @@ PrefabInstance:
       objectReference: {fileID: 888953717}
     - target: {fileID: 4386168805695701429, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 246.1
+      value: 244.5
       objectReference: {fileID: 0}
     - target: {fileID: 4386168805695701429, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.72
+      value: -28.02
       objectReference: {fileID: 0}
     - target: {fileID: 4386168805695701429, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10483,11 +10435,32 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5751727500373775415, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1572442089}
-    - targetCorrespondingSourceObject: {fileID: 5751727500373775415, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1572442090}
+    - targetCorrespondingSourceObject: {fileID: 6181801856104162678, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4630779599937900312}
   m_SourcePrefab: {fileID: 100100000, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+--- !u!1 &4630779599937900311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6181801856104162678, guid: 142094479bdeda54b9ed0e29230f4f35, type: 3}
+  m_PrefabInstance: {fileID: 4630779599937900310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &4630779599937900312
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630779599937900311}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.1230001, y: 1.281, z: 3.219}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.023000002, y: 0.425, z: -0.001}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4732159410177510584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12049,7 +12022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa85b911da2817d4b8b6f5ad85e08cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  humansNexus: {fileID: 1446443740}
+  humansNexus: {fileID: 888953717}
   plagueNexus: {fileID: 1267000552}
   daySkybox: {fileID: 2100000, guid: 3a253cab252a165478338fba0f03e63a, type: 2}
   nightSkybox: {fileID: 2100000, guid: b5a27fa4b11bfb24cbc6daff3802c229, type: 2}
