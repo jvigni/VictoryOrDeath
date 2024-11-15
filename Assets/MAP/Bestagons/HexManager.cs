@@ -72,7 +72,7 @@ public class HexManager : MonoBehaviour
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
         Mob newMob = Instantiate(GetRndMobPrefab(level), rndSpawnPosition, Quaternion.identity);
         newMob.transform.SetParent(parentObj.transform);
-        newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, level, parentObj);
+        //newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, level, parentObj);
         hex.mobs = newMob;
         return newMob;
     }
