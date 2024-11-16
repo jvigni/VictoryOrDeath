@@ -49,8 +49,11 @@ public class Minion : MonoBehaviour
     public void activateMinionLogic()
     {
         if (targetToWalk != null && targetToAtack == null)
+        {
             navAgent.isStopped = false;
-
+            RotateTowardsTarget(targetToWalk.transform.position);
+        }
+        
         if (targetToWalk == null || !targetToWalk.gameObject)
         {
             navAgent.isStopped = false;
@@ -68,6 +71,7 @@ public class Minion : MonoBehaviour
                     navAgent.isStopped = true;
                     ChangeAnimation("Atacking");
                     targetToAtack.TakeDamage(dmgInfo);
+                    RotateTowardsTarget(targetToAtack.transform.position);
                 }
                 else
                 {
@@ -92,6 +96,7 @@ public class Minion : MonoBehaviour
                     targetToAtack = minionToAtack;
                     ChangeAnimation("Atacking");
                     targetToAtack.TakeDamage(dmgInfo);
+                    RotateTowardsTarget(targetToWalk.transform.position);
                 }
                 else
                 {
@@ -109,6 +114,7 @@ public class Minion : MonoBehaviour
                     {
                         navAgent.isStopped = false;
                         MoveTowardsNexus();
+                        RotateTowardsTarget(targetToWalk.transform.position);
                         Debug.Log("111");
                     }
                 }
@@ -125,7 +131,7 @@ public class Minion : MonoBehaviour
                 targetToAtack = minionToAtack;
                 ChangeAnimation("Atacking");
                 targetToAtack.TakeDamage(dmgInfo);
-
+                RotateTowardsTarget(targetToWalk.transform.position);
             }
             else
             {
@@ -241,6 +247,7 @@ public class Minion : MonoBehaviour
             targetToWalk = nexusToObliterate;
             navAgent.SetDestination(nexusToObliterate.transform.position);
             // Debug.Log($"SetDestination Go Nexus {GetNexusToOBLITERATE().transform.position}");
+            RotateTowardsTarget(targetToWalk.transform.position);
             Debug.Log($"SetDestination Go Nexus {nexusToObliterate.transform.position} - NavMeshAgent isStopped: {navAgent.isStopped}");
             //Debug.Log($"Minion {gameObject.name} moving towards Nexus at position {GetNexusToOBLITERATE().transform.position}");
         }
