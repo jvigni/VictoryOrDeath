@@ -7916,11 +7916,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2e06b3b6400df408f48e3138857b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseColliderLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
   aimTransform: {fileID: 3388146064292808607}
   normalMovement: {fileID: 0}
+  ignoreLayer: []
 --- !u!1 &3754857558450625766
 GameObject:
   m_ObjectHideFlags: 0
@@ -8428,11 +8426,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2e06b3b6400df408f48e3138857b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseColliderLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   aimTransform: {fileID: 3388146064292808607}
   normalMovement: {fileID: 8976777331808289254}
+  ignoreLayer:
+  - serializedVersion: 2
+    m_Bits: 1024
+  - serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &4537121943259375480
 GameObject:
   m_ObjectHideFlags: 0
@@ -8939,10 +8939,10 @@ MonoBehaviour:
   overrideAnimatorController: 1
   runtimeAnimatorController: {fileID: 9100000, guid: 4c77323136b9524478f3a5c86ed70c71, type: 2}
   planarMovementParameters:
-    baseSpeedLimit: 7
+    baseSpeedLimit: 9
     canRun: 1
     runInputMode: 1
-    boostSpeedLimit: 30
+    boostSpeedLimit: 50
     stableGroundedAcceleration: 50
     stableGroundedDeceleration: 40
     stableGroundedAngleAccelerationBoost:

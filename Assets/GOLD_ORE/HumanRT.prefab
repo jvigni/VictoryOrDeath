@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6869645247329595704}
   - component: {fileID: 63684838258540476}
   - component: {fileID: 1528861111163460290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HumanRT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5533609132437207580}
   - component: {fileID: 4987835591380906190}
   - component: {fileID: 4513478535350735819}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 6726251321992052965}
   - component: {fileID: 7394628355261412080}
   - component: {fileID: 1241470596392828237}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,6 +354,18 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2438911664280683369, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020821752039888262, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889215546516396378, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8546020901774600289, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -439,6 +451,10 @@ PrefabInstance:
       value: HealhtBar
       objectReference: {fileID: 0}
     - target: {fileID: 8729352718095959169, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729352718095959169, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -463,6 +479,10 @@ PrefabInstance:
     - target: {fileID: 1244904083037243515, guid: c451ef893c655224e917d5749d468137, type: 3}
       propertyPath: m_Name
       value: caliz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244904083037243515, guid: c451ef893c655224e917d5749d468137, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1877184135029461697, guid: c451ef893c655224e917d5749d468137, type: 3}
       propertyPath: m_LocalScale.x
@@ -590,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sword
       objectReference: {fileID: 0}
+    - target: {fileID: 9199442243369390583, guid: fc5cad8c2ce1f9440b9fb9c49a5f04ed, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -651,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 8997584515197179110, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
       propertyPath: m_Name
       value: FX_GoldDust
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997584515197179110, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9086182142689193400, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -761,6 +789,10 @@ PrefabInstance:
     - target: {fileID: 6531961123638115930, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}
       propertyPath: m_Name
       value: OreBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531961123638115930, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6531961123638115930, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}
       propertyPath: m_IsActive
@@ -899,6 +931,10 @@ PrefabInstance:
     - target: {fileID: 1916667545688988743, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
       propertyPath: m_Name
       value: marmol
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916667545688988743, guid: deac8b5683f16ae4c8b12ac9d295ec39, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

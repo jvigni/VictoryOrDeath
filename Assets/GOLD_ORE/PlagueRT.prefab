@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8577942315628084255}
   - component: {fileID: 2935601384800662171}
   - component: {fileID: 442910219867344479}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlagueRT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 7247502165274310459}
   - component: {fileID: 7883343241775775209}
   - component: {fileID: 1656198980098596588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 8432824356049833410}
   - component: {fileID: 5675071737954926551}
   - component: {fileID: 4135868015132307562}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,6 +412,10 @@ PrefabInstance:
       value: OreBase
       objectReference: {fileID: 0}
     - target: {fileID: 6531961123638115930, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531961123638115930, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -496,6 +500,18 @@ PrefabInstance:
     - target: {fileID: 2208513815831879321, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438911664280683369, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020821752039888262, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889215546516396378, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8546020901774600289, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
       propertyPath: m_Pivot.x
@@ -582,6 +598,10 @@ PrefabInstance:
       value: HealhtBar
       objectReference: {fileID: 0}
     - target: {fileID: 8729352718095959169, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729352718095959169, guid: bee1ad31bb99d5c4eafa2c1d0e666249, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -646,6 +666,10 @@ PrefabInstance:
     - target: {fileID: 8997584515197179110, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
       propertyPath: m_Name
       value: FX_GoldDust
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997584515197179110, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9086182142689193400, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
       propertyPath: ColorModule.enabled
@@ -753,6 +777,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torre
       objectReference: {fileID: 0}
+    - target: {fileID: 9207029398514224156, guid: e88acc101916c2c4f89f391683d56f83, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -774,9 +802,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4475639004225626855}
     m_Modifications:
+    - target: {fileID: 641765368194234263, guid: abc7ab04541a17d4091b145319b79145, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2554510582902016079, guid: abc7ab04541a17d4091b145319b79145, type: 3}
       propertyPath: m_Name
       value: PlagueRT
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554510582902016079, guid: abc7ab04541a17d4091b145319b79145, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2554510582902016079, guid: abc7ab04541a17d4091b145319b79145, type: 3}
       propertyPath: m_IsActive
@@ -789,6 +825,10 @@ PrefabInstance:
     - target: {fileID: 2594328821717934891, guid: abc7ab04541a17d4091b145319b79145, type: 3}
       propertyPath: cycleDuration
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019843419827207925, guid: abc7ab04541a17d4091b145319b79145, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3148753366130877474, guid: abc7ab04541a17d4091b145319b79145, type: 3}
       propertyPath: m_LocalPosition.x
@@ -829,6 +869,14 @@ PrefabInstance:
     - target: {fileID: 3148753366130877474, guid: abc7ab04541a17d4091b145319b79145, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188619132900171050, guid: abc7ab04541a17d4091b145319b79145, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795991357059355198, guid: abc7ab04541a17d4091b145319b79145, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -848,6 +896,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4475639004225626855}
     m_Modifications:
+    - target: {fileID: 260915508499714541, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 925830262613278547, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2905827089724110035, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -896,9 +952,25 @@ PrefabInstance:
       propertyPath: cycleDuration
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3099176685869716643, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672473718225370402, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079904264533535769, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7434238083007397996, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
       propertyPath: m_Name
       value: HumanRT
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434238083007397996, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7434238083007397996, guid: 347d5759a007393499c7c2e3caf53ef8, type: 3}
       propertyPath: m_IsActive
@@ -925,6 +997,10 @@ PrefabInstance:
     - target: {fileID: 5273457224129974607, guid: 33f77ca29bf05ee4590fc1ed5d1ab213, type: 3}
       propertyPath: m_Name
       value: incienso
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273457224129974607, guid: 33f77ca29bf05ee4590fc1ed5d1ab213, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5276582440580914531, guid: 33f77ca29bf05ee4590fc1ed5d1ab213, type: 3}
       propertyPath: m_LocalScale.x
@@ -1011,6 +1087,10 @@ PrefabInstance:
     - target: {fileID: 7287315629818331071, guid: aec2477188d44fa47a7b1054eeb48a72, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Roof_Topper_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287315629818331071, guid: aec2477188d44fa47a7b1054eeb48a72, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7956293016003110149, guid: aec2477188d44fa47a7b1054eeb48a72, type: 3}
       propertyPath: m_LocalScale.x
