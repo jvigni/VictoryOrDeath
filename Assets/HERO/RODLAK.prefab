@@ -7900,9 +7900,9 @@ MonoBehaviour:
   Health:
     value: 0
   MaxHealth:
-    value: 0
+    value: 100
   dmgMarker: {fileID: 0}
-  originalMaxHealth: 10000
+  originalMaxHealth: 0
 --- !u!1 &3754857558450625766
 GameObject:
   m_ObjectHideFlags: 0
@@ -8412,11 +8412,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimTransform: {fileID: 3388146064292808607}
   normalMovement: {fileID: 8976777331808289254}
-  ignoreLayer:
-  - serializedVersion: 2
-    m_Bits: 1024
-  - serializedVersion: 2
-    m_Bits: 512
+  aimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  crossHair: {fileID: 0}
 --- !u!1 &4537121943259375480
 GameObject:
   m_ObjectHideFlags: 0
