@@ -6873,7 +6873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3040651128751953634
 Transform:
   m_ObjectHideFlags: 0
@@ -13298,12 +13298,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6283246913281734009}
   - {fileID: 4872717791962584575}
   - {fileID: 1869245152}
   - {fileID: 170370041}
   - {fileID: 6933454096204711550}
   - {fileID: 4920560147588984829}
-  - {fileID: 6283246913281734009}
   - {fileID: 312074551}
   - {fileID: 332561476}
   - {fileID: 1546095843}
