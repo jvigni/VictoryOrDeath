@@ -72,6 +72,7 @@ public class HexManager : MonoBehaviour
         rndSpawnPosition.y = Terrain.activeTerrain.SampleHeight(rndSpawnPosition);
         Mob newMob = Instantiate(GetRndMobPrefab(level), rndSpawnPosition, Quaternion.identity);
         newMob.transform.SetParent(parentObj.transform);
+        //TODO FIX INFINITE MOB RESPAWNING. lambda is not the solution
         //newMob.GetComponent<LifeForm>().OnDeath += () => SpawnMob(hex, level, parentObj);
         hex.mobs = newMob;
         return newMob;

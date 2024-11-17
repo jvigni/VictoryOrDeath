@@ -7920,6 +7920,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   aimTransform: {fileID: 3388146064292808607}
+  normalMovement: {fileID: 0}
 --- !u!1 &3754857558450625766
 GameObject:
   m_ObjectHideFlags: 0
@@ -8383,6 +8384,55 @@ Transform:
   - {fileID: 8748917239327554578}
   m_Father: {fileID: 5148761510857985527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4466752707468438980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547398030362432059}
+  - component: {fileID: 8696762557710153396}
+  m_Layer: 9
+  m_Name: ShooterManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1547398030362432059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466752707468438980}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3774786367846968130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8696762557710153396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466752707468438980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2e06b3b6400df408f48e3138857b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  aimTransform: {fileID: 3388146064292808607}
+  normalMovement: {fileID: 8976777331808289254}
 --- !u!1 &4537121943259375480
 GameObject:
   m_ObjectHideFlags: 0
@@ -9015,7 +9065,7 @@ MonoBehaviour:
   horizontalAxisParameter: HorizontalAxis
   verticalAxisParameter: VerticalAxis
   heightParameter: Height
-  isAiming: 0
+  IsAiming: 0
 --- !u!114 &9029474966409266014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10350,6 +10400,7 @@ Transform:
   - {fileID: 3190839883279228460}
   - {fileID: 3388146064292808607}
   - {fileID: 7682052461709909594}
+  - {fileID: 1547398030362432059}
   m_Father: {fileID: 551276666553536318}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7929690623138917679

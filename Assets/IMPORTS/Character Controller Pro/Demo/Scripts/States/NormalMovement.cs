@@ -88,7 +88,7 @@ namespace Lightbug.CharacterControllerPro.Demo
         bool reducedAirControlFlag = false;
         float reducedAirControlInitialTime = 0f;
         float reductionDuration = 0.5f;
-        public bool isAiming;
+        public bool IsAiming;
 
         protected override void Awake()
         {
@@ -687,17 +687,24 @@ namespace Lightbug.CharacterControllerPro.Demo
                 // If movement input exists and character is aiming, keep facing forward
                 if (CharacterStateController.InputMovementReference != Vector3.zero)
                 {
-                    if (isAiming)
-                        targetLookingDirection = CharacterStateController.MovementReferenceForward; // Facing forward when aiming
+                    if (IsAiming)
+                        targetLookingDirection = Camera.main.transform.forward; // Facing camera's forward direction when aiming
                     else
                         targetLookingDirection = CharacterStateController.InputMovementReference; // Rotating based on WASD
                 }
                 else
                 {
-                    // Rotate in the opposite direction of the mouse position
-                    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
-                    mousePosition.y = CharacterActor.transform.position.y; // Keep the Y coordinate consistent with the character's height
-                    targetLookingDirection = (CharacterActor.transform.position - mousePosition).normalized; // Direction away from the mouse
+                    // Rotate in the opposite direction of the mouse position, but only if aiming
+                    if (IsAiming)
+                    {
+                        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+                        mousePosition.y = CharacterActor.transform.position.y; // Keep the Y coordinate consistent with the character's height
+                        targetLookingDirection = (CharacterActor.transform.position - mousePosition).normalized; // Direction away from the mouse
+                    }
+                    else
+                    {
+                        targetLookingDirection = CharacterActor.Forward; // Default rotation when not aiming
+                    }
                 }
             }
             else
@@ -709,6 +716,7 @@ namespace Lightbug.CharacterControllerPro.Demo
                     targetLookingDirection = CharacterActor.Forward;
             }
         }
+
 
 
 
