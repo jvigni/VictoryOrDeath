@@ -6,18 +6,24 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject firstMenu;
-    [SerializeField] Button saveGame;
-    [SerializeField] Button loadGame;
-    [SerializeField] Button More;
-    [SerializeField] Button returnToGame;
+    [SerializeField] Button saveGameBtn;
+    [SerializeField] Button loadGameBtn;
+    [SerializeField] Button MoreBtn;
+    [SerializeField] Button returnToGameBtn;
 
     [Space(10)]
     [SerializeField] GameObject secondMenu;
-    [SerializeField] Button options;
-    [SerializeField] Button help;
-    [SerializeField] Button endGame;
-    [SerializeField] Button returnToFirstMenu;
+    [SerializeField] Button optionsBtn;
+    [SerializeField] Button helpBtn;
+    [SerializeField] Button endGameBtn;
+    [SerializeField] Button returnToFirstMenuBtn;
     [SerializeField] GameObject camera3D;
+
+    private void Start()
+    {
+        returnToGameBtn.onClick.AddListener(() => ReturnToGame());
+        // TODO BTNS
+    }
 
     private void OnEnable()
     {
@@ -27,6 +33,11 @@ public class PauseMenu : MonoBehaviour
     }
 
     private void OnDisable()
+    {
+        ReturnToGame();
+    }
+
+    void ReturnToGame()
     {
         camera3D.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = true;
         Cursor.visible = false;

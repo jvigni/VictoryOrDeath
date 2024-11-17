@@ -11,6 +11,8 @@ public class StartMenu : MonoBehaviour
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject hero;
     [SerializeField] GameObject spawnFX;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip spawnMusicClip;
 
     private void Start()
     {
@@ -25,6 +27,9 @@ public class StartMenu : MonoBehaviour
         spawnFX.SetActive(true);
         startMenu.SetActive(false);
         Cursor.visible = false;
+
+        audioSource.clip = spawnMusicClip;
+        audioSource.Play();
     }
 
     void About()
