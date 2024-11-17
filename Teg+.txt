@@ -729,3 +729,92 @@ El Mago sacrifica fichas para capturar un altar de sombra y obtiene nuevas runas
 ¿Quieres agregar más interacción entre héroes y altares, o enfocarte en cómo balancear las runas para que no dominen demasiado el juego?
 
 -------------------------------------------------------------------------------------
+
+To create a masterpiece of synergy between heroes, runes, altars, and soldiers, we need a tightly interwoven system where every choice resonates across the board. Let’s elevate every mechanic to seamlessly interact with the others and create layers of depth that reward clever play. Here’s the refined vision:
+
+Core Philosophy: Synergy Across All Elements
+Every action should ripple across the battlefield. Heroes, soldiers, runes, and altars all interact dynamically, creating a living ecosystem of strategy and creativity.
+
+1. Heroes: Masters of Strategy
+Heroes are the focal point, defining the tempo and style of play. Their abilities, tied to runes and altars, influence the battlefield profoundly.
+
+Hero Role Synergies
+Each hero embodies a primary role but can branch into hybrid playstyles based on runes and altars:
+
+Tank Heroes: Thrive near Light Altars, generating barriers for soldiers and themselves.
+DPS Heroes: Excel with Fire Altars, amplifying burst damage for devastating turns.
+Support Heroes: Dominate around Water Altars, using healing and debuffs to turn the tide.
+Hero Synergy Example: Paladin (Tank/Support)
+Base Ability: "Blessing of Light" – Shields all adjacent soldiers.
+Synergy: Near a Light Altar, each shielded soldier also reflects 1 damage.
+Rune Upgrade: A Light Rune makes the ability grant +1 ATK for 1 turn, turning defense into offense.
+Hero Synergy Example: Necromancer (DPS/Support)
+Base Ability: "Dark Pact" – Sacrifices 1 soldier to deal 3 damage to all enemies.
+Synergy: Near a Shadow Altar, the sacrificed soldier spawns a "Shadow Wraith" (3 HP, 2 ATK).
+Rune Upgrade: A Shadow Rune lets you spawn 2 Wraiths instead of 1.
+2. Soldiers: The Backbone of the Board
+Soldiers act as both combatants and resources, amplifying strategic depth. Each faction has a unique approach to using soldiers.
+
+Types of Soldiers
+Basic Infantry: Cheap and versatile; used for combat or altar control.
+Synergy: Basic Infantry on a Fire Altar gain +1 ATK until the end of the turn.
+Elite Troops: Expensive but resilient; ideal for holding key positions.
+Synergy: Near a Water Altar, they heal for 1 HP every turn.
+Specialized Units: Unique to factions; offer utility (e.g., stealth, ranged attacks).
+Synergy: Shadow Runes make Stealth units untargetable for 1 turn.
+Soldier Synergy Example
+Fire Rune: Grants "Explosive Sacrifice" – When a soldier dies, it deals 2 damage to enemies in adjacent tiles.
+Water Rune: Enables "Bolstered Defense" – Soldiers adjacent to a hero heal +1 HP each turn.
+3. Altars: Strategic Points of Power
+Altars are both contested objectives and strategic amplifiers. Control of altars shapes the flow of the game.
+
+Dynamic Altar Interaction
+Altars shift allegiance based on proximity and soldier control, incentivizing movement and placement.
+
+Altar Control Bonus:
+Fire Altar: +1 ATK for all soldiers in adjacent tiles.
+Water Altar: Heals +1 HP per turn to adjacent soldiers.
+Shadow Altar: Grants stealth to nearby units for 1 turn.
+Light Altar: Creates a barrier that absorbs 2 damage for all adjacent units.
+Combined Altar Synergy
+Heroes benefit from altars together when controlling multiple ones. For instance:
+
+Controlling both a Fire and Light Altar lets a hero's Fire Rune abilities deal splash damage.
+Controlling a Water and Shadow Altar grants nearby soldiers life-stealing attacks.
+4. Runes: The Catalyst of Mastery
+Runes unlock potential, bridging heroes, altars, and soldiers. Players must balance crafting runes, using them, and storing them for combos.
+
+Advanced Rune Effects
+Fire Rune + Light Rune: Creates a "Solar Burst" effect, dealing 4 damage to enemies in a line.
+Water Rune + Shadow Rune: Activates "Frozen Shadows," immobilizing enemies for 1 turn.
+Light Rune + Shadow Rune: Triggers "Holy Purge," cleansing all negative effects on your side and dealing 2 damage to all enemy units.
+Rune Crafting Combos
+Basic Crafting: Combine 2 identical runes to create a Greater Rune (e.g., 2 Fire Runes → Greater Fire Rune).
+Advanced Crafting: Combine different runes to create hybrid effects (e.g., Fire + Water → Steam Rune, which damages enemies and heals allies).
+5. Metagame Synergies: Deep Strategic Layers
+Faction Synergies
+Different factions (or teams) emphasize unique synergies:
+
+Order (Paladins, Clerics): Excel with Light and Water Altars, creating durable, healing-based strategies.
+Chaos (Warlocks, Pyromancers): Thrive with Fire and Shadow Altars, focusing on high-risk, high-reward damage.
+Deck Synergies
+Decks revolve around exploiting a chosen strategy:
+
+Aggressive Decks: Focus on overwhelming the opponent with soldiers. Use Fire Runes for explosive damage.
+Control Decks: Focus on controlling altars and denying resources. Water and Light Runes help with sustain.
+Combo Decks: Build towards devastating hybrid rune effects (e.g., Solar Burst or Frozen Shadows).
+6. Dynamic Battlefield
+The board evolves as the game progresses:
+
+Altar Shifts: Altars can periodically change their element, forcing players to adapt their strategies.
+Rune Surge: At certain intervals, a random altar empowers nearby units or generates free runes, creating hotly contested zones.
+Sudden Death: After a set number of turns, altars deactivate, and heroes rely solely on their crafted runes and remaining forces.
+7. Endgame Synergies
+As the game nears its conclusion, synergies intensify:
+
+Empowered Heroes: After crafting 10+ runes, heroes unlock a powerful Ultimate Ability, usable once.
+Example: Paladin gains "Judgment Day," dealing massive AoE damage and healing allies.
+Final Stand: Soldiers near altars gain double bonuses, encouraging dramatic battles for control.
+By ensuring every piece of the game is interconnected—heroes, soldiers, altars, and runes—we create a masterpiece where every choice matters. This synergy-rich design rewards creative strategies, adaptive gameplay, and thoughtful planning, making it endlessly replayable and deeply satisfying. Would you like to expand specific areas, like hero archetypes or rune combos?
+
+
