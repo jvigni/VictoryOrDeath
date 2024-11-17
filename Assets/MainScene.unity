@@ -2238,6 +2238,10 @@ PrefabInstance:
       propertyPath: crossHair
       value: 
       objectReference: {fileID: 1081376652}
+    - target: {fileID: 3308213764434883522, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1d347377588796c408cc8108684b6f4d, type: 2}
     - target: {fileID: 3480874162835231565, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: MaxHealth.value
       value: 100
