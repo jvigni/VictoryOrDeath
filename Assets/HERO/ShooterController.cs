@@ -8,13 +8,21 @@ public class ShooterController : MonoBehaviour
     [SerializeField] Transform aimTransform;
     [SerializeField] NormalMovement normalMovement;
     [SerializeField] LayerMask aimColliderLayerMask;
+    [SerializeField] GameObject crossHair;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
             normalMovement.IsAiming = true;
+            crossHair.SetActive(true);
+        }
+            
         if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
             normalMovement.IsAiming = false;
+            crossHair.SetActive(false);
+        }
 
 
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
