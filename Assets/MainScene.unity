@@ -1761,29 +1761,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: RODLAK
       objectReference: {fileID: 0}
-    - target: {fileID: 3742488925747485422, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 8152753052840052282, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: offsetFromHead.x
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7678801647604711892, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680219125308210838, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680289070328827754, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680526351034102998, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680681376531445848, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: m_Layer
-      value: 9
+    - target: {fileID: 8152753052840052282, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: offsetFromHead.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8623604623500292703, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1824,6 +1808,10 @@ PrefabInstance:
     - target: {fileID: 8623604623500292703, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696762557710153396, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: aimColliderLayerMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
