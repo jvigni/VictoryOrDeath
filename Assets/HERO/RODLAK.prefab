@@ -7860,10 +7860,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8623604623500292703}
   - component: {fileID: 6335304462450827694}
-  - component: {fileID: 3153766162283432593}
   m_Layer: 9
   m_Name: RODLAK
-  m_TagString: Hero
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7904,21 +7903,6 @@ MonoBehaviour:
     value: 0
   dmgMarker: {fileID: 0}
   originalMaxHealth: 10000
---- !u!114 &3153766162283432593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742488925747485422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2e06b3b6400df408f48e3138857b27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimTransform: {fileID: 3388146064292808607}
-  normalMovement: {fileID: 0}
-  ignoreLayer: []
 --- !u!1 &3754857558450625766
 GameObject:
   m_ObjectHideFlags: 0
@@ -11254,9 +11238,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3774786367846968130}
     m_Modifications:
+    - target: {fileID: 1035616698534036, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
       propertyPath: m_Name
       value: M249
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564110021164438, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871450637170646, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942557438936618, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4251306428143386, guid: 432643b6e5110004083fdff3e33e490b, type: 3}
       propertyPath: m_LocalPosition.x

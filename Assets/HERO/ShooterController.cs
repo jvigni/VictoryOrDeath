@@ -7,7 +7,7 @@ public class ShooterController : MonoBehaviour
 {
     [SerializeField] Transform aimTransform;
     [SerializeField] NormalMovement normalMovement;
-    [SerializeField] List<LayerMask> ignoreLayer;  // Layers to ignore
+    [SerializeField] LayerMask aimColliderLayerMask;
 
     private void Update()
     {
@@ -16,22 +16,14 @@ public class ShooterController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse1))
             normalMovement.IsAiming = false;
 
-        // Ray from the center of the screen
-        Vector3 screenCenterPoint = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+
+        Vector2 screenCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
-
-        // Perform the raycast
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f))
-        {
-            // Check if the hit object is in the ignore layer
-            if (IsLayerIgnored(raycastHit.collider.gameObject))
-                return;  // Skip updating aimTransform if the object is in the ignore layer
-
-            // Update aimTransform position
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask));
             aimTransform.position = raycastHit.point;
-        }
     }
 
+    /*
     // Method to check if the object's layer is in the ignoreLayer list
     private bool IsLayerIgnored(GameObject obj)
     {
@@ -43,5 +35,5 @@ public class ShooterController : MonoBehaviour
             }
         }
         return false;
-    }
+    }*/
 }
