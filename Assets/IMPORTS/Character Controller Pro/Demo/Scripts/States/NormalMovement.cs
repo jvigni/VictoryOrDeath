@@ -88,6 +88,7 @@ namespace Lightbug.CharacterControllerPro.Demo
         bool reducedAirControlFlag = false;
         float reducedAirControlInitialTime = 0f;
         float reductionDuration = 0.5f;
+        public bool isAiming;
 
         protected override void Awake()
         {
@@ -683,21 +684,33 @@ namespace Lightbug.CharacterControllerPro.Demo
         {
             if (lookingDirectionMode == LookingDirectionParameters.LookingDirectionMovementSource.Input)
             {
-                //TODO ESTA X ACA
+                // If movement input exists and character is aiming, keep facing forward
                 if (CharacterStateController.InputMovementReference != Vector3.zero)
-                    //targetLookingDirection = CharacterStateController.InputMovementReference; // Rotando segun donde apunte WASD
-                    targetLookingDirection = CharacterStateController.MovementReferenceForward; // Siempre viendo para adelante
+                {
+                    if (isAiming)
+                        targetLookingDirection = CharacterStateController.MovementReferenceForward; // Facing forward when aiming
+                    else
+                        targetLookingDirection = CharacterStateController.InputMovementReference; // Rotating based on WASD
+                }
                 else
-                    targetLookingDirection = CharacterActor.Forward;
+                {
+                    // Rotate in the opposite direction of the mouse position
+                    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
+                    mousePosition.y = CharacterActor.transform.position.y; // Keep the Y coordinate consistent with the character's height
+                    targetLookingDirection = (CharacterActor.transform.position - mousePosition).normalized; // Direction away from the mouse
+                }
             }
             else
             {
+                // Handle movement based on planar velocity if no input
                 if (CharacterActor.PlanarVelocity != Vector3.zero)
                     targetLookingDirection = Vector3.ProjectOnPlane(CharacterActor.PlanarVelocity, CharacterActor.Up);
                 else
                     targetLookingDirection = CharacterActor.Forward;
             }
         }
+
+
 
         public override void UpdateBehaviour(float dt)
         {
