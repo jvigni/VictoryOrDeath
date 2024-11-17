@@ -10,6 +10,7 @@ public class StartMenu : MonoBehaviour
     [SerializeField] Button quitBtn;
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject hero;
+    [SerializeField] GameObject spawnFX;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class StartMenu : MonoBehaviour
     void StartDEUSVULT()
     {
         hero.SetActive(true);
+        spawnFX.SetActive(true);
         startMenu.SetActive(false);
         Cursor.visible = false;
     }
