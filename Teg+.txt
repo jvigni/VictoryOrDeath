@@ -1,0 +1,14 @@
+HOMAM5 boardgame art aesthethics
+-Es el teg, pero con fichas de heroes, altares a lo RS, cartas a lo wowtcg, y buildings a lo catan.
+-se pickea una civ entre muchas. cada una con sus 3 heroes que tienen deck de 9 cartas c/u. No se puede repetir civ
+-cada ronda sube el mana en 1 como el hearthstone
+-La ficha de heroe sale de la ficha de tc que se placea a lo catan [2 tcs]
+-Los refuersos[teg] salen de los tcs
+-Un combate con un heroe permite usar mana para tirar cartas y mejorar la batalla [aliados, spells]
+-Buildings onda: torre si me van a atacar, muro si no quiero que me ataquen x aca, 
+-Altares runicos como punto de choque que permiten gastar la runa y mejorar un spell
+-Los minidecks son de 9 cartas, robas 3. y es un wowtcg. mismos elementos
+
+-----------------------------------
+magi+
+magic pero a lo wowtcg [targeteando unidades, recursos sin lands, sin combos infinitos, simple de entender, homam/wowtcg ai art]
