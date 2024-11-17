@@ -1,4 +1,4 @@
-HOMAM5 boardgame art aesthethics
+heroes of might and magic 5 boardgame art aesthethics
 -Es el teg, pero con fichas de heroes, altares a lo RS, cartas a lo wowtcg, y buildings a lo catan.
 -se pickea una civ entre muchas. cada una con sus 3 heroes que tienen deck de 9 cartas c/u. No se puede repetir civ
 -cada ronda sube el mana en 1 como el hearthstone
@@ -8,7 +8,117 @@ HOMAM5 boardgame art aesthethics
 -Buildings onda: torre si me van a atacar, muro si no quiero que me ataquen x aca, 
 -Altares runicos como punto de choque que permiten gastar la runa y mejorar un spell
 -Los minidecks son de 9 cartas, robas 3. y es un wowtcg. mismos elementos
+-se tiran dados y se dibuja el mapa por encima. asi siempre es diferente. que venga con muchos minimapas en blanco y x wweb se pueden imprimir mas
+master of monster like
 
 -----------------------------------
 magi+
 magic pero a lo wowtcg [targeteando unidades, recursos sin lands, sin combos infinitos, simple de entender, homam/wowtcg ai art]
+
+-----------------------------------
+
+Título Tentativo: Runic Realms: Heroes of Might & Mana
+Estética Visual
+Arte inspirado en Heroes of Might and Magic V:
+Héroes ilustrados con detalles épicos y fantásticos.
+Cartas con un estilo pulido, con efectos visuales como magia brillante, runas, y criaturas fantásticas.
+El mapa modular tendrá hexágonos con terrenos variados (montañas, bosques, ríos, y ruinas mágicas).
+Tablero dinámico:
+Hexágonos configurables para crear mapas diferentes en cada partida.
+Espacios para colocar altares, edificios, y zonas de batalla.
+Componentes
+Tablero modular:
+
+Hexágonos intercambiables con diferentes tipos de terreno.
+Zonas específicas para altares rúnicos, edificios, y recursos estratégicos.
+Héroes:
+
+Cada civilización tiene 3 héroes únicos con habilidades y decks personalizados (9 cartas por héroe).
+Miniaturas representando a los héroes y fichas intercambiables en forma de tokens.
+Cartas:
+
+Héroes: Cada héroe tiene un deck de 9 cartas dividido en:
+Spells: Magia ofensiva y defensiva.
+Aliados: Criaturas para reforzar combates.
+Runas: Mejoras temporales de habilidades o defensas.
+Runic Altars: Cartas especiales para potenciar hechizos si se controlan.
+Event Cards: Para dar un giro al tablero cada ronda.
+Edificios (al estilo Catan):
+
+Torres defensivas: Reducen el daño si un enemigo ataca en su dirección.
+Muros: Bloquean rutas específicas, ideal para proteger territorios.
+Altar: Permite el uso de runas para potenciar hechizos o ganar bonus estratégicos.
+Dados:
+
+Se usan para mover tropas y héroes, decidir enfrentamientos, y explorar nuevas áreas.
+Refuerzos (Teg):
+
+Las ciudades generan refuerzos por turno que puedes colocar estratégicamente.
+Mecánicas
+Selección de Civilización:
+
+Los jugadores eligen entre varias civilizaciones, cada una con:
+3 héroes únicos.
+Habilidades pasivas específicas.
+Un estilo de juego definido (agresivo, defensivo, de control, etc.).
+Construcción del Tablero:
+
+Al inicio de la partida, los jugadores dibujan el mapa con hexágonos aleatorios.
+Algunas áreas tienen recursos clave (mana, refuerzos, runas).
+Turnos:
+
+Cada jugador realiza acciones en este orden:
+Generación de recursos: Los Town Centers generan refuerzos y mana.
+Construcción: Coloca o mejora edificios.
+Movimiento y Combate: Mueve héroes o tropas. Los héroes pueden usar mana para cartas en batallas.
+Batallas con Héroes:
+
+Cuando un héroe ataca:
+Cada jugador roba 3 cartas de su deck.
+El mana disponible se usa para invocar aliados, lanzar hechizos, o activar runas.
+El atacante y el defensor usan cartas estratégicamente para determinar el ganador.
+Control de Altares Rúnicos:
+
+Si un héroe está en un altar, puede gastar runas para activar mejoras permanentes o potenciaciones temporales de spells.
+Evolución de Recursos:
+
+Cada ronda aumenta el mana máximo disponible, similar a Hearthstone.
+Los Town Centers generan tropas que se colocan en el tablero como refuerzos.
+Final de la Partida
+Gana el jugador que:
+Controle un número determinado de altares rúnicos.
+Conquiste el mayor número de territorios al final de X rondas.
+Elimine a los héroes de las civilizaciones rivales (modo eliminación).
+Innovación y Rejugabilidad
+Mapas Aleatorios: Tableros personalizables que cambian cada partida.
+Modo Online: Crear e imprimir mapas descargables.
+Estrategia Dinámica: Decisiones clave entre defensa, ataque, y expansión.
+
+---------------------------------------------------------------------
+
+
+Héroes y Civilizaciones
+Civilizaciones únicas: Cada una tiene un estilo temático (ej.: magia, tecnología, naturaleza) y habilidades pasivas propias.
+Tres héroes por civilización: Con roles distintos (ej.: ofensivo, soporte, tanque).
+Héroes intercambiables: Puedes alternar héroes durante la partida si regresas a un Town Center.
+Miniaturas personalizadas: Cada héroe tiene su propia figura en el tablero.
+Cartas de héroe: Cada héroe tiene un deck de 9 cartas divididas en: hechizos, aliados, y runas.
+Mecánicas de Mana y Cartas
+Incremento de mana por ronda: Similar a Hearthstone, los jugadores obtienen 1 punto adicional de mana por ronda, hasta un máximo de 10.
+Mecánica de mini-decks: Los decks son pequeños (9 cartas) para que las partidas sean rápidas y estratégicas.
+Cartas de aliados: Representan tropas o criaturas que refuerzan las batallas.
+Cartas de runas: Potenciaciones temporales o permanentes que se activan desde los altares.
+Recompensas por eventos: Cartas especiales que puedes obtener al explorar hexágonos.
+Mapa y Tablero Modular
+Hexágonos personalizables: El tablero se arma al inicio de la partida con piezas aleatorias.
+Tipos de terreno: Cada tipo de terreno afecta la estrategia (montañas dificultan el movimiento, bosques brindan defensa, etc.).
+Altares rúnicos: Ubicados estratégicamente en el mapa, son puntos clave para dominar.
+Zonas de refuerzo: Los Town Centers generan refuerzos (al estilo Teg) cada ronda.
+Construcción de Edificios
+Edificios básicos: Torres defensivas, muros, y altares que puedes construir y mejorar.
+Costo de construcción: Requiere refuerzos y mana, incentivando decisiones tácticas.
+Edificios avanzados: Opciones únicas desbloqueables según la civilización (ej.: gremios mágicos, fortalezas, portales).
+Batallas y Estrategia
+Combates dinámicos: Las batallas con héroes combinan dados y uso de cartas para añadir estrategia.
+Dados personalizados: Dados especiales con símbolos que representan éxito, fallo, o críticos en ataques y defensas.
+Modo final épico: Condiciones de victoria dinámicas (control de altares, conquista de territorios, eliminación de héroes rivales).
