@@ -1761,6 +1761,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: RODLAK
       objectReference: {fileID: 0}
+    - target: {fileID: 3742488925747485422, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678801647604711892, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680219125308210838, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680289070328827754, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680526351034102998, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680681376531445848, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8623604623500292703, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.31
@@ -1800,14 +1824,6 @@ PrefabInstance:
     - target: {fileID: 8623604623500292703, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976777331808289254, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: planarMovementParameters.baseSpeedLimit
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976777331808289254, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
-      propertyPath: planarMovementParameters.boostSpeedLimit
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3030,6 +3046,10 @@ PrefabInstance:
       value: 30.52
       objectReference: {fileID: 0}
     - target: {fileID: 1475750660364025392, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475750660364025392, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_TagString
       value: Minion
       objectReference: {fileID: 0}
@@ -3182,6 +3202,10 @@ PrefabInstance:
     - target: {fileID: 8276749040217745923, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 32.461
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977822187794885611, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6933939342185195750, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
