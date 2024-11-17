@@ -122,3 +122,610 @@ Batallas y Estrategia
 Combates dinámicos: Las batallas con héroes combinan dados y uso de cartas para añadir estrategia.
 Dados personalizados: Dados especiales con símbolos que representan éxito, fallo, o críticos en ataques y defensas.
 Modo final épico: Condiciones de victoria dinámicas (control de altares, conquista de territorios, eliminación de héroes rivales).
+
+
+-----------------------------------------------------------------------
+
+Edificaciones
+Aquí tienes una lista de edificaciones, sus funciones y cómo se relacionan con el juego:
+
+Town Center (Centro de Ciudad)
+
+Genera refuerzos por turno.
+Es la base principal desde donde salen los héroes.
+Si pierdes todos tus Town Centers, estás eliminado.
+Torre Defensiva
+
+Ataca automáticamente a enemigos cercanos.
+Ideal para proteger rutas clave.
+Muro
+
+Bloquea movimientos enemigos por una ruta específica.
+Puede ser destruido en un ataque.
+Altar Rúnico
+
+Permite activar runas para potenciar hechizos o habilidades temporales.
+Los altares controlados son puntos clave para ganar.
+Mina de Cristales
+
+Genera mana adicional por turno si está bajo tu control.
+Debe ser defendida.
+Campamento de Refuerzos
+
+Permite colocar refuerzos adicionales fuera del Town Center.
+Ideal para zonas avanzadas del mapa.
+Gremio de Magos
+
+Desbloquea hechizos únicos para héroes.
+Disponible solo para civilizaciones mágicas.
+Fortaleza
+
+Edificación avanzada con mayor defensa que el Town Center.
+Solo una por jugador.
+Portal de Teletransporte
+
+Permite a los héroes moverse rápidamente entre zonas.
+Construcción avanzada, costosa en recursos.
+Civilizaciones y Héroes
+Cada civilización tiene un tema único y 3 héroes con roles distintos.
+
+1. Imperio Celestial (Inspirado en humanos clásicos de fantasía)
+Héroes:
+Lord Alaric (Tanque, guerrero con alta resistencia).
+Maga Celeste Lyria (Hechicera ofensiva).
+Paladín Garin (Soporte y curador).
+2. Legión Infernal (Demonios y criaturas caóticas)
+Héroes:
+Arghal el Destructor (Guerrero agresivo con daño en área).
+Lilith la Tentadora (Invocadora de criaturas menores).
+Zarghul el Invocador (Magia oscura y sacrificios).
+3. Clanes Bárbaros (Tribus nómadas fuertes y ágiles)
+Héroes:
+Throgar el Berserker (Fuerza pura).
+Ayla la Cazadora (Daño a distancia).
+Shaman Rakkor (Hechizos naturales y totems).
+4. Concilio de los Elfos (Naturaleza y magia)
+Héroes:
+Sylwen la Guardiana (Arquera rápida).
+Eldarion el Místico (Magia defensiva).
+Dryssa la Druida (Invoca aliados del bosque).
+5. Dinastía Necrótica (No-muertos y nigromantes)
+Héroes:
+Morghast el Oscuro (Nigromante que revive aliados).
+Lady Sinistra (Controladora de almas).
+Zarthul el Coloso (Tanque esquelético).
+Cartas de Héroes
+Cada héroe tiene un deck de 9 cartas, dividido en tres tipos:
+
+Spells (Hechizos):
+
+Explosión Arcana: Daño en área.
+Escudo Divino: Reduce daño recibido.
+Llamas Infernales: Ataque progresivo por turnos.
+Aliados:
+
+Caballeros Reales: Refuerzan el combate.
+Dragón Infernal: Aliado poderoso que consume mucho mana.
+Bestia del Bosque: Invocación elfa de daño intermedio.
+Runas:
+
+Runa de Poder: Aumenta el daño de hechizos.
+Runa de Resistencia: Reduce el daño recibido.
+Runa de Velocidad: Permite atacar antes que el oponente.
+
+
+-------------------------------------------------------------------------
+
+Civilizaciones Adicionales
+Orden Mecánica (Steampunk y tecnología)
+
+Héroes: Maestro Engranaje (control de drones), Tesla (daño eléctrico), Autómata Omega (tanque mecánico).
+Horda Dracónica (Poder draconiano)
+
+Héroes: Dragón Rojo (fuerza bruta), Invocador de Dragones (aliados), Guardián Escamado (tanque).
+Clanes Sombríos (Asesinos y sigilo)
+
+Héroes: Sombra Silente (evasión), Danza Mortal (daño en ráfaga), Maestro del Velo (control de campo).
+Más Edificaciones
+Faro Arcano: Detecta enemigos cercanos.
+Armería: Mejora cartas de aliados.
+Santuario: Recupera vida y mana de héroes.
+Cuartel Avanzado: Aumenta generación de refuerzos.
+Nuevas Mecánicas
+Rutas comerciales: Une Town Centers y genera recursos extra si no son interrumpidas.
+Relicarios: Objetos en el mapa que otorgan efectos únicos si los controlas (ej.: +1 mana por turno).
+Exploración: Los héroes que exploren hexágonos desconocidos obtienen recompensas.
+Cartas de Héroe Extra
+Cataclismo: Hechizo masivo que daña a todos los enemigos en el área.
+Aliado Legendario: Una carta única por héroe, como un dragón o coloso.
+Amuleto de Protección: Runa que previene el daño de un ataque.
+Modos de Juego
+Batalla Campal: Último jugador en pie gana.
+Dominación: Controla los altares y edificios clave.
+Conquista Épica: Gana al eliminar los Town Centers de todos los rivales
+
+----------------------------------------------------------------------------
+
+Civilizaciones Extra
+Alianza Elemental (Control de los 4 elementos)
+Héroes:
+Guardiana del Agua: Hechizos defensivos y curativos.
+Señor del Fuego: Ataques explosivos.
+Avatar de la Tormenta: Control de campo y velocidad.
+Reino Celestial (Ángeles y magia divina)
+Héroes:
+Arcángel Seraphiel: Guerrero con ataques santos.
+Sanctus el Luminoso: Curador de área.
+Heraldo Radiante: Potenciador de aliados.
+Horda Abisal (Profundidades marinas)
+Héroes:
+Kraken Supremo: Invocaciones masivas.
+Sirena Oscura: Control mental.
+Tritón Guardia: Defensa impenetrable.
+Nuevas Edificaciones y Funciones
+Templo Sagrado: Genera cartas adicionales cada turno.
+Academia de Conjuros: Permite intercambiar cartas del mazo.
+Trampa Oculta: Coloca emboscadas en hexágonos específicos.
+Fortín Avanzado: Bloquea una ruta y aumenta los refuerzos en el área cercana.
+Punto de Reunión: Los héroes aliados se pueden reagrupar aquí.
+Cartas Avanzadas por Civilización
+Imperio Celestial: Orden Divina: Daño global a enemigos con alto mana.
+Legión Infernal: Fuego Infernal: Incrementa daño cada turno que sigue en juego.
+Clanes Bárbaros: Grito de Guerra: Mejora aliados cercanos.
+Dinastía Necrótica: Levantar Legión: Restaura aliados caídos como no-muertos.
+Orden Mecánica: Dron Defensivo: Escudo automático al héroe.
+Batallas y Dados
+Dados Elementales: Cada dado representa un elemento (fuego, agua, aire, tierra) con efectos adicionales según tu civilización.
+Dados de Críticos: Un dado especial que puede activar efectos únicos de cartas.
+Combos de Dados: Al juntar ciertos resultados (ej.: 2 críticos + 1 defensa), puedes activar habilidades pasivas.
+Nuevas Mecánicas de Héroes
+Cargas de Poder: Algunas habilidades se recargan tras turnos específicos (ej.: ataques definitivos).
+Talentos Evolutivos: Los héroes ganan mejoras únicas al cumplir ciertos objetivos (ej.: conquistar un altar, eliminar 3 aliados enemigos).
+Modos de Juego Especiales
+Modo "Jefe Final": Todos los jugadores se alían temporalmente contra un enemigo gigante controlado por reglas especiales.
+Asedio Total: Un jugador se defiende con una fortaleza masiva contra el resto.
+Expansión: Gana al construir X edificios clave y mantenerlos por 3 turnos consecutivos.
+Detalles para Inmersión Épica
+Minimapas descargables: Diseños únicos temáticos (volcánicos, islas flotantes, desiertos mágicos).
+Fichas de Altar personalizadas: Cada altar tiene un diseño según el tipo de runas que otorga.
+Arte y detalles inspirados en HoMM5: Tableros, cartas y miniaturas con una estética épica y detallada.
+Musica ambientada recomendada
+
+-------------------------------------------------------------------------------------
+
+Título Definitivo:
+Runic Realms: Batalla por los Altares
+
+Resumen del Juego
+Objetivo Principal: Controlar la mayor cantidad de altares rúnicos al final de la partida o eliminar a todos los héroes enemigos.
+Número de Jugadores: 2-6.
+Duración: 90-120 minutos.
+Estilo: Tablero modular estratégico con cartas, dados y miniaturas.
+Componentes Simplificados
+Tablero Modular:
+
+30 hexágonos de terreno con:
+5 altares rúnicos.
+6 minas de maná.
+8 zonas neutrales.
+4 terrenos especiales (montañas o ríos que bloquean movimientos).
+Héroes:
+
+9 civilizaciones únicas con 1 héroe por jugador.
+Cada héroe tiene:
+Ficha de héroe: Miniatura + 3 habilidades únicas.
+Deck pequeño (9 cartas): 3 hechizos, 3 aliados, 3 runas.
+Edificios (tokens):
+
+Torres defensivas, muros, altares rúnicos, y minas.
+Dados personalizados:
+
+Dados de combate (ataque, defensa, crítico).
+Dado de movimiento (1-3 hexágonos).
+Recursos:
+
+Fichas de maná.
+Fichas de refuerzos.
+Cartas de Evento:
+
+Generan sorpresas cada turno (clima, bonificaciones, trampas).
+Flujo del Juego
+1. Preparación:
+Los jugadores colocan hexágonos al azar formando un mapa.
+Se distribuyen los altares, minas y zonas neutrales.
+Cada jugador elige un héroe y recibe su deck.
+2. Turnos:
+Cada turno sigue esta secuencia:
+
+Generación de Recursos:
+
+Recoge maná de minas controladas y refuerzos de los Town Centers.
+Movimiento:
+
+Lanza el dado de movimiento para mover tu héroe o tropas aliadas.
+Batallas:
+
+Si dos héroes coinciden en un hexágono, inician combate.
+Control de Territorio:
+
+Los altares y minas controlados otorgan bonificaciones.
+Construcción:
+
+Construye torres, altares o muros con recursos recolectados.
+3. Batallas de Héroes:
+Inicio: Ambos jugadores sacan 3 cartas al azar de su deck.
+Fases del combate:
+Juega cartas (aliados, hechizos, runas) usando maná.
+Lanza dados para ataque y defensa.
+Calcula daño y resuelve efectos especiales.
+El ganador controla el hexágono; el perdedor retrocede un espacio.
+4. Eventos:
+Al final de cada ronda, se roba una carta de evento que afecta el tablero o las reglas (tormentas, terremotos, bonificaciones temporales).
+Condiciones de Victoria
+Control de Altares: Domina 3 de los 5 altares rúnicos por al menos 3 turnos consecutivos.
+Conquista Total: Elimina a los héroes enemigos.
+Puntos Estratégicos (modo largo): Obtén más puntos tras X rondas.
+Civilizaciones y Héroes
+Cada civilización tiene una temática única y un héroe con habilidades específicas.
+
+Imperio Celestial (Balanceado):
+
+Héroe: Paladín Garin.
+Habilidades: Curación, daño directo, defensa grupal.
+Legión Infernal (Agresivo):
+
+Héroe: Zarghul el Invocador.
+Habilidades: Invocación de criaturas menores, sacrificio para daño masivo.
+Clanes Bárbaros (Movilidad):
+
+Héroe: Ayla la Cazadora.
+Habilidades: Daño a distancia, trampas de terreno.
+Concilio de los Elfos (Naturaleza):
+
+Héroe: Dryssa la Druida.
+Habilidades: Invocación de bestias, curación, enredaderas para bloquear.
+Dinastía Necrótica (Control de Tropas):
+
+Héroe: Morghast el Oscuro.
+Habilidades: Levantar no-muertos, drenaje de vida.
+Simplificación Estratégica
+Movimientos Rápidos: Usa el dado de movimiento para evitar reglas complicadas de terreno.
+Cartas Directas: Efectos claros y rápidos (ej.: “Daño: -2 HP al oponente”).
+Eventos Sorprendentes: Una carta de evento por ronda para mantener la emoción.
+Innovaciones para TEG-Style
+Combate Estratégico:
+
+Similar a TEG, las batallas se resuelven rápido con dados y cartas, manteniendo la tensión táctica.
+Rejugabilidad Alta:
+
+Mapa modular + cartas de evento generan experiencias únicas en cada partida.
+Accesibilidad:
+
+Mecánicas profundas pero fáciles de aprender en la primera partida.
+
+
+------------------------------------------------------------------------------------
+
+Aquí tienes un diseño de cartas basado en los héroes y sus estilos. Las cartas están divididas en Hechizos, Aliados, y Runas para reflejar las estrategias de cada héroe y aportar variedad al metajuego.
+
+Imperio Celestial
+Lord Alaric (Tanque, guerrero con alta resistencia)
+
+Escudo del Imperio
+Tipo: Runa
+Coste: 2 Mana
+Efecto: Reduce todo el daño recibido por aliados en 2 durante 2 turnos.
+
+Carga Implacable
+Tipo: Hechizo
+Coste: 3 Mana
+Efecto: Alaric avanza 2 casillas ignorando obstáculos y hace 5 de daño a todos los enemigos en su camino.
+
+Caballeros del Imperio
+Tipo: Aliado
+Coste: 4 Mana
+Efecto: Aliado con 6 HP y 4 ATK. Los Caballeros ganan +1 ATK si están cerca de Alaric.
+
+Maga Celeste Lyria (Hechicera ofensiva)
+
+Lluvia de Luz
+Tipo: Hechizo
+Coste: 3 Mana
+Efecto: Hace 3 de daño a todos los enemigos en un área hexagonal.
+
+Escudo Arcano
+Tipo: Runa
+Coste: 2 Mana
+Efecto: Bloquea el siguiente hechizo enemigo en un radio de 2 hexágonos.
+
+Fénix Resplandeciente
+Tipo: Aliado
+Coste: 6 Mana
+Efecto: 7 HP y 5 ATK. Al morir, explota causando 4 de daño a enemigos adyacentes.
+
+Paladín Garin (Soporte y curador)
+
+Luz Sagrada
+Tipo: Hechizo
+Coste: 2 Mana
+Efecto: Restaura 5 HP a un héroe o aliado.
+
+Aura de Devoción
+Tipo: Runa
+Coste: 3 Mana
+Efecto: Los aliados cercanos reciben +2 HP máximo y +1 ATK hasta el final de la partida.
+
+Guerreros Consagrados
+Tipo: Aliado
+Coste: 3 Mana
+Efecto: 4 HP y 2 ATK. Obtienen inmunidad a daño mágico.
+
+Legión Infernal
+Arghal el Destructor (Guerrero agresivo)
+
+Furia Demoníaca
+Tipo: Hechizo
+Coste: 3 Mana
+Efecto: Arghal gana +4 ATK hasta el final del turno y puede atacar dos veces.
+
+Llamas Eternas
+Tipo: Runa
+Coste: 2 Mana
+Efecto: Cada ataque que realice causa 2 de daño adicional por fuego durante 2 turnos.
+
+Infernal
+Tipo: Aliado
+Coste: 6 Mana
+Efecto: 8 HP y 6 ATK. Ataca automáticamente al final de tu turno a enemigos cercanos.
+
+Lilith la Tentadora (Invocadora de criaturas menores)
+
+Invocación: Demonios Menores
+Tipo: Hechizo
+Coste: 3 Mana
+Efecto: Invoca 2 Demonios Menores (3 HP, 2 ATK).
+
+Seducción Oscura
+Tipo: Runa
+Coste: 2 Mana
+Efecto: Controla temporalmente a un aliado enemigo por 1 turno.
+
+Diablillo del Caos
+Tipo: Aliado
+Coste: 2 Mana
+Efecto: 2 HP y 3 ATK. Explota causando 3 de daño al morir.
+
+Zarghul el Invocador (Magia oscura)
+
+Sacrificio de Sangre
+Tipo: Hechizo
+Coste: 4 Mana
+Efecto: Zarghul pierde 4 HP para invocar un "Gólem de Oscuridad" (7 HP, 5 ATK).
+
+Corrupción de Almas
+Tipo: Runa
+Coste: 3 Mana
+Efecto: Reduce en 1 ATK y 1 HP máximo a todos los enemigos en un radio de 2 hexágonos.
+
+Legión de las Sombras
+Tipo: Aliado
+Coste: 5 Mana
+Efecto: 6 HP y 4 ATK. Se divide en 2 copias al morir, con 3 HP y 2 ATK cada una.
+
+Concilio de los Elfos
+Sylwen la Guardiana (Arquera rápida)
+
+Flecha Encantada
+Tipo: Hechizo
+Coste: 2 Mana
+Efecto: Hace 4 de daño a un enemigo y lo ralentiza por 1 turno.
+
+Evasión
+Tipo: Runa
+Coste: 2 Mana
+Efecto: Sylwen esquiva el próximo ataque o hechizo dirigido hacia ella.
+
+Centinela del Bosque
+Tipo: Aliado
+Coste: 3 Mana
+Efecto: 4 HP y 2 ATK. Puede atacar a enemigos hasta a 2 hexágonos de distancia.
+
+Eldarion el Místico (Magia defensiva)
+
+Barrera Mágica
+Tipo: Hechizo
+Coste: 3 Mana
+Efecto: Crea un escudo de 5 HP alrededor de un héroe o aliado durante 2 turnos.
+
+Runa de Equilibrio
+Tipo: Runa
+Coste: 2 Mana
+Efecto: Todos los héroes y aliados en el área recuperan 3 HP.
+
+Guardianes Arcanos
+Tipo: Aliado
+Coste: 4 Mana
+Efecto: 5 HP y 3 ATK. Reciben -2 daño de ataques mágicos.
+
+Dryssa la Druida (Invocadora del bosque)
+
+Llamado de la Naturaleza
+Tipo: Hechizo
+Coste: 3 Mana
+Efecto: Invoca un "Treant" (6 HP, 3 ATK) en un hexágono cercano.
+
+Raíces Vivas
+Tipo: Runa
+Coste: 2 Mana
+Efecto: Enraíza a todos los enemigos en un radio de 2 hexágonos durante 1 turno.
+
+Bestia del Bosque
+Tipo: Aliado
+Coste: 5 Mana
+Efecto: 7 HP y 4 ATK. Puede moverse 2 hexágonos por turno.
+
+Cada carta está diseñada para complementar las estrategias de sus héroes y promover un metajuego diverso basado en la combinación de control del tablero, gestión de recursos y combate estratégico. ¿Quieres ajustar alguna mecánica o añadir más interacción entre cartas?
+
+-------------------------------------------------------------------------
+
+Para que el combate entre héroes sea más parecido al WoW TCG, las mecánicas deben centrarse en:
+
+Gestión de recursos por turno (mana o energía).
+Acciones limitadas por turno, como usar habilidades o invocar aliados.
+Combate basado en daños dirigidos (heroes, aliados, oponentes específicos).
+Cartas especiales que actúan como equipo, habilidades únicas, o interrupciones.
+Además, fichas tipo TEG pueden representar soldados comunes que los héroes usan para controlar el campo, asediar posiciones o distraer a enemigos. Estas fichas actúan como unidades básicas y tienen interacciones simples.
+
+Aquí está una versión ajustada:
+
+Héroes (WoW TCG Style)
+Cada héroe tiene 30 HP.
+Pueden usar habilidades únicas (con costos y enfriamientos).
+Pueden atacar y defender.
+Cada turno, ganan 1 recurso adicional (mana/energía), hasta un máximo de 10.
+Equipan cartas como armas, armaduras, o hechizos permanentes.
+Unidades Básicas (Fichas tipo TEG)
+Las fichas son soldados comunes invocados por habilidades de héroes o cartas.
+Tienen 1 HP y 1 ATK por defecto.
+No cuestan recursos invocarlas, pero hay un límite de fichas activas (máximo 5 por jugador).
+Mecánica Especial:
+Escuadras: Un grupo de 3 fichas forma una escuadra, aumentando su ATK total a 3 (pero siguen con 3 HP compartidos).
+Sacrificios: Pueden bloquear ataques dirigidos a los héroes, absorbiendo el daño.
+Ejemplo de Héroe (Paladín Garin)
+HP: 30
+
+Habilidades:
+
+Golpe de Justicia
+Coste: 3 Mana
+Efecto: Hace 4 de daño a un enemigo y lo aturde 1 turno.
+Curación Divina
+Coste: 2 Mana
+Efecto: Restaura 5 HP a cualquier héroe o aliado.
+CD: 1 turno.
+Invocar Soldados
+Coste: 2 Mana
+Efecto: Invoca 2 fichas de soldado (1 HP, 1 ATK cada una).
+Carta Equipo: Martillo Sagrado
+
+Coste: 4 Mana
+Efecto: Otorga +3 ATK al héroe mientras esté equipado.
+Ejemplo de Soldados Comunes (Fichas)
+Ficha Soldado
+
+HP: 1
+ATK: 1
+Especial: Se pueden combinar en escuadras de 3 fichas, ganando 3 ATK y 3 HP compartidos.
+Ficha Arquero
+
+HP: 1
+ATK: 2
+Especial: Puede atacar a enemigos a distancia (máximo 2 hexágonos).
+Metagame y Estrategias
+Gestión de Fichas: Los héroes deben decidir si usar sus recursos en invocar soldados comunes para controlar el campo o lanzar ataques directos.
+Uso Estratégico de Escuadras: Las fichas combinadas en escuadras ofrecen un daño más alto y mejor resistencia, pero son más vulnerables a hechizos en área.
+Ataques Dirigidos: Los héroes deben equilibrar entre atacar a los enemigos y eliminar las fichas del campo para evitar ser sobrepasados.
+Interrupciones: Habilidades como contramagia o barreras pueden interrumpir los planes enemigos, fomentando decisiones tácticas.
+Cartas Adicionales de Héroes para WoWTCG Style
+Lilith la Tentadora (Bruja oscura)
+
+Control Mental
+Coste: 4 Mana
+Efecto: Controla 1 ficha enemiga durante 2 turnos.
+Invocación de Esbirros
+Coste: 2 Mana
+Efecto: Invoca 3 Esbirros (1 HP, 1 ATK cada uno).
+Sylwen la Guardiana (Arquera Élfica)
+
+Disparo Triple
+Coste: 2 Mana
+Efecto: Hace 2 de daño a 3 enemigos diferentes.
+Trampa Explosiva
+Coste: 3 Mana
+Efecto: Coloca una trampa que explota al activarse, causando 3 de daño en área.
+Opciones Avanzadas
+Asedios:
+
+Cada jugador tiene una fortaleza que puede ser atacada directamente o destruida con fichas combinadas.
+Las fichas pueden optar por atacar a los héroes o dañar estructuras.
+Héroes Múltiples por Jugador:
+
+Cada jugador puede controlar 2 héroes con habilidades complementarias y un grupo compartido de fichas.
+¿Quieres más ajustes para integrar las fichas o equilibrar las mecánicas?
+
+
+------------------------------------------------------------------------------------------------
+
+
+¡Integrar altares y runas como en Runecrafting de Runescape puede ser una mecánica fantástica para darle un giro estratégico! Aquí tienes un sistema que aprovecha estas ideas:
+
+Altares y Runas: Mecánica de Runecrafting
+Altares en el Campo
+
+Los altares están distribuidos en el mapa.
+Cada altar representa un tipo de energía o elemento (Fuego, Agua, Sombra, Luz, etc.).
+Los héroes pueden interactuar con un altar para crear Runas.
+Interactuar con un altar cuesta 1 turno, pero las runas permiten potenciar cartas o habilidades.
+Runas: Tipos y Usos
+
+Las runas son consumibles. Se almacenan en el inventario del jugador.
+Las cartas o habilidades tienen un poder extra habilitado solo si consumes runas específicas.
+Ejemplo de Tipos de Runas:
+Runa de Fuego: Potencia habilidades ofensivas.
+Runa de Agua: Potencia habilidades defensivas o de curación.
+Runa de Sombra: Da efectos secundarios como veneno o robo de vida.
+Runa de Luz: Potencia habilidades de soporte o purifica efectos negativos.
+Sistema de Crafting
+
+Los héroes necesitan recolectar energía de un altar para fabricar runas.
+Ejemplo:
+Visitar un altar de fuego produce 2 Runas de Fuego.
+Visitar un altar de luz produce 1 Runa de Luz y 1 Runa Universal.
+Runas Universales: Funcionan como comodines y pueden reemplazar cualquier tipo.
+Ejemplo de Interacciones entre Runas y Cartas
+Carta Básica: Golpe de Justicia (Paladín)
+Efecto Base: 4 de daño a un enemigo.
+Costo: 3 Mana.
+Potenciado con Runa de Luz: Hace 6 de daño y aturde al enemigo por 1 turno adicional.
+Carta Avanzada: Explosión de Fuego (Mago)
+Efecto Base: Hace 3 de daño a todos los enemigos.
+Costo: 4 Mana.
+Potenciado con Runa de Fuego: Hace 5 de daño y aplica "Quemadura" (1 daño adicional por turno).
+Habilidad del Héroe: Invocar Soldados (Paladín)
+Efecto Base: Invoca 2 fichas de soldado (1 HP, 1 ATK cada una).
+Costo: 2 Mana.
+Potenciado con Runa de Luz: Invoca 3 soldados y les otorga +1 ATK durante 1 turno.
+Metagame Estratégico
+Control de Altares:
+
+Los héroes necesitan moverse para capturar y controlar los altares.
+El control de un altar puede otorgar un bonus adicional, como más runas por turno.
+Puedes bloquear el acceso enemigo colocando soldados en los altares.
+Gestión de Runas:
+
+Los jugadores deben decidir si usar runas de inmediato para potenciar habilidades o guardarlas para combos más fuertes.
+Elegir qué runas fabricar en cada altar depende de tu estrategia y del tipo de mazo que estés usando.
+Estrategias Ofensivas/Defensivas:
+
+Ofensivo: Controlar altares específicos para asegurar runas que potencien ataques.
+Defensivo: Usar fichas para proteger altares y forzar al oponente a gastar recursos para reclamarlos.
+Progresión y Personalización
+Altares Dinámicos: Los altares cambian su elemento después de cada turno, añadiendo variedad y forzando a los jugadores a adaptarse.
+Runas Raras: Algunos altares especiales producen Runas Legendarias, que potencian varias habilidades a la vez o desbloquean habilidades completamente nuevas en cartas específicas.
+Ejemplo: Una Runa de Dragón puede convertir un ataque básico en una Llamarada Explosiva que afecta todo el campo.
+Ejemplo de Partida
+Turno Inicial:
+
+El Paladín captura un altar de luz y fabrica 2 Runas de Luz.
+El Mago captura un altar de fuego y fabrica 3 Runas de Fuego.
+Turno 2:
+
+El Paladín usa una Runa de Luz para potenciar "Golpe de Justicia", causando 6 de daño y aturdiendo.
+El Mago usa dos Runas de Fuego para potenciar "Explosión de Fuego", haciendo 5 de daño y aplicando quemadura.
+Turno 3:
+
+El Paladín mueve fichas para bloquear el acceso del Mago al altar de fuego.
+El Mago sacrifica fichas para capturar un altar de sombra y obtiene nuevas runas.
+¿Quieres agregar más interacción entre héroes y altares, o enfocarte en cómo balancear las runas para que no dominen demasiado el juego?
+
+-------------------------------------------------------------------------------------
