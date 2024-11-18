@@ -66,6 +66,8 @@ NO ITEMS: ore, herb, wood, fish, hide, meat.. esto no va
 -FRTG spells especiales
 -12345 spells spameables
 -[`] montura instantanea [de los 1ros upgrades]
+-LC: ataque basico + combo
+-RC: cubrirse, parry, 
 
 # CLASES:
 -A lo mtg, hay colores [fire, frost, holy, shadow, melee, range, nature, arcane]
@@ -141,4 +143,5 @@ TALENTOS:[se prenden solos automatico]
 -5 players = tus enemigos estan al lado, tus aliados los demas
 -Carta de comander donde se suman dados como el dmg. 30 de hp todos
 -pve nexus mode: no sabes a quien atacar? es todos vs 1. ese 1 roba 2 cartas y baja 2 lands x turno. los demas son team. se ajusta para mas players
-
+-se roba carta al final del turno [mas rapido y eficiente. para no leer durante tu turno]
+-Apliac para wowtcg comander [30 cartas diferentes]
