@@ -970,5 +970,5 @@ Estadísticas de Juego: Mostrar un pequeño perfil del jugador donde se indiquen
 10. Diversión Inmediata
 Acceso Rápido al Juego: Al entrar, ofrecer a los jugadores una partida rápida, sin necesidad de tener que leer mucho. Mostrar un “modo rápido” para que la diversión comience de inmediato, con reglas simples que se expliquen durante la partida misma.
 Sistema de Deshacer: Tener una opción de "deshacer" la última jugada (con algunas limitaciones) puede hacer que el juego sea más accesible, ya que permite experimentar sin miedo de cometer errores.
-En resumen, un buen balance entre simplicidad, profundidad estratégica y emoción es crucial. Si puedes lograr que los jugadores se sientan cómodos y se diviertan rápidamente, pero al mismo tiempo les ofreces suficientes opciones estratégicas y sorpresas, el juego tiene el potencial de ser muy atractivo.
+En resumen, un buen balance entre simplicidad, profundidad estratégica y emoción es crucial. Si puedes lograr que los jugadores se sientan cómodos y se diviertan rápidamente, pero al mismo tiempo les ofreces suficientes opciones estratégicas y sorpresas, el juego tiene el potencial de ser muy atractivo.	
 
