@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -494,8 +494,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1435,7 +1435,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 100}
+  m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &750993218708080725
 CanvasRenderer:
@@ -1785,11 +1785,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd29e7d93631a447adbe18ea8d6496b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deusVult: {fileID: 4739113428083944366}
-  about: {fileID: 1600253394399417862}
-  quit: {fileID: 2420584867783643483}
+  startBtn: {fileID: 0}
+  aboutBtn: {fileID: 0}
+  quitBtn: {fileID: 0}
   startMenu: {fileID: 7870974112225427252}
   hero: {fileID: 0}
+  spawnFX: {fileID: 0}
+  audioSource: {fileID: 0}
+  spawnMusicClip: {fileID: 0}
 --- !u!223 &8140934272634236386
 Canvas:
   m_ObjectHideFlags: 0
