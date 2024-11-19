@@ -11896,14 +11896,6 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 6831621467607602145}
-    - target: {fileID: 4218941546097311614, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -574
-      objectReference: {fileID: 0}
-    - target: {fileID: 4218941546097311614, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -458.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7870974112225427252, guid: c1b53fd6a88755541a72c013b2d0bf86, type: 3}
       propertyPath: m_Name
       value: START_MENU
