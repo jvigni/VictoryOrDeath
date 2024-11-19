@@ -23,7 +23,6 @@ public class CombatStarter : MonoBehaviour
             combatMenu.SetActive(true);
             heroGraphics.SetActive(false);
             Cursor.visible = true;
-            StartCoroutine(Utils.CenterCursor());
             camera3D.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = false;
             glowFX.Play();
 

@@ -17186,7 +17186,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7786534811601589141
 MonoBehaviour:
@@ -21693,6 +21693,10 @@ PrefabInstance:
     - target: {fileID: 8997584515197179110, guid: 12ed4cc2c9b5d2e4481da4e4c8b9feac, type: 3}
       propertyPath: m_Name
       value: FX_Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997584515197179110, guid: 12ed4cc2c9b5d2e4481da4e4c8b9feac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9086182142689193400, guid: 12ed4cc2c9b5d2e4481da4e4c8b9feac, type: 3}
       propertyPath: looping
