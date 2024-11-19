@@ -9,21 +9,25 @@ public class CombatStarter : MonoBehaviour
     [SerializeField] GameObject heroGraphics;
     [SerializeField] CombatManager combatManager;
     [SerializeField] ParticleSystem glowFX;
+    [SerializeField] LifeForm myLifeform;
 
     private void OnTriggerEnter(Collider other)
     {
         var lifeform = other.GetComponent<LifeForm>();
-        if (lifeform == null)
-            return;
+        if (lifeform != null)
+        {
+            if (lifeform.team == myLifeform.team)
+                return;
 
-        Debug.Log("COMBAT!" + lifeform.name);
-        combatMenu.SetActive(true);
-        heroGraphics.SetActive(false);
-        Cursor.visible = true;
-        StartCoroutine(Utils.CenterCursor());
-        camera3D.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = false;
-        glowFX.Play();
+            Debug.Log("COMBAT!" + lifeform.name);
+            combatMenu.SetActive(true);
+            heroGraphics.SetActive(false);
+            Cursor.visible = true;
+            StartCoroutine(Utils.CenterCursor());
+            camera3D.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = false;
+            glowFX.Play();
 
-        combatManager.StartCombat(lifeform);
+            combatManager.StartCombat(lifeform);
+        }
     }
 }
