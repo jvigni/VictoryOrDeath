@@ -1290,6 +1290,7 @@ MonoBehaviour:
   combatMenu: {fileID: 717235005}
   heroGraphics: {fileID: 192500853}
   combatManager: {fileID: 190885198}
+  glowFX: {fileID: 8532713427287998750, guid: 706029da65f34b8429aff213b0f8e3ed, type: 3}
 --- !u!4 &754876873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3537340521950560084, guid: a0ca8bc332cc4d0499939680166ff8b8, type: 3}

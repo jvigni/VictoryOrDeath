@@ -8,6 +8,7 @@ public class CombatStarter : MonoBehaviour
     [SerializeField] GameObject combatMenu;
     [SerializeField] GameObject heroGraphics;
     [SerializeField] CombatManager combatManager;
+    [SerializeField] ParticleSystem glowFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +22,7 @@ public class CombatStarter : MonoBehaviour
         Cursor.visible = true;
         StartCoroutine(Utils.CenterCursor());
         camera3D.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = false;
+        glowFX.Play();
 
         combatManager.StartCombat(lifeform);
     }
