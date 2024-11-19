@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VICTORY OR DEATH
+  m_text: "FREEDOM \nOR DEATH"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -302,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125.9, y: -34}
+  m_AnchoredPosition: {x: 125.9, y: -49}
   m_SizeDelta: {x: 61.6848, y: 40.8495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3747778018326329726
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '>>'
+  m_text: '>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -342,8 +342,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190241
-  m_fontColor: {r: 0.6301887, g: 0, b: 0, a: 1}
+    rgba: 4278456960
+  m_fontColor: {r: 0.5018867, g: 0.069022335, b: 0.014204255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -824,7 +824,7 @@ GameObject:
   - component: {fileID: 7541842505594548601}
   - component: {fileID: 4739113428083944366}
   m_Layer: 0
-  m_Name: DeusVultBtn
+  m_Name: StartDeusVultBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 45}
+  m_AnchoredPosition: {x: 0, y: 26}
   m_SizeDelta: {x: 600, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &488035664275375470
@@ -1104,7 +1104,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -134}
-  m_SizeDelta: {x: 600, y: 100}
+  m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2813388755549885288
 CanvasRenderer:
@@ -1785,14 +1785,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd29e7d93631a447adbe18ea8d6496b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startBtn: {fileID: 0}
-  aboutBtn: {fileID: 0}
-  quitBtn: {fileID: 0}
+  startBtn: {fileID: 4739113428083944366}
+  aboutBtn: {fileID: 1600253394399417862}
+  quitBtn: {fileID: 2420584867783643483}
   startMenu: {fileID: 7870974112225427252}
   hero: {fileID: 0}
   spawnFX: {fileID: 0}
   audioSource: {fileID: 0}
-  spawnMusicClip: {fileID: 0}
+  spawnMusicClip: {fileID: 8300000, guid: 2a987a74c5f98794e84bf5fdd2b80fdc, type: 3}
 --- !u!223 &8140934272634236386
 Canvas:
   m_ObjectHideFlags: 0
@@ -2018,7 +2018,7 @@ Transform:
   m_GameObject: {fileID: 9217689549875942656}
   serializedVersion: 2
   m_LocalRotation: {x: -0.11190744, y: 0.69819534, z: 0.11190744, w: 0.69819534}
-  m_LocalPosition: {x: -728.31616, y: -515.0351, z: -0.19177246}
+  m_LocalPosition: {x: -723.68, y: -517.42, z: -0.19177246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
