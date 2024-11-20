@@ -298,38 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &153122484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 153122485}
-  m_Layer: 0
-  m_Name: UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &153122485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153122484}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.911243, y: 44.823334, z: -11.875607}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1314156393}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &155695579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5903621682197439712, guid: 36aa69e99b89b5e4fa9a6b0452b39c21, type: 3}
@@ -1135,12 +1103,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2130560458}
   - {fileID: 2011637650}
-  - {fileID: 1037664953}
   - {fileID: 1345608941}
+  - {fileID: 1037664953}
   - {fileID: 2107561549}
+  - {fileID: 2130560458}
   - {fileID: 717235006}
+  - {fileID: 1314156393}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &861499106 stripped
@@ -1949,7 +1918,7 @@ GameObject:
   - component: {fileID: 1314156395}
   - component: {fileID: 1314156394}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: SUN_NIGHT_MENU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1970,7 +1939,7 @@ RectTransform:
   - {fileID: 901029655}
   - {fileID: 1851196981}
   - {fileID: 276617644}
-  m_Father: {fileID: 153122485}
+  m_Father: {fileID: 851701242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13248,7 +13217,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 9167506967995138831}
   - {fileID: 851701242}
-  - {fileID: 153122485}
   - {fileID: 646891318}
   - {fileID: 1314951245}
   - {fileID: 35424283}
