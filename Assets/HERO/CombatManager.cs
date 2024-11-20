@@ -5,20 +5,9 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    internal void StartCombat(LifeForm myLifeform, LifeForm lifeform)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    internal void StartCombat(LifeForm lifeform)
-    {
+        Debug.Log("Starting combat with " + lifeform);
         throw new NotImplementedException();
     }
 }

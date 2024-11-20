@@ -1023,6 +1023,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d5f65e720305e44b71a34e256af6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &717235005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 293641490758689695, guid: 213b7c9a242f19c44ab7e4e24cca5d14, type: 3}
+  m_PrefabInstance: {fileID: 915618038115801505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &717235006 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6921423244148527221, guid: 213b7c9a242f19c44ab7e4e24cca5d14, type: 3}
@@ -2001,6 +2006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUMANS
       objectReference: {fileID: 0}
+    - target: {fileID: 5675949865500969654, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
+      propertyPath: combatMenu
+      value: 
+      objectReference: {fileID: 717235005}
     - target: {fileID: 5758245789188097934, guid: 0e36e65d22cd7854dafcec28b2cefe3c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10778,7 +10787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 134676, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 440718, guid: 6488b6e6bbe8a9c4585b531a71d8211c, type: 3}
       propertyPath: m_LocalScale.x

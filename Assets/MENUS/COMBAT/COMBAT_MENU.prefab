@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8277375145406091529}
   - component: {fileID: 5782231504337692640}
   - component: {fileID: 7092210094082300252}
-  - component: {fileID: 3344642091095880764}
   m_Layer: 5
   m_Name: COMBAT_MENU
   m_TagString: Untagged
@@ -32,6 +31,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3598844050253555053}
   - {fileID: 2171723354716013955}
   - {fileID: 1034718491231796816}
   - {fileID: 2856772608421818857}
@@ -105,19 +105,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3344642091095880764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293641490758689695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f6cad55cc4c3a3499b8ee07a96a4431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera3D: {fileID: 0}
 --- !u!1 &489212563732942562
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,3 +330,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8740708136168559469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3598844050253555053}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3598844050253555053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740708136168559469}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.562561, y: -62.26288, z: 2.658764}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6921423244148527221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -20,13 +20,14 @@ public class CombatStarter : MonoBehaviour
                 return;
 
             Debug.Log("COMBAT!" + lifeform.name);
-            combatMenu.SetActive(true);
+            
             heroGraphics.SetActive(false);
             Cursor.visible = true;
             camera3D.GetComponent<Lightbug.CharacterControllerPro.Demo.Camera3D>().enabled = false;
             glowFX.Play();
 
-            combatManager.StartCombat(lifeform);
+            combatMenu.SetActive(true);
+            combatManager.StartCombat(myLifeform, lifeform);
         }
     }
 }
