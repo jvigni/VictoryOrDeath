@@ -1685,6 +1685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabMarker: {fileID: 0}
   lifebar: {fileID: 0}
+  image: {fileID: 21300000, guid: e250cd3404e6fcc4a8a99dad73a149b8, type: 3}
   target: {fileID: 0}
   minDmg: 1
   maxDmg: 2

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Mob : MonoBehaviour
 {
-    [SerializeField] GameObject tabMarker;
     [SerializeField] GameObject lifebar;
+    [SerializeField] Sprite image;
 
     [Space]
     public Mob target; // The target for the mob to chase.
@@ -190,10 +190,4 @@ public class Mob : MonoBehaviour
     {
         target = newTarget;
     }
-
-    public void SwapTabMark()
-    {
-        tabMarker.SetActive(!tabMarker.activeSelf);
-    }
-
 }
