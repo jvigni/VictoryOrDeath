@@ -5,9 +5,7 @@ using UnityEngine;
 public class CombatStarter : MonoBehaviour
 {
     [SerializeField] Camera camera3D;
-    [SerializeField] GameObject combatMenu;
     [SerializeField] GameObject heroGraphics;
-    [SerializeField] CombatManager combatManager;
     [SerializeField] ParticleSystem glowFX;
     [SerializeField] LifeForm myLifeform;
     [SerializeField] GameObject enterCombatPanelFX;
@@ -29,8 +27,7 @@ public class CombatStarter : MonoBehaviour
 
             enterCombatPanelFX.SetActive(true);
 
-            combatMenu.SetActive(true);
-            combatManager.StartCombat(myLifeform, lifeform);
+            
         }
     }
 }
