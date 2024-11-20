@@ -1689,8 +1689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.8481445, y: -329.8203}
-  m_SizeDelta: {x: -1179.1362, y: -659.6405}
+  m_AnchoredPosition: {x: -9, y: -329.82}
+  m_SizeDelta: {x: -1726.622, y: -659.641}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4273843025974764421
 CanvasRenderer:
@@ -2227,6 +2227,10 @@ PrefabInstance:
     - target: {fileID: 8997584515197179110, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
       propertyPath: m_Name
       value: FX_GoldDust
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087219567442761388, guid: f3fcf16c9f7b735438d2e40164d5148a, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
