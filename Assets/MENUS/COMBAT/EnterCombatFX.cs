@@ -10,6 +10,7 @@ public class EnterCombatFX : MonoBehaviour
     [SerializeField] float fadeDuration = 1f;
     [SerializeField] GameObject combatMenu;
     [SerializeField] CombatManager combatManager;
+    [SerializeField] GameObject hero;
 
     private Image panelImage;
 
@@ -23,6 +24,7 @@ public class EnterCombatFX : MonoBehaviour
     {
         await FadeIn();
         combatMenu.SetActive(true);
+        hero.SetActive(false);
         //combatManager.StartCombat(myLifeform, lifeform);
         await FadeOut();
     }

@@ -42,7 +42,7 @@ public class TabTargeter : MonoBehaviour
                 targetedObjects.Add(collider.gameObject);
         }
 
-        SelectTarget();
+        //SelectTarget();
     }
 
     private bool IsValidTarget(Collider collider)
@@ -52,7 +52,7 @@ public class TabTargeter : MonoBehaviour
             && !targetedObjects.Contains(collider.gameObject)
             && collider.GetComponent<Mob>() != null;
     }
-
+    /*
     private void SelectTarget()
     {
         CurrentObjective = null;
@@ -75,6 +75,7 @@ public class TabTargeter : MonoBehaviour
             }
         }
     }
+    */
 
     private void OnTriggerEnter(Collider other)
     {
