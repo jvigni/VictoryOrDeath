@@ -23,10 +23,10 @@ public class StartMenu : MonoBehaviour
 
     void StartDEUSVULT()
     {
-        hero.SetActive(true);
-        spawnFX.SetActive(true);
+        //hero.SetActive(true);
+        //spawnFX.SetActive(true);
         startMenu.SetActive(false);
-        Cursor.visible = false;
+        //Cursor.visible = false;
 
         audioSource.clip = spawnMusicClip;
         audioSource.Play();
