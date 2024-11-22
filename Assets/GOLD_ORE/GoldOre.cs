@@ -11,6 +11,11 @@ public class GoldOre : MonoBehaviour
     
     private void Update()
     {
+        FaceCamera();
+    }
+
+    void FaceCamera()
+    {
         // Ensure the health bar always faces the main camera
         Vector3 directionToCamera = Camera.main.transform.position - buildingBar.transform.position;
         directionToCamera.y = 0; // Optional: Ignore vertical rotation if you want it to stay upright
