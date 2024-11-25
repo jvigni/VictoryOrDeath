@@ -42,7 +42,7 @@ public class TabTargeter : MonoBehaviour
 
         detectionCollider.enabled = false;
 
-        if (nearestTarget != null)
+        if (nearestTarget != null || currentTarget != nearestTarget)
         {
             SelectTarget(nearestTarget);
         }
@@ -50,10 +50,8 @@ public class TabTargeter : MonoBehaviour
 
     private void SelectTarget(GameObject newTarget)
     {
-        if (currentTarget != null && currentTarget != newTarget)
-        {
+        if (currentTarget != null)
             currentTarget.GetComponent<Mob>().SwapTabMark();
-        }
 
         currentTarget = newTarget;
         currentTarget.GetComponent<Mob>().SwapTabMark();
