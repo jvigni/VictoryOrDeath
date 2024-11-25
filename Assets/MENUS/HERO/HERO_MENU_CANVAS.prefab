@@ -2576,7 +2576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ddf3b2aab7d974eb63f39bb538b912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggablePrefab: {fileID: 0}
   mainCamera: {fileID: 0}
   head: {fileID: 4336483632943352389}
   cloak: {fileID: 4306818656398622503}
@@ -7427,7 +7426,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2972842561282058556, guid: 393e5b8839b1286439325e94776c12bd, type: 3}
       propertyPath: m_text
-      value: DAMAGE
+      value: ATTACK
       objectReference: {fileID: 0}
     - target: {fileID: 3020274220862940917, guid: 393e5b8839b1286439325e94776c12bd, type: 3}
       propertyPath: m_Name

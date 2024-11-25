@@ -972,3 +972,54 @@ Acceso Rápido al Juego: Al entrar, ofrecer a los jugadores una partida rápida,
 Sistema de Deshacer: Tener una opción de "deshacer" la última jugada (con algunas limitaciones) puede hacer que el juego sea más accesible, ya que permite experimentar sin miedo de cometer errores.
 En resumen, un buen balance entre simplicidad, profundidad estratégica y emoción es crucial. Si puedes lograr que los jugadores se sientan cómodos y se diviertan rápidamente, pero al mismo tiempo les ofreces suficientes opciones estratégicas y sorpresas, el juego tiene el potencial de ser muy atractivo.	
 
+
+
+
+Si es para pc, tengo que tener yo el control de la nave y apuntar con wasd?
+o para celu??
+
+
+
+
+-Emleado especializado en 1 lenguaje y framework pro
+-fintech Saas
+-game que la pegue[lol arena con bots, 
+
+
+
+/////////////////////////////////////////////////////////
+crud de golang con aws con gpt [de aca a 3 meses]
+gpt para que me ensenie
+gpt para hacer los tests
+para que busque las funciones parecidas para usar[plugin para saber quien implementa la interfaz]
+gpt para refactorizar teniendo los tests
+docker/Kubernetes/gin
+/////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
