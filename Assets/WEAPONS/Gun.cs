@@ -9,14 +9,14 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            Shoot(new DmgInfo(dmg, DmgType.Fire));
+        //if (Input.GetKeyDown(KeyCode.Q))
+            //Shoot(new DmgInfo(dmg, DmgType.Fire));
     }
-
+    /*
     public void Shoot(DmgInfo dmgInfo)
     {
-        var target = targeter.CurrentObjective;
+        GameObject target = targeter.CurrentObjective;
         if (target != null)
-            target.TakeDamage(dmgInfo/*, gameObject*/); // todo??
-    }
+            target.TakeDamage(dmgInfo/*, gameObject); // todo??
+    }*/
 }

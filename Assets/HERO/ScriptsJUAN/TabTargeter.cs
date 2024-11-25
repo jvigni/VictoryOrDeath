@@ -1,87 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TabTargeter : MonoBehaviour
 {
-    public LifeForm CurrentObjective;
-    private LifeForm previousObjective;
-    [SerializeField] private List<GameObject> targetedObjects = new List<GameObject>();
-
-    private Collider targetCollider;
-    private int currentTargetIndex = -1;
+    [SerializeField] Collider detectionCollider;
+    [SerializeField] GameObject currentTarget;
 
     private void Start()
     {
-        targetCollider = GetComponent<BoxCollider>();
-        targetCollider.enabled = false;
+        detectionCollider.enabled = false;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
-            FindTargets();
+        {
+            FindNearestTarget();
+        }
     }
 
-    private void FindTargets()
+    private void FindNearestTarget()
     {
-        targetedObjects.Clear();
-        StartCoroutine(DetectTargetsInCollider());
-    }
+        detectionCollider.enabled = true;
+        Collider[] detectedColliders = Physics.OverlapBox(detectionCollider.bounds.center, detectionCollider.bounds.extents);
 
-    IEnumerator DetectTargetsInCollider()
-    {
-        targetCollider.enabled = true;
-        yield return new WaitForSeconds(0.1f);
-        targetCollider.enabled = false;
+        GameObject nearestTarget = null;
+        float nearestDistance = float.MaxValue;
 
-        Collider[] detectedColliders = Physics.OverlapBox(targetCollider.bounds.center, targetCollider.bounds.extents);
         foreach (var collider in detectedColliders)
         {
-            if (IsValidTarget(collider))
-                targetedObjects.Add(collider.gameObject);
+            LifeForm lifeForm = collider.gameObject.GetComponent<LifeForm>();
+            if (lifeForm != null)
+            {
+                float distance = Vector3.Distance(transform.position, lifeForm.transform.position);
+                if (distance < nearestDistance)
+                {
+                    nearestTarget = lifeForm.gameObject;
+                    nearestDistance = distance;
+                }
+            }
         }
 
-        //SelectTarget();
-    }
+        detectionCollider.enabled = false;
 
-    private bool IsValidTarget(Collider collider)
-    {
-        return collider != null
-            && collider.gameObject != gameObject
-            && !targetedObjects.Contains(collider.gameObject)
-            && collider.GetComponent<Mob>() != null;
-    }
-    /*
-    private void SelectTarget()
-    {
-        CurrentObjective = null;
-        if (targetedObjects.Count > 0)
+        if (nearestTarget != null)
         {
-            // Update previous target and select the next target
-            if (previousObjective != null)
-            {
-                previousObjective.GetComponent<Mob>().SwapTabMark();
-            }
-
-            currentTargetIndex = (currentTargetIndex + 1) % targetedObjects.Count;
-            CurrentObjective = targetedObjects[currentTargetIndex].GetComponent<LifeForm>();
-
-            if (CurrentObjective != null)
-            {
-                CurrentObjective.GetComponent<Mob>().SwapTabMark();
-                previousObjective = CurrentObjective;
-                //Debug.Log($"New target selected: {CurrentObjective.gameObject.name}");
-            }
+            SelectTarget(nearestTarget);
         }
     }
-    */
+
+    private void SelectTarget(GameObject newTarget)
+    {
+        if (currentTarget != null && currentTarget != newTarget)
+        {
+            currentTarget.GetComponent<Mob>().SwapTabMark();
+        }
+
+        currentTarget = newTarget;
+        currentTarget.GetComponent<Mob>().SwapTabMark();
+        Debug.Log($"New target selected: {currentTarget.name}");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (IsValidTarget(other))
+        LifeForm lifeForm = other.gameObject.GetComponent<LifeForm>();
+        if (lifeForm != null && (currentTarget == null || other.gameObject != currentTarget))
         {
-            targetedObjects.Add(other.gameObject);
+            currentTarget = other.gameObject;
         }
     }
 }

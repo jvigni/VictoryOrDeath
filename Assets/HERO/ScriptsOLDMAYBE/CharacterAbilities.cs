@@ -23,6 +23,6 @@ public class CharacterAbilities : MonoBehaviour
 
     public void UseAbility(int slot)
     {
-        heroMenu.spellSlots[slot].ability.Trigger(gameObject, targeter.CurrentObjective.gameObject);
+        heroMenu.spellSlots[slot].ability.Trigger(gameObject, targeter.gameObject);
     }
 }

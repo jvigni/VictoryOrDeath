@@ -35,6 +35,11 @@ public class Mob : MonoBehaviour
     [SerializeField] float downhillSearchRadius = 10.0f; // Radius to search for better downhill positions to avoid local minima.
     [SerializeField] int downhillSamplePoints = 8; // Number of points to sample around the mob for downhill movement.
 
+    internal void SwapTabMark()
+    {
+        Debug.Log("TODO: TAB MARK");
+    }
+
     private void Start()
     {
         initialPosition = transform.position; // Store the initial spawn position as the anchor point.
