@@ -4,6 +4,7 @@ using UnityEngine;
 public class Mob : MonoBehaviour
 {
     [SerializeField] GameObject lifebar;
+    [SerializeField] GameObject tabMark;
     [SerializeField] Sprite image;
 
     [Space]
@@ -35,11 +36,6 @@ public class Mob : MonoBehaviour
     [SerializeField] float downhillSearchRadius = 10.0f; // Radius to search for better downhill positions to avoid local minima.
     [SerializeField] int downhillSamplePoints = 8; // Number of points to sample around the mob for downhill movement.
 
-    internal void SwapTabMark()
-    {
-        Debug.Log("TODO: TAB MARK");
-    }
-
     private void Start()
     {
         initialPosition = transform.position; // Store the initial spawn position as the anchor point.
@@ -48,6 +44,8 @@ public class Mob : MonoBehaviour
 
     private void Update()
     {
+        FaceCamera();
+
         returnTimer += Time.deltaTime; // Increment the patrol timer.
 
         if (returnTimer >= returnToInitialCooldown)
@@ -190,9 +188,27 @@ public class Mob : MonoBehaviour
         return bestPosition;
     }
 
+    internal void SwapTabMark()
+    {
+        tabMark.SetActive(!tabMark.activeSelf); // Toggle the active state
+    }
+
     // Set the mob's target manually.
     public void SetTarget(Mob newTarget)
     {
         target = newTarget;
+    }
+    
+    void FaceCamera()
+    {
+        // Ensure the health bar always faces the main camera
+        Vector3 directionToCamera = Camera.main.transform.position - transform.position;
+        directionToCamera.y = 0; // Optional: Ignore vertical rotation if you want it to stay upright
+
+        // Create a rotation that looks at the camera
+        Quaternion lookRotation = Quaternion.LookRotation(directionToCamera);
+
+        // Apply the rotation to the health bar
+        transform.rotation = lookRotation;
     }
 }
