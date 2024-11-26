@@ -3,7 +3,7 @@
 public class TabTargeter : MonoBehaviour
 {
     [SerializeField] Collider detectionCollider;
-    [SerializeField] GameObject currentTarget;
+    public GameObject CurrentTarget;
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class TabTargeter : MonoBehaviour
 
         detectionCollider.enabled = false;
 
-        if (nearestTarget != null || currentTarget != nearestTarget)
+        if (nearestTarget != null || CurrentTarget != nearestTarget)
         {
             SelectTarget(nearestTarget);
         }
@@ -50,20 +50,20 @@ public class TabTargeter : MonoBehaviour
 
     private void SelectTarget(GameObject newTarget)
     {
-        if (currentTarget != null)
-            currentTarget.GetComponent<Mob>().SwapTabMark();
+        if (CurrentTarget != null)
+            CurrentTarget.GetComponent<Mob>().SwapTabMark();
 
-        currentTarget = newTarget;
-        currentTarget.GetComponent<Mob>().SwapTabMark();
-        Debug.Log($"New target selected: {currentTarget.name}");
+        CurrentTarget = newTarget;
+        CurrentTarget.GetComponent<Mob>().SwapTabMark();
+        Debug.Log($"New target selected: {CurrentTarget.name}");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         LifeForm lifeForm = other.gameObject.GetComponent<LifeForm>();
-        if (lifeForm != null && (currentTarget == null || other.gameObject != currentTarget))
+        if (lifeForm != null && (CurrentTarget == null || other.gameObject != CurrentTarget))
         {
-            currentTarget = other.gameObject;
+            CurrentTarget = other.gameObject;
         }
     }
 }
