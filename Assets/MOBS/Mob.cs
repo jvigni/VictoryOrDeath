@@ -44,7 +44,7 @@ public class Mob : MonoBehaviour
 
     private void Update()
     {
-        FaceCamera();
+        //FaceCamera();
 
         returnTimer += Time.deltaTime; // Increment the patrol timer.
 
