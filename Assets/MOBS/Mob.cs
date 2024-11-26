@@ -44,8 +44,6 @@ public class Mob : MonoBehaviour
 
     private void Update()
     {
-        //FaceCamera();
-
         returnTimer += Time.deltaTime; // Increment the patrol timer.
 
         if (returnTimer >= returnToInitialCooldown)
@@ -197,18 +195,5 @@ public class Mob : MonoBehaviour
     public void SetTarget(Mob newTarget)
     {
         target = newTarget;
-    }
-    
-    void FaceCamera()
-    {
-        // Ensure the health bar always faces the main camera
-        Vector3 directionToCamera = Camera.main.transform.position - transform.position;
-        directionToCamera.y = 0; // Optional: Ignore vertical rotation if you want it to stay upright
-
-        // Create a rotation that looks at the camera
-        Quaternion lookRotation = Quaternion.LookRotation(directionToCamera);
-
-        // Apply the rotation to the health bar
-        transform.rotation = lookRotation;
     }
 }

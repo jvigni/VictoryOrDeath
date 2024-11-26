@@ -17,7 +17,7 @@ public class DmgMarker : MonoBehaviour
     {
         redMark.SetActive(true);
         dmgText.text = dmg.ToString();
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.6f);
         redMark.SetActive(false);
     }
 }
