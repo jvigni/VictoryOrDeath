@@ -4821,7 +4821,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275159552}
-  - component: {fileID: 1275159554}
   - component: {fileID: 1275159555}
   m_Layer: 9
   m_Name: Spellbook
@@ -4845,27 +4844,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1314951246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1275159554
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275159551}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &1275159555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4878,9 +4856,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a860b7ab56cabc544a11562a5900af27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilities:
-  - {fileID: 6716487330377833718, guid: a428e69ba9fa76d49ab0f67ac6f55d8c, type: 3}
-  heroMenu: {fileID: 2107561553}
+  Ability1: {fileID: 6716487330377833718, guid: a428e69ba9fa76d49ab0f67ac6f55d8c, type: 3}
+  Ability2: {fileID: 2590204627534810833, guid: af3df056329fe9840b7b0fd595aaa02a, type: 3}
+  Ability3: {fileID: 124503007278863780, guid: 5917fb7d9609daf418c16946a4e58064, type: 3}
+  Ability4: {fileID: 0}
+  Ability5: {fileID: 0}
+  AbilityF: {fileID: 0}
+  AbilityR: {fileID: 0}
+  AbilityT: {fileID: 0}
+  AbilityG: {fileID: 0}
 --- !u!1 &1278472428
 GameObject:
   m_ObjectHideFlags: 0
@@ -8313,17 +8297,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8998399915973284421, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
   m_PrefabInstance: {fileID: 7025209528210612445}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2107561553 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9067994025868563652, guid: 06e1964b876e64f47ad658404751c6f5, type: 3}
-  m_PrefabInstance: {fileID: 7025209528210612445}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107561544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ddf3b2aab7d974eb63f39bb538b912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2121017547
 PrefabInstance:
   m_ObjectHideFlags: 0
