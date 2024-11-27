@@ -27,7 +27,6 @@ public class GoldOre : MonoBehaviour
         buildingBar.transform.rotation = lookRotation;
     }
 
-
     public void CraftResourceTower(Faction faction)
     {
         if (isBuilding) return;
