@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LionAbility : MonoBehaviour
 {
-    [SerializeField] Ability ability;
+    [SerializeField] Ability abilityPrefab;
 
     void Update()
     {
@@ -13,7 +13,13 @@ public class LionAbility : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TODO: TAKE " + ability.name);
+        var spellbook = other.GetComponent<Spellbook>();
+        if (spellbook == null)
+            return;
+
+        Debug.Log("TODO: TAKE " + abilityPrefab.name);
+        var ability = Instantiate(abilityPrefab, transform.position, Quaternion.identity);
+        
         Destroy(gameObject);
     }
 

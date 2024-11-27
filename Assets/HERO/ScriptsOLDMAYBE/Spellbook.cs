@@ -5,24 +5,12 @@ using UnityEngine;
 
 public class Spellbook : MonoBehaviour
 {
-    [SerializeField] AbilityLibrary library;
+    [SerializeField] List<Ability> abilities;
     [SerializeField] HeroMenu heroMenu;
-    //List<Ability> abilities;
 
-    private void Start()
+    private void Update()
     {
-        //abilities = new List<Ability>();    
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            abilities[0].Trigger(gameObject, Provider.Targeter.CurrentTarget);
     }
-
-    internal void LearnAbility(int index, AbilityCode code)
-    {
-        var ability = library.GetAbilityClone(code);
-        //abilities.Add(ability);
-        heroMenu.NewAbility(index, ability);
-    }
-    /*
-    public void Cast(int index)
-    {
-        heroMenu.GetAbility(index).Trigger();
-    }*/
 }
