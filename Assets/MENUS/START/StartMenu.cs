@@ -23,7 +23,7 @@ public class StartMenu : MonoBehaviour
 
     void StartDEUSVULT()
     {
-        //hero.SetActive(true);
+        hero.SetActive(true);
         //spawnFX.SetActive(true);
         startMenu.SetActive(false);
         Cursor.visible = false;
