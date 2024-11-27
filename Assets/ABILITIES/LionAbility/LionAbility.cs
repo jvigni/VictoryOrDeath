@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class LionAbility : MonoBehaviour
 {
+    [SerializeField] Ability ability;
+
     void Update()
     {
         FaceCamera();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("TODO: TAKE " + ability.name);
+        Destroy(gameObject);
     }
 
     void FaceCamera()
