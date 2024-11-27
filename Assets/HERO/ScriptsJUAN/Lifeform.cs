@@ -78,7 +78,8 @@ public class LifeForm : MonoBehaviour
         foreach (Effect effect in Effects.ToList())
             effect.OnDamageReceibed(dmgInfo);
 
-        Health.Value -= dmgInfo.Amount;
+        var dmg = dmgInfo.RndDamage();
+        Health.Value -= dmg;
 
         //Provider.VFXManager.Play(VFX.Explosion1, GetPosition());
         //Provider.VFXManager.ShowHitAlert(dmgInfo, GetPosition());
@@ -87,14 +88,13 @@ public class LifeForm : MonoBehaviour
         //Color textColor = dmgInfo.Amount > 0 ? Color.red : Color.gray;
         //Provider.FloatingTextManager.PrintOnPosition(textMsg, textColor, GetPosition());
 
-        dmgMarker.Show(dmgInfo.Amount);
-
-        OnDamageTaken?.Invoke(dmgInfo.Amount);
+        dmgMarker.Show(dmg);
+        OnDamageTaken?.Invoke(dmg);
 
         if (Health.Value <= 0)
             Death();
 
-        return dmgInfo.Amount;
+        return dmg;
     }
 
     public void ApplyEffect(Effect originalEffect, LifeForm caster)

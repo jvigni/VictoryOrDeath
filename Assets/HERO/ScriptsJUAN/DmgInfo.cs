@@ -16,10 +16,10 @@ public enum DmgType
 [Serializable]
 public struct DmgInfo
 {
-    public int minDmg;
-    public int maxDmg;
-    public DmgType Type;
-    public bool Unbloqueable;
+    [SerializeField] int minDmg;
+    [SerializeField] int maxDmg;
+    DmgType Type;
+    bool Unbloqueable;
     public bool Pure;
     public int DamagePreventedCounter;
     public bool LifeSteal;
@@ -36,7 +36,7 @@ public struct DmgInfo
         return this;
     }
 
-    public int Damage()
+    public int RndDamage()
     {
         return UnityEngine.Random.Range(minDmg, maxDmg);
     }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
-    public AbilityCode Code;
     public Sprite Icon; 
     public string NAME;
     public string DESCRIPTION;
+    public DmgType Type;
 
     [Space]
     public float castSeconds;
@@ -18,7 +18,7 @@ public abstract class Ability : MonoBehaviour
     // TODO GCD???
     //bool cooldownReady; //?    
 
-    public void Cast(AbilityCode code, GameObject target)
+    public void Cast(GameObject target)
     {
         StartCoroutine(Cast2(target));
     }

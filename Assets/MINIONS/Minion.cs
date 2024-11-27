@@ -69,7 +69,7 @@ public class Minion : MonoBehaviour
                 {
                     navAgent.isStopped = true;
                     ChangeAnimation("Atacking");
-                    targetToAtack.TakeDamage(dmgInfo);
+                    targetToAtack.TakeDamage(dmg);
                     RotateTowardsTarget(targetToAtack.transform.position);
                 }
                 else
@@ -94,7 +94,7 @@ public class Minion : MonoBehaviour
                     navAgent.isStopped = true;
                     targetToAtack = minionToAtack;
                     ChangeAnimation("Atacking");
-                    targetToAtack.TakeDamage(dmgInfo);
+                    targetToAtack.TakeDamage(dmg);
                     RotateTowardsTarget(targetToWalk.transform.position);
                 }
                 else
@@ -129,7 +129,7 @@ public class Minion : MonoBehaviour
                 targetToWalk = minionToAtack;
                 targetToAtack = minionToAtack;
                 ChangeAnimation("Atacking");
-                targetToAtack.TakeDamage(dmgInfo);
+                targetToAtack.TakeDamage(dmg);
                 RotateTowardsTarget(targetToWalk.transform.position);
             }
             else
