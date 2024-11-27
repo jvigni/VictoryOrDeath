@@ -16,10 +16,10 @@ public class LifeForm : MonoBehaviour
 {
     [SerializeField] public Team team;
     [SerializeField] HealthBar healthBar;
-    [SerializeField] ReactiveProperty<int> Health;
-    [SerializeField] ReactiveProperty<int> MaxHealth;
+    [SerializeField] int MaxHealth;
     [SerializeField] DmgMarker dmgMarker;
-    [SerializeField] private int originalMaxHealth;
+    int ActualHealth;
+    private int originalMaxHealth;
 
     public event Action OnDeath;
     public event Action<int> OnDamageTaken;
@@ -35,8 +35,8 @@ public class LifeForm : MonoBehaviour
         this.team = team;
         isAlive = true;
         originalMaxHealth = maxHp;
-        MaxHealth = new ReactiveProperty<int>(maxHp);
-        Health = new ReactiveProperty<int>(maxHp);
+        MaxHealth = maxHp;
+        ActualHealth = maxHp;
         Effects = new List<Effect>();
     }
 
@@ -54,14 +54,14 @@ public class LifeForm : MonoBehaviour
     public void ResetToDefault()
     {
         isAlive = true;
-        MaxHealth.Value = originalMaxHealth;
-        Health.Value = originalMaxHealth;
+        MaxHealth = originalMaxHealth;
+        ActualHealth = originalMaxHealth;
         Effects = new List<Effect>();
     }
 
     public void RestoreAllHealth()
     {
-        Health = MaxHealth;
+        ActualHealth = MaxHealth;
     }
 
     public int TakeDamage(DmgInfo dmgInfo/*, GameObject attacker*/)
@@ -79,7 +79,7 @@ public class LifeForm : MonoBehaviour
             effect.OnDamageReceibed(dmgInfo);
 
         var dmg = dmgInfo.RndDamage();
-        Health.Value -= dmg;
+        ActualHealth -= dmg;
 
         //Provider.VFXManager.Play(VFX.Explosion1, GetPosition());
         //Provider.VFXManager.ShowHitAlert(dmgInfo, GetPosition());
@@ -91,7 +91,7 @@ public class LifeForm : MonoBehaviour
         dmgMarker.Show(dmg);
         OnDamageTaken?.Invoke(dmg);
 
-        if (Health.Value <= 0)
+        if (ActualHealth <= 0)
             Death();
 
         return dmg;
@@ -150,10 +150,10 @@ public class LifeForm : MonoBehaviour
         if (HasEffect(EffectID.Poison))
             amount = 0;
 
-        if (Health.Value + amount > MaxHealth.Value)
-            Health.Value = MaxHealth.Value;
+        if (ActualHealth + amount > MaxHealth)
+            ActualHealth = MaxHealth;
         else
-            Health.Value += amount;
+            ActualHealth += amount;
 
         //if (amount > 0)
         //    Provider.FloatingTextManager.PrintOnPosition($"{amount}", Color.green, GetPosition());
