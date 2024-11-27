@@ -2311,12 +2311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   healthBar: {fileID: 0}
-  Health:
-    value: 0
-  MaxHealth:
-    value: 0
+  MaxHealth: 0
   dmgMarker: {fileID: 0}
-  originalMaxHealth: 1000
 --- !u!114 &2180838552659801895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4110,6 +4106,7 @@ Transform:
   - {fileID: 4583493809125943793}
   - {fileID: 468730785517945038}
   - {fileID: 4318226007760968335}
+  - {fileID: 6559421728391162255}
   - {fileID: 6055489580056031931}
   m_Father: {fileID: 938118774347167870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13647,7 +13644,6 @@ Transform:
   - {fileID: 8971868613925629699}
   - {fileID: 3235978989799250948}
   - {fileID: 938118774347167870}
-  - {fileID: 6559421728391162255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2376125093734701356
@@ -28796,7 +28792,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5758245789188097934}
+    m_TransformParent: {fileID: 4862208647483048795}
     m_Modifications:
     - target: {fileID: 3062523696486990416, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -28808,7 +28804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.30000004
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalScale.y
@@ -28816,23 +28812,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.30000004
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.898
+      value: -8.8980055
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3985176
+      value: 27.798517
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.627
+      value: -12.627005
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99283904
+      value: 0.992839
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalRotation.x
@@ -28840,7 +28836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.11946055
+      value: 0.11946048
       objectReference: {fileID: 0}
     - target: {fileID: 4236596215896947007, guid: 27c7ac99473bf5b4ab62e74b544a7a35, type: 3}
       propertyPath: m_LocalRotation.z
@@ -29804,6 +29800,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5758245789188097934}
     m_Modifications:
+    - target: {fileID: 2981399553299298389, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
+      propertyPath: combatManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3742488925747485422, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
       propertyPath: m_Name
       value: RODLAK
@@ -29848,7 +29848,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6039682493893884005, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
     m_RemovedGameObjects:
     - {fileID: 301190308936072928, guid: 3d3769bbeb7407a4da58dfb3ac6458f5, type: 3}
     m_AddedGameObjects: []
