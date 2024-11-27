@@ -16,22 +16,13 @@ public enum DmgType
 [Serializable]
 public struct DmgInfo
 {
-    public int Amount;
+    public int minDmg;
+    public int maxDmg;
     public DmgType Type;
     public bool Unbloqueable;
     public bool Pure;
     public int DamagePreventedCounter;
     public bool LifeSteal;
-
-    public DmgInfo(float amount, DmgType type)
-    {
-        Amount = Mathf.FloorToInt(amount);
-        Type = type;
-        Unbloqueable = false;
-        Pure = false;
-        DamagePreventedCounter = 0;
-        LifeSteal = false;
-    }
 
     public DmgInfo IsUnbloqueable()
     {
@@ -43,5 +34,10 @@ public struct DmgInfo
     {
         Pure = true;
         return this;
+    }
+
+    public int Damage()
+    {
+        return UnityEngine.Random.Range(minDmg, maxDmg);
     }
 }

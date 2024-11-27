@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class Minion : MonoBehaviour
 {
-    [SerializeField] private int minionDamage;
+    [SerializeField] private DmgInfo dmg;
     [SerializeField] private Team myTeam;
     [SerializeField] NexusSpawner nexusToOBLITERATE;
     [SerializeField] float speed = 10f;
@@ -14,13 +14,11 @@ public class Minion : MonoBehaviour
     [SerializeField] public LifeForm targetToAtack;
     [SerializeField] private Animator animator;
     [SerializeField] private MinionCollisionDetector collisionDetector;
-
     [SerializeField] bool isStoped;
 
     private string currentAnimation = "";
     public NavMeshAgent navAgent;
 
-    public DmgInfo dmgInfo;
 
     void Awake()
     {
@@ -33,11 +31,12 @@ public class Minion : MonoBehaviour
             Debug.LogError("NavMeshAgent not Found -Minion-");
         }
     }
+
     void Start()
     {
-        dmgInfo = new DmgInfo(minionDamage, DmgType.Fire);
         MoveTowardsNexus();
     }
+
     void Update()
     {
         isStoped = navAgent.isStopped;
@@ -171,11 +170,6 @@ public class Minion : MonoBehaviour
         }
     }
 
-    public void SetTagetToAtack(LifeForm targetToAtack)
-    {
-        this.targetToAtack = targetToAtack;
-    }
-
     public LifeForm GetNexusToObliterate()
     {
         if (nexusToOBLITERATE != null)
@@ -192,31 +186,6 @@ public class Minion : MonoBehaviour
             currentAnimation = animation;
             animator.CrossFade(animation, crossFade);
         }
-    }
-
-    private bool HasTargetToAttack()
-    {
-        return targetToAtack != null;
-    }
-
-    private bool IsTargetAlive(LifeForm target)
-    {
-        return target != null && target.IsAlive(); // Suponiendo que LifeForm tiene un método IsAlive()
-    }
-
-    public LifeForm getTarget()
-    {
-        return targetToWalk;
-    }
-
-    public void SetSpeed(float newSpeed)
-    {
-        speed = newSpeed;
-    }
-
-    public int getAtackDamage()
-    {
-        return minionDamage;
     }
 
     public void SetMySide(Team team)
