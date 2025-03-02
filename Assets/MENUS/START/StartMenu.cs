@@ -13,7 +13,9 @@ public class StartMenu : MonoBehaviour
     [SerializeField] GameObject spawnFX;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip spawnMusicClip;
-
+    [SerializeField] GameObject startMenuCamera;
+    [SerializeField] GameObject apoloCamera;
+        
     private void Start()
     {
         startBtn.onClick.AddListener(StartDEUSVULT);
@@ -24,6 +26,8 @@ public class StartMenu : MonoBehaviour
     void StartDEUSVULT()
     {
         hero.SetActive(true);
+        startMenuCamera.SetActive(false);
+        apoloCamera.SetActive(true);
         //spawnFX.SetActive(true);
         startMenu.SetActive(false);
         Cursor.visible = false;
