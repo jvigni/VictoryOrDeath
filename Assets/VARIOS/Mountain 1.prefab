@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 68c77354394ec614baef8cbc4566fcd6, type: 2}
     - target: {fileID: 919132149155446097, guid: e26b6acc661fcd34d826f22cdbb68082, type: 3}
       propertyPath: m_Name
-      value: cardHex
+      value: Mountain 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
