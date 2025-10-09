@@ -43,7 +43,7 @@ namespace Lightbug.CharacterControllerPro.Demo
                 return;
 
             rigidbody.mass *= massMultiplier;
-            rigidbody.drag *= dragMultiplier;
+            rigidbody.linearDamping *= dragMultiplier;
 
         }
 
@@ -57,7 +57,7 @@ namespace Lightbug.CharacterControllerPro.Demo
                 return;
 
             rigidbody.mass /= massMultiplier;
-            rigidbody.drag /= dragMultiplier;
+            rigidbody.linearDamping /= dragMultiplier;
 
             rigidbodies.Remove(otherCollider.transform);
 
@@ -78,10 +78,10 @@ namespace Lightbug.CharacterControllerPro.Demo
                         rigidbody.Value.AddForce(worldAddVector);
                         break;
                     case AddMode.Accelerate:
-                        rigidbody.Value.velocity += worldAddVector * Time.deltaTime;
+                        rigidbody.Value.linearVelocity += worldAddVector * Time.deltaTime;
                         break;
                     case AddMode.AddVelocity:
-                        rigidbody.Value.velocity += worldAddVector;
+                        rigidbody.Value.linearVelocity += worldAddVector;
                         break;
                 }
 

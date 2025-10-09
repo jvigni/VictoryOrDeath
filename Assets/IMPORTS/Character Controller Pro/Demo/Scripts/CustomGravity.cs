@@ -27,7 +27,7 @@ namespace Lightbug.CharacterControllerPro.Demo
         void FixedUpdate()
         {
             Vector3 dir = (planet.position - transform.position).normalized;
-            rigidbody.velocity += dir * gravity * Time.deltaTime;
+            rigidbody.linearVelocity += dir * gravity * Time.deltaTime;
         }
 
     }

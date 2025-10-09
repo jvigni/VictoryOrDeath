@@ -21,7 +21,7 @@ namespace Lightbug.Utilities
         public Collider[] UnfilteredOverlaps { get; protected set; } = new Collider[20];
         public List<Collider> FilteredOverlaps { get; protected set; } = new List<Collider>(10);
 
-        public PhysicMaterial Material
+        public PhysicsMaterial Material
         {
             get => collider.sharedMaterial;
             set => collider.sharedMaterial = value;
@@ -128,11 +128,11 @@ namespace Lightbug.Utilities
         {
             base.Awake();
 
-            PhysicMaterial material = new PhysicMaterial("Frictionless 3D");
+            PhysicsMaterial material = new PhysicsMaterial("Frictionless 3D");
             material.dynamicFriction = 0f;
             material.staticFriction = 0f;
-            material.frictionCombine = PhysicMaterialCombine.Minimum;
-            material.bounceCombine = PhysicMaterialCombine.Minimum;
+            material.frictionCombine = PhysicsMaterialCombine.Minimum;
+            material.bounceCombine = PhysicsMaterialCombine.Minimum;
             material.bounciness = 0f;
 
             collider.sharedMaterial = material;

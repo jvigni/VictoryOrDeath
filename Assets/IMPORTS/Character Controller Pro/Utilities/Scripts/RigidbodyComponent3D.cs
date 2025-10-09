@@ -40,14 +40,14 @@ namespace Lightbug.Utilities
 
         public override float LinearDrag
         {
-            get => rigidbody.drag;
-            set => rigidbody.drag = value;
+            get => rigidbody.linearDamping;
+            set => rigidbody.linearDamping = value;
         }
 
         public override float AngularDrag
         {
-            get => rigidbody.angularDrag;
-            set => rigidbody.angularDrag = value;
+            get => rigidbody.angularDamping;
+            set => rigidbody.angularDamping = value;
         }
 
 
@@ -115,8 +115,8 @@ namespace Lightbug.Utilities
 
         public override Vector3 Velocity
         {
-            get => rigidbody.velocity;
-            set => rigidbody.velocity = value;
+            get => rigidbody.linearVelocity;
+            set => rigidbody.linearVelocity = value;
         }
 
         public override Vector3 AngularVelocity
